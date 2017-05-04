@@ -31,9 +31,9 @@ class PointsViewController: UIViewController {
         }
     }
     func EnableDarkMode()  {
-        view.backgroundColor = UIColor.darkGray
-        navigationController?.navigationBar.barTintColor = UIColor.darkGray
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        view.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
     }
     
     func DisableDarkMode()  {

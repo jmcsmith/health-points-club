@@ -13,9 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ZAO-Bh-t8n">
             <objects>
-                <navigationController id="ZWq-xD-1MJ" sceneMemberID="viewController">
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" id="ZWq-xD-1MJ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJc-73-F9K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,6 +46,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,24 +101,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-3O-wuN">
-                                                    <rect key="frame" x="18" y="25" width="84" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFb-L5-SEw">
                                                     <rect key="frame" x="310" y="20" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="darkModeSwitched:" destination="NoO-bm-qRG" eventType="valueChanged" id="Slc-oN-2Mj"/>
                                                     </connections>
                                                 </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-3O-wuN">
+                                                    <rect key="frame" x="15" y="17" width="103" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kFb-L5-SEw" firstAttribute="centerY" secondItem="3Lk-3O-wuN" secondAttribute="centerY" id="gpe-BA-a8Q"/>
-                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="centerY" secondItem="ymW-K2-oyT" secondAttribute="centerY" id="r0l-Xj-ovW"/>
+                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="centerY" secondItem="kFb-L5-SEw" secondAttribute="centerY" id="6Ys-HN-eT2"/>
+                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="leading" secondItem="ymW-K2-oyT" secondAttribute="leadingMargin" constant="7" id="MZ7-Aw-HWg"/>
+                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="top" secondItem="ymW-K2-oyT" secondAttribute="topMargin" constant="9" id="MgM-HA-twg"/>
+                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="centerY" secondItem="ymW-K2-oyT" secondAttribute="centerY" id="q2C-dH-vjj"/>
                                                 <constraint firstItem="kFb-L5-SEw" firstAttribute="trailing" secondItem="ymW-K2-oyT" secondAttribute="trailingMargin" constant="-8" id="tjP-ZX-o7T"/>
-                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="leading" secondItem="ymW-K2-oyT" secondAttribute="leadingMargin" constant="10" id="ymf-Y0-8fD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -131,15 +131,17 @@
                             <outlet property="delegate" destination="NoO-bm-qRG" id="AcK-3g-J7c"/>
                         </connections>
                     </tableView>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="darkButton" destination="PNT-oc-qEe" id="A2f-f6-UI5"/>
                         <outlet property="darkModeSwitch" destination="kFb-L5-SEw" id="iy9-wm-alK"/>
+                        <outlet property="darkModeSwitchLabel" destination="3Lk-3O-wuN" id="nlZ-yk-gk3"/>
                         <outlet property="lightButton" destination="Ufc-E2-p5D" id="1AS-zC-YPO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHV-gB-zfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="123"/>
+            <point key="canvasLocation" x="893.60000000000002" y="122.78860569715144"/>
         </scene>
     </scenes>
     <resources>

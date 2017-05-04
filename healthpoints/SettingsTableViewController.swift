@@ -13,7 +13,8 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var darkButton: UIButton!
     @IBOutlet weak var lightButton: UIButton!
     @IBOutlet weak var darkModeSwitch: UISwitch!
-    
+    @IBOutlet weak var darkModeSwitchLabel: UILabel!
+    var darkmodeOn: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +41,7 @@ class SettingsTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         
-        let darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
+        darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
         
         darkModeSwitch.isOn = darkmodeOn
         
@@ -83,6 +84,7 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func darkModeSwitched(_ sender: UISwitch) {
         
         UserDefaults.standard.setValue(sender.isOn, forKey: "darkmodeOn")
+        darkmodeOn = sender.isOn    
         if sender.isOn {
             EnableDarkMode()
         }else{
@@ -91,22 +93,26 @@ class SettingsTableViewController: UITableViewController {
     }
     
     func EnableDarkMode()  {
-        tableView.backgroundColor = UIColor.darkGray
+        tableView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
+        darkModeSwitchLabel.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
         for cell in tableView.visibleCells{
-            cell.backgroundColor = UIColor.darkGray
+            cell.backgroundColor = UIColor(red:0.18, green:0.20, blue:0.20, alpha:1.00)
         }
         for index in 0..<tableView.numberOfSections{
             
             
-            tableView.headerView(forSection: index)?.backgroundView?.backgroundColor = UIColor.black
-            tableView.headerView(forSection: index)?.textLabel?.textColor = UIColor.white
+            tableView.headerView(forSection: index)?.backgroundView?.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
+            tableView.headerView(forSection: index)?.textLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
         }
-        navigationController?.navigationBar.barTintColor = UIColor.darkGray
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
+        UIApplication.shared.statusBarStyle = .lightContent
+        navigationController?.setNeedsStatusBarAppearanceUpdate()
     }
     
     func DisableDarkMode()  {
         tableView.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.00)
+        darkModeSwitchLabel.textColor = UIColor.black
         for cell in tableView.visibleCells{
             cell.backgroundColor = UIColor.white
         }
@@ -118,7 +124,16 @@ class SettingsTableViewController: UITableViewController {
         }
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
-
+        
+        UIApplication.shared.statusBarStyle = .default
+        navigationController?.setNeedsStatusBarAppearanceUpdate()
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+       
+            return .lightContent
+      
     }
     // MARK: - Table view data source
     
