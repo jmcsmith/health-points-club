@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,6 +14,8 @@
         <scene sceneID="ZAO-Bh-t8n">
             <objects>
                 <navigationController id="ZWq-xD-1MJ" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJc-73-F9K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,7 +26,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0o2-RS-fjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-721" y="35"/>
+            <point key="canvasLocation" x="-705" y="123"/>
         </scene>
         <!--Today-->
         <scene sceneID="tne-QT-ifu">
@@ -39,7 +42,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="FGS-gJ-3mk">
-                        <barButtonItem key="rightBarButtonItem" image="settings" width="1" style="done" id="RcW-CA-99k">
+                        <barButtonItem key="rightBarButtonItem" image="settings" width="1" id="RcW-CA-99k">
                             <connections>
                                 <segue destination="NoO-bm-qRG" kind="show" id="f1U-2p-UAZ"/>
                             </connections>
@@ -48,23 +51,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="86" y="123"/>
         </scene>
         <!--Settings-->
         <scene sceneID="4ee-Ps-aNM">
             <objects>
                 <tableViewController title="Settings" id="NoO-bm-qRG" customClass="SettingsTableViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dUE-16-KAG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="dUE-16-KAG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Icons" id="CNF-b1-w8r">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="W5i-bD-lEG">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="71"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" rowHeight="71" id="W5i-bD-lEG">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W5i-bD-lEG" id="w2b-0a-kgD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNT-oc-qEe">
@@ -85,6 +89,39 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Theme" id="qtD-n0-C78">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="FDy-Xg-LzD">
+                                        <rect key="frame" x="0.0" y="182.5" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FDy-Xg-LzD" id="ymW-K2-oyT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lk-3O-wuN">
+                                                    <rect key="frame" x="18" y="25" width="84" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFb-L5-SEw">
+                                                    <rect key="frame" x="310" y="20" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="darkModeSwitched:" destination="NoO-bm-qRG" eventType="valueChanged" id="Slc-oN-2Mj"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kFb-L5-SEw" firstAttribute="centerY" secondItem="3Lk-3O-wuN" secondAttribute="centerY" id="gpe-BA-a8Q"/>
+                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="centerY" secondItem="ymW-K2-oyT" secondAttribute="centerY" id="r0l-Xj-ovW"/>
+                                                <constraint firstItem="kFb-L5-SEw" firstAttribute="trailing" secondItem="ymW-K2-oyT" secondAttribute="trailingMargin" constant="-8" id="tjP-ZX-o7T"/>
+                                                <constraint firstItem="3Lk-3O-wuN" firstAttribute="leading" secondItem="ymW-K2-oyT" secondAttribute="leadingMargin" constant="10" id="ymf-Y0-8fD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -96,12 +133,13 @@
                     </tableView>
                     <connections>
                         <outlet property="darkButton" destination="PNT-oc-qEe" id="A2f-f6-UI5"/>
+                        <outlet property="darkModeSwitch" destination="kFb-L5-SEw" id="iy9-wm-alK"/>
                         <outlet property="lightButton" destination="Ufc-E2-p5D" id="1AS-zC-YPO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHV-gB-zfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="35"/>
+            <point key="canvasLocation" x="895" y="123"/>
         </scene>
     </scenes>
     <resources>

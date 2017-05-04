@@ -18,6 +18,7 @@
 		EE2F0C8F1EBA98E100207511 /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C8D1EBA98E100207511 /* light@2x.png */; };
 		EE2F0C901EBA98E100207511 /* light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C8E1EBA98E100207511 /* light@3x.png */; };
 		EE2F0C921EBA9D5600207511 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C911EBA9D5600207511 /* settings.png */; };
+		EE4699321EBAD809001F31EF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EE2F0C8D1EBA98E100207511 /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
 		EE2F0C8E1EBA98E100207511 /* light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@3x.png"; sourceTree = "<group>"; };
 		EE2F0C911EBA9D5600207511 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		EE2F0C701EBA8FBB00207511 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
+				EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */,
 				EE2F0C911EBA9D5600207511 /* settings.png */,
 				EE2F0C8D1EBA98E100207511 /* light@2x.png */,
 				EE2F0C8E1EBA98E100207511 /* light@3x.png */,
@@ -146,6 +149,7 @@
 				EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */,
 				EE2F0C881EBA922C00207511 /* dark@3x.png in Resources */,
 				EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */,
+				EE4699321EBAD809001F31EF /* iTunesArtwork@2x.png in Resources */,
 				EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */,
 				EE2F0C901EBA98E100207511 /* light@3x.png in Resources */,
 				EE2F0C871EBA922C00207511 /* dark@2x.png in Resources */,
@@ -285,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -298,6 +303,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -326,6 +334,7 @@
 				EE2F0C821EBA8FBB00207511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
