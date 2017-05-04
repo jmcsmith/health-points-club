@@ -65,5 +65,14 @@
 	</array>
 	<key>View controller-based status bar appearance</key>
 	<false/>
+    
+    
+    
+    
+    
+    <key>NSHealthUpdateUsageDescription</key>
+    <string></string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
 </dict>
 </plist>

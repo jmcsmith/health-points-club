@@ -8,11 +8,23 @@
 
 import UIKit
 
-class PointsViewController: UIViewController {
+class PointsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var day = HealthDay()
+    let datasource = ["Steps", "Water","Stand", "Sleep","Calorie Goal","Workouts", "Sodium","Carbs"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let temp = UserDefaults.standard.object(forKey: "day")
+        if temp != nil{
+            day = temp as! HealthDay
+            //set tableview datasource
+            
+        }
+        self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, -20, 0);
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +46,14 @@ class PointsViewController: UIViewController {
         view.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
+        
+        tableView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
+        
+        for cell in tableView.visibleCells{
+            cell.backgroundColor = UIColor(red:0.18, green:0.20, blue:0.20, alpha:1.00)
+            cell.textLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+            cell.detailTextLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+        }
     }
     
     func DisableDarkMode()  {
@@ -41,7 +61,26 @@ class PointsViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
         
+        tableView.backgroundColor = UIColor.white
+        
+        for cell in tableView.visibleCells{
+            cell.backgroundColor = UIColor.white
+            cell.textLabel?.textColor = UIColor.black
+            cell.detailTextLabel?.textColor = UIColor.black
+        }
+        
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return datasource.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "attributeCell")!
+        cell.textLabel?.text = datasource[indexPath.row]
+        
+        return cell
+    }
+  
     /*
      // MARK: - Navigation
      

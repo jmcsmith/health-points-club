@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var healthStore = HKHealthStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        //steps
+        let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        let stepsAuthorized = healthStore.authorizationStatus(for: stepsCount!)
+        
+        if stepsAuthorized == HKAuthorizationStatus.sharingAuthorized {
+            
+        }
         
         return true
     }

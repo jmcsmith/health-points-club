@@ -21,6 +21,7 @@
 		EE4699321EBAD809001F31EF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */; };
 		EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699331EBB6904001F31EF /* LargeHeart.png */; };
 		EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4699391EBB94D0001F31EF /* HealthKit.framework */; };
+		EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46993B1EBBB27E001F31EF /* HealthDay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		EE4699331EBB6904001F31EF /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeHeart.png; sourceTree = "<group>"; };
 		EE4699351EBB94C7001F31EF /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
 		EE4699391EBB94D0001F31EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		EE46993B1EBBB27E001F31EF /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthDay.swift; path = ../HealthDay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				EE4699351EBB94C7001F31EF /* healthpoints.entitlements */,
+				EE46993B1EBBB27E001F31EF /* HealthDay.swift */,
 				EE4699331EBB6904001F31EF /* LargeHeart.png */,
 				EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */,
 				EE2F0C911EBA9D5600207511 /* settings.png */,
@@ -192,6 +195,7 @@
 			files = (
 				EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */,
 				EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */,
+				EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */,
 				EE2F0C8A1EBA93FB00207511 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

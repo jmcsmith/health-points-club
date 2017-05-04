@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class SettingsTableViewController: UITableViewController {
     
@@ -14,7 +15,11 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var lightButton: UIButton!
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var darkModeSwitchLabel: UILabel!
+    @IBOutlet weak var healthKitLabel: UILabel!
     var darkmodeOn: Bool = false
+    
+    let healthStore = HKHealthStore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,7 +89,7 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func darkModeSwitched(_ sender: UISwitch) {
         
         UserDefaults.standard.setValue(sender.isOn, forKey: "darkmodeOn")
-        darkmodeOn = sender.isOn    
+        darkmodeOn = sender.isOn
         if sender.isOn {
             EnableDarkMode()
         }else{
@@ -95,6 +100,7 @@ class SettingsTableViewController: UITableViewController {
     func EnableDarkMode()  {
         tableView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         darkModeSwitchLabel.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+        healthKitLabel.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
         for cell in tableView.visibleCells{
             cell.backgroundColor = UIColor(red:0.18, green:0.20, blue:0.20, alpha:1.00)
         }
@@ -113,6 +119,7 @@ class SettingsTableViewController: UITableViewController {
     func DisableDarkMode()  {
         tableView.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.00)
         darkModeSwitchLabel.textColor = UIColor.black
+        healthKitLabel.textColor = UIColor.black
         for cell in tableView.visibleCells{
             cell.backgroundColor = UIColor.white
         }
@@ -131,13 +138,31 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-       
+        if darkmodeOn {
             return .lightContent
-      
+        }
+        return .default
+        
     }
     // MARK: - Table view data source
     
-    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        if indexPath.section == 2 && indexPath.row == 0 {
+            let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+            let waterCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
+            
+                  let dataTypesToWrite: Set<HKSampleType> = []
+            let dataTypesToRead : Set<HKObjectType> = [stepsCount!, waterCount!, HKWorkoutType.workoutType(), HKActivitySummaryType.activitySummaryType()]
+            
+            healthStore.requestAuthorization(toShare: dataTypesToWrite , read: dataTypesToRead) { (success, error) -> Void in
+                //UserDefaults.standard.setValue(true, forKey: "healthKitAccessRequested")
+            }
+        
+        }
+        
+    }
     
     /*
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
