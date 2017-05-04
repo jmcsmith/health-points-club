@@ -19,6 +19,8 @@
 		EE2F0C901EBA98E100207511 /* light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C8E1EBA98E100207511 /* light@3x.png */; };
 		EE2F0C921EBA9D5600207511 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C911EBA9D5600207511 /* settings.png */; };
 		EE4699321EBAD809001F31EF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */; };
+		EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699331EBB6904001F31EF /* LargeHeart.png */; };
+		EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4699391EBB94D0001F31EF /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,9 @@
 		EE2F0C8E1EBA98E100207511 /* light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@3x.png"; sourceTree = "<group>"; };
 		EE2F0C911EBA9D5600207511 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		EE4699331EBB6904001F31EF /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeHeart.png; sourceTree = "<group>"; };
+		EE4699351EBB94C7001F31EF /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
+		EE4699391EBB94D0001F31EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,7 @@
 			children = (
 				EE2F0C701EBA8FBB00207511 /* healthpoints */,
 				EE2F0C6F1EBA8FBB00207511 /* Products */,
+				EE4699361EBB94C7001F31EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +75,8 @@
 		EE2F0C701EBA8FBB00207511 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
+				EE4699351EBB94C7001F31EF /* healthpoints.entitlements */,
+				EE4699331EBB6904001F31EF /* LargeHeart.png */,
 				EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */,
 				EE2F0C911EBA9D5600207511 /* settings.png */,
 				EE2F0C8D1EBA98E100207511 /* light@2x.png */,
@@ -83,6 +92,14 @@
 				EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */,
 			);
 			path = healthpoints;
+			sourceTree = "<group>";
+		};
+		EE4699361EBB94C7001F31EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE4699391EBB94D0001F31EF /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +136,14 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JANZDS5D43;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -145,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */,
 				EE2F0C921EBA9D5600207511 /* settings.png in Resources */,
 				EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */,
 				EE2F0C881EBA922C00207511 /* dark@3x.png in Resources */,
@@ -289,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = healthpoints/healthpoints.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
@@ -303,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = healthpoints/healthpoints.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
