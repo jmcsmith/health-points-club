@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */; };
-		EE2F0C741EBA8FBB00207511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C731EBA8FBB00207511 /* ViewController.swift */; };
 		EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C751EBA8FBB00207511 /* Main.storyboard */; };
 		EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C781EBA8FBB00207511 /* Assets.xcassets */; };
 		EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C7A1EBA8FBB00207511 /* LaunchScreen.storyboard */; };
+		EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C831EBA905100207511 /* PointsViewController.swift */; };
+		EE2F0C871EBA922C00207511 /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C851EBA922C00207511 /* dark@2x.png */; };
+		EE2F0C881EBA922C00207511 /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C861EBA922C00207511 /* dark@3x.png */; };
+		EE2F0C8A1EBA93FB00207511 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */; };
+		EE2F0C8F1EBA98E100207511 /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C8D1EBA98E100207511 /* light@2x.png */; };
+		EE2F0C901EBA98E100207511 /* light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C8E1EBA98E100207511 /* light@3x.png */; };
+		EE2F0C921EBA9D5600207511 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C911EBA9D5600207511 /* settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE2F0C6E1EBA8FBB00207511 /* healthpoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE2F0C731EBA8FBB00207511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EE2F0C761EBA8FBB00207511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE2F0C781EBA8FBB00207511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE2F0C7B1EBA8FBB00207511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE2F0C7D1EBA8FBB00207511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE2F0C831EBA905100207511 /* PointsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		EE2F0C851EBA922C00207511 /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
+		EE2F0C861EBA922C00207511 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
+		EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		EE2F0C8D1EBA98E100207511 /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
+		EE2F0C8E1EBA98E100207511 /* light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@3x.png"; sourceTree = "<group>"; };
+		EE2F0C911EBA9D5600207511 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +66,18 @@
 		EE2F0C701EBA8FBB00207511 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
+				EE2F0C911EBA9D5600207511 /* settings.png */,
+				EE2F0C8D1EBA98E100207511 /* light@2x.png */,
+				EE2F0C8E1EBA98E100207511 /* light@3x.png */,
+				EE2F0C851EBA922C00207511 /* dark@2x.png */,
+				EE2F0C861EBA922C00207511 /* dark@3x.png */,
 				EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */,
-				EE2F0C731EBA8FBB00207511 /* ViewController.swift */,
 				EE2F0C751EBA8FBB00207511 /* Main.storyboard */,
 				EE2F0C781EBA8FBB00207511 /* Assets.xcassets */,
 				EE2F0C7A1EBA8FBB00207511 /* LaunchScreen.storyboard */,
 				EE2F0C7D1EBA8FBB00207511 /* Info.plist */,
+				EE2F0C831EBA905100207511 /* PointsViewController.swift */,
+				EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */,
 			);
 			path = healthpoints;
 			sourceTree = "<group>";
@@ -124,9 +142,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2F0C921EBA9D5600207511 /* settings.png in Resources */,
 				EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */,
+				EE2F0C881EBA922C00207511 /* dark@3x.png in Resources */,
 				EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */,
 				EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */,
+				EE2F0C901EBA98E100207511 /* light@3x.png in Resources */,
+				EE2F0C871EBA922C00207511 /* dark@2x.png in Resources */,
+				EE2F0C8F1EBA98E100207511 /* light@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE2F0C741EBA8FBB00207511 /* ViewController.swift in Sources */,
 				EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */,
+				EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */,
+				EE2F0C8A1EBA93FB00207511 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
