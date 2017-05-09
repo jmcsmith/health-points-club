@@ -10,30 +10,34 @@ import UIKit
 
 class PointsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var day = HealthDay()
+
     let datasource = ["Steps", "Water","Stand", "Sleep","Calorie Goal","Workouts", "Sodium","Carbs"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let temp = UserDefaults.standard.object(forKey: "day")
-        if temp != nil{
-            day = temp as! HealthDay
-            //set tableview datasource
-            
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+ 
         self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, -20, 0);
         // Do any additional setup after loading the view.
+        
+        pointsLabel.text = HealthDay.shared.steps.description
     }
-    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+      
+        pointsLabel.text = HealthDay.shared.steps.description
+        
+        
         let darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
         
         if darkmodeOn {
@@ -80,7 +84,7 @@ class PointsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
-  
+    
     /*
      // MARK: - Navigation
      
@@ -90,5 +94,7 @@ class PointsViewController: UIViewController, UITableViewDelegate, UITableViewDa
      // Pass the selected object to the new view controller.
      }
      */
-    
+    func updateUI()  {
+        pointsLabel.text = HealthDay.shared.steps.description
+    }
 }

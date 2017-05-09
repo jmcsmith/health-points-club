@@ -119,6 +119,7 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="pointsLabel" destination="Avc-PJ-Pql" id="5VJ-6G-Z5P"/>
                         <outlet property="tableView" destination="DQi-i9-FKM" id="KK6-oy-m1C"/>
                     </connections>
                 </viewController>

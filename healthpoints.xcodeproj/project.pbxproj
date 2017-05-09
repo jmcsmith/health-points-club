@@ -22,6 +22,7 @@
 		EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699331EBB6904001F31EF /* LargeHeart.png */; };
 		EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4699391EBB94D0001F31EF /* HealthKit.framework */; };
 		EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46993B1EBBB27E001F31EF /* HealthDay.swift */; };
+		EE66ACF31EBBF3810027D598 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		EE4699351EBB94C7001F31EF /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
 		EE4699391EBB94D0001F31EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		EE46993B1EBBB27E001F31EF /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthDay.swift; path = ../HealthDay.swift; sourceTree = "<group>"; };
+		EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				EE2F0C7D1EBA8FBB00207511 /* Info.plist */,
 				EE2F0C831EBA905100207511 /* PointsViewController.swift */,
 				EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */,
+				EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */,
 			);
 			path = healthpoints;
 			sourceTree = "<group>";
@@ -140,6 +143,9 @@
 						DevelopmentTeam = JANZDS5D43;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
@@ -193,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE66ACF31EBBF3810027D598 /* HealthKitHelper.swift in Sources */,
 				EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */,
 				EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */,
 				EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */,

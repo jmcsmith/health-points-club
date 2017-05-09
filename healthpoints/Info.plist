@@ -46,6 +46,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string></string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -65,14 +73,5 @@
 	</array>
 	<key>View controller-based status bar appearance</key>
 	<false/>
-    
-    
-    
-    
-    
-    <key>NSHealthUpdateUsageDescription</key>
-    <string></string>
-    <key>NSHealthShareUsageDescription</key>
-    <string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
 </dict>
 </plist>

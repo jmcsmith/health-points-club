@@ -8,25 +8,14 @@
 
 import UIKit
 
-class HealthDay: NSObject, NSCoding {
-    var date = Date()
-
-    override init() {
-        
+final class HealthDay {
+    private init() {
+    //if date != current date, reset?
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        date =  aDecoder.decodeObject(forKey: "date") as! Date
-        
-        
-    }
+    static let shared = HealthDay()
     
     
-    
-    //health attruibutes
-    
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(date, forKey: "date")
-    }
+    var date: Date = Date()
+    var steps: Int = 0
 }
