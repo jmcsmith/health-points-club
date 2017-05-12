@@ -92,6 +92,7 @@ class HealthKitHelper {
             DispatchQueue.main.async(execute: {
 
                 HealthDay.shared.steps = Int(temp)
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
                 print(temp)
             })
         }

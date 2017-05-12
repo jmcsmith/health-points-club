@@ -17,7 +17,8 @@ class PointsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
 
         self.tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: -20, right: 0)
         // Do any additional setup after loading the view.

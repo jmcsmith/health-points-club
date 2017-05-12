@@ -17,9 +17,20 @@ final class HealthDay {
     static let shared = HealthDay()
 
     var date: Date = Date()
-    var steps: Int = 0
+    var steps: Int = 0 {
+
+        didSet {
+
+            self.setUpdateNotification()
+
+        }
+    }
 
     var attributes: [Attribute] = []
+
+    func setUpdateNotification() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
+    }
 
 }
 enum AttributeType {
