@@ -46,12 +46,12 @@ enum AttributeType: String {
         case .steps:
             return (Int((value/1000)*weight))
         case .stand:
-            return Int(value)
+            return Int(value*weight)
         case .workouts:
-            return Int(value)
+             return Int(value*weight)
         case .water:
             if value >= 8.0 {
-                return 1
+                return Int(1*weight)
             } else {
                 return 0
             }

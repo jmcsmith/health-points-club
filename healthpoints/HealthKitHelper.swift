@@ -258,8 +258,6 @@ class HealthKitHelper {
 
                         water = quantity.doubleValue(for: HKUnit.cupUS())
 
-                        
-
                     }
                 }
             }
