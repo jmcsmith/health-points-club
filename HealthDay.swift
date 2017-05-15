@@ -59,6 +59,21 @@ enum AttributeType: String {
             return 0
         }
     }
+    func displayText(forValue value: Int) -> String {
+
+            switch self {
+            case .steps:
+                return "\(value) steps"
+            case .stand:
+                return "\(value) stand hours"
+            case .workouts:
+                return "\(value) workouts longer than 10 minutes"
+            case .water:
+              return "\(value) cups of water"
+            default:
+                return ""
+            }
+    }
 }
 class Attribute {
     var type: AttributeType

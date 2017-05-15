@@ -77,8 +77,9 @@ class PointsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "attributeCell")!
-        cell.textLabel?.text = HealthDay.shared.attributes[indexPath.row].type.rawValue
-        cell.detailTextLabel?.text = HealthDay.shared.attributes[indexPath.row].value.description
+        let attribute = HealthDay.shared.attributes[indexPath.row]
+        cell.textLabel?.text = attribute.type.rawValue
+        cell.detailTextLabel?.text = attribute.type.displayText(forValue: attribute.value)
 
         return cell
     }
