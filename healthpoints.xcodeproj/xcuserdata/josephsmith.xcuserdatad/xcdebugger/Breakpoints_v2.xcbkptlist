@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "healthpoints/HealthKitHelper.swift"
-            timestampString = "516301489.483454"
+            timestampString = "516505789.059857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "scheduleLocalNotification(title:subtitle:body:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "healthpoints/HealthKitHelper.swift"
-            timestampString = "516301489.483454"
+            timestampString = "516505789.059857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "stepChangedHandler(query:completionHandler:error:)"
             landmarkType = "7">
             <Locations>
@@ -196,23 +196,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "healthpoints/PointsViewController.swift"
-            timestampString = "516301489.483454"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "healthpoints/PointsViewController.swift"
-            timestampString = "516301489.483454"
+            timestampString = "516481351.665039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -228,12 +212,140 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "healthpoints/HealthKitHelper.swift"
-            timestampString = "516301489.483454"
+            timestampString = "516507449.860955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "preLoadHealthDay()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HealthKitHelper.swift"
+            timestampString = "516505789.059857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "getWorkOutData(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "healthpoints.HealthKitHelper.(getWorkOutData (completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.Int, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/Development/healthpoints/healthpoints/HealthKitHelper.swift"
+                  timestampString = "516486698.663275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "492">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "healthpoints.HealthKitHelper.(getWorkOutData (completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.Int, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/Development/healthpoints/healthpoints/HealthKitHelper.swift"
+                  timestampString = "516486698.66553"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "1232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HealthKitHelper.swift"
+            timestampString = "516505789.059857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "authorizeHealthKit(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "healthpoints.HealthKitHelper.authorizeHealthKit (completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/Development/healthpoints/healthpoints/HealthKitHelper.swift"
+                  timestampString = "516487332.840208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "1924">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "healthpoints.HealthKitHelper.(authorizeHealthKit (completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/Development/healthpoints/healthpoints/HealthKitHelper.swift"
+                  timestampString = "516487332.841945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HealthKitHelper.swift"
+            timestampString = "516505963.814954"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "getWaterData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthDay.swift"
+            timestampString = "516506655.065719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "calculatePoints(withWeight:forValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

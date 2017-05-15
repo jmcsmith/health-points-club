@@ -20,15 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 let hkHelper = HealthKitHelper()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, _) in
-            if !accepted {
-                print("Notification access denied.")
-            }
-        }
-        hkHelper.preLoadHealthDay()
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, _) in
+//            if !accepted {
+//                print("Notification access denied.")
+//            }
+//        }
+
         hkHelper.authorizeHealthKit { (authorized, error) -> Void in
             if authorized {
                 print("HealthKit authorization received.")
+                 self.hkHelper.preLoadHealthDay()
             } else {
                 print("HealthKit authorization denied!")
                 if error != nil {
@@ -36,7 +37,6 @@ let hkHelper = HealthKitHelper()
                 }
             }
         }
-        print(HealthDay.shared.steps.description)
 
         return true
     }
