@@ -14,6 +14,7 @@ final class HealthDay {
         attributes.append(Attribute(type: .steps, value: 0))
         attributes.append(Attribute(type: .workouts, value: 0))
         attributes.append(Attribute(type: .water, value: 0))
+        attributes.append(Attribute(type: .stand, value: 0))
     }
 
     static let shared = HealthDay()
@@ -48,7 +49,7 @@ enum AttributeType: String {
         case .stand:
             return Int(value*weight)
         case .workouts:
-             return Int(value*weight)
+            return Int(value*weight)
         case .water:
             if value >= 8.0 {
                 return Int(1*weight)
@@ -61,18 +62,18 @@ enum AttributeType: String {
     }
     func displayText(forValue value: Int) -> String {
 
-            switch self {
-            case .steps:
-                return "\(value) steps"
-            case .stand:
-                return "\(value) stand hours"
-            case .workouts:
-                return "\(value) workouts longer than 10 minutes"
-            case .water:
-              return "\(value) cups of water"
-            default:
-                return ""
-            }
+        switch self {
+        case .steps:
+            return "\(value) steps"
+        case .stand:
+            return "\(value) stand hours"
+        case .workouts:
+            return "\(value) workouts longer than 10 minutes"
+        case .water:
+            return "\(value) cups of water"
+        default:
+            return ""
+        }
     }
 }
 class Attribute {
