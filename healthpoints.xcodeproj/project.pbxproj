@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE0C8C431ECE652500C31122 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0C8C421ECE652500C31122 /* splash.png */; };
 		EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */; };
 		EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C751EBA8FBB00207511 /* Main.storyboard */; };
 		EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C781EBA8FBB00207511 /* Assets.xcassets */; };
@@ -18,14 +19,15 @@
 		EE2F0C8F1EBA98E100207511 /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C8D1EBA98E100207511 /* light@2x.png */; };
 		EE2F0C901EBA98E100207511 /* light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C8E1EBA98E100207511 /* light@3x.png */; };
 		EE2F0C921EBA9D5600207511 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C911EBA9D5600207511 /* settings.png */; };
-		EE4699321EBAD809001F31EF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */; };
 		EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699331EBB6904001F31EF /* LargeHeart.png */; };
 		EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4699391EBB94D0001F31EF /* HealthKit.framework */; };
 		EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46993B1EBBB27E001F31EF /* HealthDay.swift */; };
 		EE66ACF31EBBF3810027D598 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */; };
+		EE6C59841ECE446400AA3C42 /* AttributeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE0C8C421ECE652500C31122 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		EE2F0C6E1EBA8FBB00207511 /* healthpoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE2F0C761EBA8FBB00207511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,12 +41,12 @@
 		EE2F0C8D1EBA98E100207511 /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
 		EE2F0C8E1EBA98E100207511 /* light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@3x.png"; sourceTree = "<group>"; };
 		EE2F0C911EBA9D5600207511 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		EE4699331EBB6904001F31EF /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeHeart.png; sourceTree = "<group>"; };
 		EE4699351EBB94C7001F31EF /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
 		EE4699391EBB94D0001F31EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		EE46993B1EBBB27E001F31EF /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthDay.swift; path = ../HealthDay.swift; sourceTree = "<group>"; };
 		EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
+		EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +81,10 @@
 		EE2F0C701EBA8FBB00207511 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
+				EE0C8C421ECE652500C31122 /* splash.png */,
 				EE4699351EBB94C7001F31EF /* healthpoints.entitlements */,
 				EE46993B1EBBB27E001F31EF /* HealthDay.swift */,
 				EE4699331EBB6904001F31EF /* LargeHeart.png */,
-				EE4699311EBAD809001F31EF /* iTunesArtwork@2x.png */,
 				EE2F0C911EBA9D5600207511 /* settings.png */,
 				EE2F0C8D1EBA98E100207511 /* light@2x.png */,
 				EE2F0C8E1EBA98E100207511 /* light@3x.png */,
@@ -96,6 +98,7 @@
 				EE2F0C831EBA905100207511 /* PointsViewController.swift */,
 				EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */,
 				EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */,
+				EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */,
 			);
 			path = healthpoints;
 			sourceTree = "<group>";
@@ -184,8 +187,8 @@
 				EE2F0C921EBA9D5600207511 /* settings.png in Resources */,
 				EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */,
 				EE2F0C881EBA922C00207511 /* dark@3x.png in Resources */,
+				EE0C8C431ECE652500C31122 /* splash.png in Resources */,
 				EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */,
-				EE4699321EBAD809001F31EF /* iTunesArtwork@2x.png in Resources */,
 				EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */,
 				EE2F0C901EBA98E100207511 /* light@3x.png in Resources */,
 				EE2F0C871EBA922C00207511 /* dark@2x.png in Resources */,
@@ -198,7 +201,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		EE60B26D1EC15CC300249859 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -206,7 +209,7 @@
 			name = SwiftLint;
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
@@ -219,6 +222,7 @@
 			files = (
 				EE66ACF31EBBF3810027D598 /* HealthKitHelper.swift in Sources */,
 				EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */,
+				EE6C59841ECE446400AA3C42 /* AttributeCollectionViewCell.swift in Sources */,
 				EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */,
 				EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */,
 				EE2F0C8A1EBA93FB00207511 /* SettingsTableViewController.swift in Sources */,

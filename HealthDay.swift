@@ -64,15 +64,29 @@ enum AttributeType: String {
 
         switch self {
         case .steps:
-            return "\(value) steps"
+            return "\(value)"
         case .stand:
-            return "\(value) stand hours"
+            return "\(value) hours"
         case .workouts:
-            return "\(value) workouts longer than 10 minutes"
+            return "\(value) > 10 mins"
         case .water:
-            return "\(value) cups of water"
+            return "\(value) cups"
         default:
             return ""
+        }
+    }
+    func getBackgroundColor() -> UIColor {
+        switch self {
+        case .steps:
+            return UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00)
+        case .stand:
+            return UIColor(red:0.38, green:0.87, blue:0.84, alpha:1.00)
+        case .workouts:
+            return UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00)
+        case .water:
+            return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
+        default:
+            return UIColor.darkGray
         }
     }
 }

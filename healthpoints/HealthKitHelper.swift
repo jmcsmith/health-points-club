@@ -214,7 +214,6 @@ class HealthKitHelper {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: HKWorkoutType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
 
-            print("Workouts = \(results!.count)")
             var eligible = 0
             for workout in (results as? [HKWorkout])! where workout.duration >= 600 {
 
