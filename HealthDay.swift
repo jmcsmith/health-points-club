@@ -75,7 +75,8 @@ enum AttributeType: String {
             return Int(value)
         case .exercise:
             if value >= 30 {
-                return Int(1*weight)
+                let base = value/30.0
+                return Int(base*weight)
             } else {
                 return 0
             }
