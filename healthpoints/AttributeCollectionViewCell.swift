@@ -13,4 +13,5 @@ class AttributeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
+
 }
