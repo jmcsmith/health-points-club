@@ -273,7 +273,7 @@ class HealthKitHelper {
         let startDate = cal.startOfDay(for: Date())
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
 
-        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: HKQueryOptions())
         let interval: NSDateComponents = NSDateComponents()
         interval.day = 1
 
