@@ -84,7 +84,7 @@ enum AttributeType: String {
             let goal = HealthDay.shared.moveGoal
             if goal > 0 {
             return Int((value/goal)*weight)
-            }else{
+            } else {
                 return 0
             }
         case .rings:
@@ -94,7 +94,7 @@ enum AttributeType: String {
             if stand! >= 1 && move! >= 1 && exercise! >= 1 {
                 HealthDay.shared.attributes.first(where: {$0.type == .rings})?.value = 3
                 return Int(1*weight)
-                
+
             } else {
                 return 0
             }

@@ -178,7 +178,7 @@ class HealthKitHelper {
 
         let sampleType =  HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
 
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.stepChangedHandler)
+        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.exerciseChangedHandler)
 
         healthKitStore.execute(query)
         healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: {(succeeded: Bool, error: Error!) in
@@ -438,17 +438,29 @@ class HealthKitHelper {
 
     func getStandHours(_ completion: ((Int, Error?) -> Void)!) {
         let cal = Calendar.current
-
-        let startDate = cal.startOfDay(for: Date())
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
-        let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .appleStandHour)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
-
-            print("Stand Hours = \(results!.count)")
-            completion(results!.count, error)
+        
+        var dateComponents = cal.dateComponents(
+            [ .year, .month, .day ],
+            from: Date()
+        )
+        dateComponents.calendar = cal
+        let predicate = HKQuery.predicateForActivitySummary(with: dateComponents)
+        
+        let query = HKActivitySummaryQuery(predicate: predicate) { (_, summaries, error) in
+            
+            guard let summaries = summaries, summaries.count > 0
+                else {
+                    // No data returned. Perhaps check for error
+                    return
+            }
+            let summary = summaries[0]
+            
+            let moveGoal = summary.appleStandHours.doubleValue(for: HKUnit.count())
+         
+            
+            completion(Int(moveGoal), error)
         }
-
-        healthKitStore.execute(sampleQuery)
+        healthKitStore.execute(query)
     }
     func getMindSessions(_ completion: ((Int, Error?) -> Void)!) {
         let cal = Calendar.current
@@ -517,9 +529,9 @@ class HealthKitHelper {
             })
 
         }
-        getMindSessions { (hours, _) -> Void in
+        getMindSessions { (mins, _) -> Void in
             DispatchQueue.main.async(execute: {
-                HealthDay.shared.attributes.first(where: {$0.type == .mind})?.value = Int(hours)
+                HealthDay.shared.attributes.first(where: {$0.type == .mind})?.value = Int(mins)
             })
 
         }
@@ -529,9 +541,9 @@ class HealthKitHelper {
             })
 
         }
-        getExerciseTime { (energy, _) -> Void in
+        getExerciseTime { (time, _) -> Void in
             DispatchQueue.main.async(execute: {
-                HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.value = Int(energy)
+                HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.value = Int(time)
             })
 
         }
