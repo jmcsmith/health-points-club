@@ -16,6 +16,8 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var darkModeSwitchLabel: UILabel!
     @IBOutlet weak var healthKitLabel: UILabel!
+    @IBOutlet weak var dailyCalories: UITextField!
+
     var darkmodeOn: Bool = false
 
     let healthStore = HKHealthStore()
@@ -54,6 +56,8 @@ class SettingsTableViewController: UITableViewController {
         } else {
             disableDarkMode()
         }
+
+        dailyCalories.text = UserDefaults.standard.string(forKey: "dailyCalorieGoal")
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,7 +114,9 @@ class SettingsTableViewController: UITableViewController {
         }
         navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
-
+        dailyCalories.backgroundColor = UIColor(red:0.18, green:0.20, blue:0.20, alpha:1.00)
+        dailyCalories.layer.borderColor = UIColor.white.cgColor
+        dailyCalories.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
     }
 
     func disableDarkMode() {
@@ -128,6 +134,13 @@ class SettingsTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
 
+        dailyCalories.backgroundColor = UIColor.white
+        dailyCalories.layer.borderColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.00).cgColor
+        dailyCalories.textColor = UIColor.darkGray
+
+    }
+    @IBAction func dailyCaloriesChanged(_ sender: UITextField) {
+        UserDefaults.standard.setValue(sender.text, forKey: "dailyCalorieGoal")
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -145,7 +158,7 @@ class SettingsTableViewController: UITableViewController {
             let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
             let waterCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
 
-                  let dataTypesToWrite: Set<HKSampleType> = []
+            let dataTypesToWrite: Set<HKSampleType> = []
             let dataTypesToRead: Set<HKObjectType> = [stepsCount!, waterCount!, HKWorkoutType.workoutType(), HKActivitySummaryType.activitySummaryType()]
 
             healthStore.requestAuthorization(toShare: dataTypesToWrite, read: dataTypesToRead) { (_, _) -> Void in

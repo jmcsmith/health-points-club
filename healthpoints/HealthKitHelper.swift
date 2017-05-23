@@ -25,9 +25,10 @@ class HealthKitHelper {
         let mind = HKObjectType.categoryType(forIdentifier: .mindfulSession)!
         let move = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
         let exercise = HKObjectType.quantityType(forIdentifier: .appleExerciseTime)
-
+        let sleep = HKCategoryType.categoryType(forIdentifier: .sleepAnalysis)
+        let calories = HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)
         // 1. Set the types you want to read from HK Store
-        let dataTypesToRead: Set<HKObjectType> = [stepsCount!, waterCount!, HKWorkoutType.workoutType(), stand!, mind, HKActivitySummaryType.activitySummaryType(), move, exercise!]
+        let dataTypesToRead: Set<HKObjectType> = [stepsCount!, waterCount!, HKWorkoutType.workoutType(), stand!, mind, HKActivitySummaryType.activitySummaryType(), move, exercise!, sleep!, calories!]
 
         // 2. Set the types you want to write to HK Store
 
@@ -54,6 +55,7 @@ class HealthKitHelper {
                 DispatchQueue.main.async(execute: self.startObservingMindSessions)
                 DispatchQueue.main.async(execute: self.startObservingActiveCalories)
                 DispatchQueue.main.async(execute: self.startObservingExerciseChanges)
+                       DispatchQueue.main.async(execute: self.startObservingCaloriesChanges)
                 completion(success, error)
             }
         }
@@ -115,6 +117,36 @@ class HealthKitHelper {
 
         completionHandler()
     }
+
+    func startObservingCaloriesChanges() {
+        let sampleType =  HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)
+        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.caloriesChangedHandler)
+        healthKitStore.execute(query)
+        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: {(succeeded: Bool, error: Error!) in
+
+            if succeeded {
+                print("Enabled background delivery of Calories changes")
+            } else {
+                if let theError = error {
+                    print("Failed to enable background delivery of Calories changes. ")
+                    print("Error = \(theError)")
+                }
+            }
+        })
+    }
+    func caloriesChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
+        getCaloriesData { (water, _) -> Void in
+            DispatchQueue.main.async(execute: {
+
+                HealthDay.shared.attributes.first(where: {$0.type == .calories})?.value = Int(water)
+                //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
+
+            })
+        }
+
+        completionHandler()
+    }
+
     func startObservingWorkoutChanges() {
         let sampleType = HKObjectType.workoutType()
         let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.workoutChangedHandler)
@@ -261,6 +293,35 @@ class HealthKitHelper {
             DispatchQueue.main.async(execute: {
 
                 HealthDay.shared.attributes.first(where: {$0.type == .mind})?.value = Int(temp)
+            })
+        }
+
+        completionHandler()
+    }
+
+    func startObservingSleep() {
+        let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
+
+        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.sleepAnalysisChangedHandler)
+
+        healthKitStore.execute(query)
+        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: {(succeeded: Bool, error: Error!) in
+
+            if succeeded {
+                print("Enabled background delivery of Sleep Analysis changes")
+            } else {
+                if let theError = error {
+                    print("Failed to enable background delivery of Sleep Analysis changes. ")
+                    print("Error = \(theError)")
+                }
+            }
+        })
+    }
+    func sleepAnalysisChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
+        getSleepAnalysis { (temp, _) -> Void in
+            DispatchQueue.main.async(execute: {
+
+                HealthDay.shared.attributes.first(where: {$0.type == .sleep})?.value = Int(temp)
             })
         }
 
@@ -435,29 +496,63 @@ class HealthKitHelper {
         healthKitStore.execute(query)
 
     }
+    func getCaloriesData(_ completion: ((Double, Error?) -> Void)!) {
+        let cal = Calendar.current
 
+        let startDate = cal.startOfDay(for: Date())
+        let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: .strictStartDate)
+        let interval: NSDateComponents = NSDateComponents()
+        interval.day = 1
+
+        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents:interval as DateComponents)
+        query.initialResultsHandler = { query, results, error in
+
+            if error != nil {
+
+                //  Something went Wrong
+                return
+            }
+            var calories = 0.0
+            if let myResults = results {
+                myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) {statistics, _ in
+
+                    if let quantity = statistics.sumQuantity() {
+
+                        calories = quantity.doubleValue(for: HKUnit.kilocalorie())
+
+                    }
+                }
+            }
+            print("Caloriesa = \(calories)")
+            completion(calories, error)
+
+        }
+        healthKitStore.execute(query)
+
+    }
     func getStandHours(_ completion: ((Int, Error?) -> Void)!) {
         let cal = Calendar.current
-        
+
         var dateComponents = cal.dateComponents(
             [ .year, .month, .day ],
             from: Date()
         )
         dateComponents.calendar = cal
         let predicate = HKQuery.predicateForActivitySummary(with: dateComponents)
-        
+
         let query = HKActivitySummaryQuery(predicate: predicate) { (_, summaries, error) in
-            
+
             guard let summaries = summaries, summaries.count > 0
                 else {
                     // No data returned. Perhaps check for error
                     return
             }
             let summary = summaries[0]
-            
+
             let moveGoal = summary.appleStandHours.doubleValue(for: HKUnit.count())
-         
-            
+
             completion(Int(moveGoal), error)
         }
         healthKitStore.execute(query)
@@ -476,6 +571,33 @@ class HealthKitHelper {
 
         healthKitStore.execute(sampleQuery)
     }
+
+    func getSleepAnalysis(_ completion: ((Int, Error?) -> Void)!) {
+        let cal = Calendar.current
+
+        let startDate = cal.startOfDay(for: Date()).addingTimeInterval(-3600*12)
+        let endDate = cal.startOfDay(for: Date()).addingTimeInterval(3600*12)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions())
+        let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
+
+            print("Sleep Analysis = \(results!.count)")
+            var minutes = 0
+            for item in results! {
+                if let sample = item as? HKCategorySample {
+
+                    if sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
+                        minutes += Int(sample.endDate.timeIntervalSince(sample.startDate)/60)
+                        print(sample.endDate.timeIntervalSince(sample.startDate)/60)
+                    }
+                }
+            }
+            completion(minutes, error)
+        }
+
+        healthKitStore.execute(sampleQuery)
+    }
+
     func getActivityRings(_ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
 
@@ -544,6 +666,18 @@ class HealthKitHelper {
         getExerciseTime { (time, _) -> Void in
             DispatchQueue.main.async(execute: {
                 HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.value = Int(time)
+            })
+
+        }
+        getSleepAnalysis { (time, _) -> Void in
+            DispatchQueue.main.async(execute: {
+                HealthDay.shared.attributes.first(where: {$0.type == .sleep})?.value = Int(time)
+            })
+
+        }
+        getCaloriesData { (calories, _) -> Void in
+            DispatchQueue.main.async(execute: {
+                HealthDay.shared.attributes.first(where: {$0.type == .calories})?.value = Int(calories)
             })
 
         }

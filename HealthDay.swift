@@ -14,11 +14,13 @@ final class HealthDay {
         attributes.append(Attribute(type: .steps, value: 0))
         attributes.append(Attribute(type: .workouts, value: 0))
         attributes.append(Attribute(type: .water, value: 0))
+        attributes.append(Attribute(type: .sleep, value: 0))
         attributes.append(Attribute(type: .mind, value: 0))
         attributes.append(Attribute(type: .stand, value: 0))
         attributes.append(Attribute(type: .exercise, value: 0))
         attributes.append(Attribute(type: .move, value: 0))
         attributes.append(Attribute(type: .rings, value: 0))
+              attributes.append(Attribute(type: .calories, value: 0))
     }
 
     static let shared = HealthDay()
@@ -51,6 +53,7 @@ enum AttributeType: String {
     case move = "Move"
     case exercise = "Exercise"
     case rings = "⌚️ Rings"
+    case calories = "Calories"
 
     func calculatePoints(withWeight weight: Double, forValue value: Double) -> Int {
         switch self {
@@ -83,7 +86,7 @@ enum AttributeType: String {
         case .move:
             let goal = HealthDay.shared.moveGoal
             if goal > 0 {
-            return Int((value/goal)*weight)
+                return Int((value/goal)*weight)
             } else {
                 return 0
             }
@@ -95,6 +98,20 @@ enum AttributeType: String {
                 HealthDay.shared.attributes.first(where: {$0.type == .rings})?.value = 3
                 return Int(1*weight)
 
+            } else {
+                return 0
+            }
+        case .sleep:
+            if value >= 480 {
+                return Int(1*weight)
+            } else {
+                return 0
+            }
+        case .calories:
+            let goal = UserDefaults.standard.double(forKey: "dailyCalorieGoal")
+
+            if value > 0 && goal > 0 && value <= goal {
+                return Int(1*weight)
             } else {
                 return 0
             }
@@ -121,6 +138,10 @@ enum AttributeType: String {
             return "\(value) Minutes"
         case .rings:
             return "\(value) Rings Closed"
+        case .sleep:
+            return "\(value/60) Sleep Hours"
+        case .calories:
+            return "\(value) Consumed"
         default:
             return ""
         }
@@ -141,8 +162,12 @@ enum AttributeType: String {
             return UIColor(red:0.66, green:0.95, blue:0.29, alpha:1.00)
         case .move:
             return UIColor(red:0.89, green:0.24, blue:0.37, alpha:1.00)
+        case .sleep:
+            return UIColor(red:0.49, green:0.36, blue:0.92, alpha:1.00)
+        case  .calories:
+            return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
         case .rings:
-            return UIColor.darkGray
+            return UIColor.lightGray
         default:
             return UIColor.darkGray
         }

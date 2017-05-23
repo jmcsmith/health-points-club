@@ -233,16 +233,53 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Data Sources" id="11U-Cd-q1d">
+                            <tableViewSection headerTitle="Goals" id="11U-Cd-q1d">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="71" id="J4F-jY-ng9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="J4F-jY-ng9">
                                         <rect key="frame" x="0.0" y="309.5" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J4F-jY-ng9" id="8i3-3a-PQB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1h-Yq-ZER">
+                                                    <rect key="frame" x="15" y="17" width="128" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gwM-N7-Uw4">
+                                                    <rect key="frame" x="151" y="21" width="216" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="dailyCaloriesChanged:" destination="NoO-bm-qRG" eventType="editingChanged" id="lIH-SZ-dhJ"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="D1h-Yq-ZER" firstAttribute="leading" secondItem="8i3-3a-PQB" secondAttribute="leadingMargin" constant="7" id="646-Y0-mbV"/>
+                                                <constraint firstItem="D1h-Yq-ZER" firstAttribute="top" secondItem="8i3-3a-PQB" secondAttribute="topMargin" constant="9" id="CsV-Cg-t9g"/>
+                                                <constraint firstItem="D1h-Yq-ZER" firstAttribute="centerY" secondItem="8i3-3a-PQB" secondAttribute="centerY" id="JT5-ys-8rz"/>
+                                                <constraint firstItem="gwM-N7-Uw4" firstAttribute="centerY" secondItem="8i3-3a-PQB" secondAttribute="centerY" id="VEz-H8-oX5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gwM-N7-Uw4" secondAttribute="trailing" id="uc3-6y-dq6"/>
+                                                <constraint firstItem="gwM-N7-Uw4" firstAttribute="leading" secondItem="D1h-Yq-ZER" secondAttribute="trailing" constant="8" id="who-bU-3Ur"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Data Sources" id="FzI-PC-sgx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="71" id="a73-yb-4oJ">
+                                        <rect key="frame" x="0.0" y="436.5" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a73-yb-4oJ" id="NWp-N6-5XY">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HealthKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1h-Yq-ZER">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HealthKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlE-G3-6Ld">
                                                     <rect key="frame" x="15" y="17" width="86.5" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
@@ -250,9 +287,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="D1h-Yq-ZER" firstAttribute="leading" secondItem="8i3-3a-PQB" secondAttribute="leadingMargin" constant="7" id="646-Y0-mbV"/>
-                                                <constraint firstItem="D1h-Yq-ZER" firstAttribute="top" secondItem="8i3-3a-PQB" secondAttribute="topMargin" constant="9" id="CsV-Cg-t9g"/>
-                                                <constraint firstItem="D1h-Yq-ZER" firstAttribute="centerY" secondItem="8i3-3a-PQB" secondAttribute="centerY" id="JT5-ys-8rz"/>
+                                                <constraint firstItem="VlE-G3-6Ld" firstAttribute="top" secondItem="NWp-N6-5XY" secondAttribute="topMargin" constant="9" id="Use-WZ-ia3"/>
+                                                <constraint firstItem="VlE-G3-6Ld" firstAttribute="centerY" secondItem="NWp-N6-5XY" secondAttribute="centerY" id="XLF-GV-aqZ"/>
+                                                <constraint firstItem="VlE-G3-6Ld" firstAttribute="leading" secondItem="NWp-N6-5XY" secondAttribute="leadingMargin" constant="7" id="ue0-JN-6ce"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -266,6 +303,7 @@
                     </tableView>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="dailyCalories" destination="gwM-N7-Uw4" id="bNs-Ah-pCU"/>
                         <outlet property="darkButton" destination="PNT-oc-qEe" id="A2f-f6-UI5"/>
                         <outlet property="darkModeSwitch" destination="kFb-L5-SEw" id="iy9-wm-alK"/>
                         <outlet property="darkModeSwitchLabel" destination="3Lk-3O-wuN" id="nlZ-yk-gk3"/>
