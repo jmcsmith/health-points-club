@@ -17,6 +17,9 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var darkModeSwitchLabel: UILabel!
     @IBOutlet weak var healthKitLabel: UILabel!
     @IBOutlet weak var dailyCalories: UITextField!
+    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var attributesLabel: UILabel!
+    @IBOutlet weak var cellNumberSegmentedControl: UISegmentedControl!
 
     var darkmodeOn: Bool = false
 
@@ -58,6 +61,7 @@ class SettingsTableViewController: UITableViewController {
         }
 
         dailyCalories.text = UserDefaults.standard.string(forKey: "dailyCalorieGoal")
+        cellNumberSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "numberOfCellsInRow")-2
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,6 +121,8 @@ class SettingsTableViewController: UITableViewController {
         dailyCalories.backgroundColor = UIColor(red:0.18, green:0.20, blue:0.20, alpha:1.00)
         dailyCalories.layer.borderColor = UIColor.white.cgColor
         dailyCalories.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+             caloriesLabel.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+             attributesLabel.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
     }
 
     func disableDarkMode() {
@@ -137,10 +143,16 @@ class SettingsTableViewController: UITableViewController {
         dailyCalories.backgroundColor = UIColor.white
         dailyCalories.layer.borderColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.00).cgColor
         dailyCalories.textColor = UIColor.darkGray
+        caloriesLabel.textColor = UIColor.black
+        attributesLabel.textColor = UIColor.black
 
     }
     @IBAction func dailyCaloriesChanged(_ sender: UITextField) {
         UserDefaults.standard.setValue(sender.text, forKey: "dailyCalorieGoal")
+    }
+    @IBAction func cellNumberChanged(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+        UserDefaults.standard.set(sender.selectedSegmentIndex+2, forKey: "numberOfCellsInRow")
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {

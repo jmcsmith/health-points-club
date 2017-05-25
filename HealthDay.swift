@@ -20,21 +20,21 @@ final class HealthDay {
         attributes.append(Attribute(type: .exercise, value: 0))
         attributes.append(Attribute(type: .move, value: 0))
         attributes.append(Attribute(type: .rings, value: 0))
-              attributes.append(Attribute(type: .calories, value: 0))
+        attributes.append(Attribute(type: .calories, value: 0))
     }
-
+    
     static let shared = HealthDay()
-
+    
     var date: Date = Date()
-
+    
     var attributes: [Attribute] = []
-
+    
     var moveGoal: Double = 0.0
-
+    
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
     }
-
+    
     func getPoints() -> Int {
         var points = 0
         for a in attributes {
@@ -54,7 +54,7 @@ enum AttributeType: String {
     case exercise = "Exercise"
     case rings = "⌚️ Rings"
     case calories = "Calories"
-
+    
     func calculatePoints(withWeight weight: Double, forValue value: Double) -> Int {
         switch self {
         case .steps:
@@ -65,7 +65,7 @@ enum AttributeType: String {
             } else {
                 return 0
             }
-
+            
         case .workouts:
             return Int(value*weight)
         case .water:
@@ -97,7 +97,7 @@ enum AttributeType: String {
             if stand! >= 1 && move! >= 1 && exercise! >= 1 {
                 HealthDay.shared.attributes.first(where: {$0.type == .rings})?.value = 3
                 return Int(1*weight)
-
+                
             } else {
                 return 0
             }
@@ -109,7 +109,7 @@ enum AttributeType: String {
             }
         case .calories:
             let goal = UserDefaults.standard.double(forKey: "dailyCalorieGoal")
-
+            
             if value > 0 && goal > 0 && value <= goal {
                 return Int(1*weight)
             } else {
@@ -120,7 +120,7 @@ enum AttributeType: String {
         }
     }
     func displayText(forValue value: Int) -> String {
-
+        
         switch self {
         case .steps:
             return "\(value)"
@@ -176,19 +176,19 @@ enum AttributeType: String {
 class Attribute {
     var type: AttributeType
     var value: Int = 0 {
-
+        
         didSet {
-
+            
             HealthDay.shared.setUpdateNotification()
-
+            
         }
     }
-
+    
     init(type: AttributeType, value: Int) {
         self.type = type
         self.value = value
     }
-
+    
     func getPoints(withWeight weight: Double) -> Int {
         return type.calculatePoints(withWeight: weight, forValue: Double(value))
     }

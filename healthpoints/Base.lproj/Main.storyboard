@@ -235,7 +235,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Goals" id="11U-Cd-q1d">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="J4F-jY-ng9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="J4F-jY-ng9">
                                         <rect key="frame" x="0.0" y="309.5" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J4F-jY-ng9" id="8i3-3a-PQB">
@@ -295,6 +295,44 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Stuff Only Karen Wants" id="lkx-ik-bFt">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="oLk-fp-02f">
+                                        <rect key="frame" x="0.0" y="563.5" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oLk-fp-02f" id="Gqp-9F-XyU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Attributes per row" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-K0-rKZ">
+                                                    <rect key="frame" x="5" y="25" width="172" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9je-Bk-mSV">
+                                                    <rect key="frame" x="185" y="21" width="182" height="29"/>
+                                                    <segments>
+                                                        <segment title="2"/>
+                                                        <segment title="3"/>
+                                                        <segment title="4"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="cellNumberChanged:" destination="NoO-bm-qRG" eventType="valueChanged" id="BRm-44-hgi"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9je-Bk-mSV" secondAttribute="trailing" id="9Va-3H-MVu"/>
+                                                <constraint firstItem="9je-Bk-mSV" firstAttribute="centerY" secondItem="Gqp-9F-XyU" secondAttribute="centerY" id="ITb-3y-lPw"/>
+                                                <constraint firstItem="9je-Bk-mSV" firstAttribute="leading" secondItem="NlI-K0-rKZ" secondAttribute="trailing" constant="8" id="h3m-od-bLK"/>
+                                                <constraint firstItem="NlI-K0-rKZ" firstAttribute="centerY" secondItem="Gqp-9F-XyU" secondAttribute="centerY" id="rid-ZT-r0n"/>
+                                                <constraint firstItem="NlI-K0-rKZ" firstAttribute="leading" secondItem="Gqp-9F-XyU" secondAttribute="leadingMargin" constant="-3" id="uBl-ae-RRm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="NoO-bm-qRG" id="pS8-dn-Rai"/>
@@ -303,11 +341,14 @@
                     </tableView>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="attributesLabel" destination="NlI-K0-rKZ" id="8BO-e4-998"/>
+                        <outlet property="caloriesLabel" destination="D1h-Yq-ZER" id="8c8-fF-eGK"/>
+                        <outlet property="cellNumberSegmentedControl" destination="9je-Bk-mSV" id="PNy-kM-U88"/>
                         <outlet property="dailyCalories" destination="gwM-N7-Uw4" id="bNs-Ah-pCU"/>
                         <outlet property="darkButton" destination="PNT-oc-qEe" id="A2f-f6-UI5"/>
                         <outlet property="darkModeSwitch" destination="kFb-L5-SEw" id="iy9-wm-alK"/>
                         <outlet property="darkModeSwitchLabel" destination="3Lk-3O-wuN" id="nlZ-yk-gk3"/>
-                        <outlet property="healthKitLabel" destination="D1h-Yq-ZER" id="lAL-43-oFK"/>
+                        <outlet property="healthKitLabel" destination="VlE-G3-6Ld" id="laj-vU-3T0"/>
                         <outlet property="lightButton" destination="Ufc-E2-p5D" id="1AS-zC-YPO"/>
                     </connections>
                 </tableViewController>
