@@ -21,8 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let cellsPerRow = UserDefaults.standard.integer(forKey: "numberOfCellsInRow")
-        if cellsPerRow == 0{
+        if cellsPerRow == 0 {
             UserDefaults.standard.set(4, forKey: "numberOfCellsInRow")
+        }
+        if let data = UserDefaults.standard.object(forKey: "history") as? Data {
+            
+            
+            if let history = NSKeyedUnarchiver.unarchiveObject(with: data) as? [HistoryDay]{
+                HealthDay.shared.history = history
+            }
         }
         hkHelper.authorizeHealthKit { (authorized, error) -> Void in
             if authorized {

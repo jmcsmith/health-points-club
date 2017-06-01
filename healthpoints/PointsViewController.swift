@@ -29,7 +29,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView.reloadData()
+        collectionView.collectionViewLayout.invalidateLayout()
         let darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
         
         if darkmodeOn {
@@ -38,11 +38,15 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
             disableDarkMode()
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
     func enableDarkMode() {
         view.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
-        
+        tabBarController?.tabBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         collectionView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         
     }
@@ -51,7 +55,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
-        
+        tabBarController?.tabBar.barTintColor = UIColor.white
         collectionView.backgroundColor = UIColor.white
         
     }
@@ -72,6 +76,9 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.descriptionLabel.text = HealthDay.shared.attributes[indexPath.row].type.rawValue
         let value = HealthDay.shared.attributes[indexPath.row].value
         cell.pointLabel.text = HealthDay.shared.attributes[indexPath.row].getPoints(withWeight: 1).description
+        //        let font = cell.pointLabel.font
+        //        let labelsize = cell.pointLabel.bounds.height
+        //        cell.pointLabel.font = font?.withSize(labelsize-4)
         cell.valueLabel.text = HealthDay.shared.attributes[indexPath.row].type.displayText(forValue: value)
         cell.backgroundColor = HealthDay.shared.attributes[indexPath.row].type.getBackgroundColor()
         
@@ -80,13 +87,34 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cellsAcross: CGFloat = CGFloat(UserDefaults.standard.integer(forKey: "numberOfCellsInRow"))
+        //let cellsAcross: CGFloat = CGFloat(4)
+        
         let spaceBetweenCells: CGFloat = 1
         let spacers = (cellsAcross-1)*spaceBetweenCells
         let dim = (collectionView.bounds.width - spacers) / cellsAcross
         
+        if let cell = collectionView.cellForItem(at: indexPath) as? AttributeCollectionViewCell{
+            var size = 14.0
+            let font = cell.pointLabel.font
+            switch cellsAcross {
+            case 4.0:
+                size = 14.0
+            case 3.0:
+                size = 24.0
+            case 2.0:
+                size = 50.0
+            default:
+                size = 14.0
+            }
+            
+            cell.pointLabel.font = UIFont.systemFont(ofSize: (CGFloat(size)), weight: UIFontWeightHeavy)
+        }
         return CGSize(width: dim, height: dim)
     }
     
+    @IBAction func infoButtonPressed(_ sender: Any) {
+        print("info pressed")
+    }
     func updateUI() {
         DispatchQueue.main.async {
             self.pointsLabel.text = HealthDay.shared.getPoints().description

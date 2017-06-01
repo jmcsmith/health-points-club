@@ -30,16 +30,30 @@ final class HealthDay {
     var attributes: [Attribute] = []
     
     var moveGoal: Double = 0.0
-    
+    var history: [HistoryDay] = []
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
     }
     
     func getPoints() -> Int {
         var points = 0
+        let cal = Calendar.current
+        
+        let dateComponents = cal.dateComponents(
+            [ .year, .month, .day ],
+            from: Date()
+        )
+        
         for a in attributes {
             points += a.getPoints(withWeight: 1)
         }
+        if let index = history.index(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
+            history[index].points = points
+        }else{
+            history.append(HistoryDay(date: cal.date(from: dateComponents)!,points: points))
+        }
+        let h = NSKeyedArchiver.archivedData(withRootObject: history)
+        //UserDefaults.standard.set(h, forKey: "history")
         return points
     }
 }
@@ -47,7 +61,7 @@ enum AttributeType: String {
     case steps = "Steps"
     case water = "Water"
     case stand = "Stand Hours"
-    case sleep = "Sleep Hours"
+    case sleep = "Sleep"
     case workouts = "Workouts"
     case mind = "Mind Sessions"
     case move = "Move"
@@ -91,14 +105,27 @@ enum AttributeType: String {
                 return 0
             }
         case .rings:
-            let stand = HealthDay.shared.attributes.first(where: {$0.type == .stand})?.getPoints(withWeight: weight)
-            let move = HealthDay.shared.attributes.first(where: {$0.type == .move})?.getPoints(withWeight: weight)
-            let exercise = HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.getPoints(withWeight: weight)
-            if stand! >= 1 && move! >= 1 && exercise! >= 1 {
+            let stand = (HealthDay.shared.attributes.first(where: {$0.type == .stand})?.getPoints(withWeight: weight))!
+            let move = (HealthDay.shared.attributes.first(where: {$0.type == .move})?.getPoints(withWeight: weight))!
+            let exercise = (HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.getPoints(withWeight: weight))!
+            if stand >= 1 && move >= 1 && exercise >= 1 {
+                
                 HealthDay.shared.attributes.first(where: {$0.type == .rings})?.value = 3
+                
                 return Int(1*weight)
                 
             } else {
+                var temp  = 0
+                if stand > 0 {
+                    temp = temp + 1
+                }
+                if move > 0 {
+                    temp = temp + 1
+                }
+                if exercise > 0 {
+                    temp = temp + 1
+                }
+                HealthDay.shared.attributes.first(where: {$0.type == .rings})?.value = temp
                 return 0
             }
         case .sleep:
@@ -139,7 +166,7 @@ enum AttributeType: String {
         case .rings:
             return "\(value) Rings Closed"
         case .sleep:
-            return "\(value/60) Sleep Hours"
+            return "\(value/60) Hours"
         case .calories:
             return "\(value) Consumed"
         default:
@@ -178,8 +205,10 @@ class Attribute {
     var value: Int = 0 {
         
         didSet {
+            if value != oldValue {
+                HealthDay.shared.setUpdateNotification()
+            }
             
-            HealthDay.shared.setUpdateNotification()
             
         }
     }
@@ -191,5 +220,24 @@ class Attribute {
     
     func getPoints(withWeight weight: Double) -> Int {
         return type.calculatePoints(withWeight: weight, forValue: Double(value))
+    }
+}
+class HistoryDay: NSObject, NSCoding {
+    var date: Date = Date()
+    var points: Int = 0
+
+    init(date: Date, points: Int) {
+        self.date = date
+        self.points = points
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        date = aDecoder.decodeObject(forKey: "date") as! Date
+        points = Int(aDecoder.decodeCInt(forKey: "points"))
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(date, forKey: "date")
+        aCoder.encode(points, forKey: "points")
     }
 }
