@@ -53,7 +53,8 @@ final class HealthDay {
             history.append(HistoryDay(date: cal.date(from: dateComponents)!,points: points))
         }
         let h = NSKeyedArchiver.archivedData(withRootObject: history)
-        //UserDefaults.standard.set(h, forKey: "history")
+        UserDefaults.standard.set(h, forKey: "history")
+        print("Get Points - \(points)")
         return points
     }
 }

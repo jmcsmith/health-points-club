@@ -355,9 +355,10 @@ class HealthKitHelper {
                         print("Steps = \(steps)")
 
                     }
-                    completion(round(steps), error)
+                    
                 }
             }
+            completion(round(steps), error)
 
         }
         healthKitStore.execute(query)
@@ -392,9 +393,10 @@ class HealthKitHelper {
                         print("Calories = \(calories)")
 
                     }
-                    completion(round(calories), error)
+                    
                 }
             }
+            completion(round(calories), error)
 
         }
         healthKitStore.execute(query)
@@ -428,9 +430,10 @@ class HealthKitHelper {
                         print("Exercise Minutes = \(exercise)")
 
                     }
-                    completion(round(exercise), error)
+                    
                 }
             }
+            completion(round(exercise), error)
 
         }
         healthKitStore.execute(query)

@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthDay.swift"
-            timestampString = "517967653.808653"
+            timestampString = "518113211.973644"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "calculatePoints(withWeight:forValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -180,45 +180,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthDay.swift"
-            timestampString = "517966180.824058"
+            timestampString = "518113211.973644"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "getPoints()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "healthpoints.AttributeType.init (rawValue : Swift.String) -&gt; Swift.Optional&lt;healthpoints.AttributeType&gt;"
-                  moduleName = "healthpoints"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/josephsmith/Development/healthpoints/HealthDay.swift"
-                  timestampString = "517963481.809941"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "220">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "healthpoints.AttributeType.rawValue.getter : Swift.String"
-                  moduleName = "healthpoints"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/josephsmith/Development/healthpoints/HealthDay.swift"
-                  timestampString = "517963481.811685"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -228,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthDay.swift"
-            timestampString = "517966180.824058"
+            timestampString = "518113211.973644"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "getPoints()"
             landmarkType = "7">
          </BreakpointContent>
