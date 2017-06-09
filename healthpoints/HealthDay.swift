@@ -8,8 +8,9 @@
 
 import UIKit
 
-final class HealthDay {
+public class HealthDay {
     private init() {
+        
         //if date != current date, reset?
         attributes.append(Attribute(type: .steps, value: 0))
         attributes.append(Attribute(type: .workouts, value: 0))
@@ -31,8 +32,15 @@ final class HealthDay {
     
     var moveGoal: Double = 0.0
     var history: [HistoryDay] = []
+    
+    let defaults = UserDefaults.init(suiteName: "group.HealthPointsClub")
+    
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
+        
+        let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0), $0.type.getBackgroundColor()]}
+        let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
+        defaults?.set(values, forKey: "widgetValues")
     }
     
     func getPoints() -> Int {
@@ -55,8 +63,11 @@ final class HealthDay {
         let h = NSKeyedArchiver.archivedData(withRootObject: history)
         UserDefaults.standard.set(h, forKey: "history")
         print("Get Points - \(points)")
+        
         return points
     }
+    
+    
 }
 enum AttributeType: String {
     case steps = "Steps"
@@ -226,7 +237,7 @@ class Attribute {
 class HistoryDay: NSObject, NSCoding {
     var date: Date = Date()
     var points: Int = 0
-
+    
     init(date: Date, points: Int) {
         self.date = date
         self.points = points

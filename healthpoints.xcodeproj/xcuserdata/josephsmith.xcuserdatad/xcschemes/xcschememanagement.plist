@@ -4,15 +4,55 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>HealthDay.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>healthpoints.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>healthpoints_imessage MessagesExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>healthpoints_today.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>EE17D2431EE2407A00BB5A88</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE17D25C1EE2466000BB5A88</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE17D26E1EE2468100BB5A88</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EE2F0C6D1EBA8FBB00207511</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE347BEF1EE22FCC00AE1BAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EEE266E61EE27B5500A49E9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
