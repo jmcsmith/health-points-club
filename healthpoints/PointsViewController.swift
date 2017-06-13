@@ -49,6 +49,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         tabBarController?.tabBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         collectionView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     func disableDarkMode() {
@@ -57,7 +58,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
         tabBarController?.tabBar.barTintColor = UIColor.white
         collectionView.backgroundColor = UIColor.white
-        
+        setNeedsStatusBarAppearanceUpdate()
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -112,14 +113,20 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         return CGSize(width: dim, height: dim)
     }
     
-    @IBAction func infoButtonPressed(_ sender: Any) {
-        print("info pressed")
-    }
+
     func updateUI() {
         DispatchQueue.main.async {
             self.pointsLabel.text = HealthDay.shared.getPoints().description
             self.collectionView.reloadData()
         }
         
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        if UserDefaults.standard.bool(forKey: "darkmodeOn") {
+            return .lightContent
+        } else {
+            return .default
+        }
     }
 }

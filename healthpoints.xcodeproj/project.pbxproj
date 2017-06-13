@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE0024971EEB855B00A71D17 /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0024961EEB855B00A71D17 /* LargeHeart.png */; };
+		EE0024991EEBB20300A71D17 /* AttributeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0024981EEBB20300A71D17 /* AttributeCellView.xib */; };
+		EE00249B1EEBB63F00A71D17 /* AttributeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */; };
 		EE0BB6561EDF9923000071D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0BB6551EDF9923000071D0 /* InfoViewController.swift */; };
 		EE0C8C431ECE652500C31122 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0C8C421ECE652500C31122 /* splash.png */; };
+		EE0DF5AC1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0DF5AB1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift */; };
 		EE17D2451EE2407A00BB5A88 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE347BF11EE22FCC00AE1BAE /* NotificationCenter.framework */; };
 		EE17D2481EE2407A00BB5A88 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE17D2471EE2407A00BB5A88 /* TodayViewController.swift */; };
 		EE17D24B1EE2407A00BB5A88 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE17D2491EE2407A00BB5A88 /* MainInterface.storyboard */; };
@@ -93,8 +97,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EE0024961EEB855B00A71D17 /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LargeHeart.png; path = ../../../Desktop/LargeHeart.png; sourceTree = "<group>"; };
+		EE0024981EEBB20300A71D17 /* AttributeCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributeCellView.xib; sourceTree = "<group>"; };
+		EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCellView.swift; sourceTree = "<group>"; };
 		EE0BB6551EDF9923000071D0 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		EE0C8C421ECE652500C31122 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		EE0DF5AB1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE17D2441EE2407A00BB5A88 /* healthpoints_today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = healthpoints_today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE17D2471EE2407A00BB5A88 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		EE17D24A1EE2407A00BB5A88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -249,10 +257,14 @@
 			isa = PBXGroup;
 			children = (
 				EEB1B2411EEA326300939E8F /* healthpoints_imessage MessagesExtension.entitlements */,
+				EE0024961EEB855B00A71D17 /* LargeHeart.png */,
 				EEB1B2321EEA322D00939E8F /* MessagesViewController.swift */,
 				EEB1B2341EEA322D00939E8F /* MainInterface.storyboard */,
 				EEB1B2371EEA322D00939E8F /* Assets.xcassets */,
 				EEB1B2391EEA322D00939E8F /* Info.plist */,
+				EE0DF5AB1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift */,
+				EE0024981EEBB20300A71D17 /* AttributeCellView.xib */,
+				EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */,
 			);
 			path = "healthpoints_imessage MessagesExtension";
 			sourceTree = "<group>";
@@ -445,6 +457,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0024971EEB855B00A71D17 /* LargeHeart.png in Resources */,
+				EE0024991EEBB20300A71D17 /* AttributeCellView.xib in Resources */,
 				EEB1B2381EEA322D00939E8F /* Assets.xcassets in Resources */,
 				EEB1B2361EEA322D00939E8F /* MainInterface.storyboard in Resources */,
 			);
@@ -481,7 +495,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0DF5AC1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift in Sources */,
 				EEB1B2331EEA322D00939E8F /* MessagesViewController.swift in Sources */,
+				EE00249B1EEBB63F00A71D17 /* AttributeCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,7 +734,7 @@
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = healthpoints_imessage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -737,7 +753,7 @@
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = healthpoints_imessage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -756,7 +772,7 @@
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "healthpoints_imessage MessagesExtension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage.MessagesExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -777,7 +793,7 @@
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "healthpoints_imessage MessagesExtension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage.MessagesExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -824,6 +840,7 @@
 				EEB1B23D1EEA322D00939E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEB1B2401EEA322D00939E8F /* Build configuration list for PBXNativeTarget "healthpoints_imessage" */ = {
 			isa = XCConfigurationList;
@@ -832,6 +849,7 @@
 				EEB1B23B1EEA322D00939E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

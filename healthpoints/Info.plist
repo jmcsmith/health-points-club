@@ -42,14 +42,16 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>View controller-based status bar appearance</key>
+	<false/>
 	<key>CFBundleVersion</key>
 	<string>2.14</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -63,13 +65,9 @@
 		<string>armv7</string>
 		<string>healthkit</string>
 	</array>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleDefault</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>View controller-based status bar appearance</key>
-	<false/>
 </dict>
 </plist>

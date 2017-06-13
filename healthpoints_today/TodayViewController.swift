@@ -22,6 +22,16 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         let data = defaults?.object(forKey: "widgetValues") as! Data
         list = NSKeyedUnarchiver.unarchiveObject(with: data) as! [[Any]]
         
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        var dateString = formatter.string(from: Date())
+        var total = 0
+        for attribute in list {
+            total += attribute[1] as! Int
+        }
+        list.insert([dateString,total,UIColor.white], at: 0)
+        
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
     }
