@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE0024971EEB855B00A71D17 /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0024961EEB855B00A71D17 /* LargeHeart.png */; };
 		EE0024991EEBB20300A71D17 /* AttributeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0024981EEBB20300A71D17 /* AttributeCellView.xib */; };
 		EE00249B1EEBB63F00A71D17 /* AttributeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */; };
 		EE0BB6561EDF9923000071D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0BB6551EDF9923000071D0 /* InfoViewController.swift */; };
@@ -34,6 +33,7 @@
 		EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699331EBB6904001F31EF /* LargeHeart.png */; };
 		EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4699391EBB94D0001F31EF /* HealthKit.framework */; };
 		EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46993B1EBBB27E001F31EF /* HealthDay.swift */; };
+		EE55B6031EF0D54500E1D0A6 /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55B6021EF0D54500E1D0A6 /* LargeHeart.png */; };
 		EE66ACF31EBBF3810027D598 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */; };
 		EE6C59841ECE446400AA3C42 /* AttributeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */; };
 		EEB1B2251EEA322D00939E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB1B2241EEA322D00939E8F /* Assets.xcassets */; };
@@ -97,7 +97,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EE0024961EEB855B00A71D17 /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LargeHeart.png; path = ../../../Desktop/LargeHeart.png; sourceTree = "<group>"; };
 		EE0024981EEBB20300A71D17 /* AttributeCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributeCellView.xib; sourceTree = "<group>"; };
 		EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCellView.swift; sourceTree = "<group>"; };
 		EE0BB6551EDF9923000071D0 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +128,7 @@
 		EE4699351EBB94C7001F31EF /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
 		EE4699391EBB94D0001F31EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		EE46993B1EBBB27E001F31EF /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthDay.swift; path = healthpoints/HealthDay.swift; sourceTree = SOURCE_ROOT; };
+		EE55B6021EF0D54500E1D0A6 /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LargeHeart.png; path = ../../Desktop/LargeHeart.png; sourceTree = "<group>"; };
 		EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEB1B2221EEA322D00939E8F /* healthpoints_imessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints_imessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				EEB1B2411EEA326300939E8F /* healthpoints_imessage MessagesExtension.entitlements */,
-				EE0024961EEB855B00A71D17 /* LargeHeart.png */,
+				EE55B6021EF0D54500E1D0A6 /* LargeHeart.png */,
 				EEB1B2321EEA322D00939E8F /* MessagesViewController.swift */,
 				EEB1B2341EEA322D00939E8F /* MainInterface.storyboard */,
 				EEB1B2371EEA322D00939E8F /* Assets.xcassets */,
@@ -457,7 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE0024971EEB855B00A71D17 /* LargeHeart.png in Resources */,
+				EE55B6031EF0D54500E1D0A6 /* LargeHeart.png in Resources */,
 				EE0024991EEBB20300A71D17 /* AttributeCellView.xib in Resources */,
 				EEB1B2381EEA322D00939E8F /* Assets.xcassets in Resources */,
 				EEB1B2361EEA322D00939E8F /* MainInterface.storyboard in Resources */,
@@ -559,6 +559,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints_today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,6 +577,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints_today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -698,6 +700,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -716,6 +719,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -778,7 +782,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -799,7 +803,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

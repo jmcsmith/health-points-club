@@ -17,7 +17,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
-        
+        self.pointsLabel.text = HealthDay.shared.getPoints().description
     }
     
     deinit {
