@@ -37,7 +37,7 @@ public class HealthDay {
     
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
-        
+        print("--------Notification Sent--------")
         let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0), $0.type.getBackgroundColor()]}
         let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
         defaults?.set(values, forKey: "widgetValues")
@@ -60,6 +60,7 @@ public class HealthDay {
         }else{
             history.append(HistoryDay(date: cal.date(from: dateComponents)!,points: points))
         }
+        history = history.sorted(by: {$0.date > $1.date} )
         let h = NSKeyedArchiver.archivedData(withRootObject: history)
         UserDefaults.standard.set(h, forKey: "history")
         print("Get Points - \(points)")

@@ -19,7 +19,7 @@
 					<string>dark</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
-				<false/>
+				<true/>
 			</dict>
 		</dict>
 		<key>CFBundlePrimaryIcon</key>

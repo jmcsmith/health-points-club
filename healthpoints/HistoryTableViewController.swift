@@ -9,7 +9,7 @@
 import UIKit
 
 class HistoryTableViewController: UITableViewController {
-    
+    var darkmode: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
@@ -28,7 +28,7 @@ class HistoryTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         let darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
-        
+        darkmode = darkmodeOn
         if darkmodeOn {
             enableDarkMode()
         } else {
@@ -98,6 +98,11 @@ class HistoryTableViewController: UITableViewController {
         
         cell.textLabel?.text = formatter.string(from: HealthDay.shared.history[indexPath.row].date)
         cell.detailTextLabel?.text = HealthDay.shared.history[indexPath.row].points.description
+        if darkmode {
+            view.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
+        }else {
+            view.backgroundColor = UIColor.white
+        }
         return cell
     }
     

@@ -547,17 +547,19 @@ class HealthKitHelper {
         let predicate = HKQuery.predicateForActivitySummary(with: dateComponents)
         
         let query = HKActivitySummaryQuery(predicate: predicate) { (_, summaries, error) in
-            
+            var standHours = 0.0
             guard let summaries = summaries, summaries.count > 0
                 else {
                     // No data returned. Perhaps check for error
+                    completion(Int(standHours), error)
                     return
             }
             let summary = summaries[0]
             
-            let moveGoal = summary.appleStandHours.doubleValue(for: HKUnit.count())
-            print("Stand Hours = \(moveGoal)")
-            completion(Int(moveGoal), error)
+            
+            standHours = summary.appleStandHours.doubleValue(for: HKUnit.count())
+            print("Stand Hours = \(standHours)")
+            completion(Int(standHours), error)
         }
         healthKitStore.execute(query)
     }

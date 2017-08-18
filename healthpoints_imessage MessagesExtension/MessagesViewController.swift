@@ -162,7 +162,8 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDataS
 //        background.addSubview(pointsLabel)
         //background.frame.origin = CGPoint(x: cell.frame.size.width, y: cell.frame.size.height)
         UIGraphicsBeginImageContext(viewFromNib.frame.size)
-        viewFromNib.drawHierarchy(in: viewFromNib.bounds, afterScreenUpdates: true)
+        //viewFromNib.drawHierarchy(in: viewFromNib.bounds, afterScreenUpdates: true)
+        viewFromNib.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

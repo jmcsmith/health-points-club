@@ -118,6 +118,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         DispatchQueue.main.async {
             self.pointsLabel.text = HealthDay.shared.getPoints().description
             self.collectionView.reloadData()
+            print("--------Notification Processed--------")
         }
         
     }
