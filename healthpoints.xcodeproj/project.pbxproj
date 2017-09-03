@@ -25,6 +25,8 @@
 		EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C7A1EBA8FBB00207511 /* LaunchScreen.storyboard */; };
 		EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C831EBA905100207511 /* PointsViewController.swift */; };
 		EE2F0C8A1EBA93FB00207511 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */; };
+		EE387B451F58EC2F000C2070 /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE387B431F58E8F4000C2070 /* dark@2x.png */; };
+		EE387B461F58EC31000C2070 /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE387B421F58E8F3000C2070 /* dark@3x.png */; };
 		EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699331EBB6904001F31EF /* LargeHeart.png */; };
 		EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4699391EBB94D0001F31EF /* HealthKit.framework */; };
 		EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46993B1EBBB27E001F31EF /* HealthDay.swift */; };
@@ -114,6 +116,8 @@
 		EE2F0C831EBA905100207511 /* PointsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
 		EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		EE347BF11EE22FCC00AE1BAE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		EE387B421F58E8F3000C2070 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
+		EE387B431F58E8F4000C2070 /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
 		EE4699331EBB6904001F31EF /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeHeart.png; sourceTree = "<group>"; };
 		EE4699351EBB94C7001F31EF /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
 		EE4699391EBB94D0001F31EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -131,8 +135,6 @@
 		EEB1B2371EEA322D00939E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEB1B2391EEA322D00939E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEB1B2411EEA326300939E8F /* healthpoints_imessage MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints_imessage MessagesExtension.entitlements"; sourceTree = "<group>"; };
-		EEB7DBD71F3A22A600DAC5C8 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
-		EEB7DBD81F3A22A600DAC5C8 /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,10 +213,10 @@
 				EE2F0C781EBA8FBB00207511 /* Assets.xcassets */,
 				EE2F0C7A1EBA8FBB00207511 /* LaunchScreen.storyboard */,
 				EE2F0C7D1EBA8FBB00207511 /* Info.plist */,
+				EE387B431F58E8F4000C2070 /* dark@2x.png */,
+				EE387B421F58E8F3000C2070 /* dark@3x.png */,
 				EE2F0C831EBA905100207511 /* PointsViewController.swift */,
 				EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */,
-				EEB7DBD81F3A22A600DAC5C8 /* dark@2x.png */,
-				EEB7DBD71F3A22A600DAC5C8 /* dark@3x.png */,
 				EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */,
 				EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */,
 				EE2D82421EDF7A310009CFB2 /* HistoryTableViewController.swift */,
@@ -423,8 +425,10 @@
 			files = (
 				EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */,
 				EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */,
+				EE387B461F58EC31000C2070 /* dark@3x.png in Resources */,
 				EE0C8C431ECE652500C31122 /* splash.png in Resources */,
 				EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */,
+				EE387B451F58EC2F000C2070 /* dark@2x.png in Resources */,
 				EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

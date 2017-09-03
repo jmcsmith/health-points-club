@@ -19,7 +19,7 @@
 					<string>dark</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
-				<true/>
+				<false/>
 			</dict>
 		</dict>
 		<key>CFBundlePrimaryIcon</key>
@@ -42,16 +42,14 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>View controller-based status bar appearance</key>
-	<false/>
 	<key>CFBundleVersion</key>
-	<string>2.14</string>
+	<string>2.16</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -69,5 +67,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>View controller-based status bar appearance</key>
+	<false/>
 </dict>
 </plist>
