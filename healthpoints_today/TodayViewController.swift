@@ -73,7 +73,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellsAcross: CGFloat = CGFloat(5)
+        let cellsAcross: CGFloat = CGFloat(4)
         //let cellsAcross: CGFloat = CGFloat(4)
         
         let spaceBetweenCells: CGFloat = 1

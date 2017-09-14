@@ -45,7 +45,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     func enableDarkMode() {
         view.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
         tabBarController?.tabBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         collectionView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         
@@ -55,7 +55,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     func disableDarkMode() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         tabBarController?.tabBar.barTintColor = UIColor.white
         collectionView.backgroundColor = UIColor.white
         setNeedsStatusBarAppearanceUpdate()
@@ -87,8 +87,8 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellsAcross: CGFloat = CGFloat(UserDefaults.standard.integer(forKey: "numberOfCellsInRow"))
-        //let cellsAcross: CGFloat = CGFloat(4)
+        //let cellsAcross: CGFloat = CGFloat(UserDefaults.standard.integer(forKey: "numberOfCellsInRow"))
+        let cellsAcross: CGFloat = CGFloat(4)
         
         let spaceBetweenCells: CGFloat = 1
         let spacers = (cellsAcross-1)*spaceBetweenCells
@@ -108,13 +108,13 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
                 size = 14.0
             }
             
-            cell.pointLabel.font = UIFont.systemFont(ofSize: (CGFloat(size)), weight: UIFontWeightHeavy)
+            cell.pointLabel.font = UIFont.systemFont(ofSize: (CGFloat(size)), weight: UIFont.Weight.heavy)
         }
         return CGSize(width: dim, height: dim)
     }
     
 
-    func updateUI() {
+    @objc func updateUI() {
         DispatchQueue.main.async {
             self.pointsLabel.text = HealthDay.shared.getPoints().description
             self.collectionView.reloadData()

@@ -117,7 +117,7 @@ class SettingsTableViewController: UITableViewController {
             tableView.headerView(forSection: index)?.textLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
         }
         navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
                 tabBarController?.tabBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         dailyCalories.backgroundColor = UIColor(red:0.18, green:0.20, blue:0.20, alpha:1.00)
         dailyCalories.layer.borderColor = UIColor.white.cgColor
@@ -139,7 +139,7 @@ class SettingsTableViewController: UITableViewController {
             tableView.headerView(forSection: index)?.textLabel?.textColor = UIColor.darkGray
         }
         navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
                 tabBarController?.tabBar.barTintColor = UIColor.white
         dailyCalories.backgroundColor = UIColor.white
         dailyCalories.layer.borderColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.00).cgColor

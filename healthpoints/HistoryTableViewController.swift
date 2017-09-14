@@ -57,7 +57,7 @@ class HistoryTableViewController: UITableViewController {
     func enableDarkMode() {
         view.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
         tabBarController?.tabBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         tableView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
         for cell in tableView.visibleCells {
@@ -70,7 +70,7 @@ class HistoryTableViewController: UITableViewController {
     func disableDarkMode() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         tabBarController?.tabBar.barTintColor = UIColor.white
         tableView.backgroundColor = UIColor.white
         for cell in tableView.visibleCells {
@@ -80,7 +80,7 @@ class HistoryTableViewController: UITableViewController {
         }
     }
     
-    func updateUI() {
+    @objc func updateUI() {
         DispatchQueue.main.async {
             
             self.tableView.reloadData()

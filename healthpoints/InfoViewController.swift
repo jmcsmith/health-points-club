@@ -36,7 +36,7 @@ class InfoViewController: UIViewController {
     func enableDarkMode() {
         view.backgroundColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         navBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
         instructionsTextView.backgroundColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         instructionsTextView.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
     }
@@ -44,7 +44,7 @@ class InfoViewController: UIViewController {
     func disableDarkMode() {
         view.backgroundColor = UIColor.white
         navBar.barTintColor = UIColor.white
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         instructionsTextView.backgroundColor = UIColor.white
         instructionsTextView.textColor = UIColor.black
          }
