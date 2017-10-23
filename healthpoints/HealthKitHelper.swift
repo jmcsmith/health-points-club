@@ -18,7 +18,7 @@ class HealthKitHelper {
         
     }
     
-    func authorizeHealthKit(completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
+     func authorizeHealthKit(completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         let waterCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
         let stand = HKObjectType.categoryType(forIdentifier: .appleStandHour)
@@ -48,19 +48,23 @@ class HealthKitHelper {
         healthKitStore.requestAuthorization(toShare: dataTypesToWrite, read: dataTypesToRead) { (success, error) -> Void in
             if completion != nil {
                 
-                DispatchQueue.main.async(execute: self.startObservingStepChanges)
-                DispatchQueue.main.async(execute: self.startObservingWorkoutChanges)
-                DispatchQueue.main.async(execute: self.startObservingWaterChanges)
-                DispatchQueue.main.async(execute: self.startObservingStandHours)
-                DispatchQueue.main.async(execute: self.startObservingMindSessions)
-                DispatchQueue.main.async(execute: self.startObservingActiveCalories)
-                DispatchQueue.main.async(execute: self.startObservingExerciseChanges)
-                DispatchQueue.main.async(execute: self.startObservingCaloriesChanges)
-                DispatchQueue.main.async(execute: self.startObservingSleep)
+                self.startObservingQueries()
                 completion(success, error)
             }
         }
     }
+     func startObservingQueries()  {
+        DispatchQueue.main.async(execute: self.startObservingStepChanges)
+        DispatchQueue.main.async(execute: self.startObservingWorkoutChanges)
+        DispatchQueue.main.async(execute: self.startObservingWaterChanges)
+        DispatchQueue.main.async(execute: self.startObservingStandHours)
+        DispatchQueue.main.async(execute: self.startObservingMindSessions)
+        DispatchQueue.main.async(execute: self.startObservingActiveCalories)
+        DispatchQueue.main.async(execute: self.startObservingExerciseChanges)
+        DispatchQueue.main.async(execute: self.startObservingCaloriesChanges)
+        DispatchQueue.main.async(execute: self.startObservingSleep)
+    }
+    
     func startObservingStandHours() {
         let sampleType = HKObjectType.categoryType(forIdentifier: .appleStandHour)!
         

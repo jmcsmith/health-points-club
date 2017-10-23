@@ -11,7 +11,6 @@ import UIKit
 public class HealthDay {
     private init() {
         
-        //if date != current date, reset?
         attributes.append(Attribute(type: .steps, value: 0))
         attributes.append(Attribute(type: .workouts, value: 0))
         attributes.append(Attribute(type: .water, value: 0))
@@ -33,7 +32,7 @@ public class HealthDay {
     var moveGoal: Double = 0.0
     var history: [HistoryDay] = []
     
-    let defaults = UserDefaults.init(suiteName: "group.HealthPointsClub")
+    let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
     
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
@@ -65,6 +64,7 @@ public class HealthDay {
         UserDefaults.standard.set(h, forKey: "history")
         print("Get Points - \(points)")
         
+        //defaults?.set(h, forKey: "globalHistory")
         return points
     }
     
@@ -155,8 +155,7 @@ enum AttributeType: String {
             } else {
                 return 0
             }
-        default:
-            return 0
+
         }
     }
     func displayText(forValue value: Int) -> String {
@@ -182,8 +181,7 @@ enum AttributeType: String {
             return "\(value/60) Hours"
         case .calories:
             return "\(value) Consumed"
-        default:
-            return ""
+
         }
     }
     func getBackgroundColor() -> UIColor {
@@ -208,8 +206,7 @@ enum AttributeType: String {
             return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
         case .rings:
             return UIColor.lightGray
-        default:
-            return UIColor.darkGray
+
         }
     }
 }
@@ -254,3 +251,4 @@ class HistoryDay: NSObject, NSCoding {
         aCoder.encode(points, forKey: "points")
     }
 }
+

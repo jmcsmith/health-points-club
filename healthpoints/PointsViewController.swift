@@ -1,65 +1,75 @@
 //
 //  PointsViewController.swift
-//  healthpoints
+//  healthpointsclub
 //
-//  Created by Joseph Smith on 5/3/17.
-//  Copyright © 2017 healthpoints. All rights reserved.
+//  Created by Joseph Smith on 10/2/17.
+//  Copyright © 2017 Joseph Smith. All rights reserved.
 //
 
 import UIKit
 
 class PointsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    let defaults:UserDefaults = UserDefaults.standard
+    var isfirstload: Bool = true
     @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    fileprivate var longPressGesture: UILongPressGestureRecognizer!
+    var movingIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         self.pointsLabel.text = HealthDay.shared.getPoints().description
+        
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(gesture:)))
+        collectionView.addGestureRecognizer(longPressGesture)
+        
+        
+        //defaults.set(true, forKey: "firstlaunch")
+        // Do any additional setup after loading the view.
+        
+        //defaults.set(true, forKey: "firstlaunch")
+        
+        isfirstload = !defaults.bool(forKey: "hasopenedbefore" )
+        print(isfirstload)
+        if isfirstload {
+            
+            self.performSegue(withIdentifier: "onboarding", sender: nil)
+        }
     }
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        collectionView.collectionViewLayout.invalidateLayout()
-        let darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
-        
-        if darkmodeOn {
-            enableDarkMode()
-        } else {
-            disableDarkMode()
-        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
     }
-    func enableDarkMode() {
-        view.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
-        navigationController?.navigationBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)]
-        tabBarController?.tabBar.barTintColor = UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
-        collectionView.backgroundColor = UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.collectionViewLayout.invalidateLayout()
         
-        setNeedsStatusBarAppearanceUpdate()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let temp = HealthDay.shared.attributes[sourceIndexPath.row]
+        
+        HealthDay.shared.attributes.remove(at: sourceIndexPath.row)
+        HealthDay.shared.attributes.insert(temp, at: destinationIndexPath.row)
     }
     
-    func disableDarkMode() {
-        view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
-        tabBarController?.tabBar.barTintColor = UIColor.white
-        collectionView.backgroundColor = UIColor.white
-        setNeedsStatusBarAppearanceUpdate()
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        
+        
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
@@ -77,9 +87,6 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.descriptionLabel.text = HealthDay.shared.attributes[indexPath.row].type.rawValue
         let value = HealthDay.shared.attributes[indexPath.row].value
         cell.pointLabel.text = HealthDay.shared.attributes[indexPath.row].getPoints(withWeight: 1).description
-        //        let font = cell.pointLabel.font
-        //        let labelsize = cell.pointLabel.bounds.height
-        //        cell.pointLabel.font = font?.withSize(labelsize-4)
         cell.valueLabel.text = HealthDay.shared.attributes[indexPath.row].type.displayText(forValue: value)
         cell.backgroundColor = HealthDay.shared.attributes[indexPath.row].type.getBackgroundColor()
         
@@ -96,7 +103,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         if let cell = collectionView.cellForItem(at: indexPath) as? AttributeCollectionViewCell{
             var size = 14.0
-            let font = cell.pointLabel.font
+            
             switch cellsAcross {
             case 4.0:
                 size = 14.0
@@ -113,7 +120,45 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         return CGSize(width: dim, height: dim)
     }
     
-
+    func animatePickingUpCell(cell: AttributeCollectionViewCell?) {
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.allowUserInteraction, .beginFromCurrentState], animations: { () -> Void in
+            cell?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }, completion: { finished in
+            
+        })
+    }
+    
+    
+    
+    @objc func handleLongGesture(gesture: UILongPressGestureRecognizer) {
+        switch(gesture.state) {
+            
+        case .began:
+            guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+                break
+            }
+            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+            animatePickingUpCell(cell: collectionView.cellForItem(at: selectedIndexPath) as? AttributeCollectionViewCell)
+        case .changed:
+            collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+        case .ended:
+            collectionView.endInteractiveMovement()
+        default:
+            collectionView.cancelInteractiveMovement()
+        }
+    }
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @objc func updateUI() {
         DispatchQueue.main.async {
             self.pointsLabel.text = HealthDay.shared.getPoints().description
@@ -121,13 +166,5 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
             print("--------Notification Processed--------")
         }
         
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        
-        if UserDefaults.standard.bool(forKey: "darkmodeOn") {
-            return .lightContent
-        } else {
-            return .default
-        }
     }
 }

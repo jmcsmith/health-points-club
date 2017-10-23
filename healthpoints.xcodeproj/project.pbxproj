@@ -3,362 +3,258 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE0024991EEBB20300A71D17 /* AttributeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0024981EEBB20300A71D17 /* AttributeCellView.xib */; };
-		EE00249B1EEBB63F00A71D17 /* AttributeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */; };
-		EE0BB6561EDF9923000071D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0BB6551EDF9923000071D0 /* InfoViewController.swift */; };
-		EE0C8C431ECE652500C31122 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0C8C421ECE652500C31122 /* splash.png */; };
-		EE0DF5AC1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0DF5AB1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift */; };
-		EE17D2451EE2407A00BB5A88 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE347BF11EE22FCC00AE1BAE /* NotificationCenter.framework */; };
-		EE17D2481EE2407A00BB5A88 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE17D2471EE2407A00BB5A88 /* TodayViewController.swift */; };
-		EE17D24B1EE2407A00BB5A88 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE17D2491EE2407A00BB5A88 /* MainInterface.storyboard */; };
-		EE17D24F1EE2407A00BB5A88 /* healthpoints_today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EE17D2441EE2407A00BB5A88 /* healthpoints_today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EE17D2551EE2416A00BB5A88 /* WidgetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE17D2541EE2416A00BB5A88 /* WidgetCollectionViewCell.swift */; };
-		EE17D2571EE2433700BB5A88 /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE17D2561EE2433700BB5A88 /* LargeHeart.png */; };
-		EE2D82431EDF7A310009CFB2 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D82421EDF7A310009CFB2 /* HistoryTableViewController.swift */; };
-		EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */; };
-		EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C751EBA8FBB00207511 /* Main.storyboard */; };
-		EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C781EBA8FBB00207511 /* Assets.xcassets */; };
-		EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2F0C7A1EBA8FBB00207511 /* LaunchScreen.storyboard */; };
-		EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C831EBA905100207511 /* PointsViewController.swift */; };
-		EE2F0C8A1EBA93FB00207511 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */; };
-		EE387B451F58EC2F000C2070 /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE387B431F58E8F4000C2070 /* dark@2x.png */; };
-		EE387B461F58EC31000C2070 /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE387B421F58E8F3000C2070 /* dark@3x.png */; };
-		EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4699331EBB6904001F31EF /* LargeHeart.png */; };
-		EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4699391EBB94D0001F31EF /* HealthKit.framework */; };
-		EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46993B1EBBB27E001F31EF /* HealthDay.swift */; };
-		EE55B6031EF0D54500E1D0A6 /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55B6021EF0D54500E1D0A6 /* LargeHeart.png */; };
-		EE66ACF31EBBF3810027D598 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */; };
-		EE6C59841ECE446400AA3C42 /* AttributeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */; };
-		EEB1B2251EEA322D00939E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB1B2241EEA322D00939E8F /* Assets.xcassets */; };
-		EEB1B22C1EEA322D00939E8F /* healthpoints_imessage MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EEB1B22B1EEA322D00939E8F /* healthpoints_imessage MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EEB1B2301EEA322D00939E8F /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB1B22F1EEA322D00939E8F /* Messages.framework */; };
-		EEB1B2331EEA322D00939E8F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1B2321EEA322D00939E8F /* MessagesViewController.swift */; };
-		EEB1B2361EEA322D00939E8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB1B2341EEA322D00939E8F /* MainInterface.storyboard */; };
-		EEB1B2381EEA322D00939E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB1B2371EEA322D00939E8F /* Assets.xcassets */; };
+		EE5552AA1F96FE99001D3F5F /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A81F96FE98001D3F5F /* dark@3x.png */; };
+		EE5552AB1F96FE99001D3F5F /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A91F96FE99001D3F5F /* dark@2x.png */; };
+		EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */; };
+		EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C41F94606900F6BFC1 /* Theme.swift */; };
+		EE5DE9C71F9473E500F6BFC1 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */; };
+		EE5DE9C91F94750400F6BFC1 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */; };
+		EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682D861F82F05E003A6CF6 /* AppDelegate.swift */; };
+		EE682D8C1F82F05E003A6CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8A1F82F05E003A6CF6 /* Main.storyboard */; };
+		EE682D8E1F82F05E003A6CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8D1F82F05E003A6CF6 /* Assets.xcassets */; };
+		EE682D911F82F05E003A6CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8F1F82F05E003A6CF6 /* LaunchScreen.storyboard */; };
+		EE682D9C1F82F05E003A6CF6 /* healthpointsclubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682D9B1F82F05E003A6CF6 /* healthpointsclubTests.swift */; };
+		EE682DA71F82F05E003A6CF6 /* healthpointsclubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */; };
+		EE682DB81F82F439003A6CF6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EE682DB51F82F439003A6CF6 /* splash.png */; };
+		EE682DBC1F82F46D003A6CF6 /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */; };
+		EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */; };
+		EE682DC01F82F5B4003A6CF6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */; };
+		EE682DC31F830093003A6CF6 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DC21F830093003A6CF6 /* PointsViewController.swift */; };
+		EE682DC51F8301CF003A6CF6 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DC41F8301CF003A6CF6 /* OnboardingPageOneViewController.swift */; };
+		EE682DC71F830270003A6CF6 /* OnboardingPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DC61F830270003A6CF6 /* OnboardingPageTwoViewController.swift */; };
+		EE7E0BB81F9043B700849FDF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE7E0BB71F9043B700849FDF /* LargeHeart.png */; };
+		EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E0BB91F90443600849FDF /* AttributeCollectionViewCell.swift */; };
+		EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */; };
+		EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */; };
+		EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8C599C1F94297C00A30773 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EE17D24D1EE2407A00BB5A88 /* PBXContainerItemProxy */ = {
+		EE682D981F82F05E003A6CF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE2F0C661EBA8FBB00207511 /* Project object */;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EE17D2431EE2407A00BB5A88;
-			remoteInfo = healthpoints_today;
+			remoteGlobalIDString = EE682D821F82F05E003A6CF6;
+			remoteInfo = healthpointsclub;
 		};
-		EEB1B22D1EEA322D00939E8F /* PBXContainerItemProxy */ = {
+		EE682DA31F82F05E003A6CF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE2F0C661EBA8FBB00207511 /* Project object */;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EEB1B22A1EEA322D00939E8F;
-			remoteInfo = "healthpoints_imessage MessagesExtension";
+			remoteGlobalIDString = EE682D821F82F05E003A6CF6;
+			remoteInfo = healthpointsclub;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		EE17D2691EE2466100BB5A88 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EE347C001EE22FCC00AE1BAE /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				EE17D24F1EE2407A00BB5A88 /* healthpoints_today.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEB1B23F1EEA322D00939E8F /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				EEB1B22C1EEA322D00939E8F /* healthpoints_imessage MessagesExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		EE0024981EEBB20300A71D17 /* AttributeCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributeCellView.xib; sourceTree = "<group>"; };
-		EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCellView.swift; sourceTree = "<group>"; };
-		EE0BB6551EDF9923000071D0 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		EE0C8C421ECE652500C31122 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
-		EE0DF5AB1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewCell.swift; sourceTree = "<group>"; };
-		EE17D2441EE2407A00BB5A88 /* healthpoints_today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = healthpoints_today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE17D2471EE2407A00BB5A88 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		EE17D24A1EE2407A00BB5A88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		EE17D24C1EE2407A00BB5A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE17D2531EE2408800BB5A88 /* healthpoints_today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints_today.entitlements; sourceTree = "<group>"; };
-		EE17D2541EE2416A00BB5A88 /* WidgetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCollectionViewCell.swift; sourceTree = "<group>"; };
-		EE17D2561EE2433700BB5A88 /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeHeart.png; sourceTree = "<group>"; };
-		EE2D82421EDF7A310009CFB2 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
-		EE2F0C6E1EBA8FBB00207511 /* healthpoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE2F0C761EBA8FBB00207511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EE2F0C781EBA8FBB00207511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EE2F0C7B1EBA8FBB00207511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EE2F0C7D1EBA8FBB00207511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE2F0C831EBA905100207511 /* PointsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
-		EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		EE347BF11EE22FCC00AE1BAE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		EE387B421F58E8F3000C2070 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
-		EE387B431F58E8F4000C2070 /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
-		EE4699331EBB6904001F31EF /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeHeart.png; sourceTree = "<group>"; };
-		EE4699351EBB94C7001F31EF /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
-		EE4699391EBB94D0001F31EF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		EE46993B1EBBB27E001F31EF /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthDay.swift; path = healthpoints/HealthDay.swift; sourceTree = SOURCE_ROOT; };
-		EE55B6021EF0D54500E1D0A6 /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LargeHeart.png; path = ../../Desktop/LargeHeart.png; sourceTree = "<group>"; };
-		EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
-		EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCollectionViewCell.swift; sourceTree = "<group>"; };
-		EEB1B2221EEA322D00939E8F /* healthpoints_imessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints_imessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEB1B2241EEA322D00939E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EEB1B2261EEA322D00939E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEB1B22B1EEA322D00939E8F /* healthpoints_imessage MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "healthpoints_imessage MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEB1B22F1EEA322D00939E8F /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		EEB1B2321EEA322D00939E8F /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		EEB1B2351EEA322D00939E8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		EEB1B2371EEA322D00939E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EEB1B2391EEA322D00939E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEB1B2411EEA326300939E8F /* healthpoints_imessage MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints_imessage MessagesExtension.entitlements"; sourceTree = "<group>"; };
+		EE5552A81F96FE98001D3F5F /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
+		EE5552A91F96FE99001D3F5F /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
+		EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		EE5DE9C41F94606900F6BFC1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
+		EE682D831F82F05E003A6CF6 /* healthpoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE682D861F82F05E003A6CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE682D8B1F82F05E003A6CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE682D8D1F82F05E003A6CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE682D901F82F05E003A6CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE682D921F82F05E003A6CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE682D971F82F05E003A6CF6 /* healthpointsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = healthpointsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE682D9B1F82F05E003A6CF6 /* healthpointsclubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthpointsclubTests.swift; sourceTree = "<group>"; };
+		EE682D9D1F82F05E003A6CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE682DA21F82F05E003A6CF6 /* healthpointsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = healthpointsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthpointsclubUITests.swift; sourceTree = "<group>"; };
+		EE682DA81F82F05E003A6CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE682DB51F82F439003A6CF6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDay.swift; sourceTree = "<group>"; };
+		EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
+		EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		EE682DC11F82F5B4003A6CF6 /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
+		EE682DC21F830093003A6CF6 /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		EE682DC41F8301CF003A6CF6 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
+		EE682DC61F830270003A6CF6 /* OnboardingPageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwoViewController.swift; sourceTree = "<group>"; };
+		EE7E0BB71F9043B700849FDF /* LargeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeHeart.png; sourceTree = "<group>"; };
+		EE7E0BB91F90443600849FDF /* AttributeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		EE8C599C1F94297C00A30773 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EE17D2411EE2407A00BB5A88 /* Frameworks */ = {
+		EE682D801F82F05E003A6CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE17D2451EE2407A00BB5A88 /* NotificationCenter.framework in Frameworks */,
+				EE682DC01F82F5B4003A6CF6 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE2F0C6B1EBA8FBB00207511 /* Frameworks */ = {
+		EE682D941F82F05E003A6CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE46993A1EBB94D0001F31EF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEB1B2281EEA322D00939E8F /* Frameworks */ = {
+		EE682D9F1F82F05E003A6CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEB1B2301EEA322D00939E8F /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE17D2461EE2407A00BB5A88 /* healthpoints_today */ = {
+		EE682D7A1F82F05E003A6CF6 = {
 			isa = PBXGroup;
 			children = (
-				EE17D2561EE2433700BB5A88 /* LargeHeart.png */,
-				EE17D2531EE2408800BB5A88 /* healthpoints_today.entitlements */,
-				EE17D2471EE2407A00BB5A88 /* TodayViewController.swift */,
-				EE17D2491EE2407A00BB5A88 /* MainInterface.storyboard */,
-				EE17D24C1EE2407A00BB5A88 /* Info.plist */,
-				EE17D2541EE2416A00BB5A88 /* WidgetCollectionViewCell.swift */,
-			);
-			path = healthpoints_today;
-			sourceTree = "<group>";
-		};
-		EE2F0C651EBA8FBB00207511 = {
-			isa = PBXGroup;
-			children = (
-				EE2F0C701EBA8FBB00207511 /* healthpoints */,
-				EE17D2461EE2407A00BB5A88 /* healthpoints_today */,
-				EEB1B2231EEA322D00939E8F /* healthpoints_imessage */,
-				EEB1B2311EEA322D00939E8F /* healthpoints_imessage MessagesExtension */,
-				EE2F0C6F1EBA8FBB00207511 /* Products */,
-				EE4699361EBB94C7001F31EF /* Frameworks */,
+				EE682D851F82F05E003A6CF6 /* healthpoints */,
+				EE682D9A1F82F05E003A6CF6 /* healthpointsclubTests */,
+				EE682DA51F82F05E003A6CF6 /* healthpointsclubUITests */,
+				EE682D841F82F05E003A6CF6 /* Products */,
+				EE682DBE1F82F5B4003A6CF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		EE2F0C6F1EBA8FBB00207511 /* Products */ = {
+		EE682D841F82F05E003A6CF6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE2F0C6E1EBA8FBB00207511 /* healthpoints.app */,
-				EE17D2441EE2407A00BB5A88 /* healthpoints_today.appex */,
-				EEB1B2221EEA322D00939E8F /* healthpoints_imessage.app */,
-				EEB1B22B1EEA322D00939E8F /* healthpoints_imessage MessagesExtension.appex */,
+				EE682D831F82F05E003A6CF6 /* healthpoints.app */,
+				EE682D971F82F05E003A6CF6 /* healthpointsTests.xctest */,
+				EE682DA21F82F05E003A6CF6 /* healthpointsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE2F0C701EBA8FBB00207511 /* healthpoints */ = {
+		EE682D851F82F05E003A6CF6 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
-				EE46993B1EBBB27E001F31EF /* HealthDay.swift */,
-				EE0C8C421ECE652500C31122 /* splash.png */,
-				EE4699351EBB94C7001F31EF /* healthpoints.entitlements */,
-				EE4699331EBB6904001F31EF /* LargeHeart.png */,
-				EE2F0C711EBA8FBB00207511 /* AppDelegate.swift */,
-				EE2F0C751EBA8FBB00207511 /* Main.storyboard */,
-				EE2F0C781EBA8FBB00207511 /* Assets.xcassets */,
-				EE2F0C7A1EBA8FBB00207511 /* LaunchScreen.storyboard */,
-				EE2F0C7D1EBA8FBB00207511 /* Info.plist */,
-				EE387B431F58E8F4000C2070 /* dark@2x.png */,
-				EE387B421F58E8F3000C2070 /* dark@3x.png */,
-				EE2F0C831EBA905100207511 /* PointsViewController.swift */,
-				EE2F0C891EBA93FB00207511 /* SettingsTableViewController.swift */,
-				EE66ACF21EBBF3810027D598 /* HealthKitHelper.swift */,
-				EE6C59831ECE446400AA3C42 /* AttributeCollectionViewCell.swift */,
-				EE2D82421EDF7A310009CFB2 /* HistoryTableViewController.swift */,
-				EE0BB6551EDF9923000071D0 /* InfoViewController.swift */,
+				EE5552A91F96FE99001D3F5F /* dark@2x.png */,
+				EE5552A81F96FE98001D3F5F /* dark@3x.png */,
+				EE7E0BB71F9043B700849FDF /* LargeHeart.png */,
+				EE682DC11F82F5B4003A6CF6 /* healthpoints.entitlements */,
+				EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */,
+				EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */,
+				EE682DB51F82F439003A6CF6 /* splash.png */,
+				EE682D861F82F05E003A6CF6 /* AppDelegate.swift */,
+				EE682D8A1F82F05E003A6CF6 /* Main.storyboard */,
+				EE682D8D1F82F05E003A6CF6 /* Assets.xcassets */,
+				EE682D8F1F82F05E003A6CF6 /* LaunchScreen.storyboard */,
+				EE682D921F82F05E003A6CF6 /* Info.plist */,
+				EE682DC21F830093003A6CF6 /* PointsViewController.swift */,
+				EE682DC41F8301CF003A6CF6 /* OnboardingPageOneViewController.swift */,
+				EE682DC61F830270003A6CF6 /* OnboardingPageTwoViewController.swift */,
+				EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */,
+				EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */,
+				EE7E0BB91F90443600849FDF /* AttributeCollectionViewCell.swift */,
+				EE8C599C1F94297C00A30773 /* InfoViewController.swift */,
+				EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */,
+				EE5DE9C41F94606900F6BFC1 /* Theme.swift */,
+				EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */,
+				EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */,
 			);
 			path = healthpoints;
 			sourceTree = "<group>";
 		};
-		EE4699361EBB94C7001F31EF /* Frameworks */ = {
+		EE682D9A1F82F05E003A6CF6 /* healthpointsclubTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE4699391EBB94D0001F31EF /* HealthKit.framework */,
-				EE347BF11EE22FCC00AE1BAE /* NotificationCenter.framework */,
-				EEB1B22F1EEA322D00939E8F /* Messages.framework */,
+				EE682D9B1F82F05E003A6CF6 /* healthpointsclubTests.swift */,
+				EE682D9D1F82F05E003A6CF6 /* Info.plist */,
+			);
+			path = healthpointsclubTests;
+			sourceTree = "<group>";
+		};
+		EE682DA51F82F05E003A6CF6 /* healthpointsclubUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */,
+				EE682DA81F82F05E003A6CF6 /* Info.plist */,
+			);
+			path = healthpointsclubUITests;
+			sourceTree = "<group>";
+		};
+		EE682DBE1F82F5B4003A6CF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EEB1B2231EEA322D00939E8F /* healthpoints_imessage */ = {
-			isa = PBXGroup;
-			children = (
-				EEB1B2241EEA322D00939E8F /* Assets.xcassets */,
-				EEB1B2261EEA322D00939E8F /* Info.plist */,
-			);
-			path = healthpoints_imessage;
-			sourceTree = "<group>";
-		};
-		EEB1B2311EEA322D00939E8F /* healthpoints_imessage MessagesExtension */ = {
-			isa = PBXGroup;
-			children = (
-				EEB1B2411EEA326300939E8F /* healthpoints_imessage MessagesExtension.entitlements */,
-				EE55B6021EF0D54500E1D0A6 /* LargeHeart.png */,
-				EEB1B2321EEA322D00939E8F /* MessagesViewController.swift */,
-				EEB1B2341EEA322D00939E8F /* MainInterface.storyboard */,
-				EEB1B2371EEA322D00939E8F /* Assets.xcassets */,
-				EEB1B2391EEA322D00939E8F /* Info.plist */,
-				EE0DF5AB1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift */,
-				EE0024981EEBB20300A71D17 /* AttributeCellView.xib */,
-				EE00249A1EEBB63F00A71D17 /* AttributeCellView.swift */,
-			);
-			path = "healthpoints_imessage MessagesExtension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE17D2431EE2407A00BB5A88 /* healthpoints_today */ = {
+		EE682D821F82F05E003A6CF6 /* healthpoints */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE17D2501EE2407A00BB5A88 /* Build configuration list for PBXNativeTarget "healthpoints_today" */;
+			buildConfigurationList = EE682DAB1F82F05E003A6CF6 /* Build configuration list for PBXNativeTarget "healthpoints" */;
 			buildPhases = (
-				EE17D2401EE2407A00BB5A88 /* Sources */,
-				EE17D2411EE2407A00BB5A88 /* Frameworks */,
-				EE17D2421EE2407A00BB5A88 /* Resources */,
+				EE682D7F1F82F05E003A6CF6 /* Sources */,
+				EE682D801F82F05E003A6CF6 /* Frameworks */,
+				EE682D811F82F05E003A6CF6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = healthpoints_today;
-			productName = healthpoints_today;
-			productReference = EE17D2441EE2407A00BB5A88 /* healthpoints_today.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		EE2F0C6D1EBA8FBB00207511 /* healthpoints */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EE2F0C801EBA8FBB00207511 /* Build configuration list for PBXNativeTarget "healthpoints" */;
-			buildPhases = (
-				EE2F0C6A1EBA8FBB00207511 /* Sources */,
-				EE2F0C6B1EBA8FBB00207511 /* Frameworks */,
-				EE2F0C6C1EBA8FBB00207511 /* Resources */,
-				EE347C001EE22FCC00AE1BAE /* Embed App Extensions */,
-				EE17D2691EE2466100BB5A88 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EE17D24E1EE2407A00BB5A88 /* PBXTargetDependency */,
 			);
 			name = healthpoints;
-			productName = healthpoints;
-			productReference = EE2F0C6E1EBA8FBB00207511 /* healthpoints.app */;
+			productName = healthpointsclub;
+			productReference = EE682D831F82F05E003A6CF6 /* healthpoints.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EEB1B2211EEA322D00939E8F /* healthpoints_imessage */ = {
+		EE682D961F82F05E003A6CF6 /* healthpointsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEB1B2401EEA322D00939E8F /* Build configuration list for PBXNativeTarget "healthpoints_imessage" */;
+			buildConfigurationList = EE682DAE1F82F05E003A6CF6 /* Build configuration list for PBXNativeTarget "healthpointsTests" */;
 			buildPhases = (
-				EEB1B2201EEA322D00939E8F /* Resources */,
-				EEB1B23F1EEA322D00939E8F /* Embed App Extensions */,
+				EE682D931F82F05E003A6CF6 /* Sources */,
+				EE682D941F82F05E003A6CF6 /* Frameworks */,
+				EE682D951F82F05E003A6CF6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EEB1B22E1EEA322D00939E8F /* PBXTargetDependency */,
+				EE682D991F82F05E003A6CF6 /* PBXTargetDependency */,
 			);
-			name = healthpoints_imessage;
-			productName = healthpoints_imessage;
-			productReference = EEB1B2221EEA322D00939E8F /* healthpoints_imessage.app */;
-			productType = "com.apple.product-type.application.messages";
+			name = healthpointsTests;
+			productName = healthpointsclubTests;
+			productReference = EE682D971F82F05E003A6CF6 /* healthpointsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EEB1B22A1EEA322D00939E8F /* healthpoints_imessage MessagesExtension */ = {
+		EE682DA11F82F05E003A6CF6 /* healthpointsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEB1B23E1EEA322D00939E8F /* Build configuration list for PBXNativeTarget "healthpoints_imessage MessagesExtension" */;
+			buildConfigurationList = EE682DB11F82F05E003A6CF6 /* Build configuration list for PBXNativeTarget "healthpointsUITests" */;
 			buildPhases = (
-				EEB1B2271EEA322D00939E8F /* Sources */,
-				EEB1B2281EEA322D00939E8F /* Frameworks */,
-				EEB1B2291EEA322D00939E8F /* Resources */,
+				EE682D9E1F82F05E003A6CF6 /* Sources */,
+				EE682D9F1F82F05E003A6CF6 /* Frameworks */,
+				EE682DA01F82F05E003A6CF6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EE682DA41F82F05E003A6CF6 /* PBXTargetDependency */,
 			);
-			name = "healthpoints_imessage MessagesExtension";
-			productName = "healthpoints_imessage MessagesExtension";
-			productReference = EEB1B22B1EEA322D00939E8F /* healthpoints_imessage MessagesExtension.appex */;
-			productType = "com.apple.product-type.app-extension.messages";
+			name = healthpointsUITests;
+			productName = healthpointsclubUITests;
+			productReference = EE682DA21F82F05E003A6CF6 /* healthpointsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EE2F0C661EBA8FBB00207511 /* Project object */ = {
+		EE682D7B1F82F05E003A6CF6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = healthpoints;
+				ORGANIZATIONNAME = "Joseph Smith";
 				TargetAttributes = {
-					EE17D2431EE2407A00BB5A88 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = JANZDS5D43;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					EE2F0C6D1EBA8FBB00207511 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = JANZDS5D43;
-						LastSwiftMigration = 0900;
+					EE682D821F82F05E003A6CF6 = {
+						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -370,221 +266,151 @@
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
-							com.apple.HomeKit = {
-								enabled = 0;
-							};
 						};
 					};
-					EEB1B2211EEA322D00939E8F = {
+					EE682D961F82F05E003A6CF6 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = JANZDS5D43;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EE682D821F82F05E003A6CF6;
 					};
-					EEB1B22A1EEA322D00939E8F = {
+					EE682DA11F82F05E003A6CF6 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = JANZDS5D43;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
+						ProvisioningStyle = Automatic;
+						TestTargetID = EE682D821F82F05E003A6CF6;
 					};
 				};
 			};
-			buildConfigurationList = EE2F0C691EBA8FBB00207511 /* Build configuration list for PBXProject "healthpoints" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = EE682D7E1F82F05E003A6CF6 /* Build configuration list for PBXProject "healthpoints" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = EE2F0C651EBA8FBB00207511;
-			productRefGroup = EE2F0C6F1EBA8FBB00207511 /* Products */;
+			mainGroup = EE682D7A1F82F05E003A6CF6;
+			productRefGroup = EE682D841F82F05E003A6CF6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE2F0C6D1EBA8FBB00207511 /* healthpoints */,
-				EE17D2431EE2407A00BB5A88 /* healthpoints_today */,
-				EEB1B2211EEA322D00939E8F /* healthpoints_imessage */,
-				EEB1B22A1EEA322D00939E8F /* healthpoints_imessage MessagesExtension */,
+				EE682D821F82F05E003A6CF6 /* healthpoints */,
+				EE682D961F82F05E003A6CF6 /* healthpointsTests */,
+				EE682DA11F82F05E003A6CF6 /* healthpointsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EE17D2421EE2407A00BB5A88 /* Resources */ = {
+		EE682D811F82F05E003A6CF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE17D2571EE2433700BB5A88 /* LargeHeart.png in Resources */,
-				EE17D24B1EE2407A00BB5A88 /* MainInterface.storyboard in Resources */,
+				EE682D911F82F05E003A6CF6 /* LaunchScreen.storyboard in Resources */,
+				EE5552AB1F96FE99001D3F5F /* dark@2x.png in Resources */,
+				EE5552AA1F96FE99001D3F5F /* dark@3x.png in Resources */,
+				EE682D8E1F82F05E003A6CF6 /* Assets.xcassets in Resources */,
+				EE7E0BB81F9043B700849FDF /* LargeHeart.png in Resources */,
+				EE682D8C1F82F05E003A6CF6 /* Main.storyboard in Resources */,
+				EE682DB81F82F439003A6CF6 /* splash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE2F0C6C1EBA8FBB00207511 /* Resources */ = {
+		EE682D951F82F05E003A6CF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE4699341EBB6904001F31EF /* LargeHeart.png in Resources */,
-				EE2F0C7C1EBA8FBB00207511 /* LaunchScreen.storyboard in Resources */,
-				EE387B461F58EC31000C2070 /* dark@3x.png in Resources */,
-				EE0C8C431ECE652500C31122 /* splash.png in Resources */,
-				EE2F0C791EBA8FBB00207511 /* Assets.xcassets in Resources */,
-				EE387B451F58EC2F000C2070 /* dark@2x.png in Resources */,
-				EE2F0C771EBA8FBB00207511 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEB1B2201EEA322D00939E8F /* Resources */ = {
+		EE682DA01F82F05E003A6CF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEB1B2251EEA322D00939E8F /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEB1B2291EEA322D00939E8F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EE55B6031EF0D54500E1D0A6 /* LargeHeart.png in Resources */,
-				EE0024991EEBB20300A71D17 /* AttributeCellView.xib in Resources */,
-				EEB1B2381EEA322D00939E8F /* Assets.xcassets in Resources */,
-				EEB1B2361EEA322D00939E8F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EE17D2401EE2407A00BB5A88 /* Sources */ = {
+		EE682D7F1F82F05E003A6CF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE17D2551EE2416A00BB5A88 /* WidgetCollectionViewCell.swift in Sources */,
-				EE17D2481EE2407A00BB5A88 /* TodayViewController.swift in Sources */,
+				EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */,
+				EE682DC51F8301CF003A6CF6 /* OnboardingPageOneViewController.swift in Sources */,
+				EE682DBC1F82F46D003A6CF6 /* HealthDay.swift in Sources */,
+				EE5DE9C71F9473E500F6BFC1 /* ThemeView.swift in Sources */,
+				EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */,
+				EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */,
+				EE5DE9C91F94750400F6BFC1 /* ThemeImageView.swift in Sources */,
+				EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */,
+				EE682DC31F830093003A6CF6 /* PointsViewController.swift in Sources */,
+				EE682DC71F830270003A6CF6 /* OnboardingPageTwoViewController.swift in Sources */,
+				EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */,
+				EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */,
+				EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */,
+				EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE2F0C6A1EBA8FBB00207511 /* Sources */ = {
+		EE682D931F82F05E003A6CF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE66ACF31EBBF3810027D598 /* HealthKitHelper.swift in Sources */,
-				EE2F0C721EBA8FBB00207511 /* AppDelegate.swift in Sources */,
-				EE6C59841ECE446400AA3C42 /* AttributeCollectionViewCell.swift in Sources */,
-				EE2F0C841EBA905100207511 /* PointsViewController.swift in Sources */,
-				EE2D82431EDF7A310009CFB2 /* HistoryTableViewController.swift in Sources */,
-				EE46993C1EBBB27E001F31EF /* HealthDay.swift in Sources */,
-				EE0BB6561EDF9923000071D0 /* InfoViewController.swift in Sources */,
-				EE2F0C8A1EBA93FB00207511 /* SettingsTableViewController.swift in Sources */,
+				EE682D9C1F82F05E003A6CF6 /* healthpointsclubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEB1B2271EEA322D00939E8F /* Sources */ = {
+		EE682D9E1F82F05E003A6CF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE0DF5AC1EEB83E300EA1DD2 /* MessagesCollectionViewCell.swift in Sources */,
-				EEB1B2331EEA322D00939E8F /* MessagesViewController.swift in Sources */,
-				EE00249B1EEBB63F00A71D17 /* AttributeCellView.swift in Sources */,
+				EE682DA71F82F05E003A6CF6 /* healthpointsclubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EE17D24E1EE2407A00BB5A88 /* PBXTargetDependency */ = {
+		EE682D991F82F05E003A6CF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EE17D2431EE2407A00BB5A88 /* healthpoints_today */;
-			targetProxy = EE17D24D1EE2407A00BB5A88 /* PBXContainerItemProxy */;
+			target = EE682D821F82F05E003A6CF6 /* healthpoints */;
+			targetProxy = EE682D981F82F05E003A6CF6 /* PBXContainerItemProxy */;
 		};
-		EEB1B22E1EEA322D00939E8F /* PBXTargetDependency */ = {
+		EE682DA41F82F05E003A6CF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EEB1B22A1EEA322D00939E8F /* healthpoints_imessage MessagesExtension */;
-			targetProxy = EEB1B22D1EEA322D00939E8F /* PBXContainerItemProxy */;
+			target = EE682D821F82F05E003A6CF6 /* healthpoints */;
+			targetProxy = EE682DA31F82F05E003A6CF6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EE17D2491EE2407A00BB5A88 /* MainInterface.storyboard */ = {
+		EE682D8A1F82F05E003A6CF6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE17D24A1EE2407A00BB5A88 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		EE2F0C751EBA8FBB00207511 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE2F0C761EBA8FBB00207511 /* Base */,
+				EE682D8B1F82F05E003A6CF6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EE2F0C7A1EBA8FBB00207511 /* LaunchScreen.storyboard */ = {
+		EE682D8F1F82F05E003A6CF6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE2F0C7B1EBA8FBB00207511 /* Base */,
+				EE682D901F82F05E003A6CF6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		EEB1B2341EEA322D00939E8F /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EEB1B2351EEA322D00939E8F /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EE17D2511EE2407A00BB5A88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = healthpoints_today/healthpoints_today.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = JANZDS5D43;
-				INFOPLIST_FILE = healthpoints_today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-today";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		EE17D2521EE2407A00BB5A88 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = healthpoints_today/healthpoints_today.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JANZDS5D43;
-				INFOPLIST_FILE = healthpoints_today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-today";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		EE2F0C7E1EBA8FBB00207511 /* Debug */ = {
+		EE682DA91F82F05E003A6CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -604,14 +430,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -625,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -634,13 +461,13 @@
 			};
 			name = Debug;
 		};
-		EE2F0C7F1EBA8FBB00207511 /* Release */ = {
+		EE682DAA1F82F05E003A6CF6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -660,14 +487,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -675,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -683,173 +511,146 @@
 			};
 			name = Release;
 		};
-		EE2F0C811EBA8FBB00207511 /* Debug */ = {
+		EE682DAC1F82F05E003A6CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = healthpoints/healthpoints.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpointsv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		EE2F0C821EBA8FBB00207511 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = healthpoints/healthpoints.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JANZDS5D43;
-				INFOPLIST_FILE = healthpoints/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		EEB1B23A1EEA322D00939E8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = JANZDS5D43;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = healthpoints_imessage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		EEB1B23B1EEA322D00939E8F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = JANZDS5D43;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = healthpoints_imessage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		EEB1B23C1EEA322D00939E8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "healthpoints_imessage MessagesExtension/healthpoints_imessage MessagesExtension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = JANZDS5D43;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "healthpoints_imessage MessagesExtension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage.MessagesExtension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		EEB1B23D1EEA322D00939E8F /* Release */ = {
+		EE682DAD1F82F05E003A6CF6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "healthpoints_imessage MessagesExtension/healthpoints_imessage MessagesExtension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = healthpoints/healthpoints.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JANZDS5D43;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "healthpoints_imessage MessagesExtension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josephsmith.healthpoints-imessage.MessagesExtension";
+				INFOPLIST_FILE = healthpoints/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpointsv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EE682DAF1F82F05E003A6CF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = healthpointsclubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpointsclubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/healthpoints.app/healthpoints";
+			};
+			name = Debug;
+		};
+		EE682DB01F82F05E003A6CF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = healthpointsclubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpointsclubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/healthpoints.app/healthpoints";
+			};
+			name = Release;
+		};
+		EE682DB21F82F05E003A6CF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = healthpointsclubUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpointsclubUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = healthpointsclub;
+			};
+			name = Debug;
+		};
+		EE682DB31F82F05E003A6CF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = healthpointsclubUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpointsclubUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = healthpointsclub;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE17D2501EE2407A00BB5A88 /* Build configuration list for PBXNativeTarget "healthpoints_today" */ = {
+		EE682D7E1F82F05E003A6CF6 /* Build configuration list for PBXProject "healthpoints" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE17D2511EE2407A00BB5A88 /* Debug */,
-				EE17D2521EE2407A00BB5A88 /* Release */,
+				EE682DA91F82F05E003A6CF6 /* Debug */,
+				EE682DAA1F82F05E003A6CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE2F0C691EBA8FBB00207511 /* Build configuration list for PBXProject "healthpoints" */ = {
+		EE682DAB1F82F05E003A6CF6 /* Build configuration list for PBXNativeTarget "healthpoints" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE2F0C7E1EBA8FBB00207511 /* Debug */,
-				EE2F0C7F1EBA8FBB00207511 /* Release */,
+				EE682DAC1F82F05E003A6CF6 /* Debug */,
+				EE682DAD1F82F05E003A6CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE2F0C801EBA8FBB00207511 /* Build configuration list for PBXNativeTarget "healthpoints" */ = {
+		EE682DAE1F82F05E003A6CF6 /* Build configuration list for PBXNativeTarget "healthpointsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE2F0C811EBA8FBB00207511 /* Debug */,
-				EE2F0C821EBA8FBB00207511 /* Release */,
+				EE682DAF1F82F05E003A6CF6 /* Debug */,
+				EE682DB01F82F05E003A6CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEB1B23E1EEA322D00939E8F /* Build configuration list for PBXNativeTarget "healthpoints_imessage MessagesExtension" */ = {
+		EE682DB11F82F05E003A6CF6 /* Build configuration list for PBXNativeTarget "healthpointsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EEB1B23C1EEA322D00939E8F /* Debug */,
-				EEB1B23D1EEA322D00939E8F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EEB1B2401EEA322D00939E8F /* Build configuration list for PBXNativeTarget "healthpoints_imessage" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EEB1B23A1EEA322D00939E8F /* Debug */,
-				EEB1B23B1EEA322D00939E8F /* Release */,
+				EE682DB21F82F05E003A6CF6 /* Debug */,
+				EE682DB31F82F05E003A6CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EE2F0C661EBA8FBB00207511 /* Project object */;
+	rootObject = EE682D7B1F82F05E003A6CF6 /* Project object */;
 }

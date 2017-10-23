@@ -1,49 +1,51 @@
 //
 //  AppDelegate.swift
-//  healthpoints
+//  healthpointsclub
 //
-//  Created by Joseph Smith on 5/3/17.
-//  Copyright © 2017 healthpoints. All rights reserved.
+//  Created by Joseph Smith on 10/2/17.
+//  Copyright © 2017 Joseph Smith. All rights reserved.
 //
 
 import UIKit
-import HealthKit
 import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    let healthKitStore: HKHealthStore = HKHealthStore()
-    
     let hkHelper = HealthKitHelper()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let cellsPerRow = UserDefaults.standard.integer(forKey: "numberOfCellsInRow")
-        if cellsPerRow == 0 {
-            UserDefaults.standard.set(4, forKey: "numberOfCellsInRow")
-        }
-        if let data = UserDefaults.standard.object(forKey: "history") as? Data {
-            
-            
+        // Override point for customization after application launch.
+        //          let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
+        //
+        //        if let olddata = UserDefaults.standard.data(forKey: "history") {
+        //            print("olddata")
+        //            if let history = NSKeyedUnarchiver.unarchiveObject(with: olddata) as? [HistoryDay]{
+        //                let h = NSKeyedArchiver.archivedData(withRootObject: history)
+        //                defaults?.set(h, forKey: "globalHistory")
+        //            }
+        //        }
+        
+        
+        if let data =  UserDefaults.standard.data(forKey: "history") {
             if let history = NSKeyedUnarchiver.unarchiveObject(with: data) as? [HistoryDay]{
                 HealthDay.shared.history = history
             }
         }
-        hkHelper.authorizeHealthKit { (authorized, error) -> Void in
-            if authorized {
-                print("HealthKit authorization received.")
-                self.hkHelper.preLoadHealthDay()
-            } else {
-                print("HealthKit authorization denied!")
-                if error != nil {
-                    print("\(error.debugDescription)")
-                }
-            }
+        let first = UserDefaults.standard.bool(forKey: "hasopenedbefore")
+        print(first)
+        if first {
+            hkHelper.startObservingQueries()
+            hkHelper.preLoadHealthDay()
         }
-        
+        print(Theme.current)
+        NSLog(Theme.current.rawValue.description)
+        Theme.current.apply()
         return true
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     }
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
@@ -71,4 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    
 }
+
