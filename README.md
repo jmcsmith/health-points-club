@@ -31,4 +31,6 @@ Phase 3:
 
 ## History
 
-TODO: Write history
+2017-10-23 First commit of rewrite. 
+2017-09-14 Converted to Swift 4  
+2017-05-03 First Commit  
