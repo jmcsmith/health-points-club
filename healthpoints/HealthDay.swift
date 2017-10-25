@@ -37,9 +37,7 @@ public class HealthDay {
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
-        let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0), $0.type.getBackgroundColor()]}
-        let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
-        defaults?.set(values, forKey: "widgetValues")
+      updateWidgetValues()
     }
     
     func getPoints() -> Int {
@@ -63,12 +61,16 @@ public class HealthDay {
         let h = NSKeyedArchiver.archivedData(withRootObject: history)
         UserDefaults.standard.set(h, forKey: "history")
         print("Get Points - \(points)")
-        
+        updateWidgetValues()
         //defaults?.set(h, forKey: "globalHistory")
         return points
     }
     
-    
+    func updateWidgetValues(){
+        let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0), $0.type.getBackgroundColor()]}
+        let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
+        defaults?.set(values, forKey: "widgetValues")
+    }
 }
 enum AttributeType: String {
     case steps = "Steps"

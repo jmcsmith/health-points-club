@@ -16,7 +16,7 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+
        
         setNeedsStatusBarAppearanceUpdate()
     }
@@ -53,5 +53,7 @@ class InfoViewController: UIViewController {
         
         
     }
+    
+  
 }
 

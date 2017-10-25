@@ -42,25 +42,27 @@ enum Theme: Int {
         
         UINavigationBar.appearance().barStyle = barStyle
         //UINavigationBar.appearance().backgroundColor = backgroundColor
-        UINavigationBar.appearance().barTintColor = backgroundColor
+        UINavigationBar.appearance().barTintColor = barBackgroundColor
         UINavigationBar.appearance().isTranslucent = false
         
         
-        UITabBar.appearance().barTintColor = backgroundColor
-        UITabBar.appearance().backgroundColor = backgroundColor
+        UITabBar.appearance().barTintColor = barBackgroundColor
+        UITabBar.appearance().backgroundColor = barBackgroundColor
         
-        UITableViewCell.appearance().backgroundColor = backgroundColor
+        UITableViewCell.appearance().backgroundColor = tableviewCellBackgroundColor
+        UITableView.appearance().separatorColor = UIColor.darkGray
+        UITableViewCell.appearance(whenContainedInInstancesOf: [HistoryTableViewController.self]).backgroundColor = backgroundColor
         
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).textColor = textColor
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = textColor
         
         UITextView.appearance().backgroundColor = backgroundColor
         UITextView.appearance().textColor = textColor
+        
         ThemeView.appearance().backgroundColor = backgroundColor
         ThemeImageView.appearance().backgroundColor = backgroundColor
         
         UITableView.appearance().backgroundColor = backgroundColor
-        UITableViewHeaderFooterView.appearance().backgroundColor = backgroundColor
         
         UICollectionView.appearance().backgroundColor = backgroundColor
         
@@ -75,7 +77,7 @@ enum Theme: Int {
         case .default:
             return UIColor.white
         case .dark:
-            return UIColor(red:0.24, green:0.25, blue:0.25, alpha:1.00)
+            return UIColor(red:0.14, green:0.14, blue:0.14, alpha:1.00)
         }
     }
     
@@ -103,6 +105,21 @@ enum Theme: Int {
             return UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
         }
     }
-    
+    var barBackgroundColor: UIColor {
+        switch self{
+        case .default:
+            return UIColor.white
+        case .dark:
+            return .black
+        }
+    }
+    var tableviewCellBackgroundColor: UIColor {
+        switch self{
+        case .default:
+            return UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.00)
+        case .dark:
+            return .black
+        }
+    }
     
 }

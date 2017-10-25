@@ -1681,15 +1681,15 @@ Cg
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rVw-nr-jWf" firstAttribute="leading" secondItem="k81-XM-D5l" secondAttribute="leadingMargin" constant="8" id="1Uq-lW-Dly"/>
                             <constraint firstItem="rVw-nr-jWf" firstAttribute="top" secondItem="7ke-ba-EOe" secondAttribute="bottom" constant="7" id="2wu-ZL-dfe"/>
-                            <constraint firstItem="Bjr-QR-ARK" firstAttribute="bottom" secondItem="rVw-nr-jWf" secondAttribute="bottom" constant="9" id="GDf-iI-Hj1"/>
-                            <constraint firstItem="7ke-ba-EOe" firstAttribute="top" secondItem="Bjr-QR-ARK" secondAttribute="top" id="XMm-65-7ZI"/>
-                            <constraint firstItem="7ke-ba-EOe" firstAttribute="leading" secondItem="k81-XM-D5l" secondAttribute="leading" id="qcj-Xa-hWV"/>
-                            <constraint firstAttribute="trailing" secondItem="7ke-ba-EOe" secondAttribute="trailing" id="yUr-l3-QiC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rVw-nr-jWf" secondAttribute="trailing" constant="8" id="ywT-co-nFo"/>
+                            <constraint firstItem="7ke-ba-EOe" firstAttribute="leading" secondItem="k81-XM-D5l" secondAttribute="leading" id="HBU-gk-f8O"/>
+                            <constraint firstAttribute="trailing" secondItem="7ke-ba-EOe" secondAttribute="trailing" id="MVo-By-Bsf"/>
+                            <constraint firstItem="IlK-AV-iVb" firstAttribute="bottom" secondItem="rVw-nr-jWf" secondAttribute="bottom" constant="9" id="MaM-Ri-ztW"/>
+                            <constraint firstItem="rVw-nr-jWf" firstAttribute="leading" secondItem="IlK-AV-iVb" secondAttribute="leading" constant="24" id="huv-JF-SLi"/>
+                            <constraint firstItem="7ke-ba-EOe" firstAttribute="top" secondItem="IlK-AV-iVb" secondAttribute="top" id="kYw-fg-h4d"/>
+                            <constraint firstItem="7ke-ba-EOe" firstAttribute="centerX" secondItem="rVw-nr-jWf" secondAttribute="centerX" id="wfH-QN-iMv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Bjr-QR-ARK"/>
+                        <viewLayoutGuide key="safeArea" id="IlK-AV-iVb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsl-Uo-ccO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1808,44 +1808,6 @@ Cg
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Stuff Only Karen Wants" id="3XH-Oc-lDC">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="Vz1-u0-NkS">
-                                        <rect key="frame" x="0.0" y="436.5" width="375" height="71"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vz1-u0-NkS" id="btw-KA-ekU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Attributes per row" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHb-hv-nNd">
-                                                    <rect key="frame" x="13" y="25" width="172" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LYn-dr-jsL">
-                                                    <rect key="frame" x="193" y="21" width="166" height="29"/>
-                                                    <segments>
-                                                        <segment title="2"/>
-                                                        <segment title="3"/>
-                                                        <segment title="4"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="cellNumberChanged:" destination="OWK-BW-SaO" eventType="valueChanged" id="P5M-7O-KEo"/>
-                                                    </connections>
-                                                </segmentedControl>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LYn-dr-jsL" firstAttribute="centerY" secondItem="btw-KA-ekU" secondAttribute="centerY" id="UlR-92-U6e"/>
-                                                <constraint firstItem="JHb-hv-nNd" firstAttribute="centerY" secondItem="btw-KA-ekU" secondAttribute="centerY" id="c2Z-yC-o6T"/>
-                                                <constraint firstItem="LYn-dr-jsL" firstAttribute="leading" secondItem="JHb-hv-nNd" secondAttribute="trailing" constant="8" id="f3b-6e-Vge"/>
-                                                <constraint firstItem="JHb-hv-nNd" firstAttribute="leading" secondItem="btw-KA-ekU" secondAttribute="leadingMargin" constant="-3" id="wub-uu-WfD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="LYn-dr-jsL" secondAttribute="trailing" id="zzd-ei-owx"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="OWK-BW-SaO" id="VEX-vE-BMR"/>
@@ -1854,9 +1816,7 @@ Cg
                     </tableView>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="attributesLabel" destination="JHb-hv-nNd" id="elR-dn-c7N"/>
                         <outlet property="caloriesLabel" destination="1KO-Bc-Xla" id="7bY-IX-TMD"/>
-                        <outlet property="cellNumberSegmentedControl" destination="LYn-dr-jsL" id="0PC-91-ewI"/>
                         <outlet property="dailyCalories" destination="XDF-MT-ytq" id="RBH-2H-wCP"/>
                         <outlet property="darkButton" destination="tL2-qs-Qfm" id="RkQ-u7-6zJ"/>
                         <outlet property="darkModeSwitch" destination="O5x-bQ-oHu" id="Dc9-jr-F0l"/>

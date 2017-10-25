@@ -56,7 +56,7 @@ class SettingsTableViewController: UITableViewController {
        
         
         dailyCalories.text = UserDefaults.standard.string(forKey: "dailyCalorieGoal")
-        cellNumberSegmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "numberOfCellsInRow")-2
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,10 +113,7 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func dailyCaloriesChanged(_ sender: UITextField) {
         UserDefaults.standard.setValue(sender.text, forKey: "dailyCalorieGoal")
     }
-    @IBAction func cellNumberChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set(sender.selectedSegmentIndex+2, forKey: "numberOfCellsInRow")
-        
-    }
+
     
  
     // MARK: - Table view data source

@@ -17,15 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //          let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
-        //
-        //        if let olddata = UserDefaults.standard.data(forKey: "history") {
-        //            print("olddata")
-        //            if let history = NSKeyedUnarchiver.unarchiveObject(with: olddata) as? [HistoryDay]{
-        //                let h = NSKeyedArchiver.archivedData(withRootObject: history)
-        //                defaults?.set(h, forKey: "globalHistory")
-        //            }
-        //        }
         
         
         if let data =  UserDefaults.standard.data(forKey: "history") {
