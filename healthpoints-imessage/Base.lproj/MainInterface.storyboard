@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -15,7 +14,7 @@
         <!--Messages View Controller-->
         <scene sceneID="TEF-5G-9Cj">
             <objects>
-                <viewController id="aVN-GV-Da3" customClass="MessagesViewController" customModule="healthpoints_imessage_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aVN-GV-Da3" customClass="MessagesViewController" customModule="healthpoints_imessage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RB5-kV-Ash"/>
                         <viewControllerLayoutGuide type="bottom" id="g4O-Uz-svA"/>
@@ -45,7 +44,7 @@
                                                     <rect key="frame" x="8" y="8" width="158" height="133"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-Yy-4wu">
-                                                    <rect key="frame" x="82" y="38" width="10" height="52.5"/>
+                                                    <rect key="frame" x="82" y="38" width="10" height="53"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -87,8 +86,8 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mgo-lc-zvY" secondAttribute="trailing" id="8Hu-mw-ko8"/>
                             <constraint firstItem="mgo-lc-zvY" firstAttribute="leading" secondItem="2NA-6P-Zvj" secondAttribute="leading" id="RSP-rC-n4U"/>
-                            <constraint firstItem="g4O-Uz-svA" firstAttribute="top" secondItem="mgo-lc-zvY" secondAttribute="bottom" id="ZnE-MT-Isg"/>
-                            <constraint firstItem="mgo-lc-zvY" firstAttribute="top" secondItem="RB5-kV-Ash" secondAttribute="bottom" id="dw7-Zl-a7g"/>
+                            <constraint firstItem="mgo-lc-zvY" firstAttribute="top" secondItem="Gke-bL-mdZ" secondAttribute="top" id="dw7-Zl-a7g"/>
+                            <constraint firstItem="mgo-lc-zvY" firstAttribute="bottom" secondItem="Gke-bL-mdZ" secondAttribute="bottom" id="p9b-wO-brx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gke-bL-mdZ"/>
                     </view>

@@ -44,7 +44,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
-    }
+    } 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
@@ -59,14 +59,11 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let temp = HealthDay.shared.attributes[sourceIndexPath.row]
-        print(temp.type)
-//        HealthDay.shared.defaultAttributes?.remove(at: sourceIndexPath.row)
-//        HealthDay.shared.defaultAttributes?.insert(temp.type.rawValue, at: destinationIndexPath.row)
-
+        
         HealthDay.shared.attributes.remove(at: sourceIndexPath.row)
         HealthDay.shared.attributes.insert(temp, at: destinationIndexPath.row)
-                HealthDay.shared.saveDefaltAttributes()
-
+        
+        HealthDay.shared.saveAttributeOrder()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {

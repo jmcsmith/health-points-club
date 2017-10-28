@@ -10,26 +10,25 @@ import UIKit
 
 public class HealthDay {
     private init() {
-        let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
-        defaultAttributes = defaults?.object(forKey: "defaultAttrubutes") as? [String]
+         let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
+        defaultAttributes = defaults?.object(forKey: "attributeOrder") as? [String]
         if defaultAttributes != nil {
             for attribute in defaultAttributes!{
-                self.attributes.append(Attribute(type: AttributeType.init(rawValue: attribute)!, value: 0))
+                attributes.append(Attribute(type: AttributeType.init(rawValue: attribute)!, value: 0))
             }
         }else{
-            self.attributes.append(Attribute(type: .steps, value: 0))
-            self.attributes.append(Attribute(type: .workouts, value: 0))
-            self.attributes.append(Attribute(type: .water, value: 0))
-            self.attributes.append(Attribute(type: .sleep, value: 0))
-            self.attributes.append(Attribute(type: .mind, value: 0))
-            self.attributes.append(Attribute(type: .stand, value: 0))
-            self.attributes.append(Attribute(type: .exercise, value: 0))
-            self.attributes.append(Attribute(type: .move, value: 0))
-            self.attributes.append(Attribute(type: .rings, value: 0))
-            self.attributes.append(Attribute(type: .calories, value: 0))
+        attributes.append(Attribute(type: .steps, value: 0))
+        attributes.append(Attribute(type: .workouts, value: 0))
+        attributes.append(Attribute(type: .water, value: 0))
+        attributes.append(Attribute(type: .sleep, value: 0))
+        attributes.append(Attribute(type: .mind, value: 0))
+        attributes.append(Attribute(type: .stand, value: 0))
+        attributes.append(Attribute(type: .exercise, value: 0))
+        attributes.append(Attribute(type: .move, value: 0))
+        attributes.append(Attribute(type: .rings, value: 0))
+        attributes.append(Attribute(type: .calories, value: 0))
             
-            //set default attributes
-            saveDefaltAttributes()
+            saveAttributeOrder()
         }
     }
     
@@ -47,11 +46,11 @@ public class HealthDay {
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
-        updateWidgetValues()
+      updateWidgetValues()
     }
-    func saveDefaltAttributes(){
-        let temp = self.attributes.map({$0.type.rawValue})
-        defaults?.set(temp, forKey: "defaultAttrubutes")
+    func saveAttributeOrder(){
+        defaultAttributes = attributes.map({$0.type.rawValue})
+        defaults?.set(defaultAttributes, forKey: "attributeOrder")
     }
     func getPoints() -> Int {
         var points = 0
@@ -83,6 +82,34 @@ public class HealthDay {
         let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0), $0.type.getBackgroundColor()]}
         let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
         defaults?.set(values, forKey: "widgetValues")
+        
+        
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let dayOfWeek = calendar.component(.weekday, from: today)
+        let week = calendar.range(of: .weekday, in: .weekOfYear, for: today)!
+        let days = (week.lowerBound ..< week.upperBound)
+            .flatMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: today) }
+        
+        var weekTotal = 0
+        var lifetimeTotal = 0
+        var alltimeHigh = 0
+        for day in history{
+            if day.points > alltimeHigh{
+                alltimeHigh = day.points
+            }
+            if days.contains(day.date)
+            {
+                weekTotal += day.points
+            }
+            lifetimeTotal += day.points
+        }
+        defaults?.set(weekTotal, forKey: "weekTotal")
+        defaults?.set(alltimeHigh, forKey: "allTimeHigh")
+        defaults?.set(lifetimeTotal, forKey: "lifetimeTotal")
+        
+        
+     
     }
 }
 enum AttributeType: String {
@@ -170,7 +197,7 @@ enum AttributeType: String {
             } else {
                 return 0
             }
-            
+
         }
     }
     func displayText(forValue value: Int) -> String {
@@ -196,7 +223,7 @@ enum AttributeType: String {
             return "\(value/60) Hours"
         case .calories:
             return "\(value) Consumed"
-            
+
         }
     }
     func getBackgroundColor() -> UIColor {
@@ -221,7 +248,7 @@ enum AttributeType: String {
             return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
         case .rings:
             return UIColor.lightGray
-            
+
         }
     }
 }
