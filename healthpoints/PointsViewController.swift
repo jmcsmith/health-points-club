@@ -14,6 +14,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     var isfirstload: Bool = true
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var largeHeartImageView: ThemeImageView!
     fileprivate var longPressGesture: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     
@@ -21,6 +22,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         self.pointsLabel.text = HealthDay.shared.getPoints().description
+        self.pointsLabel.accessibilityValue = HealthDay.shared.getPoints().description +  " Points"
         
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(gesture:)))
         collectionView.addGestureRecognizer(longPressGesture)
@@ -164,6 +166,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     @objc func updateUI() {
         DispatchQueue.main.async {
             self.pointsLabel.text = HealthDay.shared.getPoints().description
+            self.pointsLabel.accessibilityValue = HealthDay.shared.getPoints().description +  " Points"
             self.collectionView.reloadData()
             print("--------Notification Processed--------")
         }

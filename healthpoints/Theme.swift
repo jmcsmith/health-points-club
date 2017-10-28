@@ -9,15 +9,12 @@
 import UIKit
 
 enum Theme: Int {
-    //1
     case `default`, dark
-    
-    //2
+
     private enum Keys {
         static let selectedTheme = "SelectedTheme"
     }
     
-    //3
     static var current: Theme {
         let storedTheme = UserDefaults.standard.integer(forKey: Keys.selectedTheme)
         return Theme(rawValue: storedTheme) ?? .default
@@ -33,43 +30,44 @@ enum Theme: Int {
         }
     }
     func apply() {
-        //1
+        
         UserDefaults.standard.set(rawValue, forKey: Keys.selectedTheme)
         UserDefaults.standard.synchronize()
         
-        //2
+        //global
         UIApplication.shared.delegate?.window??.tintColor = mainColor
+        UISwitch.appearance().onTintColor = mainColor
         
+        //NavigationBar
         UINavigationBar.appearance().barStyle = barStyle
-        //UINavigationBar.appearance().backgroundColor = backgroundColor
-        UINavigationBar.appearance().barTintColor = barBackgroundColor
         UINavigationBar.appearance().isTranslucent = false
+        //UINavigationBar.appearance().backgroundColor = barBackgroundColor
+        UINavigationBar.appearance().barTintColor = navigationBarBackgroundColor
         
-        
+        //tab bar
         UITabBar.appearance().barTintColor = barBackgroundColor
         UITabBar.appearance().backgroundColor = barBackgroundColor
         
+        //table view and cell
         UITableViewCell.appearance().backgroundColor = tableviewCellBackgroundColor
         UITableView.appearance().separatorColor = UIColor.darkGray
         UITableViewCell.appearance(whenContainedInInstancesOf: [HistoryTableViewController.self]).backgroundColor = backgroundColor
+        UITableView.appearance().backgroundColor = backgroundColor
         
+        //specific labels
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).textColor = textColor
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = textColor
         
+        //text view
         UITextView.appearance().backgroundColor = backgroundColor
         UITextView.appearance().textColor = textColor
         
+        //custom views
         ThemeView.appearance().backgroundColor = backgroundColor
         ThemeImageView.appearance().backgroundColor = backgroundColor
         
-        UITableView.appearance().backgroundColor = backgroundColor
-        
+        //ccollection view
         UICollectionView.appearance().backgroundColor = backgroundColor
-        
-        
-        
-        UISwitch.appearance().onTintColor = mainColor
-        
     }
     
     var backgroundColor: UIColor {
@@ -77,7 +75,8 @@ enum Theme: Int {
         case .default:
             return UIColor.white
         case .dark:
-            return UIColor(red:0.14, green:0.14, blue:0.14, alpha:1.00)
+            return UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.00)
+            //return .darkGray
         }
     }
     
@@ -110,7 +109,15 @@ enum Theme: Int {
         case .default:
             return UIColor.white
         case .dark:
-            return .black
+            return UIColor(red: 0.18, green: 0.18, blue: 0.18, alpha: 1.00)
+        }
+    }
+    var navigationBarBackgroundColor: UIColor {
+        switch self{
+        case .default:
+            return UIColor.white
+        case .dark:
+            return UIColor(red: 0.24, green: 0.24, blue: 0.24, alpha: 1.00)
         }
     }
     var tableviewCellBackgroundColor: UIColor {

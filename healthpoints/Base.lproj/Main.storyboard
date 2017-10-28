@@ -161,7 +161,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDB-gI-Bdx">
-                                            <rect key="frame" x="325" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="319" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -173,7 +173,7 @@
                                         <constraint firstItem="6d2-cb-IOf" firstAttribute="leading" secondItem="YNK-VI-NKL" secondAttribute="leadingMargin" id="RWV-Z5-eR5"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6d2-cb-IOf" secondAttribute="trailingMargin" id="Ybe-ns-hJc"/>
                                         <constraint firstItem="6d2-cb-IOf" firstAttribute="centerY" secondItem="YNK-VI-NKL" secondAttribute="centerY" id="afa-j5-C86"/>
-                                        <constraint firstAttribute="trailing" secondItem="mDB-gI-Bdx" secondAttribute="trailing" constant="8" id="ctf-XV-bUm"/>
+                                        <constraint firstAttribute="trailing" secondItem="mDB-gI-Bdx" secondAttribute="trailing" constant="14" id="ctf-XV-bUm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -225,6 +225,9 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-8P-8g7" customClass="ThemeImageView" customModule="healthpoints" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="8" width="375" height="184.5"/>
+                                        <accessibility key="accessibilityConfiguration" label="Today's Points">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-y4-84X">
                                         <rect key="frame" x="164" y="41" width="47" height="91"/>
@@ -341,6 +344,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="RC0-nP-Dwr" id="LvM-7b-Obz"/>
+                        <outlet property="largeHeartImageView" destination="hx2-8P-8g7" id="3p2-UY-o9l"/>
                         <outlet property="pointsLabel" destination="cIe-y4-84X" id="oze-3s-xEJ"/>
                         <segue destination="BrB-PP-muS" kind="presentation" identifier="onboarding" id="Yeu-Or-iwg"/>
                     </connections>

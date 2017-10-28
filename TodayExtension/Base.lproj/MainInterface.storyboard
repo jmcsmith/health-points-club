@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,12 +23,9 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="FKZ-tT-c2e">
                                         <rect key="frame" x="8" y="8" width="113" height="651"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="FKZ-tT-c2e" secondAttribute="height" multiplier="113:651" id="1fs-wo-6ST"/>
-                                        </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B6b-Ct-Ar2">
-                                        <rect key="frame" x="137" y="303.5" width="230" height="61"/>
+                                        <rect key="frame" x="137" y="303" width="230" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Total: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-xV-dlj">
                                                 <rect key="frame" x="0.0" y="0.0" width="230" height="20.5"/>
@@ -55,20 +51,20 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB1-to-Kdo">
-                                        <rect key="frame" x="51" y="260" width="28.5" height="55"/>
+                                        <rect key="frame" x="50.5" y="260" width="28.5" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="FKZ-tT-c2e" secondAttribute="bottom" constant="8" id="2dH-IB-ihs"/>
-                                    <constraint firstItem="FKZ-tT-c2e" firstAttribute="top" secondItem="JHh-So-w0s" secondAttribute="top" constant="8" id="3cE-oJ-0Nu"/>
                                     <constraint firstAttribute="trailing" secondItem="B6b-Ct-Ar2" secondAttribute="trailing" constant="8" id="5G1-YG-1GD"/>
                                     <constraint firstItem="B6b-Ct-Ar2" firstAttribute="leading" secondItem="FKZ-tT-c2e" secondAttribute="trailing" constant="16" id="Hr4-l5-kgn"/>
                                     <constraint firstItem="FKZ-tT-c2e" firstAttribute="width" secondItem="JHh-So-w0s" secondAttribute="width" multiplier="0.3" id="I2M-yA-kvS"/>
+                                    <constraint firstItem="FKZ-tT-c2e" firstAttribute="top" secondItem="JHh-So-w0s" secondAttribute="top" constant="8" id="NU8-8y-VmX"/>
                                     <constraint firstItem="SB1-to-Kdo" firstAttribute="centerY" secondItem="FKZ-tT-c2e" secondAttribute="centerY" multiplier="0.86" id="U8v-KQ-51R"/>
                                     <constraint firstItem="B6b-Ct-Ar2" firstAttribute="centerY" secondItem="JHh-So-w0s" secondAttribute="centerY" id="ZmQ-3a-RFH"/>
+                                    <constraint firstAttribute="bottom" secondItem="FKZ-tT-c2e" secondAttribute="bottom" constant="8" id="Zv1-Kd-UwI"/>
                                     <constraint firstItem="FKZ-tT-c2e" firstAttribute="leading" secondItem="JHh-So-w0s" secondAttribute="leading" constant="8" id="fRY-md-bLl"/>
                                     <constraint firstItem="SB1-to-Kdo" firstAttribute="centerX" secondItem="FKZ-tT-c2e" secondAttribute="centerX" id="vrS-k5-h1Q"/>
                                 </constraints>
