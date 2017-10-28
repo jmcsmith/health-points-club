@@ -59,9 +59,14 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let temp = HealthDay.shared.attributes[sourceIndexPath.row]
-        
+        print(temp.type)
+//        HealthDay.shared.defaultAttributes?.remove(at: sourceIndexPath.row)
+//        HealthDay.shared.defaultAttributes?.insert(temp.type.rawValue, at: destinationIndexPath.row)
+
         HealthDay.shared.attributes.remove(at: sourceIndexPath.row)
         HealthDay.shared.attributes.insert(temp, at: destinationIndexPath.row)
+                HealthDay.shared.saveDefaltAttributes()
+
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {

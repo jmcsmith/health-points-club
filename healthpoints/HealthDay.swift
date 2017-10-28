@@ -10,17 +10,27 @@ import UIKit
 
 public class HealthDay {
     private init() {
-        
-        attributes.append(Attribute(type: .steps, value: 0))
-        attributes.append(Attribute(type: .workouts, value: 0))
-        attributes.append(Attribute(type: .water, value: 0))
-        attributes.append(Attribute(type: .sleep, value: 0))
-        attributes.append(Attribute(type: .mind, value: 0))
-        attributes.append(Attribute(type: .stand, value: 0))
-        attributes.append(Attribute(type: .exercise, value: 0))
-        attributes.append(Attribute(type: .move, value: 0))
-        attributes.append(Attribute(type: .rings, value: 0))
-        attributes.append(Attribute(type: .calories, value: 0))
+        let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
+        defaultAttributes = defaults?.object(forKey: "defaultAttrubutes") as? [String]
+        if defaultAttributes != nil {
+            for attribute in defaultAttributes!{
+                self.attributes.append(Attribute(type: AttributeType.init(rawValue: attribute)!, value: 0))
+            }
+        }else{
+            self.attributes.append(Attribute(type: .steps, value: 0))
+            self.attributes.append(Attribute(type: .workouts, value: 0))
+            self.attributes.append(Attribute(type: .water, value: 0))
+            self.attributes.append(Attribute(type: .sleep, value: 0))
+            self.attributes.append(Attribute(type: .mind, value: 0))
+            self.attributes.append(Attribute(type: .stand, value: 0))
+            self.attributes.append(Attribute(type: .exercise, value: 0))
+            self.attributes.append(Attribute(type: .move, value: 0))
+            self.attributes.append(Attribute(type: .rings, value: 0))
+            self.attributes.append(Attribute(type: .calories, value: 0))
+            
+            //set default attributes
+            saveDefaltAttributes()
+        }
     }
     
     static let shared = HealthDay()
@@ -28,7 +38,7 @@ public class HealthDay {
     var date: Date = Date()
     
     var attributes: [Attribute] = []
-    
+    var defaultAttributes: [String]? = []
     var moveGoal: Double = 0.0
     var history: [HistoryDay] = []
     
@@ -37,9 +47,12 @@ public class HealthDay {
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
-      updateWidgetValues()
+        updateWidgetValues()
     }
-    
+    func saveDefaltAttributes(){
+        let temp = self.attributes.map({$0.type.rawValue})
+        defaults?.set(temp, forKey: "defaultAttrubutes")
+    }
     func getPoints() -> Int {
         var points = 0
         let cal = Calendar.current
@@ -157,7 +170,7 @@ enum AttributeType: String {
             } else {
                 return 0
             }
-
+            
         }
     }
     func displayText(forValue value: Int) -> String {
@@ -183,7 +196,7 @@ enum AttributeType: String {
             return "\(value/60) Hours"
         case .calories:
             return "\(value) Consumed"
-
+            
         }
     }
     func getBackgroundColor() -> UIColor {
@@ -208,7 +221,7 @@ enum AttributeType: String {
             return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
         case .rings:
             return UIColor.lightGray
-
+            
         }
     }
 }
