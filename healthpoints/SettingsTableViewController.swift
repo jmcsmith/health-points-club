@@ -12,8 +12,12 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var darkButton: UIButton!
     @IBOutlet weak var lightButton: UIButton!
+    
     @IBOutlet weak var darkModeSwitch: UISwitch!
+    @IBOutlet weak var pitchBlackSwitch: UISwitch!
+    
     @IBOutlet weak var darkModeSwitchLabel: UILabel!
+
     
     @IBOutlet weak var dailyCalories: UITextField!
     @IBOutlet weak var caloriesLabel: UILabel!
@@ -22,7 +26,7 @@ class SettingsTableViewController: UITableViewController {
     
     var darkmodeOn: Bool = false
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,14 +53,24 @@ class SettingsTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         
-        darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
-        
-        darkModeSwitch.isOn = darkmodeOn
+        switch Theme.current {
+        case .dark:
+            darkModeSwitch.isOn = true
+            pitchBlackSwitch.isOn = false
+        case .pitchBlack:
+            pitchBlackSwitch.isOn = true
+            darkModeSwitch.isOn = false
+        default: 
+            pitchBlackSwitch.isOn = false
+            darkModeSwitch.isOn = false
+        }
         
        
         
+        
+        
         dailyCalories.text = UserDefaults.standard.string(forKey: "dailyCalorieGoal")
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,11 +103,20 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     @IBAction func darkModeSwitched(_ sender: UISwitch) {
+        pitchBlackSwitch.isOn = false
         
-        UserDefaults.standard.setValue(sender.isOn, forKey: "darkmodeOn")
-        darkmodeOn = sender.isOn
         if sender.isOn {
             Theme.dark.apply()
+            
+        } else {
+            Theme.default.apply()
+        }
+        refreshUITheme()
+    }
+    @IBAction func pitchBlackSwitch(sender: UISwitch) {
+        darkModeSwitch.isOn = false
+        if sender.isOn {
+            Theme.pitchBlack.apply()
             
         } else {
             Theme.default.apply()
@@ -106,19 +129,19 @@ class SettingsTableViewController: UITableViewController {
                 view.removeFromSuperview()
                 window.addSubview(view)
             }
-
+            
         }
     }
     
     @IBAction func dailyCaloriesChanged(_ sender: UITextField) {
         UserDefaults.standard.setValue(sender.text, forKey: "dailyCalorieGoal")
     }
-
     
- 
+    
+    
     // MARK: - Table view data source
     
-   
+    
     
 }
 

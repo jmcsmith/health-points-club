@@ -1752,7 +1752,7 @@ Cg
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5x-bQ-oHu">
                                                     <rect key="frame" x="302" y="20" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="darkModeSwitched:" destination="OWK-BW-SaO" eventType="valueChanged" id="K4e-EQ-p6d"/>
+                                                        <action selector="darkModeSwitched:" destination="OWK-BW-SaO" eventType="valueChanged" id="fBy-Nq-vG5"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdN-b5-h8w">
@@ -1772,12 +1772,42 @@ Cg
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="fT3-IT-N0B">
+                                        <rect key="frame" x="0.0" y="253.5" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fT3-IT-N0B" id="gpX-FB-9Ay">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsB-Ws-kgj">
+                                                    <rect key="frame" x="302" y="20" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="pitchBlackSwitchWithSender:" destination="OWK-BW-SaO" eventType="valueChanged" id="oMh-xh-Bos"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch Black Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYj-8C-TDb">
+                                                    <rect key="frame" x="23" y="20" width="158" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VYj-8C-TDb" firstAttribute="centerY" secondItem="gpX-FB-9Ay" secondAttribute="centerY" id="5l4-rw-dh7"/>
+                                                <constraint firstItem="VYj-8C-TDb" firstAttribute="top" secondItem="gpX-FB-9Ay" secondAttribute="topMargin" constant="9" id="B1K-E9-ueo"/>
+                                                <constraint firstItem="VYj-8C-TDb" firstAttribute="centerY" secondItem="fsB-Ws-kgj" secondAttribute="centerY" id="El1-uV-ILs"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VYj-8C-TDb" secondAttribute="trailingMargin" id="IUU-Pq-QUQ"/>
+                                                <constraint firstItem="fsB-Ws-kgj" firstAttribute="trailing" secondItem="gpX-FB-9Ay" secondAttribute="trailingMargin" constant="-8" id="aKY-a9-EGq"/>
+                                                <constraint firstItem="VYj-8C-TDb" firstAttribute="leading" secondItem="gpX-FB-9Ay" secondAttribute="leadingMargin" constant="7" id="raX-I0-48H"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Goals" id="sRh-Eh-sCT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="pmc-OA-dpt">
-                                        <rect key="frame" x="0.0" y="309.5" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="380.5" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pmc-OA-dpt" id="HOC-yg-Wfx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -1823,9 +1853,10 @@ Cg
                         <outlet property="caloriesLabel" destination="1KO-Bc-Xla" id="7bY-IX-TMD"/>
                         <outlet property="dailyCalories" destination="XDF-MT-ytq" id="RBH-2H-wCP"/>
                         <outlet property="darkButton" destination="tL2-qs-Qfm" id="RkQ-u7-6zJ"/>
-                        <outlet property="darkModeSwitch" destination="O5x-bQ-oHu" id="Dc9-jr-F0l"/>
+                        <outlet property="darkModeSwitch" destination="O5x-bQ-oHu" id="nDB-RA-WMR"/>
                         <outlet property="darkModeSwitchLabel" destination="YdN-b5-h8w" id="lRj-gR-iHx"/>
                         <outlet property="lightButton" destination="ncT-64-qUE" id="SIB-qh-gUa"/>
+                        <outlet property="pitchBlackSwitch" destination="fsB-Ws-kgj" id="WMc-kD-yAg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFc-2o-0og" userLabel="First Responder" sceneMemberID="firstResponder"/>

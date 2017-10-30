@@ -9,7 +9,7 @@
 import UIKit
 
 enum Theme: Int {
-    case `default`, dark
+    case `default`, dark, pitchBlack
 
     private enum Keys {
         static let selectedTheme = "SelectedTheme"
@@ -26,7 +26,8 @@ enum Theme: Int {
             return UIColor(red: 14.0/255.0, green: 122.0/255.0, blue: 254.0/255.0, alpha: 1.0)
         case .dark:
             return UIColor(red: 255.0/255.0, green: 115.0/255.0, blue: 50.0/255.0, alpha: 1.0)
-            
+        case .pitchBlack:
+            return .green
         }
     }
     func apply() {
@@ -77,6 +78,8 @@ enum Theme: Int {
         case .dark:
             return UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.00)
             //return .darkGray
+        case .pitchBlack:
+            return .black
         }
     }
     
@@ -86,6 +89,8 @@ enum Theme: Int {
             return UIColor.black
         case .dark:
             return UIColor.white
+        case .pitchBlack:
+            return .white
         }
     }
     var barStyle: UIBarStyle {
@@ -93,6 +98,8 @@ enum Theme: Int {
         case .default:
             return .default
         case .dark:
+            return .black
+        case .pitchBlack:
             return .black
         }
     }
@@ -102,6 +109,8 @@ enum Theme: Int {
             return UIColor.white
         case .dark:
             return UIColor(red:0.14, green:0.15, blue:0.15, alpha:1.00)
+        case .pitchBlack:
+            return .black
         }
     }
     var barBackgroundColor: UIColor {
@@ -110,6 +119,8 @@ enum Theme: Int {
             return UIColor.white
         case .dark:
             return UIColor(red: 0.18, green: 0.18, blue: 0.18, alpha: 1.00)
+        case .pitchBlack:
+            return .black
         }
     }
     var navigationBarBackgroundColor: UIColor {
@@ -118,6 +129,8 @@ enum Theme: Int {
             return UIColor.white
         case .dark:
             return UIColor(red: 0.24, green: 0.24, blue: 0.24, alpha: 1.00)
+        case .pitchBlack:
+            return .black
         }
     }
     var tableviewCellBackgroundColor: UIColor {
@@ -125,6 +138,8 @@ enum Theme: Int {
         case .default:
             return UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.00)
         case .dark:
+            return UIColor(red: 0.24, green: 0.24, blue: 0.24, alpha: 1.00)
+        case .pitchBlack:
             return .black
         }
     }
