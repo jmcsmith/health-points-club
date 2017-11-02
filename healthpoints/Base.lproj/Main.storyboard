@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8er-Xl-n7k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8er-Xl-n7k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -119,11 +119,11 @@
             </objects>
             <point key="canvasLocation" x="-977" y="-128"/>
         </scene>
-        <!--History-->
+        <!--Navigation Controller-->
         <scene sceneID="xDn-lq-cR9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gvf-q3-A6Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="info" selectedImage="info" id="Rqk-Fw-GZ7"/>
+                    <tabBarItem key="tabBarItem" selectedImage="info" systemItem="history" id="Rqk-Fw-GZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j9z-tK-67f">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -344,6 +344,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="RC0-nP-Dwr" id="LvM-7b-Obz"/>
+                        <outlet property="heartImage" destination="hx2-8P-8g7" id="Qbd-6J-WKI"/>
                         <outlet property="largeHeartImageView" destination="hx2-8P-8g7" id="3p2-UY-o9l"/>
                         <outlet property="pointsLabel" destination="cIe-y4-84X" id="oze-3s-xEJ"/>
                         <segue destination="BrB-PP-muS" kind="presentation" identifier="onboarding" id="Yeu-Or-iwg"/>

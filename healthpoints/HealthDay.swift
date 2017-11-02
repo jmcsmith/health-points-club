@@ -235,7 +235,7 @@ enum AttributeType: String {
         case .workouts:
             return UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00)
         case .water:
-            return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
+            return UIColor(red:0.38, green:0.75, blue:0.98, alpha:1.00)
         case .mind:
             return UIColor(red:0.33, green:0.73, blue:0.82, alpha:1.00)
         case .exercise:

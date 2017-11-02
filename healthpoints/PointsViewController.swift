@@ -9,6 +9,7 @@
 import UIKit
 
 class PointsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    @IBOutlet weak var heartImage: ThemeImageView!
     
     let defaults:UserDefaults = UserDefaults.standard
     var isfirstload: Bool = true
@@ -26,7 +27,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(gesture:)))
         collectionView.addGestureRecognizer(longPressGesture)
-        
+  
         
         //defaults.set(true, forKey: "firstlaunch")
         // Do any additional setup after loading the view.
@@ -48,6 +49,14 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.collectionViewLayout.invalidateLayout()
     } 
     override func viewWillAppear(_ animated: Bool) {
+        if Theme.current == Theme.pitchBlack{
+            heartImage.image = #imageLiteral(resourceName: "heartdarkergray.png")
+            pointsLabel.textColor = .black
+        }
+        else{
+            heartImage.image = #imageLiteral(resourceName: "LargeHeart.png")
+            pointsLabel.textColor = .white
+        }
         super.viewWillAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
         
