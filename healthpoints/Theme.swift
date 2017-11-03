@@ -50,9 +50,10 @@ enum Theme: Int {
         UITabBar.appearance().backgroundColor = barBackgroundColor
         
         //table view and cell
-        UITableViewCell.appearance().backgroundColor = tableviewCellBackgroundColor
+        //UITableViewCell.appearance().backgroundColor = tableviewCellBackgroundColor
         UITableView.appearance().separatorColor = UIColor.darkGray
         UITableViewCell.appearance(whenContainedInInstancesOf: [HistoryTableViewController.self]).backgroundColor = backgroundColor
+        UITableViewCell.appearance(whenContainedInInstancesOf: [SettingsTableViewController.self]).backgroundColor = tableviewCellBackgroundColor
         UITableView.appearance().backgroundColor = backgroundColor
         
         //specific labels
@@ -130,7 +131,7 @@ enum Theme: Int {
         case .dark:
             return UIColor(red: 0.24, green: 0.24, blue: 0.24, alpha: 1.00)
         case .pitchBlack:
-            return .black
+            return UIColor(red: 0.07, green: 0.07, blue: 0.07, alpha: 1.00)
         }
     }
     var tableviewCellBackgroundColor: UIColor {
@@ -140,7 +141,7 @@ enum Theme: Int {
         case .dark:
             return UIColor(red: 0.24, green: 0.24, blue: 0.24, alpha: 1.00)
         case .pitchBlack:
-            return .black
+            return UIColor(red: 0.07, green: 0.07, blue: 0.07, alpha: 1.00)
         }
     }
     

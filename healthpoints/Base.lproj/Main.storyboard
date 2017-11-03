@@ -1843,6 +1843,42 @@ Cg
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Backup and Restore" id="Zyj-FJ-2sA">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="KZm-3m-dnz">
+                                        <rect key="frame" x="0.0" y="507.5" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KZm-3m-dnz" id="0ft-2i-rao">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DD2-8P-JhZ">
+                                                    <rect key="frame" x="16" y="21" width="163.5" height="30"/>
+                                                    <state key="normal" title="Backup"/>
+                                                    <connections>
+                                                        <action selector="backupButtonClicked:" destination="OWK-BW-SaO" eventType="touchUpInside" id="bG5-nS-rbD"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgK-S8-SpR">
+                                                    <rect key="frame" x="195.5" y="21" width="163.5" height="30"/>
+                                                    <state key="normal" title="Restore"/>
+                                                    <connections>
+                                                        <action selector="importButtonClicked:" destination="OWK-BW-SaO" eventType="touchUpInside" id="SrA-WT-5di"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DD2-8P-JhZ" firstAttribute="baseline" secondItem="KgK-S8-SpR" secondAttribute="baseline" id="6NN-uV-XqY"/>
+                                                <constraint firstItem="DD2-8P-JhZ" firstAttribute="width" secondItem="KgK-S8-SpR" secondAttribute="width" id="Gh7-6p-GK7"/>
+                                                <constraint firstItem="DD2-8P-JhZ" firstAttribute="centerY" secondItem="0ft-2i-rao" secondAttribute="centerY" id="HdD-Sh-DJ6"/>
+                                                <constraint firstItem="DD2-8P-JhZ" firstAttribute="leading" secondItem="0ft-2i-rao" secondAttribute="leading" constant="16" id="TAB-mn-bbF"/>
+                                                <constraint firstItem="KgK-S8-SpR" firstAttribute="leading" secondItem="DD2-8P-JhZ" secondAttribute="trailing" constant="16" id="XIt-EF-ini"/>
+                                                <constraint firstAttribute="trailing" secondItem="KgK-S8-SpR" secondAttribute="trailing" constant="16" id="qvu-ct-sfF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="OWK-BW-SaO" id="VEX-vE-BMR"/>

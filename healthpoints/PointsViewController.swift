@@ -51,11 +51,11 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
         if Theme.current == Theme.pitchBlack{
             heartImage.image = #imageLiteral(resourceName: "heartdarkergray.png")
-            pointsLabel.textColor = .black
+           
         }
         else{
             heartImage.image = #imageLiteral(resourceName: "LargeHeart.png")
-            pointsLabel.textColor = .white
+          
         }
         super.viewWillAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()

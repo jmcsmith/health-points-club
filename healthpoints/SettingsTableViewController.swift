@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, UIDocumentPickerDelegate {
+    
+    
     
     @IBOutlet weak var darkButton: UIButton!
     @IBOutlet weak var lightButton: UIButton!
@@ -17,7 +19,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var pitchBlackSwitch: UISwitch!
     
     @IBOutlet weak var darkModeSwitchLabel: UILabel!
-
+    
     
     @IBOutlet weak var dailyCalories: UITextField!
     @IBOutlet weak var caloriesLabel: UILabel!
@@ -65,7 +67,7 @@ class SettingsTableViewController: UITableViewController {
             darkModeSwitch.isOn = false
         }
         
-       
+        
         
         
         
@@ -138,8 +140,72 @@ class SettingsTableViewController: UITableViewController {
     }
     
     
+    @IBAction func backupButtonClicked(_ sender: Any) {
+        exportHistoryToFile()
+    }
+    @IBAction func importButtonClicked(_ sender: Any) {
+        importHistoryFromFile()
+    }
     
-    // MARK: - Table view data source
+    func exportHistoryToFile(){
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        let filename = "HealthPointsClubBackup_"+date.description+".csv"
+        print(filename)
+        let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename)
+        print(path)
+        let content = HealthDay.shared.history.map({$0.date.description+","+$0.points.description+"\n"}).joined()
+        do{
+            try content.write(to: path, atomically: true, encoding: String.Encoding.utf8)
+            let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
+            self.present(vc, animated: true, completion: nil)
+        } catch {
+            print("Failed to export")
+        }
+    }
+    func importHistoryFromFile(){
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text"], in: UIDocumentPickerMode.import)
+        documentPicker.delegate = self as UIDocumentPickerDelegate
+        documentPicker.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(documentPicker, animated: true, completion: nil)
+        
+    }
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        print("selected")
+        print(urls)
+        let cal = Calendar.current
+       
+
+        //reading
+        do {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+            var lines: [String] = []
+            let text2 = try String(contentsOf: urls[0], encoding: .utf8)
+            text2.enumerateLines { line, _ in
+                lines.append(line)
+                var parts = line.components(separatedBy: ",")
+                let d = formatter.date(from: parts[0])
+              
+                var historyday = HistoryDay(date: d!, points: Int(parts[1])!)
+                let dateComponents = cal.dateComponents(
+                    [ .year, .month, .day ],
+                    from: historyday.date
+                )
+                if let index = HealthDay.shared.history.index(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
+                    HealthDay.shared.history[index] = historyday
+                }else{
+                    HealthDay.shared.history.append(historyday)
+                }
+                print(historyday)
+            }
+            print(HealthDay.shared.history)
+            HealthDay.shared.saveHistory()
+        }
+        catch {/* error handling here */}
+       
+    }
     
     
     

@@ -10,23 +10,23 @@ import UIKit
 
 public class HealthDay {
     private init() {
-         let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
+        let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
         defaultAttributes = defaults?.object(forKey: "attributeOrder") as? [String]
         if defaultAttributes != nil {
             for attribute in defaultAttributes!{
                 attributes.append(Attribute(type: AttributeType.init(rawValue: attribute)!, value: 0))
             }
         }else{
-        attributes.append(Attribute(type: .steps, value: 0))
-        attributes.append(Attribute(type: .workouts, value: 0))
-        attributes.append(Attribute(type: .water, value: 0))
-        attributes.append(Attribute(type: .sleep, value: 0))
-        attributes.append(Attribute(type: .mind, value: 0))
-        attributes.append(Attribute(type: .stand, value: 0))
-        attributes.append(Attribute(type: .exercise, value: 0))
-        attributes.append(Attribute(type: .move, value: 0))
-        attributes.append(Attribute(type: .rings, value: 0))
-        attributes.append(Attribute(type: .calories, value: 0))
+            attributes.append(Attribute(type: .steps, value: 0))
+            attributes.append(Attribute(type: .workouts, value: 0))
+            attributes.append(Attribute(type: .water, value: 0))
+            attributes.append(Attribute(type: .sleep, value: 0))
+            attributes.append(Attribute(type: .mind, value: 0))
+            attributes.append(Attribute(type: .stand, value: 0))
+            attributes.append(Attribute(type: .exercise, value: 0))
+            attributes.append(Attribute(type: .move, value: 0))
+            attributes.append(Attribute(type: .rings, value: 0))
+            attributes.append(Attribute(type: .calories, value: 0))
             
             saveAttributeOrder()
         }
@@ -46,7 +46,7 @@ public class HealthDay {
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
-      updateWidgetValues()
+        updateWidgetValues()
     }
     func saveAttributeOrder(){
         defaultAttributes = attributes.map({$0.type.rawValue})
@@ -69,15 +69,17 @@ public class HealthDay {
         }else{
             history.append(HistoryDay(date: cal.date(from: dateComponents)!,points: points))
         }
-        history = history.sorted(by: {$0.date > $1.date} )
-        let h = NSKeyedArchiver.archivedData(withRootObject: history)
-        UserDefaults.standard.set(h, forKey: "history")
+        saveHistory()
         print("Get Points - \(points)")
         updateWidgetValues()
         //defaults?.set(h, forKey: "globalHistory")
         return points
     }
-    
+    func saveHistory(){
+        history = history.sorted(by: {$0.date > $1.date} )
+        let h = NSKeyedArchiver.archivedData(withRootObject: history)
+        UserDefaults.standard.set(h, forKey: "history")
+    }
     func updateWidgetValues(){
         let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0), $0.type.getBackgroundColor()]}
         let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
@@ -109,7 +111,7 @@ public class HealthDay {
         defaults?.set(lifetimeTotal, forKey: "lifetimeTotal")
         
         
-     
+        
     }
 }
 enum AttributeType: String {
@@ -197,7 +199,7 @@ enum AttributeType: String {
             } else {
                 return 0
             }
-
+            
         }
     }
     func displayText(forValue value: Int) -> String {
@@ -223,7 +225,7 @@ enum AttributeType: String {
             return "\(value/60) Hours"
         case .calories:
             return "\(value) Consumed"
-
+            
         }
     }
     func getBackgroundColor() -> UIColor {
@@ -248,7 +250,7 @@ enum AttributeType: String {
             return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
         case .rings:
             return UIColor.lightGray
-
+            
         }
     }
 }

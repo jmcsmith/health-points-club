@@ -39,6 +39,7 @@
 		EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */; };
 		EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */; };
 		EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8C599C1F94297C00A30773 /* InfoViewController.swift */; };
+		EEB58DF21FABC94A0015390F /* heartdarkest.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB58DF11FABC94A0015390F /* heartdarkest.png */; };
 		EEC5D3181FA000DA007956FB /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC5D3171FA000DA007956FB /* Messages.framework */; };
 		EEC5D31B1FA000DA007956FB /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5D31A1FA000DA007956FB /* MessagesViewController.swift */; };
 		EEC5D31E1FA000DA007956FB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC5D31C1FA000DA007956FB /* MainInterface.storyboard */; };
@@ -139,6 +140,7 @@
 		EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		EE8C599C1F94297C00A30773 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		EEB58DF11FABC94A0015390F /* heartdarkest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdarkest.png; sourceTree = "<group>"; };
 		EEC5D3161FA000DA007956FB /* healthpoints-imessage.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "healthpoints-imessage.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC5D3171FA000DA007956FB /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		EEC5D31A1FA000DA007956FB /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		EE682D851F82F05E003A6CF6 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
+				EEB58DF11FABC94A0015390F /* heartdarkest.png */,
 				EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */,
 				EE0EA54E1FA9159A00B71576 /* heartdarkgray.png */,
 				EE0EA54C1FA8010F00B71576 /* heartgray.png */,
@@ -494,6 +497,7 @@
 				EEDACCFC1FA9DF8900D3F6A9 /* heartdarkergray.png in Resources */,
 				EE7E0BB81F9043B700849FDF /* LargeHeart.png in Resources */,
 				EE682D8C1F82F05E003A6CF6 /* Main.storyboard in Resources */,
+				EEB58DF21FABC94A0015390F /* heartdarkest.png in Resources */,
 				EE0EA54B1FA7FF9600B71576 /* heartdark.png in Resources */,
 				EE682DB81F82F439003A6CF6 /* splash.png in Resources */,
 			);
