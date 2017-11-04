@@ -188,7 +188,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
                 var parts = line.components(separatedBy: ",")
                 let d = formatter.date(from: parts[0])
               
-                var historyday = HistoryDay(date: d!, points: Int(parts[1])!)
+                let historyday = HistoryDay(date: d!, points: Int(parts[1])!)
                 let dateComponents = cal.dateComponents(
                     [ .year, .month, .day ],
                     from: historyday.date
