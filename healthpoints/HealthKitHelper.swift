@@ -18,7 +18,7 @@ class HealthKitHelper {
         
     }
     
-     func authorizeHealthKit(completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
+    func authorizeHealthKit(completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         let waterCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
         let stand = HKObjectType.categoryType(forIdentifier: .appleStandHour)
@@ -53,7 +53,7 @@ class HealthKitHelper {
             }
         }
     }
-     func startObservingQueries()  {
+    func startObservingQueries()  {
         DispatchQueue.main.async(execute: self.startObservingStepChanges)
         DispatchQueue.main.async(execute: self.startObservingWorkoutChanges)
         DispatchQueue.main.async(execute: self.startObservingWaterChanges)
@@ -455,13 +455,15 @@ class HealthKitHelper {
         let sampleQuery = HKSampleQuery(sampleType: HKWorkoutType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
             
             var eligible = 0
-            for workout in (results as? [HKWorkout])! where workout.duration >= 600 {
+            if let myResults = results as? [HKWorkout]{
+                for workout in myResults where workout.duration >= 600 {
+                    
+                    eligible += 1
+                    
+                }
                 
-                eligible += 1
-                
+                print("Eligible Workouts = \(eligible)")
             }
-            
-            print("Eligible Workouts = \(eligible)")
             completion(eligible, error)
         }
         
@@ -574,9 +576,12 @@ class HealthKitHelper {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .mindfulSession)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
-            
-            print("Mind Sessions = \(results!.count)")
-            completion(results!.count, error)
+            var mindSessions = 0
+            if let myResults = results {
+                print("Mind Sessions = \(myResults.count)")
+                mindSessions = myResults.count
+            }
+            completion(mindSessions, error)
         }
         
         healthKitStore.execute(sampleQuery)
@@ -592,7 +597,8 @@ class HealthKitHelper {
         let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
             
             var minutes = 0
-            for item in results! {
+            if let myResults = results {
+            for item in myResults {
                 if let sample = item as? HKCategorySample {
                     
                     if sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
@@ -600,6 +606,7 @@ class HealthKitHelper {
                         print("Sleep Analysis = \(sample.endDate.timeIntervalSince(sample.startDate)/60)")
                     }
                 }
+            }
             }
             completion(minutes, error)
         }
@@ -690,7 +697,7 @@ class HealthKitHelper {
         }
         getActivityRings { (temp, _) -> Void in
             HealthDay.shared.moveGoal = temp
-
+            
         }
     }
 }
