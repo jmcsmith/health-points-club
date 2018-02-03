@@ -35,25 +35,19 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         //defaults.set(true, forKey: "firstlaunch")
         
         isfirstload = !defaults.bool(forKey: "hasopenedbefore" )
-        
 
-        
         print(isfirstload)
         if isfirstload {
             let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
-            print(currentVersion)
             defaults.set(currentVersion, forKey: "lastOpenVersion")
-            
             self.performSegue(withIdentifier: "onboarding", sender: nil)
         }else{
             let lastopened = defaults.string(forKey: "lastOpenVersion")
-            
             let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
             if currentVersion != lastopened || lastopened == nil {
                 self.performSegue(withIdentifier: "newVersion", sender: nil)
             }
         }
-        
     }
     deinit {
         NotificationCenter.default.removeObserver(self)

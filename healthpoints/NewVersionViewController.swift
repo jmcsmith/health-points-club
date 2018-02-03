@@ -10,6 +10,7 @@ import UIKit
 
 class NewVersionViewController: UIViewController {
     let hkHelper = HealthKitHelper()
+        let defaults:UserDefaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +22,13 @@ class NewVersionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func authorizeNewVersionHealthKit(_ sender: Any) {
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+        self.defaults.set(currentVersion, forKey: "lastOpenVersion")
         hkHelper.authorizeHealthKit { (authorized, error) -> Void in
             if authorized {
                 print("HealthKit authorization received.")
                 self.hkHelper.preLoadHealthDay()
+                
                 //DispatchQueue.main.async(execute: self.closeView())
                 self.dismiss(animated: true, completion: nil)
             } else {
@@ -32,6 +36,7 @@ class NewVersionViewController: UIViewController {
                 if error != nil {
                     print("\(error.debugDescription)")
                 }
+                
                 //DispatchQueue.main.async(execute: self.closeView())
                 self.dismiss(animated: true, completion: nil)
             }
