@@ -27,8 +27,9 @@ class HealthKitHelper {
         let exercise = HKObjectType.quantityType(forIdentifier: .appleExerciseTime)
         let sleep = HKCategoryType.categoryType(forIdentifier: .sleepAnalysis)
         let calories = HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)
+        let weight = HKObjectType.quantityType(forIdentifier: .bodyMass)
         // 1. Set the types you want to read from HK Store
-        let dataTypesToRead: Set<HKObjectType> = [stepsCount!, waterCount!, HKWorkoutType.workoutType(), stand!, mind, HKActivitySummaryType.activitySummaryType(), move, exercise!, sleep!, calories!]
+        let dataTypesToRead: Set<HKObjectType> = [stepsCount!, waterCount!, HKWorkoutType.workoutType(), stand!, mind, HKActivitySummaryType.activitySummaryType(), move, exercise!, sleep!, calories!, weight!]
         
         // 2. Set the types you want to write to HK Store
         
@@ -553,18 +554,30 @@ class HealthKitHelper {
         let predicate = HKQuery.predicateForActivitySummary(with: dateComponents)
         
         let query = HKActivitySummaryQuery(predicate: predicate) { (_, summaries, error) in
-            var standHours = 0.0
-            guard let summaries = summaries, summaries.count > 0
-                else {
-                    // No data returned. Perhaps check for error
-                    completion(Int(standHours), error)
-                    return
+            if error != nil {
+                
+                //  Something went Wrong
+                return
             }
-            let summary = summaries[0]
+            var standHours = 0.0
+            if let myResults  = summaries {
+                print("Stand Hours = \(standHours)")
+                if myResults.count > 0 {
+                    standHours = myResults[0].appleStandHours.doubleValue(for: HKUnit.count())
+                }
+            }
             
-            
-            standHours = summary.appleStandHours.doubleValue(for: HKUnit.count())
-            print("Stand Hours = \(standHours)")
+//            guard let summaries = summaries, summaries.count > 0
+//                else {
+//                    // No data returned. Perhaps check for error
+//                    completion(Int(standHours), error)
+//                    return
+//            }
+//            let summary = summaries[0]
+//
+//
+//            standHours = summary.appleStandHours.doubleValue(for: HKUnit.count())
+//            print("Stand Hours = \(standHours)")
             completion(Int(standHours), error)
         }
         healthKitStore.execute(query)
@@ -576,6 +589,11 @@ class HealthKitHelper {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .mindfulSession)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
+            if error != nil {
+                
+                //  Something went Wrong
+                return
+            }
             var mindSessions = 0
             if let myResults = results {
                 print("Mind Sessions = \(myResults.count)")
@@ -595,7 +613,11 @@ class HealthKitHelper {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
-            
+            if error != nil {
+                
+                //  Something went Wrong
+                return
+            }
             var minutes = 0
             if let myResults = results {
             for item in myResults {
@@ -625,15 +647,28 @@ class HealthKitHelper {
         let predicate = HKQuery.predicateForActivitySummary(with: dateComponents)
         
         let query = HKActivitySummaryQuery(predicate: predicate) { (_, summaries, error) in
-            
-            guard let summaries = summaries, summaries.count > 0
-                else {
-                    // No data returned. Perhaps check for error
-                    return
+            if error != nil {
+                
+                //  Something went Wrong
+                return
             }
-            let summary = summaries[0]
+            var moveGoal = 0.0
+            if let myResults  = summaries {
+                
+                if myResults.count > 0 {
+                    moveGoal = myResults[0].activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
+                }
+            }
             
-            let moveGoal = summary.activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
+            
+//            guard let summaries = summaries, summaries.count > 0
+//                else {
+//                    // No data returned. Perhaps check for error
+//                    return
+//            }
+//            let summary = summaries[0]
+//
+//            let moveGoal = summary.activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
             
             completion(moveGoal, error)
         }

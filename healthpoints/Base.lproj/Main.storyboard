@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8er-Xl-n7k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8er-Xl-n7k">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -352,11 +352,15 @@ Cg
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1M-nX-nCP" customClass="ThemeView" customModule="healthpoints" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-8P-8g7" customClass="ThemeImageView" customModule="healthpoints" customModuleProvider="target">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-8P-8g7" customClass="ThemeImageView" customModule="healthpoints" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="8" width="375" height="213.33333333333334"/>
                                         <accessibility key="accessibilityConfiguration" label="Today's Points">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="kpl-fs-kEq" appends="YES" id="y0e-66-hIe"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-y4-84X">
                                         <rect key="frame" x="164.33333333333334" y="52.666666666666657" width="47" height="91"/>
@@ -477,11 +481,88 @@ Cg
                         <outlet property="largeHeartImageView" destination="hx2-8P-8g7" id="3p2-UY-o9l"/>
                         <outlet property="pointsLabel" destination="cIe-y4-84X" id="oze-3s-xEJ"/>
                         <segue destination="BrB-PP-muS" kind="presentation" identifier="onboarding" id="Yeu-Or-iwg"/>
+                        <segue destination="tZX-Qi-cQ5" kind="show" identifier="debugSegue" id="VLA-Ou-I0q"/>
+                        <segue destination="dKD-fk-MeZ" kind="presentation" identifier="newVersion" id="bu1-ZZ-3gd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxC-4A-h04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="10" id="kpl-fs-kEq">
+                    <connections>
+                        <action selector="handleSecretTaps:" destination="6aL-Pq-ARS" id="0Mu-Qh-05V"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="652" y="-501"/>
+        </scene>
+        <!--New-->
+        <scene sceneID="w7K-HE-PLX">
+            <objects>
+                <viewController title="New" id="dKD-fk-MeZ" customClass="NewVersionViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lLR-Rg-OYW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New in this Version!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djl-AB-cmr">
+                                <rect key="frame" x="16" y="44" width="343" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I06-hx-q47">
+                                <rect key="frame" x="16" y="740" width="343" height="30"/>
+                                <state key="normal" title="Authorize HealthKit Changes"/>
+                                <connections>
+                                    <action selector="authorizeNewVersionHealthKit:" destination="dKD-fk-MeZ" eventType="touchUpInside" id="Wir-1t-pvR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icb-LU-udp">
+                                <rect key="frame" x="16" y="94" width="343" height="638"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">We have changed the calculation for daily water intake.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="24"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="In order to more accurately estimate the amount of water you should be drinking we need an ad">
+                                        <attributes>
+                                            <font key="NSFont" size="19" name=".SFNSDisplay"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">ditional piece of information. Your current weight.
+The new calculation will be fluid ounces equal to half your body weight in pounds and then adjusted for activity. An additional twelve ounces will be added to your goal for each thirty minutes of exercise.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name=".SFNSDisplay"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nJq-xU-HQx" firstAttribute="trailing" secondItem="I06-hx-q47" secondAttribute="trailing" constant="16" id="8wv-vO-UNc"/>
+                            <constraint firstItem="icb-LU-udp" firstAttribute="leading" secondItem="nJq-xU-HQx" secondAttribute="leading" constant="16" id="JqS-vl-HMv"/>
+                            <constraint firstItem="nJq-xU-HQx" firstAttribute="bottom" secondItem="I06-hx-q47" secondAttribute="bottom" constant="8" id="Kml-Ky-LPi"/>
+                            <constraint firstItem="I06-hx-q47" firstAttribute="leading" secondItem="nJq-xU-HQx" secondAttribute="leading" constant="16" id="PLq-ue-3UE"/>
+                            <constraint firstItem="nJq-xU-HQx" firstAttribute="trailing" secondItem="icb-LU-udp" secondAttribute="trailing" constant="16" id="cII-zg-maZ"/>
+                            <constraint firstItem="Djl-AB-cmr" firstAttribute="leading" secondItem="nJq-xU-HQx" secondAttribute="leading" constant="16" id="kg1-jC-q08"/>
+                            <constraint firstItem="Djl-AB-cmr" firstAttribute="top" secondItem="nJq-xU-HQx" secondAttribute="top" id="nkL-fM-GUH"/>
+                            <constraint firstItem="icb-LU-udp" firstAttribute="top" secondItem="Djl-AB-cmr" secondAttribute="bottom" constant="8" id="nle-3y-fqA"/>
+                            <constraint firstItem="I06-hx-q47" firstAttribute="top" secondItem="icb-LU-udp" secondAttribute="bottom" constant="8" id="oTn-pZ-gGV"/>
+                            <constraint firstItem="nJq-xU-HQx" firstAttribute="trailing" secondItem="Djl-AB-cmr" secondAttribute="trailing" constant="16" id="rrS-UM-gOI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nJq-xU-HQx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6l-pr-4wC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="-1281.2807881773399"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="1Cl-w9-UEN">
@@ -1829,6 +1910,21 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsl-Uo-ccO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="-1281"/>
+        </scene>
+        <!--Log-->
+        <scene sceneID="Iwb-sQ-ozP">
+            <objects>
+                <viewController title="Log" id="tZX-Qi-cQ5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NjT-Q9-V2E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wub-ZE-5Lv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEL-JA-LB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="-1272"/>
         </scene>
         <!--Settings-->
         <scene sceneID="9RN-tV-Rfq">

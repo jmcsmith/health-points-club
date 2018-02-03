@@ -33,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(Theme.current)
         NSLog(Theme.current.rawValue.description)
         Theme.current.apply()
+        
+        
+        
         return true
     }
     

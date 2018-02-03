@@ -23,18 +23,18 @@ class OnboardingPageTwoViewController: UIViewController {
     }
     
     @IBAction func doneOnboarding(_ sender: Any) {
-        hkHelper.authorizeHealthKit { (authorized, error) -> Void in
-            if authorized {
-                print("HealthKit authorization received.")
-                self.hkHelper.preLoadHealthDay()
-            } else {
-                print("HealthKit authorization denied!")
-                if error != nil {
-                    print("\(error.debugDescription)")
-                }
-            }
-        }
-        print("start healthkit queries")
+//        hkHelper.authorizeHealthKit { (authorized, error) -> Void in
+//            if authorized {
+//                print("HealthKit authorization received.")
+//                self.hkHelper.preLoadHealthDay()
+//            } else {
+//                print("HealthKit authorization denied!")
+//                if error != nil {
+//                    print("\(error.debugDescription)")
+//                }
+//            }
+//        }
+//        print("start healthkit queries")
         defaults.set(true, forKey: "hasopenedbefore")
        
         performSegue(withIdentifier: "doneOnboarding", sender: self)

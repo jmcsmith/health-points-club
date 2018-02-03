@@ -10,6 +10,7 @@
 		EE0EA54B1FA7FF9600B71576 /* heartdark.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0EA54A1FA7FF9500B71576 /* heartdark.png */; };
 		EE0EA54D1FA8011000B71576 /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0EA54C1FA8010F00B71576 /* heartgray.png */; };
 		EE0EA54F1FA9159B00B71576 /* heartdarkgray.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0EA54E1FA9159A00B71576 /* heartdarkgray.png */; };
+		EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE24EF2C202675B800860749 /* NewVersionViewController.swift */; };
 		EE5552AA1F96FE99001D3F5F /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A81F96FE98001D3F5F /* dark@3x.png */; };
 		EE5552AB1F96FE99001D3F5F /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A91F96FE99001D3F5F /* dark@2x.png */; };
 		EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */; };
@@ -102,6 +103,7 @@
 		EE0EA54A1FA7FF9500B71576 /* heartdark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdark.png; sourceTree = "<group>"; };
 		EE0EA54C1FA8010F00B71576 /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
 		EE0EA54E1FA9159A00B71576 /* heartdarkgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdarkgray.png; sourceTree = "<group>"; };
+		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
 		EE5552A81F96FE98001D3F5F /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
 		EE5552A91F96FE99001D3F5F /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
 		EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				EE5DE9C41F94606900F6BFC1 /* Theme.swift */,
 				EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */,
 				EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */,
+				EE24EF2C202675B800860749 /* NewVersionViewController.swift */,
 			);
 			path = healthpoints;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				EE682DC71F830270003A6CF6 /* OnboardingPageTwoViewController.swift in Sources */,
 				EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */,
 				EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */,
+				EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */,
 				EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */,
 				EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */,
 			);
