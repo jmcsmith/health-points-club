@@ -107,7 +107,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         // Configure the cell
         cell.descriptionLabel.text = HealthDay.shared.attributes[indexPath.row].type.rawValue
         let value = HealthDay.shared.attributes[indexPath.row].value
-        cell.pointLabel.text = HealthDay.shared.attributes[indexPath.row].getPoints(withWeight: 1).description
+        cell.pointLabel.text = HealthDay.shared.attributes[indexPath.row].getPoints(withWeight: 1, withBodyMass: HealthDay.shared.bodyMass).description
         cell.valueLabel.text = HealthDay.shared.attributes[indexPath.row].type.displayText(forValue: value)
         cell.backgroundColor = HealthDay.shared.attributes[indexPath.row].type.getBackgroundColor()
         

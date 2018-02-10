@@ -64,8 +64,34 @@ class HealthKitHelper {
         DispatchQueue.main.async(execute: self.startObservingExerciseChanges)
         DispatchQueue.main.async(execute: self.startObservingCaloriesChanges)
         DispatchQueue.main.async(execute: self.startObservingSleep)
+        DispatchQueue.main.async(execute: self.startObservingBodyMass)
     }
-    
+    func startObservingBodyMass() {
+        let sampleType =  HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)
+        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.bodyMassChangedHandler)
+        healthKitStore.execute(query)
+        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: {(succeeded: Bool, error: Error!) in
+            
+            if succeeded {
+                print("Enabled background delivery of body mass changes")
+            } else {
+                if let theError = error {
+                    print("Failed to enable background delivery of body mass changes. ")
+                    print("Error = \(theError)")
+                }
+            }
+        })
+    }
+    func bodyMassChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
+        getBodyMassData { (bodyMass, _) -> Void in
+            
+            
+            HealthDay.shared.bodyMass = bodyMass
+            
+        }
+        
+        completionHandler()
+    }
     func startObservingStandHours() {
         let sampleType = HKObjectType.categoryType(forIdentifier: .appleStandHour)!
         
@@ -471,6 +497,28 @@ class HealthKitHelper {
         healthKitStore.execute(sampleQuery)
         
     }
+    func getBodyMassData(_ completion: ((Double, Error?) -> Void)!) {
+        
+        let weight = HKObjectType.quantityType(forIdentifier: .bodyMass)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let query = HKSampleQuery(sampleType: weight!, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
+            if error != nil {
+                
+                //  Something went Wrong
+                return
+            }
+            var bodyMass = 0.0
+            if let result = results?.first as? HKQuantitySample {
+                bodyMass = result.quantity.doubleValue(for: HKUnit.pound())
+                
+                
+            }
+            print("Body Mass = \(bodyMass)")
+            completion(bodyMass, error)
+        }
+        healthKitStore.execute(query)
+    }
     func getWaterData(_ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
@@ -495,7 +543,7 @@ class HealthKitHelper {
                     
                     if let quantity = statistics.sumQuantity() {
                         
-                        water = quantity.doubleValue(for: HKUnit.cupUS())
+                        water = quantity.doubleValue(for: HKUnit.fluidOunceUS())
                         
                     }
                 }
@@ -676,6 +724,10 @@ class HealthKitHelper {
     }
     
     func preLoadHealthDay() {
+        
+        getBodyMassData{ (bodyMass, _) -> Void in
+            HealthDay.shared.bodyMass = bodyMass
+        }
         getStepData { (temp, _) -> Void in
             
             HealthDay.shared.attributes.first(where: {$0.type == .steps})?.value = Int(temp)
@@ -734,5 +786,6 @@ class HealthKitHelper {
             HealthDay.shared.moveGoal = temp
             
         }
+ 
     }
 }

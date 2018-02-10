@@ -40,6 +40,7 @@ public class HealthDay {
     var defaultAttributes: [String]? = []
     var moveGoal: Double = 0.0
     var history: [HistoryDay] = []
+    var bodyMass: Double = 0.0
     
     let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
     
@@ -62,7 +63,7 @@ public class HealthDay {
         )
         
         for a in attributes {
-            points += a.getPoints(withWeight: 1)
+            points += a.getPoints(withWeight: 1, withBodyMass: bodyMass)
         }
         if let index = history.index(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
             history[index].points = points
@@ -72,7 +73,6 @@ public class HealthDay {
         saveHistory()
         print("Get Points - \(points)")
         updateWidgetValues()
-        //defaults?.set(h, forKey: "globalHistory")
         return points
     }
     func saveHistory(){
@@ -81,7 +81,7 @@ public class HealthDay {
         UserDefaults.standard.set(h, forKey: "history")
     }
     func updateWidgetValues(){
-        let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0), $0.type.getBackgroundColor()]}
+        let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0, withBodyMass: bodyMass), $0.type.getBackgroundColor()]}
         let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
         defaults?.set(values, forKey: "widgetValues")
         
@@ -126,7 +126,7 @@ enum AttributeType: String {
     case rings = "⌚️ Rings"
     case calories = "Calories"
     
-    func calculatePoints(withWeight weight: Double, forValue value: Double) -> Int {
+    func calculatePoints(withWeight weight: Double, forValue value: Double, withBodyMass bodyMass: Double) -> Int {
         switch self {
         case .steps:
             return (Int((value/1000)*weight))
@@ -140,9 +140,22 @@ enum AttributeType: String {
         case .workouts:
             return Int(value*weight)
         case .water:
-            if value >= 8.0 {
-                return Int(1*weight)
+            if bodyMass == 0.0 {
+                if value >= 64.0 {
+                    return Int(1*weight)
+                } else {
+                    return 0
+                }
             } else {
+                var base = bodyMass/2
+                
+                if let exercise = HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.value {
+                    let additional = Double((exercise/30)*12)
+                    base += additional
+                }
+                if value >= base {
+                    return 1
+                }
                 return 0
             }
         case .mind:
@@ -162,9 +175,9 @@ enum AttributeType: String {
                 return 0
             }
         case .rings:
-            let stand = (HealthDay.shared.attributes.first(where: {$0.type == .stand})?.getPoints(withWeight: weight))!
-            let move = (HealthDay.shared.attributes.first(where: {$0.type == .move})?.getPoints(withWeight: weight))!
-            let exercise = (HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.getPoints(withWeight: weight))!
+            let stand = (HealthDay.shared.attributes.first(where: {$0.type == .stand})?.getPoints(withWeight: weight, withBodyMass: bodyMass))!
+            let move = (HealthDay.shared.attributes.first(where: {$0.type == .move})?.getPoints(withWeight: weight, withBodyMass: bodyMass))!
+            let exercise = (HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.getPoints(withWeight: weight, withBodyMass: bodyMass))!
             if stand >= 1 && move >= 1 && exercise >= 1 {
                 
                 HealthDay.shared.attributes.first(where: {$0.type == .rings})?.value = 3
@@ -186,7 +199,7 @@ enum AttributeType: String {
                 return 0
             }
         case .sleep:
-            if value >= 480 {
+            if value >= 420 {
                 return Int(1*weight)
             } else {
                 return 0
@@ -212,7 +225,18 @@ enum AttributeType: String {
         case .workouts:
             return "\(value) > 10 mins"
         case .water:
-            return "\(value) cups"
+            let bodyMass = HealthDay.shared.bodyMass
+            if bodyMass == 0.0 {
+                 return "\(value) fl oz"
+            } else {
+                var base = bodyMass/2
+                
+                if let exercise = HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.value {
+                    let additional = Double((exercise/30)*12)
+                    base += additional
+                }
+                return "\(value) of \(Int(base)) fl oz"
+            }
         case .mind:
             return "\(value)"
         case .move:
@@ -272,8 +296,8 @@ class Attribute {
         self.value = value
     }
     
-    func getPoints(withWeight weight: Double) -> Int {
-        return type.calculatePoints(withWeight: weight, forValue: Double(value))
+    func getPoints(withWeight weight: Double, withBodyMass bodyMass: Double) -> Int {
+        return type.calculatePoints(withWeight: weight, forValue: Double(value), withBodyMass: bodyMass)
     }
 }
 class HistoryDay: NSObject, NSCoding {
