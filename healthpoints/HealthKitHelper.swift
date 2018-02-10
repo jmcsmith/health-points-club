@@ -741,7 +741,7 @@ class HealthKitHelper {
             
         }
         getWaterData { (water, _) -> Void in
-            
+           
             HealthDay.shared.attributes.first(where: {$0.type == .water})?.value = Int(water)
             
             

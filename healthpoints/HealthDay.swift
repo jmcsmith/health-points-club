@@ -150,7 +150,7 @@ enum AttributeType: String {
                 var base = bodyMass/2
                 
                 if let exercise = HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.value {
-                    let additional = Double((exercise/30)*12)
+                    let additional = Double(exercise) * 0.4
                     base += additional
                 }
                 if value >= base {
@@ -199,7 +199,7 @@ enum AttributeType: String {
                 return 0
             }
         case .sleep:
-            if value >= 420 {
+            if value >= 420 && value < 540{
                 return Int(1*weight)
             } else {
                 return 0
@@ -227,12 +227,12 @@ enum AttributeType: String {
         case .water:
             let bodyMass = HealthDay.shared.bodyMass
             if bodyMass == 0.0 {
-                 return "\(value) fl oz"
+                return "\(value) fl oz"
             } else {
                 var base = bodyMass/2
                 
                 if let exercise = HealthDay.shared.attributes.first(where: {$0.type == .exercise})?.value {
-                    let additional = Double((exercise/30)*12)
+                    let additional = Double(exercise) * 0.4
                     base += additional
                 }
                 return "\(value) of \(Int(base)) fl oz"
