@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE0EA54B1FA7FF9600B71576 /* heartdark.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0EA54A1FA7FF9500B71576 /* heartdark.png */; };
-		EE0EA54D1FA8011000B71576 /* heartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0EA54C1FA8010F00B71576 /* heartgray.png */; };
-		EE0EA54F1FA9159B00B71576 /* heartdarkgray.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0EA54E1FA9159A00B71576 /* heartdarkgray.png */; };
 		EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE24EF2C202675B800860749 /* NewVersionViewController.swift */; };
 		EE5552AA1F96FE99001D3F5F /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A81F96FE98001D3F5F /* dark@3x.png */; };
 		EE5552AB1F96FE99001D3F5F /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A91F96FE99001D3F5F /* dark@2x.png */; };
@@ -50,6 +47,9 @@
 		EEC5D32C1FA00295007956FB /* MessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5D32B1FA00295007956FB /* MessagesCollectionViewCell.swift */; };
 		EEC5D32F1FA0031D007956FB /* AttributeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC5D32D1FA0031D007956FB /* AttributeCellView.xib */; };
 		EEC5D3301FA0031D007956FB /* AttributeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5D32E1FA0031D007956FB /* AttributeCellView.swift */; };
+		EED7DD73209CC26000F88BDC /* HistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7DD72209CC26000F88BDC /* HistoryDay.swift */; };
+		EED7DD75209E077100F88BDC /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7DD74209E077100F88BDC /* Attribute.swift */; };
+		EED7DD77209E07A500F88BDC /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7DD76209E07A500F88BDC /* AttributeType.swift */; };
 		EEDACCFC1FA9DF8900D3F6A9 /* heartdarkergray.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */; };
 /* End PBXBuildFile section */
 
@@ -100,9 +100,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EE0EA54A1FA7FF9500B71576 /* heartdark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdark.png; sourceTree = "<group>"; };
-		EE0EA54C1FA8010F00B71576 /* heartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartgray.png; sourceTree = "<group>"; };
-		EE0EA54E1FA9159A00B71576 /* heartdarkgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdarkgray.png; sourceTree = "<group>"; };
 		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
 		EE5552A81F96FE98001D3F5F /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
 		EE5552A91F96FE99001D3F5F /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
@@ -154,6 +151,9 @@
 		EEC5D32D1FA0031D007956FB /* AttributeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeCellView.xib; sourceTree = "<group>"; };
 		EEC5D32E1FA0031D007956FB /* AttributeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCellView.swift; sourceTree = "<group>"; };
 		EEC5D3311FA003B8007956FB /* healthpoints-imessage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints-imessage.entitlements"; sourceTree = "<group>"; };
+		EED7DD72209CC26000F88BDC /* HistoryDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDay.swift; sourceTree = "<group>"; };
+		EED7DD74209E077100F88BDC /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		EED7DD76209E07A500F88BDC /* AttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
 		EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdarkergray.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,17 +227,13 @@
 		EE682D851F82F05E003A6CF6 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
+				EED7DD78209E07D400F88BDC /* HealthKit */,
 				EEB58DF11FABC94A0015390F /* heartdarkest.png */,
 				EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */,
-				EE0EA54E1FA9159A00B71576 /* heartdarkgray.png */,
-				EE0EA54C1FA8010F00B71576 /* heartgray.png */,
-				EE0EA54A1FA7FF9500B71576 /* heartdark.png */,
 				EE5552A91F96FE99001D3F5F /* dark@2x.png */,
 				EE5552A81F96FE98001D3F5F /* dark@3x.png */,
 				EE7E0BB71F9043B700849FDF /* LargeHeart.png */,
 				EE682DC11F82F5B4003A6CF6 /* healthpoints.entitlements */,
-				EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */,
-				EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */,
 				EE682DB51F82F439003A6CF6 /* splash.png */,
 				EE682D861F82F05E003A6CF6 /* AppDelegate.swift */,
 				EE682D8A1F82F05E003A6CF6 /* Main.storyboard */,
@@ -314,6 +310,18 @@
 				EEC5D32B1FA00295007956FB /* MessagesCollectionViewCell.swift */,
 			);
 			path = "healthpoints-imessage";
+			sourceTree = "<group>";
+		};
+		EED7DD78209E07D400F88BDC /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */,
+				EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */,
+				EED7DD72209CC26000F88BDC /* HistoryDay.swift */,
+				EED7DD74209E077100F88BDC /* Attribute.swift */,
+				EED7DD76209E07A500F88BDC /* AttributeType.swift */,
+			);
+			path = HealthKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,7 +424,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Joseph Smith";
 				TargetAttributes = {
 					EE682D821F82F05E003A6CF6 = {
@@ -493,15 +501,12 @@
 			files = (
 				EE682D911F82F05E003A6CF6 /* LaunchScreen.storyboard in Resources */,
 				EE5552AB1F96FE99001D3F5F /* dark@2x.png in Resources */,
-				EE0EA54D1FA8011000B71576 /* heartgray.png in Resources */,
-				EE0EA54F1FA9159B00B71576 /* heartdarkgray.png in Resources */,
 				EE5552AA1F96FE99001D3F5F /* dark@3x.png in Resources */,
 				EE682D8E1F82F05E003A6CF6 /* Assets.xcassets in Resources */,
 				EEDACCFC1FA9DF8900D3F6A9 /* heartdarkergray.png in Resources */,
 				EE7E0BB81F9043B700849FDF /* LargeHeart.png in Resources */,
 				EE682D8C1F82F05E003A6CF6 /* Main.storyboard in Resources */,
 				EEB58DF21FABC94A0015390F /* heartdarkest.png in Resources */,
-				EE0EA54B1FA7FF9600B71576 /* heartdark.png in Resources */,
 				EE682DB81F82F439003A6CF6 /* splash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,14 +558,17 @@
 				EE5DE9C71F9473E500F6BFC1 /* ThemeView.swift in Sources */,
 				EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */,
 				EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */,
+				EED7DD77209E07A500F88BDC /* AttributeType.swift in Sources */,
 				EE5DE9C91F94750400F6BFC1 /* ThemeImageView.swift in Sources */,
 				EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */,
 				EE682DC31F830093003A6CF6 /* PointsViewController.swift in Sources */,
 				EE682DC71F830270003A6CF6 /* OnboardingPageTwoViewController.swift in Sources */,
 				EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */,
+				EED7DD73209CC26000F88BDC /* HistoryDay.swift in Sources */,
 				EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */,
 				EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */,
 				EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */,
+				EED7DD75209E077100F88BDC /* Attribute.swift in Sources */,
 				EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +682,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -681,6 +690,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -731,6 +741,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -738,6 +749,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

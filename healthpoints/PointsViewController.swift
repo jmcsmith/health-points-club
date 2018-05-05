@@ -10,7 +10,7 @@ import UIKit
 
 class PointsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var heartImage: ThemeImageView!
-    
+    let hkHelper = HealthKitHelper()
     let defaults:UserDefaults = UserDefaults.standard
     var isfirstload: Bool = true
     @IBOutlet weak var pointsLabel: UILabel!
@@ -22,20 +22,15 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .UIApplicationWillEnterForeground, object: nil)
         self.pointsLabel.text = HealthDay.shared.getPoints().description
         self.pointsLabel.accessibilityValue = HealthDay.shared.getPoints().description +  " Points"
         
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(gesture:)))
         collectionView.addGestureRecognizer(longPressGesture)
-  
-        
-        //defaults.set(true, forKey: "firstlaunch")
-        // Do any additional setup after loading the view.
-        
-        //defaults.set(true, forKey: "firstlaunch")
         
         isfirstload = !defaults.bool(forKey: "hasopenedbefore" )
-
+        
         print(isfirstload)
         if isfirstload {
             let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
@@ -48,6 +43,19 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
                 self.performSegue(withIdentifier: "newVersion", sender: nil)
             }
         }
+        let cal = Calendar.current
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = cal
+        dateComponents.year = 2018
+        dateComponents.month = 1
+        dateComponents.day = 1
+        if let date = dateComponents.date {
+            hkHelper.getActivityRings(forDate: date) { (temp, _) -> Void in
+                print("Activity Rings for Date: \(temp)")
+                
+            }
+        }
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -55,15 +63,16 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.reloadData();
     } 
     override func viewWillAppear(_ animated: Bool) {
+        hkHelper.loadHealthDay()
+        
         if Theme.current == Theme.pitchBlack{
             heartImage.image = #imageLiteral(resourceName: "heartdarkergray.png")
-           
         }
         else{
             heartImage.image = #imageLiteral(resourceName: "LargeHeart.png")
-          
         }
         super.viewWillAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
@@ -87,17 +96,13 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
-        
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return HealthDay.shared.attributes.count
     }
     
@@ -110,35 +115,38 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.pointLabel.text = HealthDay.shared.attributes[indexPath.row].getPoints(withWeight: 1, withBodyMass: HealthDay.shared.bodyMass).description
         cell.valueLabel.text = HealthDay.shared.attributes[indexPath.row].type.displayText(forValue: value)
         cell.backgroundColor = HealthDay.shared.attributes[indexPath.row].type.getBackgroundColor()
-        
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         //let cellsAcross: CGFloat = CGFloat(UserDefaults.standard.integer(forKey: "numberOfCellsInRow"))
-        let cellsAcross: CGFloat = CGFloat(4)
+        let cellsAcross: CGFloat = CGFloat(2)
         
-        let spaceBetweenCells: CGFloat = 1
+        let spaceBetweenCells: CGFloat = 8
         let spacers = (cellsAcross-1)*spaceBetweenCells
         let dim = (collectionView.bounds.width - spacers) / cellsAcross
+        let heightSpaces = spaceBetweenCells * 5
+        let height = (collectionView.bounds.height - heightSpaces) / 5
         
         if let cell = collectionView.cellForItem(at: indexPath) as? AttributeCollectionViewCell{
-            var size = 14.0
+            let size = 18.0
             
-            switch cellsAcross {
-            case 4.0:
-                size = 14.0
-            case 3.0:
-                size = 24.0
-            case 2.0:
-                size = 50.0
-            default:
-                size = 14.0
-            }
+            //            switch cellsAcross {
+            //            case 4.0:
+            //                size = 14.0
+            //            case 3.0:
+            //                size = 24.0
+            //            case 2.0:
+            //                size = 50.0
+            //            default:
+            //                size = 14.0
+            //            }
             
             cell.pointLabel.font = UIFont.systemFont(ofSize: (CGFloat(size)), weight: UIFont.Weight.heavy)
         }
-        return CGSize(width: dim, height: dim)
+        return CGSize(width: dim - 4, height: height)
     }
     
     func animatePickingUpCell(cell: AttributeCollectionViewCell?) {
@@ -149,9 +157,9 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         })
     }
     @IBAction func handleSecretTaps(_ sender: UITapGestureRecognizer) {
-           self.performSegue(withIdentifier: "debugSegue", sender: nil)
+        self.performSegue(withIdentifier: "debugSegue", sender: nil)
     }
-   
+    
     
     
     @objc func handleLongGesture(gesture: UILongPressGestureRecognizer) {
@@ -183,6 +191,10 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
      // Pass the selected object to the new view controller.
      }
      */
+    @objc func getLatestData(){
+        hkHelper.loadHealthDay()
+        updateUI()
+    }
     @objc func updateUI() {
         DispatchQueue.main.async {
             self.pointsLabel.text = HealthDay.shared.getPoints().description

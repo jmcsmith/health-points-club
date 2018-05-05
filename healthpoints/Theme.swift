@@ -70,6 +70,9 @@ enum Theme: Int {
         
         //ccollection view
         UICollectionView.appearance().backgroundColor = backgroundColor
+        
+        UILabel.appearance(whenContainedInInstancesOf: [UIDocumentPickerViewController.self]).tintColor = mainColor
+
     }
     
     var backgroundColor: UIColor {

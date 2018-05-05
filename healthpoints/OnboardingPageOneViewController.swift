@@ -26,7 +26,7 @@ class OnboardingPageOneViewController: UIViewController {
         hkHelper.authorizeHealthKit { (authorized, error) -> Void in
             if authorized {
                 print("HealthKit authorization received.")
-                self.hkHelper.preLoadHealthDay()
+                self.hkHelper.loadHealthDay()
                 DispatchQueue.main.async(execute: self.moveToPageTwo)
             } else {
                 print("HealthKit authorization denied!")

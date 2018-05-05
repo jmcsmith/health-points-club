@@ -159,7 +159,11 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         do{
             try content.write(to: path, atomically: true, encoding: String.Encoding.utf8)
             let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
-            self.present(vc, animated: true, completion: nil)
+            let systemTint = UIButton.appearance().tintColor
+            UIButton.appearance().tintColor = UIColor(red: 14.0/255.0, green: 122.0/255.0, blue: 254.0/255.0, alpha: 1.0)
+            self.present(vc, animated: true){
+               UIButton.appearance().tintColor = systemTint
+            }
         } catch {
             print("Failed to export")
         }
@@ -168,15 +172,19 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text"], in: UIDocumentPickerMode.import)
         documentPicker.delegate = self as UIDocumentPickerDelegate
         documentPicker.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        self.present(documentPicker, animated: true, completion: nil)
+        let systemTint = UILabel.appearance().tintColor
+        UILabel.appearance().tintColor = UIColor(red: 14.0/255.0, green: 122.0/255.0, blue: 254.0/255.0, alpha: 1.0)
+        self.present(documentPicker, animated: true){
+            UILabel.appearance().tintColor = systemTint
+        }
         
     }
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         print("selected")
         print(urls)
         let cal = Calendar.current
-       
-
+        
+        
         //reading
         do {
             let formatter = DateFormatter()
@@ -187,7 +195,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
                 lines.append(line)
                 var parts = line.components(separatedBy: ",")
                 let d = formatter.date(from: parts[0])
-              
+                
                 let historyday = HistoryDay(date: d!, points: Int(parts[1])!)
                 let dateComponents = cal.dateComponents(
                     [ .year, .month, .day ],
@@ -204,7 +212,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
             HealthDay.shared.saveHistory()
         }
         catch {/* error handling here */}
-       
+        
     }
     
     

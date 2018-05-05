@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(first)
         if first {
             hkHelper.startObservingQueries()
-            hkHelper.preLoadHealthDay()
+            hkHelper.loadHealthDay()
         }
         print(Theme.current)
         NSLog(Theme.current.rawValue.description)

@@ -43,7 +43,25 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        let data = defaults?.object(forKey: "widgetValues") as! Data
+        let list = NSKeyedUnarchiver.unarchiveObject(with: data) as! [[Any]]
+        
+        var total = 0
+        for attribute in list {
+            total += attribute[1] as! Int
+        }
+        todayPointTotal.text = total.description
+        
+        let weeklyTotalValue = defaults?.integer(forKey: "weekTotal")
+        weeklyTotal.text = "Weekly Total: " + (weeklyTotalValue?.description)!
+        if let alltimeHighValue = defaults?.integer(forKey: "allTimeHigh"){
+            allTimeHigh.text = "All Time High: " + (alltimeHighValue.description)
+        }
+        if let lifetimeTotalValue = defaults?.integer(forKey: "lifetimeTotal"){
+            lifeTimeHigh.text = "Life Time Total: " + (lifetimeTotalValue.description)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
