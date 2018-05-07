@@ -81,17 +81,6 @@ class HealthKitHelper {
         })
     }
     
-    //    func bodyMassChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getBodyMassData { (bodyMass, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.bodyMass = bodyMass
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
-    
     func startObservingStandHours() {
         let sampleType = HKObjectType.categoryType(forIdentifier: .appleStandHour)!
         
@@ -111,17 +100,6 @@ class HealthKitHelper {
         })
     }
     
-    //    func standHoursChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getStandHours { (temp, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .stand })?.value = Int(temp)
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
-    
     func startObservingWaterChanges() {
         let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
         let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
@@ -138,17 +116,6 @@ class HealthKitHelper {
             }
         })
     }
-    
-    //    func waterChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getWaterData { (water, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .water })?.value = Int(water)
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
     
     func startObservingCaloriesChanges() {
         let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)
@@ -167,18 +134,6 @@ class HealthKitHelper {
         })
     }
     
-    //    func caloriesChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getCaloriesData { (water, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .calories })?.value = Int(water)
-    //
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
-    
     func startObservingWorkoutChanges() {
         let sampleType = HKObjectType.workoutType()
         let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
@@ -195,18 +150,6 @@ class HealthKitHelper {
             }
         })
     }
-    
-    //    func workoutChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getWorkOutData { (eligible, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .workouts })?.value = Int(eligible)
-    //
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
     
     func startObservingStepChanges() {
         
@@ -228,17 +171,6 @@ class HealthKitHelper {
         })
     }
     
-    //    func stepChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getStepData { (temp, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .steps })?.value = Int(temp)
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
-    
     func startObservingExerciseChanges() {
         
         let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -259,17 +191,6 @@ class HealthKitHelper {
         })
     }
     
-    //    func exerciseChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getExerciseTime { (temp, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .exercise })?.value = Int(temp)
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
-    
     func startObservingActiveCalories() {
         let sampleType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
         
@@ -288,23 +209,6 @@ class HealthKitHelper {
             }
         })
     }
-    
-    //    func activeEnergyChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getActivityRings { (temp, _) -> Void in
-    //            HealthDay.shared.moveGoal = temp
-    //            print("move goal: \(temp)")
-    //        }
-    //
-    //        getActiveEnergy { (temp, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .move })?.value = Int(temp)
-    //
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
     
     func startObservingMindSessions() {
         let sampleType = HKObjectType.categoryType(forIdentifier: .mindfulSession)!
@@ -325,17 +229,6 @@ class HealthKitHelper {
         })
     }
     
-    //    func mindSessionsChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getMindSessions { (temp, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .mind })?.value = Int(temp)
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
-    
     func startObservingSleep() {
         let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
         
@@ -354,25 +247,19 @@ class HealthKitHelper {
             }
         })
     }
-    
-    //    func sleepAnalysisChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
-    //        getSleepAnalysis { (temp, _) -> Void in
-    //
-    //
-    //            HealthDay.shared.attributes.first(where: { $0.type == .sleep })?.value = Int(temp)
-    //
-    //        }
-    //
-    //        completionHandler()
-    //    }
-    
-    func getStepData(_ completion: ((Double, Error?) -> Void)!) {
+
+    func getStepData(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date())
+        let startDate = cal.startOfDay(for: date)
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
+        
+        let endDate = cal.date(byAdding: comps, to: startDate)
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
         
-        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: HKQueryOptions())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions())
         let interval: NSDateComponents = NSDateComponents()
         interval.day = 1
         
@@ -387,23 +274,15 @@ class HealthKitHelper {
             var steps = 0.0
             if let myResults = results {
                 myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
-                    
                     if let quantity = statistics.sumQuantity() {
-                        
                         steps = quantity.doubleValue(for: HKUnit.count())
-                        
-                        print("Steps = \(steps)")
-                        
                     }
-                    
                 }
             }
             completion(round(steps), error)
-            
         }
         healthKitStore.execute(query)
     }
-    
     func getActiveEnergy(_ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
@@ -425,19 +304,12 @@ class HealthKitHelper {
             var calories = 0.0
             if let myResults = results {
                 myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
-                    
                     if let quantity = statistics.sumQuantity() {
-                        
                         calories = quantity.doubleValue(for: HKUnit.kilocalorie())
-                        
-                        print("Calories = \(calories)")
-                        
                     }
-                    
                 }
             }
             completion(round(calories), error)
-            
         }
         healthKitStore.execute(query)
     }
@@ -463,19 +335,12 @@ class HealthKitHelper {
             var exercise = 0.0
             if let myResults = results {
                 myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
-                    
                     if let quantity = statistics.sumQuantity() {
-                        
                         exercise = quantity.doubleValue(for: HKUnit.minute())
-                        
-                        print("Exercise Minutes = \(exercise)")
-                        
                     }
-                    
                 }
             }
             completion(round(exercise), error)
-            
         }
         healthKitStore.execute(query)
     }
@@ -491,26 +356,31 @@ class HealthKitHelper {
             var eligible = 0
             if let myResults = results as? [HKWorkout] {
                 for workout in myResults where workout.duration >= 600 {
-                    
                     eligible += 1
-                    
                 }
-                
-                print("Eligible Workouts = \(eligible)")
             }
             completion(eligible, error)
         }
-        
         healthKitStore.execute(sampleQuery)
-        
     }
     
-    func getBodyMassData(_ completion: ((Double, Error?) -> Void)!) {
+    func getBodyMassData(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
+        let cal = Calendar.current
+        var startComps = DateComponents()
+        startComps.year = 2000
+        startComps.month = 1
+        startComps.day = 1
+        let startDate = startComps.date
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
         
+        let endDate = cal.date(byAdding: comps, to: cal.startOfDay(for: date))
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
         let weight = HKObjectType.quantityType(forIdentifier: .bodyMass)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        let query = HKSampleQuery(sampleType: weight!, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
+        let query = HKSampleQuery(sampleType: weight!, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
             if error != nil {
                 
                 //  Something went Wrong
@@ -519,15 +389,11 @@ class HealthKitHelper {
             var bodyMass = 0.0
             if let result = results?.first as? HKQuantitySample {
                 bodyMass = result.quantity.doubleValue(for: HKUnit.pound())
-                
-                
             }
-            print("Body Mass = \(bodyMass)")
             completion(bodyMass, error)
         }
         healthKitStore.execute(query)
     }
-    
     func getWaterData(_ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
@@ -542,24 +408,18 @@ class HealthKitHelper {
         query.initialResultsHandler = { query, results, error in
             
             if error != nil {
-                
                 //  Something went Wrong
                 return
             }
             var water = 0.0
             if let myResults = results {
                 myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
-                    
                     if let quantity = statistics.sumQuantity() {
-                        
                         water = quantity.doubleValue(for: HKUnit.fluidOunceUS())
-                        
                     }
                 }
             }
-            print("Water = \(water)")
             completion(floor(water), error)
-            
         }
         healthKitStore.execute(query)
         
@@ -579,7 +439,6 @@ class HealthKitHelper {
         query.initialResultsHandler = { query, results, error in
             
             if error != nil {
-                
                 //  Something went Wrong
                 return
             }
@@ -588,15 +447,11 @@ class HealthKitHelper {
                 myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
                     
                     if let quantity = statistics.sumQuantity() {
-                        
                         calories = quantity.doubleValue(for: HKUnit.kilocalorie())
-                        
                     }
                 }
             }
-            print("Calories = \(calories)")
             completion(calories, error)
-            
         }
         healthKitStore.execute(query)
         
@@ -620,23 +475,11 @@ class HealthKitHelper {
             }
             var standHours = 0.0
             if let myResults = summaries {
-                print("Stand Hours = \(standHours)")
+  
                 if myResults.count > 0 {
                     standHours = myResults[0].appleStandHours.doubleValue(for: HKUnit.count())
                 }
             }
-            
-            //            guard let summaries = summaries, summaries.count > 0
-            //                else {
-            //                    // No data returned. Perhaps check for error
-            //                    completion(Int(standHours), error)
-            //                    return
-            //            }
-            //            let summary = summaries[0]
-            //
-            //
-            //            standHours = summary.appleStandHours.doubleValue(for: HKUnit.count())
-            //            print("Stand Hours = \(standHours)")
             completion(Int(standHours), error)
         }
         healthKitStore.execute(query)
@@ -656,12 +499,11 @@ class HealthKitHelper {
             }
             var mindSessions = 0
             if let myResults = results {
-                print("Mind Sessions = \(myResults.count)")
+      
                 mindSessions = myResults.count
             }
             completion(mindSessions, error)
         }
-        
         healthKitStore.execute(sampleQuery)
     }
     
@@ -676,7 +518,6 @@ class HealthKitHelper {
             if error != nil {
                 
                 //  Something went Wrong
-                print(error!)
                 return
             }
             var minutes = 0
@@ -686,7 +527,6 @@ class HealthKitHelper {
                         
                         if sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
                             minutes += Int(sample.endDate.timeIntervalSince(sample.startDate) / 60)
-                            print("Sleep Analysis = \(sample.endDate.timeIntervalSince(sample.startDate) / 60)")
                         }
                     }
                 }
@@ -696,45 +536,7 @@ class HealthKitHelper {
         
         healthKitStore.execute(sampleQuery)
     }
-    
-    func getActivityRings(_ completion: ((Double, Error?) -> Void)!) {
-        let cal = Calendar.current
-        
-        var dateComponents = cal.dateComponents(
-            [.year, .month, .day],
-            from: Date()
-        )
-        dateComponents.calendar = cal
-        let predicate = HKQuery.predicateForActivitySummary(with: dateComponents)
-        
-        let query = HKActivitySummaryQuery(predicate: predicate) { (_, summaries, error) in
-            if error != nil {
-                
-                //  Something went Wrong
-                return
-            }
-            var moveGoal = 0.0
-            if let myResults = summaries {
-                
-                if myResults.count > 0 {
-                    moveGoal = myResults[0].activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
-                }
-            }
-            
-            
-            //            guard let summaries = summaries, summaries.count > 0
-            //                else {
-            //                    // No data returned. Perhaps check for error
-            //                    return
-            //            }
-            //            let summary = summaries[0]
-            //
-            //            let moveGoal = summary.activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
-            
-            completion(moveGoal, error)
-        }
-        healthKitStore.execute(query)
-    }
+
     func getActivityRings(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
@@ -758,17 +560,6 @@ class HealthKitHelper {
                     moveGoal = myResults[0].activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
                 }
             }
-            
-            
-            //            guard let summaries = summaries, summaries.count > 0
-            //                else {
-            //                    // No data returned. Perhaps check for error
-            //                    return
-            //            }
-            //            let summary = summaries[0]
-            //
-            //            let moveGoal = summary.activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
-            
             completion(moveGoal, error)
         }
         healthKitStore.execute(query)
@@ -778,15 +569,20 @@ class HealthKitHelper {
         getActivityRings(forDate: date) { (temp, _) -> Void in
             historyDay.moveGoal = temp
         }
-        
+        getStepData(forDate: date) { (temp, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .steps})?.value = Int(temp)
+        }
+        getBodyMassData(forDate: date) { (temp, _) -> Void in
+            historyDay.bodyMass = temp
+        }
         return historyDay
     }
     func loadHealthDay() {
         
-        getBodyMassData { (bodyMass, _) -> Void in
+        getBodyMassData(forDate: Date()) { (bodyMass, _) -> Void in
             HealthDay.shared.bodyMass = bodyMass
         }
-        getStepData { (temp, _) -> Void in
+        getStepData(forDate: Date()) { (temp, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .steps })?.value = Int(temp)
         }
         getWorkOutData { (eligible, _) -> Void in
@@ -816,12 +612,10 @@ class HealthKitHelper {
         getActivityRings(forDate: Date()) { (temp, _) -> Void in
             HealthDay.shared.moveGoal = temp
         }
-        
     }
     
     func valueChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
         loadHealthDay()
-        
         completionHandler()
     }
 }

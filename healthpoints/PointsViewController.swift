@@ -51,10 +51,8 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         dateComponents.month = 1
         dateComponents.day = 1
         if let date = dateComponents.date {
-            hkHelper.getActivityRings(forDate: date) { (temp, _) -> Void in
-                print("Activity Rings for Date: \(temp)")
-                
-            }
+           let temp = hkHelper.loadHistoricDay(date: date)
+        
         }
     }
     deinit {
