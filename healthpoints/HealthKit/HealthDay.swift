@@ -47,7 +47,6 @@ public class HealthDay {
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
-        updateWidgetValues()
     }
     func saveAttributeOrder(){
         defaultAttributes = attributes.map({$0.type.rawValue})

@@ -22,7 +22,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getLatestData), name: .UIApplicationWillEnterForeground, object: nil)
         self.pointsLabel.text = HealthDay.shared.getPoints().description
         self.pointsLabel.accessibilityValue = HealthDay.shared.getPoints().description +  " Points"
         
@@ -31,7 +31,6 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         isfirstload = !defaults.bool(forKey: "hasopenedbefore" )
         
-        print(isfirstload)
         if isfirstload {
             let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
             defaults.set(currentVersion, forKey: "lastOpenVersion")
@@ -190,15 +189,16 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
      }
      */
     @objc func getLatestData(){
-        hkHelper.loadHealthDay()
+        //hkHelper.loadHealthDay()
         updateUI()
     }
     @objc func updateUI() {
         DispatchQueue.main.async {
-            self.pointsLabel.text = HealthDay.shared.getPoints().description
-            self.pointsLabel.accessibilityValue = HealthDay.shared.getPoints().description +  " Points"
+            let points = HealthDay.shared.getPoints().description
+            self.pointsLabel.text = points
+            self.pointsLabel.accessibilityValue = points +  " Points"
             self.collectionView.reloadData()
-            print("--------Notification Processed--------")
+            HealthDay.shared.updateWidgetValues()
         }
         
     }
