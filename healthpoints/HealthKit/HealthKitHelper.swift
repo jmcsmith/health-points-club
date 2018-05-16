@@ -247,7 +247,7 @@ class HealthKitHelper {
             }
         })
     }
-
+    
     func getStepData(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
@@ -272,8 +272,8 @@ class HealthKitHelper {
                 return
             }
             var steps = 0.0
-            if let myResults = results {
-                myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
+            if let myResults = results, let endDate = endDate {
+                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                     if let quantity = statistics.sumQuantity() {
                         steps = quantity.doubleValue(for: HKUnit.count())
                     }
@@ -283,13 +283,18 @@ class HealthKitHelper {
         }
         healthKitStore.execute(query)
     }
-    func getActiveEnergy(_ completion: ((Double, Error?) -> Void)!) {
+    func getActiveEnergy(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date())
+        let startDate = cal.startOfDay(for: date)
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
+        
+        let endDate = cal.date(byAdding: comps, to: startDate)
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)
         
-        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
         let interval: NSDateComponents = NSDateComponents()
         interval.day = 1
         
@@ -302,8 +307,8 @@ class HealthKitHelper {
                 return
             }
             var calories = 0.0
-            if let myResults = results {
-                myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
+            if let myResults = results, let endDate = endDate {
+                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                     if let quantity = statistics.sumQuantity() {
                         calories = quantity.doubleValue(for: HKUnit.kilocalorie())
                     }
@@ -313,14 +318,18 @@ class HealthKitHelper {
         }
         healthKitStore.execute(query)
     }
-    
-    func getExerciseTime(_ completion: ((Double, Error?) -> Void)!) {
+    func getExerciseTime(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date())
+        let startDate = cal.startOfDay(for: date)
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
+        
+        let endDate = cal.date(byAdding: comps, to: startDate)
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)
         
-        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
         let interval: NSDateComponents = NSDateComponents()
         interval.day = 1
         
@@ -333,8 +342,8 @@ class HealthKitHelper {
                 return
             }
             var exercise = 0.0
-            if let myResults = results {
-                myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
+            if let myResults = results, let endDate = endDate {
+                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                     if let quantity = statistics.sumQuantity() {
                         exercise = quantity.doubleValue(for: HKUnit.minute())
                     }
@@ -345,12 +354,17 @@ class HealthKitHelper {
         healthKitStore.execute(query)
     }
     
-    func getWorkOutData(completion: ((Int, Error?) -> Void)!) {
+    func getWorkOutData(forDate date: Date, _ completion: ((Int, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date())
+        let startDate = cal.startOfDay(for: date)
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
+        
+        let endDate = cal.date(byAdding: comps, to: startDate)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: HKQueryOptions())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: HKWorkoutType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
             
             var eligible = 0
@@ -394,17 +408,22 @@ class HealthKitHelper {
         }
         healthKitStore.execute(query)
     }
-    func getWaterData(_ completion: ((Double, Error?) -> Void)!) {
+    func getWaterData(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date())
+        let startDate = cal.startOfDay(for: date)
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
+        
+        let endDate = cal.date(byAdding: comps, to: startDate)
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
         
-        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
         let interval: NSDateComponents = NSDateComponents()
         interval.day = 1
         
-        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents: interval as DateComponents)
+        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval as DateComponents)
         query.initialResultsHandler = { query, results, error in
             
             if error != nil {
@@ -412,8 +431,8 @@ class HealthKitHelper {
                 return
             }
             var water = 0.0
-            if let myResults = results {
-                myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
+            if let myResults = results, let endDate = endDate {
+                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                     if let quantity = statistics.sumQuantity() {
                         water = quantity.doubleValue(for: HKUnit.fluidOunceUS())
                     }
@@ -425,13 +444,18 @@ class HealthKitHelper {
         
     }
     
-    func getCaloriesData(_ completion: ((Double, Error?) -> Void)!) {
+    func getCaloriesData(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date())
+        let startDate = cal.startOfDay(for: date)
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
+        
+        let endDate = cal.date(byAdding: comps, to: startDate)
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)
         
-        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: Date() as Date, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
         let interval: NSDateComponents = NSDateComponents()
         interval.day = 1
         
@@ -443,8 +467,8 @@ class HealthKitHelper {
                 return
             }
             var calories = 0.0
-            if let myResults = results {
-                myResults.enumerateStatistics(from: startDate as Date, to: Date() as Date) { statistics, _ in
+            if let myResults = results, let endDate = endDate {
+                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                     
                     if let quantity = statistics.sumQuantity() {
                         calories = quantity.doubleValue(for: HKUnit.kilocalorie())
@@ -457,12 +481,12 @@ class HealthKitHelper {
         
     }
     
-    func getStandHours(_ completion: ((Int, Error?) -> Void)!) {
+    func getStandHours(forDate date: Date, _ completion: ((Int, Error?) -> Void)!) {
         let cal = Calendar.current
         
         var dateComponents = cal.dateComponents(
             [.year, .month, .day],
-            from: Date()
+            from: date
         )
         dateComponents.calendar = cal
         let predicate = HKQuery.predicateForActivitySummary(with: dateComponents)
@@ -475,7 +499,7 @@ class HealthKitHelper {
             }
             var standHours = 0.0
             if let myResults = summaries {
-  
+                
                 if myResults.count > 0 {
                     standHours = myResults[0].appleStandHours.doubleValue(for: HKUnit.count())
                 }
@@ -485,12 +509,17 @@ class HealthKitHelper {
         healthKitStore.execute(query)
     }
     
-    func getMindSessions(_ completion: ((Int, Error?) -> Void)!) {
+    func getMindSessions(forDate date: Date, _ completion: ((Int, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date())
+        let startDate = cal.startOfDay(for: date)
+        var comps = DateComponents()
+        comps.day = 1
+        comps.second = -1
+        
+        let endDate = cal.date(byAdding: comps, to: startDate)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: HKQueryOptions())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .mindfulSession)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
             if error != nil {
                 
@@ -499,7 +528,7 @@ class HealthKitHelper {
             }
             var mindSessions = 0
             if let myResults = results {
-      
+                
                 mindSessions = myResults.count
             }
             completion(mindSessions, error)
@@ -507,11 +536,11 @@ class HealthKitHelper {
         healthKitStore.execute(sampleQuery)
     }
     
-    func getSleepAnalysis(_ completion: ((Int, Error?) -> Void)!) {
+    func getSleepAnalysis(forDate date: Date, _ completion: ((Int, Error?) -> Void)!) {
         let cal = Calendar.current
         
-        let startDate = cal.startOfDay(for: Date()).addingTimeInterval(-3600 * 12)
-        let endDate = cal.startOfDay(for: Date()).addingTimeInterval(3600 * 12)
+        let startDate = cal.startOfDay(for: date).addingTimeInterval(-3600 * 12)
+        let endDate = cal.startOfDay(for: date).addingTimeInterval(3600 * 12)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!, predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) { (_, results, error ) -> Void in
@@ -536,7 +565,7 @@ class HealthKitHelper {
         
         healthKitStore.execute(sampleQuery)
     }
-
+    
     func getActivityRings(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
@@ -564,18 +593,69 @@ class HealthKitHelper {
         }
         healthKitStore.execute(query)
     }
-    func loadHistoricDay(date: Date) -> HistoryDay {
+    func loadHistoricDay(date: Date, _ completion: @escaping ((HistoryDay) -> Void)) {
         let historyDay = HistoryDay(date: date, points: 0)
-        getActivityRings(forDate: date) { (temp, _) -> Void in
+        
+        self.getActivityRings(forDate: date) { (temp, _) -> Void in
             historyDay.moveGoal = temp
+            //}
+            self.getStepData(forDate: date) { (temp, _) -> Void in
+                historyDay.attributes.first(where: { $0.type == .steps})?.value = Int(temp)
+                //            let day = HealthDay.shared.history.first(where: {$0.date == date})
+                //            day?.attributes.first(where: { $0.type == .steps})?.value = Int(temp)
+                //            let points = historyDay.getPoints()
+                //                day?.points = points
+                //
+                //        }
+                self.getBodyMassData(forDate: date) { (temp, _) -> Void in
+                    historyDay.bodyMass = temp
+                    //        }
+                    self.getActiveEnergy(forDate: date) { (energy, _) -> Void in
+                        historyDay.attributes.first(where: { $0.type == .move })?.value = Int(energy)
+                        //        }
+                        self.getExerciseTime(forDate: date) { (time, _) -> Void in
+                            historyDay.attributes.first(where: { $0.type == .exercise })?.value = Int(time)
+                            //        }
+                            self.getWorkOutData(forDate: date) { (eligible, _) -> Void in
+                                historyDay.attributes.first(where: { $0.type == .workouts })?.value = Int(eligible)
+                                //        }
+                                self.getWaterData(forDate: date) { (water, _) -> Void in
+                                    historyDay.attributes.first(where: { $0.type == .water })?.value = Int(water)
+                                    //        }
+                                    self.getStandHours(forDate: date) { (hours, _) -> Void in
+                                        historyDay.attributes.first(where: { $0.type == .stand })?.value = Int(hours)
+                                        //        }
+                                        self.getMindSessions(forDate: date) { (mins, _) -> Void in
+                                            historyDay.attributes.first(where: { $0.type == .mind })?.value = Int(mins)
+                                            //        }
+                                            self.getSleepAnalysis(forDate: date) { (time, _) -> Void in
+                                                historyDay.attributes.first(where: { $0.type == .sleep })?.value = Int(time)
+                                                //        }
+                                                self.getCaloriesData(forDate: date) { (calories, _) -> Void in
+                                                    historyDay.attributes.first(where: { $0.type == .calories })?.value = Int(calories)
+                                                    completion(historyDay)
+                                                }
+                                            }
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
         }
-        getStepData(forDate: date) { (temp, _) -> Void in
-            historyDay.attributes.first(where: { $0.type == .steps})?.value = Int(temp)
-        }
-        getBodyMassData(forDate: date) { (temp, _) -> Void in
-            historyDay.bodyMass = temp
-        }
-        return historyDay
+        
+        
     }
     func loadHealthDay() {
         
@@ -585,28 +665,28 @@ class HealthKitHelper {
         getStepData(forDate: Date()) { (temp, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .steps })?.value = Int(temp)
         }
-        getWorkOutData { (eligible, _) -> Void in
+        getWorkOutData(forDate: Date()) { (eligible, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .workouts })?.value = Int(eligible)
         }
-        getWaterData { (water, _) -> Void in
+        getWaterData(forDate: Date()) { (water, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .water })?.value = Int(water)
         }
-        getStandHours { (hours, _) -> Void in
+        getStandHours(forDate: Date()) { (hours, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .stand })?.value = Int(hours)
         }
-        getMindSessions { (mins, _) -> Void in
+        getMindSessions(forDate: Date()) { (mins, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .mind })?.value = Int(mins)
         }
-        getActiveEnergy { (energy, _) -> Void in
+        getActiveEnergy(forDate: Date()) { (energy, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .move })?.value = Int(energy)
         }
-        getExerciseTime { (time, _) -> Void in
+        getExerciseTime(forDate: Date()) { (time, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .exercise })?.value = Int(time)
         }
-        getSleepAnalysis { (time, _) -> Void in
+        getSleepAnalysis(forDate: Date()) { (time, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .sleep })?.value = Int(time)
         }
-        getCaloriesData { (calories, _) -> Void in
+        getCaloriesData(forDate: Date()) { (calories, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .calories })?.value = Int(calories)
         }
         getActivityRings(forDate: Date()) { (temp, _) -> Void in

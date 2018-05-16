@@ -37,6 +37,8 @@
 		EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */; };
 		EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */; };
 		EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8C599C1F94297C00A30773 /* InfoViewController.swift */; };
+		EE91EBDE20AC8BFA004A70C0 /* HistoryAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91EBDD20AC8BFA004A70C0 /* HistoryAttribute.swift */; };
+		EE91EBE020AC8C23004A70C0 /* HistoyAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91EBDF20AC8C23004A70C0 /* HistoyAttributeType.swift */; };
 		EEB58DF21FABC94A0015390F /* heartdarkest.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB58DF11FABC94A0015390F /* heartdarkest.png */; };
 		EEC5D3181FA000DA007956FB /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC5D3171FA000DA007956FB /* Messages.framework */; };
 		EEC5D31B1FA000DA007956FB /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5D31A1FA000DA007956FB /* MessagesViewController.swift */; };
@@ -139,6 +141,8 @@
 		EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		EE8C599C1F94297C00A30773 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		EE91EBDD20AC8BFA004A70C0 /* HistoryAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAttribute.swift; sourceTree = "<group>"; };
+		EE91EBDF20AC8C23004A70C0 /* HistoyAttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoyAttributeType.swift; sourceTree = "<group>"; };
 		EEB58DF11FABC94A0015390F /* heartdarkest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdarkest.png; sourceTree = "<group>"; };
 		EEC5D3161FA000DA007956FB /* healthpoints-imessage.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "healthpoints-imessage.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC5D3171FA000DA007956FB /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -320,6 +324,8 @@
 				EED7DD72209CC26000F88BDC /* HistoryDay.swift */,
 				EED7DD74209E077100F88BDC /* Attribute.swift */,
 				EED7DD76209E07A500F88BDC /* AttributeType.swift */,
+				EE91EBDD20AC8BFA004A70C0 /* HistoryAttribute.swift */,
+				EE91EBDF20AC8C23004A70C0 /* HistoyAttributeType.swift */,
 			);
 			path = HealthKit;
 			sourceTree = "<group>";
@@ -554,6 +560,7 @@
 			files = (
 				EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */,
 				EE682DC51F8301CF003A6CF6 /* OnboardingPageOneViewController.swift in Sources */,
+				EE91EBDE20AC8BFA004A70C0 /* HistoryAttribute.swift in Sources */,
 				EE682DBC1F82F46D003A6CF6 /* HealthDay.swift in Sources */,
 				EE5DE9C71F9473E500F6BFC1 /* ThemeView.swift in Sources */,
 				EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */,
@@ -565,6 +572,7 @@
 				EE682DC71F830270003A6CF6 /* OnboardingPageTwoViewController.swift in Sources */,
 				EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */,
 				EED7DD73209CC26000F88BDC /* HistoryDay.swift in Sources */,
+				EE91EBE020AC8C23004A70C0 /* HistoyAttributeType.swift in Sources */,
 				EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */,
 				EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */,
 				EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */,

@@ -42,17 +42,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
                 self.performSegue(withIdentifier: "newVersion", sender: nil)
             }
         }
-        let cal = Calendar.current
-        
-        var dateComponents = DateComponents()
-        dateComponents.calendar = cal
-        dateComponents.year = 2018
-        dateComponents.month = 1
-        dateComponents.day = 1
-        if let date = dateComponents.date {
-           let temp = hkHelper.loadHistoricDay(date: date)
-        
-        }
+      
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
