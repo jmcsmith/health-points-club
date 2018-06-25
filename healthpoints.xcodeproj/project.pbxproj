@@ -14,6 +14,7 @@
 		EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C41F94606900F6BFC1 /* Theme.swift */; };
 		EE5DE9C71F9473E500F6BFC1 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */; };
 		EE5DE9C91F94750400F6BFC1 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */; };
+		EE67D55220E154EE0074F484 /* SettingsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE67D55120E154EE0074F484 /* SettingsWebViewController.swift */; };
 		EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682D861F82F05E003A6CF6 /* AppDelegate.swift */; };
 		EE682D8C1F82F05E003A6CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8A1F82F05E003A6CF6 /* Main.storyboard */; };
 		EE682D8E1F82F05E003A6CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8D1F82F05E003A6CF6 /* Assets.xcassets */; };
@@ -109,6 +110,7 @@
 		EE5DE9C41F94606900F6BFC1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
+		EE67D55120E154EE0074F484 /* SettingsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWebViewController.swift; sourceTree = "<group>"; };
 		EE682D831F82F05E003A6CF6 /* healthpoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE682D861F82F05E003A6CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE682D8B1F82F05E003A6CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */,
 				EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */,
 				EE24EF2C202675B800860749 /* NewVersionViewController.swift */,
+				EE67D55120E154EE0074F484 /* SettingsWebViewController.swift */,
 			);
 			path = healthpoints;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE67D55220E154EE0074F484 /* SettingsWebViewController.swift in Sources */,
 				EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */,
 				EE682DC51F8301CF003A6CF6 /* OnboardingPageOneViewController.swift in Sources */,
 				EE91EBDE20AC8BFA004A70C0 /* HistoryAttribute.swift in Sources */,

@@ -214,7 +214,17 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         catch {/* error handling here */}
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destination = segue.destination as? SettingsWebViewController
+        print(segue.identifier)
+        if segue.identifier == "privacySegue" {
+            destination?.urlString = "https://www.healthpoints.club/privacy"
+        } else if segue.identifier == "websiteSegue" {
+            destination?.urlString = "https://www.healthpoints.club"
+        } else if segue.identifier == "rssSegue" {
+            destination?.urlString = "https://www.roboticsnailsoftware.com"
+        }
+    }
     
     
 }
