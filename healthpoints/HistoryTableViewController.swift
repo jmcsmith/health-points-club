@@ -28,13 +28,60 @@ class HistoryTableViewController: UITableViewController {
     }
     
     @IBAction func refreshHistory(_ sender: Any) {
+        let alert = UIAlertController(title: "Update", message: "Your History is being updated. Please Wait.", preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }})
+        action.isEnabled = false
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+        
+        let original = HealthDay.shared.history.reduce(0) {$0 + $1.points}
+        let originalHighScore = HealthDay.shared.history.map{ $0.points }.max()!
+        var newTotal = 0
+        var newHighScore = 0
+        var count = 0
         let hkHelper = HealthKitHelper()
         for day in HealthDay.shared.history {
-            hkHelper.loadHistoricDay(date: day.date) { (day) in
-                let points = day.getPoints()
+            if let index = HealthDay.shared.history.index(of: day){
+                hkHelper.loadHistoricDay(date: day.date) { (day) in
+                    let points = day.getPoints()
+                    count += 1
+                    if count == HealthDay.shared.history.count {
+                        newTotal = HealthDay.shared.history.reduce(0) {$0 + $1.points}
+                        newHighScore = HealthDay.shared.history.map{ $0.points }.max()!
+                        self.updateHistoryDifferencesAlert(starting: original, new: newTotal, oldHigh: originalHighScore, newHigh: newHighScore)
+                        DispatchQueue.main.async {
+                            alert.message = "Total Points: \(original) -> \(newTotal) \nAll Time High: \(originalHighScore) -> \(newHighScore)"
+                            action.isEnabled = true
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableViewRowAnimation.automatic)
+                    }
+                }
+                
             }
         }
-        tableView.reloadData()
+        
+    }
+    
+    func updateHistoryDifferencesAlert(starting: Int, new: Int, oldHigh: Int, newHigh: Int){
+        print("Starting: \(starting)")
+        print("New: \(new)")
+        print("-----------------------")
+        print("Original High: \(oldHigh)")
+        print("New High: \(newHigh)")
     }
     // MARK: - Table view data source
     
