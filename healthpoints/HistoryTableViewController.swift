@@ -52,37 +52,37 @@ class HistoryTableViewController: UITableViewController {
         var newHighScore = 0
         var count = 0
         let hkHelper = HealthKitHelper()
+        
+        let group = DispatchGroup()
+        
         for day in HealthDay.shared.history {
+            group.enter()
             if let index = HealthDay.shared.history.index(of: day){
                 hkHelper.loadHistoricDay(date: day.date) { (day) in
-                    let points = day.getPoints()
+                    _ = day.getPoints()
                     count += 1
-                    if count == HealthDay.shared.history.count {
-                        newTotal = HealthDay.shared.history.reduce(0) {$0 + $1.points}
-                        newHighScore = HealthDay.shared.history.map{ $0.points }.max()!
-                        self.updateHistoryDifferencesAlert(starting: original, new: newTotal, oldHigh: originalHighScore, newHigh: newHighScore)
-                        DispatchQueue.main.async {
-                            alert.message = "Total Points: \(original) -> \(newTotal) \nAll Time High: \(originalHighScore) -> \(newHighScore)"
-                            action.isEnabled = true
-                        }
-                    }
                     DispatchQueue.main.async {
                         self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableViewRowAnimation.automatic)
                     }
+                    group.leave()
                 }
-                
             }
+            
         }
-        
+        group.notify(queue: .main) {
+            newTotal = HealthDay.shared.history.reduce(0) {$0 + $1.points}
+            let points = HealthDay.shared.history.map{ $0.points }
+            if let newscore = points.max() {
+                newHighScore = newscore
+            } else {
+                newHighScore = 0
+            }
+            
+            alert.message = "Total Points: \(original) -> \(newTotal) \nAll Time High: \(originalHighScore) -> \(newHighScore)"
+            action.isEnabled = true
+        }
     }
-    
-    func updateHistoryDifferencesAlert(starting: Int, new: Int, oldHigh: Int, newHigh: Int){
-        print("Starting: \(starting)")
-        print("New: \(new)")
-        print("-----------------------")
-        print("Original High: \(oldHigh)")
-        print("New High: \(newHigh)")
-    }
+
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
