@@ -595,68 +595,74 @@ class HealthKitHelper {
     }
     func loadHistoricDay(date: Date, _ completion: @escaping ((HistoryDay) -> Void)) {
         let historyDay = HistoryDay(date: date, points: 0)
+        let group = DispatchGroup()
         
+        group.enter()
         self.getActivityRings(forDate: date) { (temp, _) -> Void in
             historyDay.moveGoal = temp
-            //}
-            self.getStepData(forDate: date) { (temp, _) -> Void in
-                historyDay.attributes.first(where: { $0.type == .steps})?.value = Int(temp)
-                //            let day = HealthDay.shared.history.first(where: {$0.date == date})
-                //            day?.attributes.first(where: { $0.type == .steps})?.value = Int(temp)
-                //            let points = historyDay.getPoints()
-                //                day?.points = points
-                //
-                //        }
-                self.getBodyMassData(forDate: date) { (temp, _) -> Void in
-                    historyDay.bodyMass = temp
-                    //        }
-                    self.getActiveEnergy(forDate: date) { (energy, _) -> Void in
-                        historyDay.attributes.first(where: { $0.type == .move })?.value = Int(energy)
-                        //        }
-                        self.getExerciseTime(forDate: date) { (time, _) -> Void in
-                            historyDay.attributes.first(where: { $0.type == .exercise })?.value = Int(time)
-                            //        }
-                            self.getWorkOutData(forDate: date) { (eligible, _) -> Void in
-                                historyDay.attributes.first(where: { $0.type == .workouts })?.value = Int(eligible)
-                                //        }
-                                self.getWaterData(forDate: date) { (water, _) -> Void in
-                                    historyDay.attributes.first(where: { $0.type == .water })?.value = Int(water)
-                                    //        }
-                                    self.getStandHours(forDate: date) { (hours, _) -> Void in
-                                        historyDay.attributes.first(where: { $0.type == .stand })?.value = Int(hours)
-                                        //        }
-                                        self.getMindSessions(forDate: date) { (mins, _) -> Void in
-                                            historyDay.attributes.first(where: { $0.type == .mind })?.value = Int(mins)
-                                            //        }
-                                            self.getSleepAnalysis(forDate: date) { (time, _) -> Void in
-                                                historyDay.attributes.first(where: { $0.type == .sleep })?.value = Int(time)
-                                                //        }
-                                                self.getCaloriesData(forDate: date) { (calories, _) -> Void in
-                                                    historyDay.attributes.first(where: { $0.type == .calories })?.value = Int(calories)
-                                                    completion(historyDay)
-                                                }
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
+            group.leave()
+        }
+        group.enter()
+        self.getStepData(forDate: date) { (temp, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .steps})?.value = Int(temp)
+            group.leave()
+        }
+        group.enter()
+        self.getBodyMassData(forDate: date) { (temp, _) -> Void in
+            historyDay.bodyMass = temp
+            group.leave()
+        }
+        group.enter()
+        self.getActiveEnergy(forDate: date) { (energy, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .move })?.value = Int(energy)
+            group.leave()
+        }
+        group.enter()
+        self.getExerciseTime(forDate: date) { (time, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .exercise })?.value = Int(time)
+            group.leave()
+        }
+        group.enter()
+        self.getWorkOutData(forDate: date) { (eligible, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .workouts })?.value = Int(eligible)
+            group.leave()
+        }
+        group.enter()
+        self.getWaterData(forDate: date) { (water, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .water })?.value = Int(water)
+            group.leave()
+        }
+        group.enter()
+        self.getStandHours(forDate: date) { (hours, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .stand })?.value = Int(hours)
+            group.leave()
+        }
+        group.enter()
+        self.getMindSessions(forDate: date) { (mins, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .mind })?.value = Int(mins)
+            group.leave()
+        }
+        group.enter()
+        self.getSleepAnalysis(forDate: date) { (time, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .sleep })?.value = Int(time)
+            group.leave()
+        }
+        group.enter()
+        self.getCaloriesData(forDate: date) { (calories, _) -> Void in
+            historyDay.attributes.first(where: { $0.type == .calories })?.value = Int(calories)
+            group.leave()
             
         }
-        
-        
+        group.notify(queue: .main) {
+            completion(historyDay)
+        }
     }
+    
+    
+    
+    
+    
+    
     func loadHealthDay() {
         
         getBodyMassData(forDate: Date()) { (bodyMass, _) -> Void in
