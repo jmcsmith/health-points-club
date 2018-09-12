@@ -37,12 +37,17 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
             self.performSegue(withIdentifier: "onboarding", sender: nil)
         }else{
             let lastopened = defaults.string(forKey: "lastOpenVersion")
-            let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
-            if currentVersion != lastopened || lastopened == nil {
-                self.performSegue(withIdentifier: "newVersion", sender: nil)
+            if let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+                if (currentVersion != lastopened || lastopened == nil) {
+                    if let version = Int(currentVersion) {
+                        if version < 390 {
+                            self.performSegue(withIdentifier: "newVersion", sender: nil)
+                        }
+                    }
+                }
             }
         }
-      
+        
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
