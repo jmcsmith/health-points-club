@@ -22,7 +22,7 @@ class HistoryTableViewController: UITableViewController {
     }
     
     @IBAction func refreshHistory(_ sender: Any) {
-        let alert = UIAlertController(title: "Update", message: "Your History is being updated. Please Wait.", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Update", message: "Your History is being updated. Please Wait.", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             case .default:
@@ -61,7 +61,7 @@ class HistoryTableViewController: UITableViewController {
                     day.getPoints()
                 
                     DispatchQueue.main.async {
-                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableViewRowAnimation.none)
+                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.none)
                     }
                     group.leave()
                 }
@@ -97,7 +97,7 @@ class HistoryTableViewController: UITableViewController {
             hkHelper.loadHistoricDay(date: date) { (day) -> Void in
                 let points = day.getPoints()
                 DispatchQueue.main.async {
-                    tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                    tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
                 }
                 
             }

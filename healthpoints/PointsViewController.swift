@@ -22,7 +22,7 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(getLatestData), name: .UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getLatestData), name: UIApplication.willEnterForegroundNotification, object: nil)
         self.pointsLabel.text = HealthDay.shared.getPoints().description
         self.pointsLabel.accessibilityValue = HealthDay.shared.getPoints().description +  " Points"
         
