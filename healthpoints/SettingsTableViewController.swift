@@ -201,7 +201,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
                     [ .year, .month, .day ],
                     from: historyday.date
                 )
-                if let index = HealthDay.shared.history.index(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
+                if let index = HealthDay.shared.history.firstIndex(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
                     HealthDay.shared.history[index] = historyday
                 }else{
                     HealthDay.shared.history.append(historyday)

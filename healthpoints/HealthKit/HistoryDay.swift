@@ -46,7 +46,7 @@ class HistoryDay: NSObject, NSCoding {
         for a in attributes {
             points += a.getPoints(withHistoryDay: self)
         }
-        if let index = HealthDay.shared.history.index(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
+        if let index = HealthDay.shared.history.firstIndex(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
             HealthDay.shared.history[index].points = points
         }else{
             HealthDay.shared.history.append(HistoryDay(date: cal.date(from: dateComponents)!,points: points))

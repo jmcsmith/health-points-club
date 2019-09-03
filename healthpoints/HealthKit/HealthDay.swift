@@ -64,7 +64,7 @@ public class HealthDay {
         for a in attributes {
             points += a.getPoints(withWeight: 1, withBodyMass: bodyMass)
         }
-        if let index = history.index(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
+        if let index = history.firstIndex(where: {cal.dateComponents([ .year, .month, .day ], from: $0.date) == dateComponents}){
             history[index].points = points
         }else{
             history.append(HistoryDay(date: cal.date(from: dateComponents)!,points: points))

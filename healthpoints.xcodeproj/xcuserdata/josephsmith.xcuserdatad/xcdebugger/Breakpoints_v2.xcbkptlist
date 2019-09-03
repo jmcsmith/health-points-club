@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "2787E3DC-5168-40A5-825E-F91A3CF5F417"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "71D8C052-02E9-4B1D-ABED-654FD5893441"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -24,16 +26,204 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "417FD2BE-755D-4BBF-BB96-3C448EB75AEB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "healthpoints/PointsViewController.swift"
-            timestampString = "558482598.135277"
+            timestampString = "558570135.465965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E507CF7-70F5-44D2-9A7C-6A9FAC722BE8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HistoryTableViewController.swift"
+            timestampString = "559501696.6884789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "refresh(alert:action:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E507CF7-70F5-44D2-9A7C-6A9FAC722BE8 - e375fda8400f1bae"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "healthpoints.HistoryTableViewController.refresh(alert: __C.UIAlertController, action: __C.UIAlertAction) -&gt; ()"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/health-points-club/healthpoints/HistoryTableViewController.swift"
+                  timestampString = "558571069.072571"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "9E507CF7-70F5-44D2-9A7C-6A9FAC722BE8 - c259bfa628a28fa3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int, healthpoints.HistoryDay) -&gt; Swift.Int in healthpoints.HistoryTableViewController.refresh(alert: __C.UIAlertController, action: __C.UIAlertAction) -&gt; ()"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/health-points-club/healthpoints/HistoryTableViewController.swift"
+                  timestampString = "558571069.074697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CB8F4A6-01FC-463F-BC62-800A1F72ABBD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HistoryTableViewController.swift"
+            timestampString = "559501696.688867"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "refresh(alert:action:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7CB8F4A6-01FC-463F-BC62-800A1F72ABBD - e375fda8400f1bae"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "healthpoints.HistoryTableViewController.refresh(alert: __C.UIAlertController, action: __C.UIAlertAction) -&gt; ()"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/health-points-club/healthpoints/HistoryTableViewController.swift"
+                  timestampString = "558571090.230664"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "7CB8F4A6-01FC-463F-BC62-800A1F72ABBD - edb53459ed40b3bc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (healthpoints.HistoryDay) -&gt; Swift.Int in healthpoints.HistoryTableViewController.refresh(alert: __C.UIAlertController, action: __C.UIAlertAction) -&gt; ()"
+                  moduleName = "healthpoints"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephsmith/health-points-club/healthpoints/HistoryTableViewController.swift"
+                  timestampString = "558571090.233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21731CB3-1D12-4853-996D-A372C3BEFFAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HistoryTableViewController.swift"
+            timestampString = "559501696.689064"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "refresh(alert:action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A28C426-B338-49B5-A0BB-5FCE11CE7792"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HistoryTableViewController.swift"
+            timestampString = "559501696.689254"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "refresh(alert:action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA998EB6-E048-462D-B7ED-90887F846FED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HistoryTableViewController.swift"
+            timestampString = "559501696.689438"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "refresh(alert:action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F0DF9D0-8D6A-44BC-9CC9-607062905D70"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HealthKit/HealthKitHelper.swift"
+            timestampString = "559501737.231827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "648"
+            endingLineNumber = "648"
+            landmarkName = "loadHistoricDay(date:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF5A0394-E86F-4E9F-B263-DC0DC90BB158"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HealthKit/HealthKitHelper.swift"
+            timestampString = "559501818.409308"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "554"
+            endingLineNumber = "554"
+            landmarkName = "getSleepAnalysis(forDate:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

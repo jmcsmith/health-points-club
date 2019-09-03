@@ -37,11 +37,13 @@ class HistoryTableViewController: UITableViewController {
         action.isEnabled = false
         alert.addAction(action)
         
-        self.present(alert, animated: true, completion: nil)
         
+         self.present(alert, animated: true, completion: nil)
         DispatchQueue.main.async {
-            self.refresh(alert: alert, action: action)
+           
+          
         }
+          self.refresh(alert: alert, action: action)
    
     }
     func refresh(alert: UIAlertController, action: UIAlertAction) {
@@ -56,7 +58,7 @@ class HistoryTableViewController: UITableViewController {
         
         for day in HealthDay.shared.history {
             group.enter()
-            if let index = HealthDay.shared.history.index(of: day){
+            if let index = HealthDay.shared.history.firstIndex(of: day){
                 hkHelper.loadHistoricDay(date: day.date) { (day) in
                     day.getPoints()
                 
