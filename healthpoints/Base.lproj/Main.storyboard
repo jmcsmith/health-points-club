@@ -2217,9 +2217,6 @@ Cg
                                                 <constraint firstItem="fGC-rn-GwV" firstAttribute="leading" secondItem="CWH-a7-bja" secondAttribute="leading" constant="16" id="mlK-Xz-OSA"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="mEs-oq-PhX" kind="show" identifier="privacySegue" id="wNH-eB-nNm"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="48" id="OTT-Lw-Ja8">
                                         <rect key="frame" x="0.0" y="682.33333206176758" width="375" height="48"/>
@@ -2241,9 +2238,6 @@ Cg
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JGS-5U-vyz" secondAttribute="trailing" constant="20" symbolic="YES" id="ovP-vd-NNM"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="mEs-oq-PhX" kind="show" identifier="websiteSegue" id="4GT-E8-NzW"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="48" id="edi-wP-MD4">
                                         <rect key="frame" x="0.0" y="730.33333206176758" width="375" height="48"/>
@@ -2265,9 +2259,6 @@ Cg
                                                 <constraint firstItem="7dn-OB-xzs" firstAttribute="leading" secondItem="Jpo-7m-q0S" secondAttribute="leadingMargin" id="xlg-SC-ZXs"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="mEs-oq-PhX" kind="show" identifier="rssSegue" id="moQ-lU-d8G"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2298,11 +2289,11 @@ Cg
             <objects>
                 <viewController id="mEs-oq-PhX" customClass="SettingsWebViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pYD-h7-95N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-d6-D21">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2328,9 +2319,6 @@ Cg
             <point key="canvasLocation" x="2394.4000000000001" y="-515.02463054187194"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="wNH-eB-nNm"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="LargeHeart.png" width="797" height="797"/>
         <image name="dark.png" width="60" height="60"/>

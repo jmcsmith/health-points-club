@@ -79,6 +79,26 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 4 {
+            switch indexPath.row {
+            case 0:
+                if let url = URL(string: "https://www.healthpoints.club/privacy") {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            case 1:
+                if let url = URL(string: "https://www.healthpoints.club"){
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            case 2:
+                if let url = URL(string: "https://www.roboticsnailsoftware.com"){
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            default:
+                return
+            }
+        }
+    }
     
     @IBAction func darkButtonClicked(_ sender: Any) {
         UIApplication.shared.setAlternateIconName("AppIcon-2") { error in
@@ -162,7 +182,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
             let systemTint = UIButton.appearance().tintColor
             UIButton.appearance().tintColor = UIColor(red: 14.0/255.0, green: 122.0/255.0, blue: 254.0/255.0, alpha: 1.0)
             self.present(vc, animated: true){
-               UIButton.appearance().tintColor = systemTint
+                UIButton.appearance().tintColor = systemTint
             }
         } catch {
             print("Failed to export")
@@ -193,7 +213,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
             let text2 = try String(contentsOf: urls[0], encoding: .utf8)
             text2.enumerateLines { line, _ in
                 lines.append(line)
-                var parts = line.components(separatedBy: ",")
+                let parts = line.components(separatedBy: ",")
                 let d = formatter.date(from: parts[0])
                 
                 let historyday = HistoryDay(date: d!, points: Int(parts[1])!)
@@ -214,17 +234,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         catch {/* error handling here */}
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destination = segue.destination as? SettingsWebViewController
-        print(segue.identifier)
-        if segue.identifier == "privacySegue" {
-            destination?.urlString = "https://www.healthpoints.club/privacy"
-        } else if segue.identifier == "websiteSegue" {
-            destination?.urlString = "https://www.healthpoints.club"
-        } else if segue.identifier == "rssSegue" {
-            destination?.urlString = "https://www.roboticsnailsoftware.com"
-        }
-    }
+    
     
     
 }
