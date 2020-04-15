@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8er-Xl-n7k">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8er-Xl-n7k">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,25 +13,26 @@
             <objects>
                 <viewController title="Onboarding" id="BrB-PP-muS" customClass="OnboardingPageOneViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I0C-bs-i3s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="tXG-pR-VlQ">
-                                <rect key="frame" x="10" y="44" width="355" height="768"/>
+                                <rect key="frame" x="10" y="0.0" width="355" height="724"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avl-kc-1zS">
-                                <rect key="frame" x="84" y="75.666666666666671" width="207" height="63.000000000000014"/>
+                                <rect key="frame" x="84" y="59" width="207" height="63"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0r-nl-ejj">
-                                <rect key="frame" x="10" y="197.66666666666666" width="355" height="460.66666666666674"/>
+                                <rect key="frame" x="10" y="144.66666666666666" width="355" height="434.66666666666674"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Stay on top of your fitness progress!!! 
 </string>
                                         <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="22" name="SFMono-Heavy"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -43,18 +42,21 @@
 IAo
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Health Points Club monitors your health data directly from Apple Health and converts it to Health Points - ">
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="❤️">
                                         <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="17" name=".AppleColorEmojiUI"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -63,7 +65,8 @@ IAo
                                         <string key="content">.  
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -72,18 +75,21 @@ IAo
 Cg
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Use your ">
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="❤️">
                                         <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="17" name=".AppleColorEmojiUI"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -92,7 +98,8 @@ Cg
                                         <string key="content">'s to compare days, share and compete with friends.
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -101,7 +108,8 @@ Cg
 Cg
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -109,7 +117,8 @@ Cg
                                         <string key="content">To calculate your points Health Points Club needs access to the health data on your device. 
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -118,13 +127,15 @@ Cg
 Cg
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Please authorize health access below.">
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -132,7 +143,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k72-20-gXg">
-                                <rect key="frame" x="112" y="735" width="151" height="30"/>
+                                <rect key="frame" x="112" y="647" width="151" height="30"/>
                                 <state key="normal" title="Authorize Health Data"/>
                                 <connections>
                                     <action selector="authorize:" destination="BrB-PP-muS" eventType="touchUpInside" id="ge6-Wu-PNA"/>
@@ -170,33 +181,33 @@ Cg
             <objects>
                 <viewController id="gsl-wK-vab" customClass="OnboardingPageTwoViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mdW-uK-J5o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="PLd-Tl-3HY">
-                                <rect key="frame" x="10" y="44" width="355" height="768"/>
+                                <rect key="frame" x="10" y="0.0" width="355" height="724"/>
                                 <viewLayoutGuide key="safeArea" id="sHU-fg-QAF"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You for setting up Health Data authroization!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-n5-ZpW">
-                                <rect key="frame" x="30" y="74" width="315" height="66"/>
+                                <rect key="frame" x="30" y="57.666666666666657" width="315" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="EfP-po-oPK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are ready to start using Health Points Club" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59F-Gi-uKB">
-                                <rect key="frame" x="30" y="375" width="315" height="66"/>
+                                <rect key="frame" x="30" y="309" width="315" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="2sa-xo-8gA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azm-iP-4TE">
-                                <rect key="frame" x="146" y="735" width="83" height="30"/>
+                                <rect key="frame" x="146" y="647" width="83" height="30"/>
                                 <state key="normal" title="Get started!"/>
                                 <connections>
                                     <action selector="doneOnboarding:" destination="gsl-wK-vab" eventType="touchUpInside" id="qzk-jR-j56"/>
@@ -276,10 +287,10 @@ Cg
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" id="bdg-AS-Vcq" customClass="HistoryTableViewCell" customModule="healthpoints" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bdg-AS-Vcq" id="YNK-VI-NKL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d2-cb-IOf">
@@ -355,10 +366,10 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1M-nX-nCP" customClass="ThemeView" customModule="healthpoints" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="675"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-8P-8g7" customClass="ThemeImageView" customModule="healthpoints" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="224.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="213.33333333333334"/>
                                         <accessibility key="accessibilityConfiguration" label="Today's Points">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -368,13 +379,13 @@ Cg
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-y4-84X">
-                                        <rect key="frame" x="164" y="58" width="47" height="91"/>
+                                        <rect key="frame" x="164" y="53" width="47" height="91"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="76"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RC0-nP-Dwr">
-                                        <rect key="frame" x="0.0" y="240.66666666666671" width="375" height="434.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="229.33333333333329" width="375" height="411.66666666666674"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="rWv-rT-oLK">
                                             <size key="itemSize" width="174" height="170"/>
@@ -393,7 +404,7 @@ Cg
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" horizontalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oE4-Sj-R4g">
                                                             <rect key="frame" x="73.333333333333314" y="87.333333333333329" width="92.666666666666686" height="14.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="3qZ-Bg-UIL">
@@ -408,7 +419,7 @@ Cg
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJl-Mf-ZBa">
                                                             <rect key="frame" x="73.333333333333314" y="66.666666666666671" width="92.666666666666686" height="20.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -504,24 +515,24 @@ Cg
             <objects>
                 <viewController title="New" id="dKD-fk-MeZ" customClass="NewVersionViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLR-Rg-OYW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New in this Version!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djl-AB-cmr">
-                                <rect key="frame" x="16" y="60" width="343" height="42"/>
+                                <rect key="frame" x="16" y="16" width="343" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I06-hx-q47">
-                                <rect key="frame" x="16" y="774" width="343" height="30"/>
+                                <rect key="frame" x="16" y="686" width="343" height="30"/>
                                 <state key="normal" title="Authorize HealthKit Changes"/>
                                 <connections>
                                     <action selector="authorizeNewVersionHealthKit:" destination="dKD-fk-MeZ" eventType="touchUpInside" id="Wir-1t-pvR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icb-LU-udp">
-                                <rect key="frame" x="16" y="110" width="343" height="656"/>
+                                <rect key="frame" x="16" y="66" width="343" height="612"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">We have changed the calculation for daily water intake.
@@ -533,7 +544,7 @@ Cg
                                     </fragment>
                                     <fragment content="In order to more accurately estimate the amount of water you should be drinking we need an ad">
                                         <attributes>
-                                            <font key="NSFont" size="19" name=".SFNSDisplay"/>
+                                            <font key="NSFont" metaFont="system" size="19"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -541,7 +552,7 @@ Cg
                                         <string key="content">ditional piece of information. Your current weight.
 The new calculation will be fluid ounces equal to half your body weight in pounds and then adjusted for activity. An additional twelve ounces will be added to your goal for each thirty minutes of exercise.</string>
                                         <attributes>
-                                            <font key="NSFont" size="18" name=".SFNSDisplay"/>
+                                            <font key="NSFont" metaFont="system" size="18"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -574,11 +585,11 @@ The new calculation will be fluid ounces equal to half your body weight in pound
             <objects>
                 <viewController id="syM-RH-q6C" customClass="InfoViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k81-XM-D5l" customClass="ThemeView" customModule="healthpoints" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-ba-EOe">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <items>
                                     <navigationItem title="How to earn HP" id="xTk-tP-KQj">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="URE-1W-mjO">
@@ -590,7 +601,7 @@ The new calculation will be fluid ounces equal to half your body weight in pound
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVw-nr-jWf">
-                                <rect key="frame" x="24" y="95" width="327" height="708"/>
+                                <rect key="frame" x="24" y="63" width="327" height="652"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -2018,7 +2029,7 @@ Cg
                             <tableViewSection headerTitle="Icons" id="wvN-LJ-tLa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" rowHeight="71" id="Coa-em-c9W">
-                                        <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Coa-em-c9W" id="Q6A-UN-2Vu">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -2049,7 +2060,7 @@ Cg
                             <tableViewSection headerTitle="Theme" id="NE2-9i-Aa2">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="7LH-uv-OdG">
-                                        <rect key="frame" x="0.0" y="182.33333333333334" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="182.33333206176758" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7LH-uv-OdG" id="i9P-Vg-Bfi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -2079,7 +2090,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="fT3-IT-N0B">
-                                        <rect key="frame" x="0.0" y="253.33333333333337" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="253.33333206176758" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fT3-IT-N0B" id="gpX-FB-9Ay">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -2113,7 +2124,7 @@ Cg
                             <tableViewSection headerTitle="Goals" id="sRh-Eh-sCT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="pmc-OA-dpt">
-                                        <rect key="frame" x="0.0" y="380.33333333333337" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="380.33333206176758" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pmc-OA-dpt" id="HOC-yg-Wfx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -2126,8 +2137,8 @@ Cg
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDF-MT-ytq">
-                                                    <rect key="frame" x="155.66666666666663" y="20.666666666666671" width="203.33333333333337" height="30"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="155.66666666666663" y="18.666666666666671" width="203.33333333333337" height="34"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     <connections>
@@ -2151,7 +2162,7 @@ Cg
                             <tableViewSection headerTitle="Backup and Restore" id="Zyj-FJ-2sA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="KZm-3m-dnz">
-                                        <rect key="frame" x="0.0" y="507.33333333333337" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="507.33333206176758" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KZm-3m-dnz" id="0ft-2i-rao">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -2187,10 +2198,10 @@ Cg
                             <tableViewSection headerTitle="About" id="TNt-hY-QBB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="48" id="nmT-rg-Z2j">
-                                        <rect key="frame" x="0.0" y="634.33333333333337" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="634.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nmT-rg-Z2j" id="CWH-a7-bja">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGC-rn-GwV">
@@ -2211,10 +2222,10 @@ Cg
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="48" id="OTT-Lw-Ja8">
-                                        <rect key="frame" x="0.0" y="682.33333333333337" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="682.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OTT-Lw-Ja8" id="m6e-Ee-FKB">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGS-5U-vyz">
@@ -2235,10 +2246,10 @@ Cg
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="48" id="edi-wP-MD4">
-                                        <rect key="frame" x="0.0" y="730.33333333333337" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="730.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="edi-wP-MD4" id="Jpo-7m-q0S">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robotic Snail Software 🤖🐌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dn-OB-xzs">
@@ -2291,7 +2302,7 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-d6-D21">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="675"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2317,6 +2328,9 @@ Cg
             <point key="canvasLocation" x="2394.4000000000001" y="-515.02463054187194"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wNH-eB-nNm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="LargeHeart.png" width="797" height="797"/>
         <image name="dark.png" width="60" height="60"/>
@@ -2325,7 +2339,4 @@ Cg
         <image name="settings" width="25" height="25"/>
         <image name="today" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="wNH-eB-nNm"/>
-    </inferredMetricsTieBreakers>
 </document>

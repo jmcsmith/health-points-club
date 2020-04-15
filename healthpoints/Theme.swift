@@ -44,6 +44,8 @@ enum Theme: Int {
         UINavigationBar.appearance().isTranslucent = false
         //UINavigationBar.appearance().backgroundColor = barBackgroundColor
         UINavigationBar.appearance().barTintColor = navigationBarBackgroundColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: textColor]
+
         
         //tab bar
         UITabBar.appearance().barTintColor = barBackgroundColor
@@ -64,6 +66,8 @@ enum Theme: Int {
         UITextView.appearance().backgroundColor = backgroundColor
         UITextView.appearance().textColor = textColor
         
+        UITextField.appearance().backgroundColor = backgroundColor
+        UITextField.appearance().textColor = textColor
         //custom views
         ThemeView.appearance().backgroundColor = backgroundColor
         ThemeImageView.appearance().backgroundColor = backgroundColor
