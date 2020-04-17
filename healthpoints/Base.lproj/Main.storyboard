@@ -2232,6 +2232,27 @@ Cg
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="48" id="3MN-JJ-bzf">
+                                        <rect key="frame" x="0.0" y="778.33333206176758" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3MN-JJ-bzf" id="sKH-fN-6sf">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Health Points Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-hF-Xq4">
+                                                    <rect key="frame" x="16" y="11" width="214.66666666666666" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vLc-hF-Xq4" firstAttribute="leading" secondItem="sKH-fN-6sf" secondAttribute="leadingMargin" id="aYc-PD-Hxj"/>
+                                                <constraint firstItem="vLc-hF-Xq4" firstAttribute="centerY" secondItem="sKH-fN-6sf" secondAttribute="centerY" id="hIE-WY-JwU"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vLc-hF-Xq4" secondAttribute="trailing" constant="20" symbolic="YES" id="tFF-b2-nVp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>

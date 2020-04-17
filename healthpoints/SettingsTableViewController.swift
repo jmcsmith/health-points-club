@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class SettingsTableViewController: UITableViewController, UIDocumentPickerDelegate {
     
@@ -68,18 +69,11 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
             pitchBlackSwitch.isOn = false
             darkModeSwitch.isOn = false
         }
-        
-        
-        
-        
-        
         dailyCalories.text = UserDefaults.standard.string(forKey: "dailyCalorieGoal")
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 4 {
@@ -96,6 +90,8 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
                 if let url = URL(string: "https://www.roboticsnailsoftware.com"){
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
+            case 3:
+                SKStoreReviewController.requestReview()
             default:
                 return
             }
