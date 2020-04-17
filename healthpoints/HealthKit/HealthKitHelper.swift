@@ -702,6 +702,23 @@ class HealthKitHelper {
     
     func valueChangedHandler(query: HKObserverQuery!, completionHandler: HKObserverQueryCompletionHandler!, error: Error!) {
         loadHealthDay()
+        let defaults = UserDefaults.standard
+        let lastUpdate = defaults.object(forKey: "lastUpdate") as? Date ?? Date()
+        print("Last Update Date: \(lastUpdate.description) - Current Date: \(Date().description)")
+        let calendar = Calendar.current
+        let lastUpdateDay = calendar.component(.day, from: lastUpdate)
+        let currentDay = calendar.component(.day, from: Date())
+        
+        if lastUpdateDay < currentDay {
+            if let targetDate = calendar.date(byAdding: .day, value: -1, to: Date()) {
+                loadHistoricDay(date: targetDate) { (day) in
+                    let points = day.getPoints()
+                    print("Ran Yesterday (\(targetDate.description): \(points)")
+                    defaults.setValue(Date(), forKey: "lastUpdate")
+                }
+            }
+        }
+        defaults.setValue(Date(), forKey: "lastUpdate")
         completionHandler()
     }
 }
