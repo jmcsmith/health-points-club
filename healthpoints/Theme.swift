@@ -10,7 +10,7 @@ import UIKit
 
 enum Theme: Int {
     case `default`, dark, pitchBlack
-
+    
     private enum Keys {
         static let selectedTheme = "SelectedTheme"
     }
@@ -45,7 +45,7 @@ enum Theme: Int {
         //UINavigationBar.appearance().backgroundColor = barBackgroundColor
         UINavigationBar.appearance().barTintColor = navigationBarBackgroundColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: textColor]
-
+        
         
         //tab bar
         UITabBar.appearance().barTintColor = barBackgroundColor
@@ -57,6 +57,12 @@ enum Theme: Int {
         UITableViewCell.appearance(whenContainedInInstancesOf: [HistoryTableViewController.self]).backgroundColor = backgroundColor
         UITableViewCell.appearance(whenContainedInInstancesOf: [SettingsTableViewController.self]).backgroundColor = tableviewCellBackgroundColor
         UITableView.appearance().backgroundColor = backgroundColor
+        if #available(iOS 13, *) {
+        } else {
+            
+            UITableView.appearance().backgroundColor = UIColor.green
+        }
+        
         
         //specific labels
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).textColor = textColor
@@ -76,7 +82,17 @@ enum Theme: Int {
         UICollectionView.appearance().backgroundColor = backgroundColor
         
         UILabel.appearance(whenContainedInInstancesOf: [UIDocumentPickerViewController.self]).tintColor = mainColor
-
+        
+    }
+    var description: String {
+        switch self {
+        case .default:
+            return "Default"
+        case .dark:
+            return "Dark"
+        case .pitchBlack:
+            return "Black"
+        }
     }
     
     var backgroundColor: UIColor {
@@ -85,7 +101,7 @@ enum Theme: Int {
             return UIColor.white
         case .dark:
             return UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.00)
-            //return .darkGray
+        //return .darkGray
         case .pitchBlack:
             return .black
         }
@@ -104,7 +120,7 @@ enum Theme: Int {
     var barStyle: UIBarStyle {
         switch self {
         case .default:
-            return .default
+            return .black
         case .dark:
             return .black
         case .pitchBlack:

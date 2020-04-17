@@ -198,3 +198,4 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
     }
 }
+

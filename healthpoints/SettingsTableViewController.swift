@@ -28,7 +28,9 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
     
     var darkmodeOn: Bool = false
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.backgroundView = ThemeView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +135,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         } else {
             Theme.default.apply()
         }
+        setNeedsStatusBarAppearanceUpdate()
         refreshUITheme()
     }
     @IBAction func pitchBlackSwitch(sender: UISwitch) {
@@ -143,6 +146,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         } else {
             Theme.default.apply()
         }
+        setNeedsStatusBarAppearanceUpdate()
         refreshUITheme()
     }
     func refreshUITheme(){
@@ -236,6 +240,6 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
     }
     
     
-    
+
 }
 

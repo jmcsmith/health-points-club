@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE24EF2C202675B800860749 /* NewVersionViewController.swift */; };
+		EE50AF392449EC2100355AEF /* HealthPointsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */; };
 		EE5552AA1F96FE99001D3F5F /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A81F96FE98001D3F5F /* dark@3x.png */; };
 		EE5552AB1F96FE99001D3F5F /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A91F96FE99001D3F5F /* dark@2x.png */; };
 		EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */; };
@@ -103,6 +104,7 @@
 
 /* Begin PBXFileReference section */
 		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
+		EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPointsNavigationController.swift; sourceTree = "<group>"; };
 		EE5552A81F96FE98001D3F5F /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
 		EE5552A91F96FE99001D3F5F /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
 		EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */,
 				EE24EF2C202675B800860749 /* NewVersionViewController.swift */,
 				EE67D55120E154EE0074F484 /* SettingsWebViewController.swift */,
+				EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */,
 			);
 			path = healthpoints;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				EE91EBE020AC8C23004A70C0 /* HistoyAttributeType.swift in Sources */,
 				EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */,
 				EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */,
+				EE50AF392449EC2100355AEF /* HealthPointsNavigationController.swift in Sources */,
 				EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */,
 				EED7DD75209E077100F88BDC /* Attribute.swift in Sources */,
 				EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */,

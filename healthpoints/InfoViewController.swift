@@ -16,8 +16,8 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-
-       
+        
+        
         setNeedsStatusBarAppearanceUpdate()
     }
     
@@ -28,7 +28,7 @@ class InfoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-       
+        
     }
     
     /*
@@ -43,17 +43,8 @@ class InfoViewController: UIViewController {
     @IBAction func donePressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        let darkmodeOn = UserDefaults.standard.bool(forKey: "darkmodeOn")
-        if darkmodeOn {
-            return .lightContent
-        }else{
-            return .default
-        }
-        
-        
-    }
     
-  
+    
+    
 }
 
