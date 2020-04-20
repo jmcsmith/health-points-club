@@ -11,22 +11,22 @@
         <!--Onboarding-->
         <scene sceneID="5Nh-o4-oBc">
             <objects>
-                <viewController title="Onboarding" id="BrB-PP-muS" customClass="OnboardingPageOneViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page1" title="Onboarding" id="BrB-PP-muS" customClass="OnboardingPageOneViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I0C-bs-i3s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="tXG-pR-VlQ">
-                                <rect key="frame" x="10" y="0.0" width="355" height="724"/>
+                                <rect key="frame" x="10" y="44" width="355" height="734"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avl-kc-1zS">
-                                <rect key="frame" x="84" y="59" width="207" height="63"/>
+                                <rect key="frame" x="84" y="71.333333333333329" width="207" height="62.999999999999986"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0r-nl-ejj">
-                                <rect key="frame" x="10" y="144.66666666666666" width="355" height="434.66666666666674"/>
+                                <rect key="frame" x="10" y="190.66666666666666" width="355" height="440.66666666666674"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Stay on top of your fitness progress!!! 
@@ -115,7 +115,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k72-20-gXg">
-                                <rect key="frame" x="112" y="647" width="151" height="30"/>
+                                <rect key="frame" x="112" y="701" width="151" height="30"/>
                                 <state key="normal" title="Authorize Health Data"/>
                                 <connections>
                                     <action selector="authorize:" destination="BrB-PP-muS" eventType="touchUpInside" id="ge6-Wu-PNA"/>
@@ -140,9 +140,6 @@ Cg
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1bc-KT-q4L"/>
                     </view>
-                    <connections>
-                        <segue destination="gsl-wK-vab" kind="showDetail" identifier="onboardingP2" id="nUd-oc-3Os"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnf-LV-awn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,17 +148,17 @@ Cg
         <!--Onboarding Page Two View Controller-->
         <scene sceneID="gdB-0h-ibI">
             <objects>
-                <viewController id="gsl-wK-vab" customClass="OnboardingPageTwoViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2" id="gsl-wK-vab" customClass="OnboardingPageTwoViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mdW-uK-J5o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LargeHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="PLd-Tl-3HY">
-                                <rect key="frame" x="10" y="0.0" width="355" height="724"/>
+                                <rect key="frame" x="10" y="44" width="355" height="734"/>
                                 <viewLayoutGuide key="safeArea" id="sHU-fg-QAF"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You for setting up Health Data authroization!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-n5-ZpW">
-                                <rect key="frame" x="30" y="57.666666666666657" width="315" height="66"/>
+                                <rect key="frame" x="30" y="69.666666666666671" width="315" height="66.000000000000014"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="EfP-po-oPK"/>
                                 </constraints>
@@ -170,7 +167,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are ready to start using Health Points Club" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59F-Gi-uKB">
-                                <rect key="frame" x="30" y="309" width="315" height="66"/>
+                                <rect key="frame" x="30" y="358" width="315" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="2sa-xo-8gA"/>
                                 </constraints>
@@ -179,7 +176,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azm-iP-4TE">
-                                <rect key="frame" x="146" y="647" width="83" height="30"/>
+                                <rect key="frame" x="146" y="701" width="83" height="30"/>
                                 <state key="normal" title="Get started!"/>
                                 <connections>
                                     <action selector="doneOnboarding:" destination="gsl-wK-vab" eventType="touchUpInside" id="qzk-jR-j56"/>
@@ -204,9 +201,6 @@ Cg
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nLS-Gi-mVW"/>
                     </view>
-                    <connections>
-                        <segue destination="8er-Xl-n7k" kind="show" identifier="doneOnboarding" id="4cJ-ES-Fea"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8q-WX-3Te" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,7 +231,7 @@ Cg
                     <tabBarItem key="tabBarItem" selectedImage="info" systemItem="history" id="Rqk-Fw-GZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j9z-tK-67f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -254,7 +248,7 @@ Cg
             <objects>
                 <tableViewController id="EGj-f2-63N" customClass="HistoryTableViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="anY-al-qga">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -309,6 +303,14 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xj-js-FEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="278"/>
+        </scene>
+        <!--Onboarding Page View Controller-->
+        <scene sceneID="rki-xX-qm9">
+            <objects>
+                <pageViewController storyboardIdentifier="pageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="FRG-IK-UeZ" customClass="OnboardingPageViewController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ONj-Mw-i2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="480"/>
         </scene>
         <!--Today-->
         <scene sceneID="ci0-eg-BOC">
@@ -468,7 +470,6 @@ Cg
                         <outlet property="heartImage" destination="hx2-8P-8g7" id="Qbd-6J-WKI"/>
                         <outlet property="largeHeartImageView" destination="hx2-8P-8g7" id="3p2-UY-o9l"/>
                         <outlet property="pointsLabel" destination="cIe-y4-84X" id="oze-3s-xEJ"/>
-                        <segue destination="BrB-PP-muS" kind="presentation" identifier="onboarding" id="Yeu-Or-iwg"/>
                         <segue destination="tZX-Qi-cQ5" kind="show" identifier="debugSegue" id="VLA-Ou-I0q"/>
                         <segue destination="dKD-fk-MeZ" kind="presentation" identifier="newVersion" id="bu1-ZZ-3gd"/>
                     </connections>

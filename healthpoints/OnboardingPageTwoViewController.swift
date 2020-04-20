@@ -11,6 +11,7 @@ import UIKit
 class OnboardingPageTwoViewController: UIViewController {
     let defaults:UserDefaults = UserDefaults.standard
     let hkHelper = HealthKitHelper()
+     var pageOne: OnboardingPageOneViewController? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +38,9 @@ class OnboardingPageTwoViewController: UIViewController {
 //        print("start healthkit queries")
         defaults.set(true, forKey: "hasopenedbefore")
        
-        performSegue(withIdentifier: "doneOnboarding", sender: self)
+        self.dismiss(animated: true){
+              self.pageOne?.dismiss(animated: false, completion: nil)
+          }
     }
     
     /*

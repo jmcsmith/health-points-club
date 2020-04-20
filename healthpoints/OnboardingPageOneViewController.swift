@@ -39,7 +39,9 @@ class OnboardingPageOneViewController: UIViewController {
         
     }
     func moveToPageTwo() {
-        self.performSegue(withIdentifier: "onboardingP2", sender: self)
+        if let pageViewController = self.parent as? OnboardingPageViewController {
+                 pageViewController.setViewControllers([pageViewController.pages[1]], direction: .forward, animated: true, completion: nil)
+             }
     }
     /*
      // MARK: - Navigation

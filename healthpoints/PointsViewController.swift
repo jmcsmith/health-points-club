@@ -32,20 +32,10 @@ class PointsViewController: UIViewController, UICollectionViewDelegate, UICollec
         isfirstload = !defaults.bool(forKey: "hasopenedbefore" )
         
         if isfirstload {
-            let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
-            defaults.set(currentVersion, forKey: "lastOpenVersion")
-            self.performSegue(withIdentifier: "onboarding", sender: nil)
-        }else{
-            let lastopened = defaults.string(forKey: "lastOpenVersion")
-            if let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-                if (currentVersion != lastopened || lastopened == nil) {
-                    if let version = Int(currentVersion) {
-                        if version < 390 {
-                            self.performSegue(withIdentifier: "newVersion", sender: nil)
-                        }
-                    }
-                }
-            }
+            let pageOne = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pageView")
+     
+            pageOne.modalPresentationStyle = .fullScreen
+            self.present(pageOne, animated: true, completion: nil)
         }
         
     }
