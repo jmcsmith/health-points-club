@@ -224,10 +224,10 @@ Cg
             </objects>
             <point key="canvasLocation" x="-977" y="-128"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Health Points Navigation Controller-->
         <scene sceneID="xDn-lq-cR9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gvf-q3-A6Z" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gvf-q3-A6Z" customClass="HealthPointsNavigationController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="info" systemItem="history" id="Rqk-Fw-GZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j9z-tK-67f">

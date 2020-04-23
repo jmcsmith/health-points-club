@@ -123,6 +123,15 @@ class HistoryTableViewController: UITableViewController {
         
         return cell
     }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if Theme.current == .default {
+            if #available(iOS 13, *) {
+                return .darkContent
+            }
+            return .default
+        } else {
+            return .lightContent
+        }
+    }
     
 }

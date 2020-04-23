@@ -715,6 +715,7 @@ class HealthKitHelper {
                     let points = day.getPoints()
                     print("Ran Yesterday (\(targetDate.description): \(points)")
                     defaults.setValue(Date(), forKey: "lastUpdate")
+                    //send local notification? - "Congrats you got X points yesterday"?
                 }
             }
         }

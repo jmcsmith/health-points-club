@@ -805,7 +805,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = healthpoints/healthpoints.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 311;
+				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -825,7 +825,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = healthpoints/healthpoints.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 311;
+				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -909,7 +909,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 311;
+				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -928,7 +928,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 311;
+				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -948,7 +948,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = "healthpoints-imessage/healthpoints-imessage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 311;
+				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = "healthpoints-imessage/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -968,7 +968,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = "healthpoints-imessage/healthpoints-imessage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 311;
+				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = "healthpoints-imessage/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
