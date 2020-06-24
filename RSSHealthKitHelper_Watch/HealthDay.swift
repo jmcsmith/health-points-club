@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import WatchConnectivity
 
 public class HealthDay {
-    private init() {
+    public init() {
         let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
         defaultAttributes = defaults?.object(forKey: "attributeOrder") as? [String]
         if defaultAttributes != nil {
@@ -33,28 +32,29 @@ public class HealthDay {
         }
     }
     
-    static let shared = HealthDay()
+    public static let shared = HealthDay()
     
     var date: Date = Date()
     
-    var attributes: [Attribute] = []
+    public var attributes: [Attribute] = []
     var defaultAttributes: [String]? = []
     var moveGoal: Double = 0.0
     var history: [HistoryDay] = []
-    var bodyMass: Double = 0.0
+    public var bodyMass: Double = 0.0
+    public var weeklyTotal = 0
+    public var lifetimeTotal = 0
     
     let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
     
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
-        sendAlertToWatch()
     }
     func saveAttributeOrder(){
         defaultAttributes = attributes.map({$0.type.rawValue})
         defaults?.set(defaultAttributes, forKey: "attributeOrder")
     }
-    func getPoints() -> Int {
+    public func getPoints() -> Int {
         var points = 0
         let cal = Calendar.current
         
@@ -73,7 +73,6 @@ public class HealthDay {
         }
         saveHistory()
         print("Get Points - \(points)")
-        sendAlertToWatch()
         updateWidgetValues()
         return points
     }
@@ -115,24 +114,4 @@ public class HealthDay {
         
         
     }
-    public func sendAlertToWatch(){
-        if WCSession.isSupported() {
-            
-            let session = WCSession.default
-            if session.isWatchAppInstalled {
-                do {
-                    let weeklyTotalValue = defaults?.integer(forKey: "weekTotal")
-                    let alltimeHighValue = defaults?.integer(forKey: "allTimeHigh")
-                    let lifetimeTotalValue = defaults?.integer(forKey: "lifetimeTotal")
-
-                    try session.updateApplicationContext(["status": "Update","weekTotal":weeklyTotalValue ?? 0, "allTimeHigh":alltimeHighValue ?? 0, "lifetimeTotal": lifetimeTotalValue ?? 0, "date": Date()])
-                    print("sent status update to watch")
-                } catch {
-                    print("ERROR: \(error)")
-                }
-            }
-            
-        }
-    }
 }
-

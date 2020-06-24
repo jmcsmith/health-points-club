@@ -11,10 +11,10 @@ import Foundation
 import HealthKit
 import UserNotifications
 
-class HealthKitHelper {
+public class HealthKitHelper {
     
     let healthKitStore: HKHealthStore = HKHealthStore()
-    init() {
+    public init() {
         
     }
     
@@ -45,208 +45,208 @@ class HealthKitHelper {
         healthKitStore.requestAuthorization(toShare: dataTypesToWrite, read: dataTypesToRead) { (success, error) -> Void in
             if completion != nil {
                 
-                self.startObservingQueries()
+                //self.startObservingQueries()
                 completion(success, error)
             }
         }
     }
     
-    func startObservingQueries() {
-        DispatchQueue.main.async(execute: self.startObservingStepChanges)
-        DispatchQueue.main.async(execute: self.startObservingWorkoutChanges)
-        DispatchQueue.main.async(execute: self.startObservingWaterChanges)
-        DispatchQueue.main.async(execute: self.startObservingStandHours)
-        DispatchQueue.main.async(execute: self.startObservingMindSessions)
-        DispatchQueue.main.async(execute: self.startObservingActiveCalories)
-        DispatchQueue.main.async(execute: self.startObservingExerciseChanges)
-        DispatchQueue.main.async(execute: self.startObservingCaloriesChanges)
-        DispatchQueue.main.async(execute: self.startObservingSleep)
-        DispatchQueue.main.async(execute: self.startObservingBodyMass)
-    }
-    
-    func startObservingBodyMass() {
-        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of body mass changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of body mass changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingStandHours() {
-        let sampleType = HKObjectType.categoryType(forIdentifier: .appleStandHour)!
-        
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
-        
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of Stand Hour changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of Stand Hour changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingWaterChanges() {
-        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of water changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of water changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingCaloriesChanges() {
-        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of Calories changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of Calories changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingWorkoutChanges() {
-        let sampleType = HKObjectType.workoutType()
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of workout changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of workout changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingStepChanges() {
-        
-        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
-        
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of Step changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of Step changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingExerciseChanges() {
-        
-        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
-        
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of Exercise changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of Exercise changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingActiveCalories() {
-        let sampleType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
-        
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
-        
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of Active Energy changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of Active Energy changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingMindSessions() {
-        let sampleType = HKObjectType.categoryType(forIdentifier: .mindfulSession)!
-        
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
-        
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of Mind Session changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of Mind Session changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
-    
-    func startObservingSleep() {
-        let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
-        
-        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
-        
-        healthKitStore.execute(query)
-        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
-            
-            if succeeded {
-                print("Enabled background delivery of Sleep Analysis changes")
-            } else {
-                if let theError = error {
-                    print("Failed to enable background delivery of Sleep Analysis changes. ")
-                    print("Error = \(theError)")
-                }
-            }
-        })
-    }
+//    func startObservingQueries() {
+//        DispatchQueue.main.async(execute: self.startObservingStepChanges)
+//        DispatchQueue.main.async(execute: self.startObservingWorkoutChanges)
+//        DispatchQueue.main.async(execute: self.startObservingWaterChanges)
+//        DispatchQueue.main.async(execute: self.startObservingStandHours)
+//        DispatchQueue.main.async(execute: self.startObservingMindSessions)
+//        DispatchQueue.main.async(execute: self.startObservingActiveCalories)
+//        DispatchQueue.main.async(execute: self.startObservingExerciseChanges)
+//        DispatchQueue.main.async(execute: self.startObservingCaloriesChanges)
+//        DispatchQueue.main.async(execute: self.startObservingSleep)
+//        DispatchQueue.main.async(execute: self.startObservingBodyMass)
+//    }
+//
+//    func startObservingBodyMass() {
+//        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of body mass changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of body mass changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingStandHours() {
+//        let sampleType = HKObjectType.categoryType(forIdentifier: .appleStandHour)!
+//
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
+//
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of Stand Hour changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of Stand Hour changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingWaterChanges() {
+//        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of water changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of water changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingCaloriesChanges() {
+//        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of Calories changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of Calories changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingWorkoutChanges() {
+//        let sampleType = HKObjectType.workoutType()
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of workout changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of workout changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingStepChanges() {
+//
+//        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+//
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
+//
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of Step changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of Step changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingExerciseChanges() {
+//
+//        let sampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+//
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType!, predicate: nil, updateHandler: self.valueChangedHandler)
+//
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType!, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of Exercise changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of Exercise changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingActiveCalories() {
+//        let sampleType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
+//
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
+//
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of Active Energy changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of Active Energy changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingMindSessions() {
+//        let sampleType = HKObjectType.categoryType(forIdentifier: .mindfulSession)!
+//
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
+//
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of Mind Session changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of Mind Session changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
+//
+//    func startObservingSleep() {
+//        let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
+//
+//        let query: HKObserverQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: self.valueChangedHandler)
+//
+//        healthKitStore.execute(query)
+//        healthKitStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate, withCompletion: { (succeeded: Bool, error: Error!) in
+//
+//            if succeeded {
+//                print("Enabled background delivery of Sleep Analysis changes")
+//            } else {
+//                if let theError = error {
+//                    print("Failed to enable background delivery of Sleep Analysis changes. ")
+//                    print("Error = \(theError)")
+//                }
+//            }
+//        })
+//    }
     
     func getStepData(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
         let cal = Calendar.current
@@ -663,7 +663,7 @@ class HealthKitHelper {
     
     
     
-    func loadHealthDay() {
+    public func loadHealthDay() {
         
         getBodyMassData(forDate: Date()) { (bodyMass, _) -> Void in
             HealthDay.shared.bodyMass = bodyMass

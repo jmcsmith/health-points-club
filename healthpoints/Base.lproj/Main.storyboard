@@ -227,7 +227,7 @@ Cg
         <!--Health Points Navigation Controller-->
         <scene sceneID="xDn-lq-cR9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gvf-q3-A6Z" customClass="HealthPointsNavigationController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gvf-q3-A6Z" customClass="HealthPointsNavigationController" customModule="healthpoints" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="info" systemItem="history" id="Rqk-Fw-GZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j9z-tK-67f">
@@ -315,7 +315,7 @@ Cg
         <!--Today-->
         <scene sceneID="ci0-eg-BOC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="quf-7A-y97" customClass="HealthPointsNavigationController" customModule="healthpoints" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="quf-7A-y97" customClass="HealthPointsNavigationController" customModule="healthpoints" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Today" image="today" selectedImage="today" id="JNt-5x-gbH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nE6-XC-EKH">

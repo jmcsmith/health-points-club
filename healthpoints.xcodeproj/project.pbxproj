@@ -10,6 +10,32 @@
 		EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE24EF2C202675B800860749 /* NewVersionViewController.swift */; };
 		EE50AF392449EC2100355AEF /* HealthPointsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */; };
 		EE50AF3B244A45EA00355AEF /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF3A244A45EA00355AEF /* OnboardingPageViewController.swift */; };
+		EE50AF42245A0B8500355AEF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE50AF40245A0B8500355AEF /* Interface.storyboard */; };
+		EE50AF44245A0B8800355AEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE50AF43245A0B8800355AEF /* Assets.xcassets */; };
+		EE50AF56245A0B8800355AEF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF55245A0B8800355AEF /* NotificationController.swift */; };
+		EE50AF58245A0B8800355AEF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF57245A0B8800355AEF /* NotificationView.swift */; };
+		EE50AF5C245A0B8800355AEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE50AF5B245A0B8800355AEF /* Assets.xcassets */; };
+		EE50AF5F245A0B8900355AEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE50AF5E245A0B8900355AEF /* Preview Assets.xcassets */; };
+		EE50AF64245A0B8900355AEF /* HP Club.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EE50AF3E245A0B8500355AEF /* HP Club.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EE50AF6F245A0C3900355AEF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE50AF6E245A0C3900355AEF /* HealthKit.framework */; };
+		EE50AFAE245A188E00355AEF /* RSSHealthKitHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = EE50AFAC245A188E00355AEF /* RSSHealthKitHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE50AFFC245A1A8200355AEF /* RSSHealthKitHelper_Watch.h in Headers */ = {isa = PBXBuildFile; fileRef = EE50AFFA245A1A8200355AEF /* RSSHealthKitHelper_Watch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE50AFFF245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE50AFF8245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework */; };
+		EE50B000245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE50AFF8245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE50B00C245A1ABE00355AEF /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B005245A1ABD00355AEF /* Attribute.swift */; };
+		EE50B00D245A1ABE00355AEF /* HistoyAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B006245A1ABD00355AEF /* HistoyAttributeType.swift */; };
+		EE50B00E245A1ABE00355AEF /* HistoryAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B007245A1ABD00355AEF /* HistoryAttribute.swift */; };
+		EE50B00F245A1ABE00355AEF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B008245A1ABD00355AEF /* HealthDay.swift */; };
+		EE50B010245A1ABE00355AEF /* HistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B009245A1ABE00355AEF /* HistoryDay.swift */; };
+		EE50B011245A1ABE00355AEF /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B00A245A1ABE00355AEF /* AttributeType.swift */; };
+		EE50B019245A1E1E00355AEF /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B012245A1E1D00355AEF /* Attribute.swift */; };
+		EE50B01A245A1E1E00355AEF /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B013245A1E1D00355AEF /* HealthDay.swift */; };
+		EE50B01B245A1E1E00355AEF /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B014245A1E1E00355AEF /* HealthKitHelper.swift */; };
+		EE50B01C245A1E1E00355AEF /* HistoryAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B015245A1E1E00355AEF /* HistoryAttribute.swift */; };
+		EE50B01D245A1E1E00355AEF /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B016245A1E1E00355AEF /* AttributeType.swift */; };
+		EE50B01E245A1E1E00355AEF /* HistoyAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B017245A1E1E00355AEF /* HistoyAttributeType.swift */; };
+		EE50B01F245A1E1E00355AEF /* HistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B018245A1E1E00355AEF /* HistoryDay.swift */; };
+		EE50B021245A233C00355AEF /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50B020245A233C00355AEF /* HealthKitHelper.swift */; };
 		EE5552AA1F96FE99001D3F5F /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A81F96FE98001D3F5F /* dark@3x.png */; };
 		EE5552AB1F96FE99001D3F5F /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5552A91F96FE99001D3F5F /* dark@2x.png */; };
 		EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */; };
@@ -24,8 +50,6 @@
 		EE682D9C1F82F05E003A6CF6 /* healthpointsclubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682D9B1F82F05E003A6CF6 /* healthpointsclubTests.swift */; };
 		EE682DA71F82F05E003A6CF6 /* healthpointsclubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */; };
 		EE682DB81F82F439003A6CF6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EE682DB51F82F439003A6CF6 /* splash.png */; };
-		EE682DBC1F82F46D003A6CF6 /* HealthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */; };
-		EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */; };
 		EE682DC01F82F5B4003A6CF6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */; };
 		EE682DC31F830093003A6CF6 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DC21F830093003A6CF6 /* PointsViewController.swift */; };
 		EE682DC51F8301CF003A6CF6 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DC41F8301CF003A6CF6 /* OnboardingPageOneViewController.swift */; };
@@ -40,8 +64,6 @@
 		EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */; };
 		EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */; };
 		EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8C599C1F94297C00A30773 /* InfoViewController.swift */; };
-		EE91EBDE20AC8BFA004A70C0 /* HistoryAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91EBDD20AC8BFA004A70C0 /* HistoryAttribute.swift */; };
-		EE91EBE020AC8C23004A70C0 /* HistoyAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91EBDF20AC8C23004A70C0 /* HistoyAttributeType.swift */; };
 		EEC5D3181FA000DA007956FB /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC5D3171FA000DA007956FB /* Messages.framework */; };
 		EEC5D31B1FA000DA007956FB /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5D31A1FA000DA007956FB /* MessagesViewController.swift */; };
 		EEC5D31E1FA000DA007956FB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC5D31C1FA000DA007956FB /* MainInterface.storyboard */; };
@@ -51,13 +73,29 @@
 		EEC5D32C1FA00295007956FB /* MessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5D32B1FA00295007956FB /* MessagesCollectionViewCell.swift */; };
 		EEC5D32F1FA0031D007956FB /* AttributeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC5D32D1FA0031D007956FB /* AttributeCellView.xib */; };
 		EEC5D3301FA0031D007956FB /* AttributeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5D32E1FA0031D007956FB /* AttributeCellView.swift */; };
-		EED7DD73209CC26000F88BDC /* HistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7DD72209CC26000F88BDC /* HistoryDay.swift */; };
-		EED7DD75209E077100F88BDC /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7DD74209E077100F88BDC /* Attribute.swift */; };
-		EED7DD77209E07A500F88BDC /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7DD76209E07A500F88BDC /* AttributeType.swift */; };
+		EED3EB0B245B152C00DE92E4 /* HP Club.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EE50AF4A245A0B8800355AEF /* HP Club.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EED3EB0F245B15CC00DE92E4 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF51245A0B8800355AEF /* HostingController.swift */; };
+		EED3EB10245B15D100DE92E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF4F245A0B8800355AEF /* ContentView.swift */; };
+		EED3EB11245B15DB00DE92E4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF53245A0B8800355AEF /* ExtensionDelegate.swift */; };
+		EED3EB12245B186A00DE92E4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF59245A0B8800355AEF /* ComplicationController.swift */; };
 		EEDACCFC1FA9DF8900D3F6A9 /* heartdarkergray.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EE50AF62245A0B8900355AEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE50AF3D245A0B8500355AEF;
+			remoteInfo = "healthpoints-watch";
+		};
+		EE50AFFD245A1A8200355AEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE50AFF7245A1A8200355AEF;
+			remoteInfo = RSSHealthKitHelper_Watch;
+		};
 		EE682D981F82F05E003A6CF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
@@ -86,9 +124,38 @@
 			remoteGlobalIDString = EEC5D3151FA000DA007956FB;
 			remoteInfo = "healthpoints-imessage";
 		};
+		EED3EB0C245B152C00DE92E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE50AF49245A0B8800355AEF;
+			remoteInfo = "healthpoints-watch Extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		EE50AF65245A0B8900355AEF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				EE50AF64245A0B8900355AEF /* HP Club.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFA4245A163200355AEF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EE50B000245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEC5D3281FA000DA007956FB /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,12 +168,61 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EED3EB0E245B152C00DE92E4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EED3EB0B245B152C00DE92E4 /* HP Club.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
 		EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPointsNavigationController.swift; sourceTree = "<group>"; };
 		EE50AF3A244A45EA00355AEF /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		EE50AF3E245A0B8500355AEF /* HP Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HP Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE50AF41245A0B8500355AEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		EE50AF43245A0B8800355AEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE50AF45245A0B8800355AEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE50AF4A245A0B8800355AEF /* HP Club.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HP Club.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE50AF4F245A0B8800355AEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EE50AF51245A0B8800355AEF /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		EE50AF53245A0B8800355AEF /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		EE50AF55245A0B8800355AEF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		EE50AF57245A0B8800355AEF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		EE50AF59245A0B8800355AEF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		EE50AF5B245A0B8800355AEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE50AF5E245A0B8900355AEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE50AF60245A0B8900355AEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE50AF61245A0B8900355AEF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		EE50AF6D245A0C3900355AEF /* healthpoints-watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints-watch Extension.entitlements"; sourceTree = "<group>"; };
+		EE50AF6E245A0C3900355AEF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		EE50AFAA245A188E00355AEF /* RSSHealthKitHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSSHealthKitHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE50AFAC245A188E00355AEF /* RSSHealthKitHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSHealthKitHelper.h; sourceTree = "<group>"; };
+		EE50AFAD245A188E00355AEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE50AFEB245A19F900355AEF /* RSSHealthKitHelper copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RSSHealthKitHelper copy-Info.plist"; path = "/Users/josephsmith/health-points-club/RSSHealthKitHelper copy-Info.plist"; sourceTree = "<absolute>"; };
+		EE50AFF8245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSSHealthKitHelper_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE50AFFA245A1A8200355AEF /* RSSHealthKitHelper_Watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSHealthKitHelper_Watch.h; sourceTree = "<group>"; };
+		EE50AFFB245A1A8200355AEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE50B005245A1ABD00355AEF /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		EE50B006245A1ABD00355AEF /* HistoyAttributeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoyAttributeType.swift; sourceTree = "<group>"; };
+		EE50B007245A1ABD00355AEF /* HistoryAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryAttribute.swift; sourceTree = "<group>"; };
+		EE50B008245A1ABD00355AEF /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDay.swift; sourceTree = "<group>"; };
+		EE50B009245A1ABE00355AEF /* HistoryDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDay.swift; sourceTree = "<group>"; };
+		EE50B00A245A1ABE00355AEF /* AttributeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
+		EE50B012245A1E1D00355AEF /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		EE50B013245A1E1D00355AEF /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDay.swift; sourceTree = "<group>"; };
+		EE50B014245A1E1E00355AEF /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
+		EE50B015245A1E1E00355AEF /* HistoryAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryAttribute.swift; sourceTree = "<group>"; };
+		EE50B016245A1E1E00355AEF /* AttributeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
+		EE50B017245A1E1E00355AEF /* HistoyAttributeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoyAttributeType.swift; sourceTree = "<group>"; };
+		EE50B018245A1E1E00355AEF /* HistoryDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDay.swift; sourceTree = "<group>"; };
+		EE50B020245A233C00355AEF /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		EE5552A81F96FE98001D3F5F /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
 		EE5552A91F96FE99001D3F5F /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
 		EE5DE9C21F942D6300F6BFC1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -127,8 +243,6 @@
 		EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthpointsclubUITests.swift; sourceTree = "<group>"; };
 		EE682DA81F82F05E003A6CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE682DB51F82F439003A6CF6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
-		EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDay.swift; sourceTree = "<group>"; };
-		EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		EE682DC11F82F5B4003A6CF6 /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
 		EE682DC21F830093003A6CF6 /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
@@ -146,8 +260,6 @@
 		EE8A3C031F8930CC00EB3E77 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EE8A3C051F89314900EB3E77 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		EE8C599C1F94297C00A30773 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		EE91EBDD20AC8BFA004A70C0 /* HistoryAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAttribute.swift; sourceTree = "<group>"; };
-		EE91EBDF20AC8C23004A70C0 /* HistoyAttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoyAttributeType.swift; sourceTree = "<group>"; };
 		EEC5D3161FA000DA007956FB /* healthpoints-imessage.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "healthpoints-imessage.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC5D3171FA000DA007956FB /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		EEC5D31A1FA000DA007956FB /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -159,13 +271,34 @@
 		EEC5D32D1FA0031D007956FB /* AttributeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeCellView.xib; sourceTree = "<group>"; };
 		EEC5D32E1FA0031D007956FB /* AttributeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCellView.swift; sourceTree = "<group>"; };
 		EEC5D3311FA003B8007956FB /* healthpoints-imessage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints-imessage.entitlements"; sourceTree = "<group>"; };
-		EED7DD72209CC26000F88BDC /* HistoryDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDay.swift; sourceTree = "<group>"; };
-		EED7DD74209E077100F88BDC /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
-		EED7DD76209E07A500F88BDC /* AttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
+		EED3EB0A245AEF1C00DE92E4 /* healthpoints-watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints-watch.entitlements"; sourceTree = "<group>"; };
 		EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdarkergray.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EE50AF47245A0B8800355AEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE50AF6F245A0C3900355AEF /* HealthKit.framework in Frameworks */,
+				EE50AFFF245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFA7245A188E00355AEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFF5245A1A8200355AEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE682D801F82F05E003A6CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,6 +340,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE50AF3F245A0B8500355AEF /* healthpoints-watch */ = {
+			isa = PBXGroup;
+			children = (
+				EED3EB0A245AEF1C00DE92E4 /* healthpoints-watch.entitlements */,
+				EE50AF40245A0B8500355AEF /* Interface.storyboard */,
+				EE50AF43245A0B8800355AEF /* Assets.xcassets */,
+				EE50AF45245A0B8800355AEF /* Info.plist */,
+			);
+			path = "healthpoints-watch";
+			sourceTree = "<group>";
+		};
+		EE50AF4E245A0B8800355AEF /* healthpoints-watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EE50AF6D245A0C3900355AEF /* healthpoints-watch Extension.entitlements */,
+				EE50AF4F245A0B8800355AEF /* ContentView.swift */,
+				EE50AF51245A0B8800355AEF /* HostingController.swift */,
+				EE50AF53245A0B8800355AEF /* ExtensionDelegate.swift */,
+				EE50AF55245A0B8800355AEF /* NotificationController.swift */,
+				EE50AF57245A0B8800355AEF /* NotificationView.swift */,
+				EE50AF59245A0B8800355AEF /* ComplicationController.swift */,
+				EE50AF5B245A0B8800355AEF /* Assets.xcassets */,
+				EE50AF60245A0B8900355AEF /* Info.plist */,
+				EE50AF61245A0B8900355AEF /* PushNotificationPayload.apns */,
+				EE50AF5D245A0B8900355AEF /* Preview Content */,
+			);
+			path = "healthpoints-watch Extension";
+			sourceTree = "<group>";
+		};
+		EE50AF5D245A0B8900355AEF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EE50AF5E245A0B8900355AEF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE50AFAB245A188E00355AEF /* RSSHealthKitHelper */ = {
+			isa = PBXGroup;
+			children = (
+				EE50AFAC245A188E00355AEF /* RSSHealthKitHelper.h */,
+				EE50AFAD245A188E00355AEF /* Info.plist */,
+			);
+			path = RSSHealthKitHelper;
+			sourceTree = "<group>";
+		};
+		EE50AFF9245A1A8200355AEF /* RSSHealthKitHelper_Watch */ = {
+			isa = PBXGroup;
+			children = (
+				EE50B020245A233C00355AEF /* HealthKitHelper.swift */,
+				EE50B005245A1ABD00355AEF /* Attribute.swift */,
+				EE50B00A245A1ABE00355AEF /* AttributeType.swift */,
+				EE50B008245A1ABD00355AEF /* HealthDay.swift */,
+				EE50B007245A1ABD00355AEF /* HistoryAttribute.swift */,
+				EE50B009245A1ABE00355AEF /* HistoryDay.swift */,
+				EE50B006245A1ABD00355AEF /* HistoyAttributeType.swift */,
+				EE50AFFA245A1A8200355AEF /* RSSHealthKitHelper_Watch.h */,
+				EE50AFFB245A1A8200355AEF /* Info.plist */,
+			);
+			path = RSSHealthKitHelper_Watch;
+			sourceTree = "<group>";
+		};
 		EE682D7A1F82F05E003A6CF6 = {
 			isa = PBXGroup;
 			children = (
@@ -215,8 +410,13 @@
 				EE682DA51F82F05E003A6CF6 /* healthpointsclubUITests */,
 				EEC5D3191FA000DA007956FB /* healthpoints-imessage */,
 				EE6B34B11FA4E22A005E8E87 /* TodayExtension */,
+				EE50AF3F245A0B8500355AEF /* healthpoints-watch */,
+				EE50AF4E245A0B8800355AEF /* healthpoints-watch Extension */,
+				EE50AFAB245A188E00355AEF /* RSSHealthKitHelper */,
+				EE50AFF9245A1A8200355AEF /* RSSHealthKitHelper_Watch */,
 				EE682D841F82F05E003A6CF6 /* Products */,
 				EE682DBE1F82F5B4003A6CF6 /* Frameworks */,
+				EE50AFEB245A19F900355AEF /* RSSHealthKitHelper copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,6 +428,10 @@
 				EE682DA21F82F05E003A6CF6 /* healthpointsUITests.xctest */,
 				EEC5D3161FA000DA007956FB /* healthpoints-imessage.appex */,
 				EE6B34AE1FA4E229005E8E87 /* TodayExtension.appex */,
+				EE50AF3E245A0B8500355AEF /* HP Club.app */,
+				EE50AF4A245A0B8800355AEF /* HP Club.appex */,
+				EE50AFAA245A188E00355AEF /* RSSHealthKitHelper.framework */,
+				EE50AFF8245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,6 +491,7 @@
 		EE682DBE1F82F5B4003A6CF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE50AF6E245A0C3900355AEF /* HealthKit.framework */,
 				EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */,
 				EEC5D3171FA000DA007956FB /* Messages.framework */,
 				EE6B34AF1FA4E22A005E8E87 /* NotificationCenter.framework */,
@@ -325,20 +530,111 @@
 		EED7DD78209E07D400F88BDC /* HealthKit */ = {
 			isa = PBXGroup;
 			children = (
-				EE682DBA1F82F46D003A6CF6 /* HealthDay.swift */,
-				EE682DBB1F82F46D003A6CF6 /* HealthKitHelper.swift */,
-				EED7DD72209CC26000F88BDC /* HistoryDay.swift */,
-				EED7DD74209E077100F88BDC /* Attribute.swift */,
-				EED7DD76209E07A500F88BDC /* AttributeType.swift */,
-				EE91EBDD20AC8BFA004A70C0 /* HistoryAttribute.swift */,
-				EE91EBDF20AC8C23004A70C0 /* HistoyAttributeType.swift */,
+				EE50B012245A1E1D00355AEF /* Attribute.swift */,
+				EE50B016245A1E1E00355AEF /* AttributeType.swift */,
+				EE50B013245A1E1D00355AEF /* HealthDay.swift */,
+				EE50B014245A1E1E00355AEF /* HealthKitHelper.swift */,
+				EE50B015245A1E1E00355AEF /* HistoryAttribute.swift */,
+				EE50B018245A1E1E00355AEF /* HistoryDay.swift */,
+				EE50B017245A1E1E00355AEF /* HistoyAttributeType.swift */,
 			);
 			path = HealthKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		EE50AFA5245A188E00355AEF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE50AFAE245A188E00355AEF /* RSSHealthKitHelper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFF3245A1A8200355AEF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE50AFFC245A1A8200355AEF /* RSSHealthKitHelper_Watch.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		EE50AF3D245A0B8500355AEF /* healthpoints-watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE50AF6C245A0B8900355AEF /* Build configuration list for PBXNativeTarget "healthpoints-watch" */;
+			buildPhases = (
+				EE50AF3C245A0B8500355AEF /* Resources */,
+				EED3EB0E245B152C00DE92E4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EED3EB0D245B152C00DE92E4 /* PBXTargetDependency */,
+			);
+			name = "healthpoints-watch";
+			productName = "healthpoints-watch";
+			productReference = EE50AF3E245A0B8500355AEF /* HP Club.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		EE50AF49245A0B8800355AEF /* healthpoints-watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE50AF6B245A0B8900355AEF /* Build configuration list for PBXNativeTarget "healthpoints-watch Extension" */;
+			buildPhases = (
+				EE50AF46245A0B8800355AEF /* Sources */,
+				EE50AF47245A0B8800355AEF /* Frameworks */,
+				EE50AF48245A0B8800355AEF /* Resources */,
+				EE50AFA4245A163200355AEF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE50AFFE245A1A8200355AEF /* PBXTargetDependency */,
+			);
+			name = "healthpoints-watch Extension";
+			productName = "healthpoints-watch Extension";
+			productReference = EE50AF4A245A0B8800355AEF /* HP Club.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		EE50AFA9245A188E00355AEF /* RSSHealthKitHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE50AFB6245A188E00355AEF /* Build configuration list for PBXNativeTarget "RSSHealthKitHelper" */;
+			buildPhases = (
+				EE50AFA5245A188E00355AEF /* Headers */,
+				EE50AFA6245A188E00355AEF /* Sources */,
+				EE50AFA7245A188E00355AEF /* Frameworks */,
+				EE50AFA8245A188E00355AEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSSHealthKitHelper;
+			productName = RSSHealthKitHelper;
+			productReference = EE50AFAA245A188E00355AEF /* RSSHealthKitHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EE50AFF7245A1A8200355AEF /* RSSHealthKitHelper_Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE50B001245A1A8200355AEF /* Build configuration list for PBXNativeTarget "RSSHealthKitHelper_Watch" */;
+			buildPhases = (
+				EE50AFF3245A1A8200355AEF /* Headers */,
+				EE50AFF4245A1A8200355AEF /* Sources */,
+				EE50AFF5245A1A8200355AEF /* Frameworks */,
+				EE50AFF6245A1A8200355AEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSSHealthKitHelper_Watch;
+			productName = RSSHealthKitHelper_Watch;
+			productReference = EE50AFF8245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		EE682D821F82F05E003A6CF6 /* healthpoints */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE682DAB1F82F05E003A6CF6 /* Build configuration list for PBXNativeTarget "healthpoints" */;
@@ -347,12 +643,14 @@
 				EE682D801F82F05E003A6CF6 /* Frameworks */,
 				EE682D811F82F05E003A6CF6 /* Resources */,
 				EEC5D3281FA000DA007956FB /* Embed App Extensions */,
+				EE50AF65245A0B8900355AEF /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				EEC5D3231FA000DA007956FB /* PBXTargetDependency */,
 				EE6B34B91FA4E22A005E8E87 /* PBXTargetDependency */,
+				EE50AF63245A0B8900355AEF /* PBXTargetDependency */,
 			);
 			name = healthpoints;
 			productName = healthpointsclub;
@@ -435,10 +733,28 @@
 		EE682D7B1F82F05E003A6CF6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Joseph Smith";
 				TargetAttributes = {
+					EE50AF3D245A0B8500355AEF = {
+						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
+					};
+					EE50AF49245A0B8800355AEF = {
+						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
+					};
+					EE50AFA9245A188E00355AEF = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+						ProvisioningStyle = Automatic;
+					};
+					EE50AFF7245A1A8200355AEF = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+						ProvisioningStyle = Automatic;
+					};
 					EE682D821F82F05E003A6CF6 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1100;
@@ -505,11 +821,47 @@
 				EE682DA11F82F05E003A6CF6 /* healthpointsUITests */,
 				EEC5D3151FA000DA007956FB /* healthpoints-imessage */,
 				EE6B34AD1FA4E229005E8E87 /* TodayExtension */,
+				EE50AF3D245A0B8500355AEF /* healthpoints-watch */,
+				EE50AF49245A0B8800355AEF /* healthpoints-watch Extension */,
+				EE50AFA9245A188E00355AEF /* RSSHealthKitHelper */,
+				EE50AFF7245A1A8200355AEF /* RSSHealthKitHelper_Watch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EE50AF3C245A0B8500355AEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE50AF44245A0B8800355AEF /* Assets.xcassets in Resources */,
+				EE50AF42245A0B8500355AEF /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AF48245A0B8800355AEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE50AF5F245A0B8900355AEF /* Preview Assets.xcassets in Resources */,
+				EE50AF5C245A0B8800355AEF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFA8245A188E00355AEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFF6245A1A8200355AEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE682D811F82F05E003A6CF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -562,33 +914,67 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EE50AF46245A0B8800355AEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED3EB0F245B15CC00DE92E4 /* HostingController.swift in Sources */,
+				EE50AF56245A0B8800355AEF /* NotificationController.swift in Sources */,
+				EED3EB11245B15DB00DE92E4 /* ExtensionDelegate.swift in Sources */,
+				EED3EB10245B15D100DE92E4 /* ContentView.swift in Sources */,
+				EE50AF58245A0B8800355AEF /* NotificationView.swift in Sources */,
+				EED3EB12245B186A00DE92E4 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFA6245A188E00355AEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE50AFF4245A1A8200355AEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE50B011245A1ABE00355AEF /* AttributeType.swift in Sources */,
+				EE50B021245A233C00355AEF /* HealthKitHelper.swift in Sources */,
+				EE50B00C245A1ABE00355AEF /* Attribute.swift in Sources */,
+				EE50B00D245A1ABE00355AEF /* HistoyAttributeType.swift in Sources */,
+				EE50B00F245A1ABE00355AEF /* HealthDay.swift in Sources */,
+				EE50B00E245A1ABE00355AEF /* HistoryAttribute.swift in Sources */,
+				EE50B010245A1ABE00355AEF /* HistoryDay.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE682D7F1F82F05E003A6CF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE50B01D245A1E1E00355AEF /* AttributeType.swift in Sources */,
+				EE50B01F245A1E1E00355AEF /* HistoryDay.swift in Sources */,
 				EE67D55220E154EE0074F484 /* SettingsWebViewController.swift in Sources */,
+				EE50B01E245A1E1E00355AEF /* HistoyAttributeType.swift in Sources */,
 				EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */,
 				EE682DC51F8301CF003A6CF6 /* OnboardingPageOneViewController.swift in Sources */,
-				EE91EBDE20AC8BFA004A70C0 /* HistoryAttribute.swift in Sources */,
-				EE682DBC1F82F46D003A6CF6 /* HealthDay.swift in Sources */,
 				EE5DE9C71F9473E500F6BFC1 /* ThemeView.swift in Sources */,
+				EE50B01A245A1E1E00355AEF /* HealthDay.swift in Sources */,
 				EE50AF3B244A45EA00355AEF /* OnboardingPageViewController.swift in Sources */,
 				EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */,
 				EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */,
-				EED7DD77209E07A500F88BDC /* AttributeType.swift in Sources */,
 				EE5DE9C91F94750400F6BFC1 /* ThemeImageView.swift in Sources */,
 				EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */,
 				EE682DC31F830093003A6CF6 /* PointsViewController.swift in Sources */,
+				EE50B01B245A1E1E00355AEF /* HealthKitHelper.swift in Sources */,
 				EE682DC71F830270003A6CF6 /* OnboardingPageTwoViewController.swift in Sources */,
 				EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */,
-				EED7DD73209CC26000F88BDC /* HistoryDay.swift in Sources */,
-				EE91EBE020AC8C23004A70C0 /* HistoyAttributeType.swift in Sources */,
 				EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */,
 				EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */,
 				EE50AF392449EC2100355AEF /* HealthPointsNavigationController.swift in Sources */,
-				EE682DBD1F82F46D003A6CF6 /* HealthKitHelper.swift in Sources */,
-				EED7DD75209E077100F88BDC /* Attribute.swift in Sources */,
+				EE50B019245A1E1E00355AEF /* Attribute.swift in Sources */,
 				EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */,
+				EE50B01C245A1E1E00355AEF /* HistoryAttribute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +1015,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EE50AF63245A0B8900355AEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE50AF3D245A0B8500355AEF /* healthpoints-watch */;
+			targetProxy = EE50AF62245A0B8900355AEF /* PBXContainerItemProxy */;
+		};
+		EE50AFFE245A1A8200355AEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE50AFF7245A1A8200355AEF /* RSSHealthKitHelper_Watch */;
+			targetProxy = EE50AFFD245A1A8200355AEF /* PBXContainerItemProxy */;
+		};
 		EE682D991F82F05E003A6CF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EE682D821F82F05E003A6CF6 /* healthpoints */;
@@ -649,9 +1045,22 @@
 			target = EEC5D3151FA000DA007956FB /* healthpoints-imessage */;
 			targetProxy = EEC5D3221FA000DA007956FB /* PBXContainerItemProxy */;
 		};
+		EED3EB0D245B152C00DE92E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE50AF49245A0B8800355AEF /* healthpoints-watch Extension */;
+			targetProxy = EED3EB0C245B152C00DE92E4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EE50AF40245A0B8500355AEF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE50AF41245A0B8500355AEF /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		EE682D8A1F82F05E003A6CF6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -687,6 +1096,222 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EE50AF66245A0B8900355AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "healthpoints-watch/healthpoints-watch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 312;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				IBSC_MODULE = healthpoints_watch_Extension;
+				INFOPLIST_FILE = "healthpoints-watch/Info.plist";
+				MARKETING_VERSION = 2020.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.watchkitapp;
+				PRODUCT_NAME = "HP Club";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		EE50AF67245A0B8900355AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "healthpoints-watch/healthpoints-watch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 312;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				IBSC_MODULE = healthpoints_watch_Extension;
+				INFOPLIST_FILE = "healthpoints-watch/Info.plist";
+				MARKETING_VERSION = 2020.1;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.watchkitapp;
+				PRODUCT_NAME = "HP Club";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		EE50AF69245A0B8900355AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "healthpoints-watch Extension/healthpoints-watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 312;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "healthpoints-watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2020.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "HP Club";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		EE50AF6A245A0B8900355AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "healthpoints-watch Extension/healthpoints-watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 312;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "healthpoints-watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2020.1;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "HP Club";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		EE50AFB4245A188E00355AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RSSHealthKitHelper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoboticSnailSoftware.RSSHealthKitHelper;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EE50AFB5245A188E00355AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RSSHealthKitHelper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoboticSnailSoftware.RSSHealthKitHelper;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EE50B002245A1A8200355AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RSSHealthKitHelper_Watch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RoboticSnailSoftware.RSSHealthKitHelper-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		EE50B003245A1A8200355AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RSSHealthKitHelper_Watch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RoboticSnailSoftware.RSSHealthKitHelper-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
 		EE682DA91F82F05E003A6CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -985,6 +1610,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EE50AF6B245A0B8900355AEF /* Build configuration list for PBXNativeTarget "healthpoints-watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE50AF69245A0B8900355AEF /* Debug */,
+				EE50AF6A245A0B8900355AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE50AF6C245A0B8900355AEF /* Build configuration list for PBXNativeTarget "healthpoints-watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE50AF66245A0B8900355AEF /* Debug */,
+				EE50AF67245A0B8900355AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE50AFB6245A188E00355AEF /* Build configuration list for PBXNativeTarget "RSSHealthKitHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE50AFB4245A188E00355AEF /* Debug */,
+				EE50AFB5245A188E00355AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE50B001245A1A8200355AEF /* Build configuration list for PBXNativeTarget "RSSHealthKitHelper_Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE50B002245A1A8200355AEF /* Debug */,
+				EE50B003245A1A8200355AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EE682D7E1F82F05E003A6CF6 /* Build configuration list for PBXProject "healthpoints" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
