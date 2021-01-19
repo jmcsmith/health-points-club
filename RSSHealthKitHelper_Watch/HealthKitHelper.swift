@@ -566,7 +566,7 @@ public class HealthKitHelper {
         healthKitStore.execute(sampleQuery)
     }
     
-    func getActivityRings(forDate date: Date, _ completion: ((Double, Error?) -> Void)!) {
+    func getActivityRings(forDate date: Date, _ completion: ((Double, Double, Double, Error?) -> Void)!) {
         let cal = Calendar.current
         
         var dateComponents = cal.dateComponents(
@@ -583,13 +583,17 @@ public class HealthKitHelper {
                 return
             }
             var moveGoal = 0.0
+            var standGoal = 0.0
+            var exerciseGoal = 0.0
             if let myResults = summaries {
                 
                 if myResults.count > 0 {
                     moveGoal = myResults[0].activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie())
+                    standGoal = myResults[0].appleStandHoursGoal.doubleValue(for: .count())
+                    exerciseGoal = myResults[0].appleExerciseTimeGoal.doubleValue(for: .minute())
                 }
             }
-            completion(moveGoal, error)
+            completion(moveGoal,exerciseGoal, standGoal, error)
         }
         healthKitStore.execute(query)
     }
@@ -598,8 +602,10 @@ public class HealthKitHelper {
         let group = DispatchGroup()
         
         group.enter()
-        self.getActivityRings(forDate: date) { (temp, _) -> Void in
-            historyDay.moveGoal = temp
+        self.getActivityRings(forDate: date) { (mGoal,eGoal,sGoal, _) -> Void in
+            historyDay.moveGoal = mGoal
+            historyDay.exerciseGoal = eGoal
+            historyDay.standGoal = sGoal
             group.leave()
         }
         group.enter()
@@ -695,8 +701,10 @@ public class HealthKitHelper {
         getCaloriesData(forDate: Date()) { (calories, _) -> Void in
             HealthDay.shared.attributes.first(where: { $0.type == .calories })?.value = Int(calories)
         }
-        getActivityRings(forDate: Date()) { (temp, _) -> Void in
-            HealthDay.shared.moveGoal = temp
+        getActivityRings(forDate: Date()) { (mGoal, eGoal, sGoal, _) -> Void in
+            HealthDay.shared.moveGoal = mGoal
+            HealthDay.shared.exerciseGoal = eGoal
+            HealthDay.shared.standGoal = sGoal
         }
     }
     

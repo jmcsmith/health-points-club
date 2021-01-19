@@ -21,7 +21,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9E507CF7-70F5-44D2-9A7C-6A9FAC722BE8 - e375fda8400f1bae"
+                  uuid = "9E507CF7-70F5-44D2-9A7C-6A9FAC722BE8 - 38b7994d564e83be"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -37,7 +37,7 @@
                   offsetFromSymbolStart = "93">
                </Location>
                <Location
-                  uuid = "9E507CF7-70F5-44D2-9A7C-6A9FAC722BE8 - c259bfa628a28fa3"
+                  uuid = "9E507CF7-70F5-44D2-9A7C-6A9FAC722BE8 - 199bdb433ee317b3"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -72,7 +72,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7CB8F4A6-01FC-463F-BC62-800A1F72ABBD - e375fda8400f1bae"
+                  uuid = "7CB8F4A6-01FC-463F-BC62-800A1F72ABBD - 38b7994d564e8391"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -88,7 +88,7 @@
                   offsetFromSymbolStart = "392">
                </Location>
                <Location
-                  uuid = "7CB8F4A6-01FC-463F-BC62-800A1F72ABBD - edb53459ed40b3bc"
+                  uuid = "7CB8F4A6-01FC-463F-BC62-800A1F72ABBD - 367750bcfb012b83"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -168,8 +168,8 @@
             timestampString = "559501737.231827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "648"
-            endingLineNumber = "648"
+            startingLineNumber = "654"
+            endingLineNumber = "654"
             landmarkName = "loadHistoricDay(date:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,24 +217,8 @@
             filePath = "healthpoints-watch Extension/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "69B38BA8-A588-40AB-8601-597B34C023A9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "healthpoints-watch Extension/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -249,8 +233,8 @@
             filePath = "healthpoints-watch Extension/ExtensionDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "applicationWillEnterForeground()"
             landmarkType = "7">
          </BreakpointContent>
@@ -265,8 +249,8 @@
             filePath = "healthpoints-watch Extension/ExtensionDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "session(_:didReceiveApplicationContext:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,9 +265,57 @@
             filePath = "healthpoints-watch Extension/ExtensionDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "session(_:didReceiveApplicationContext:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "941601C9-B90D-4C77-BB1E-A10FFA6F94C0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HealthKit/HealthDay.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "getPoints()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7215EBB-F990-4356-B9F6-349FACE0C749"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "healthpoints/HealthKit/HealthDay.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "setUpdateNotification()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD48EA97-6788-4964-B8EE-B0095B6EAA01"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PointsTotal/PointsTotal.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getTimeline(for:in:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

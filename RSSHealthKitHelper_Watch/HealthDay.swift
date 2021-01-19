@@ -39,6 +39,8 @@ public class HealthDay {
     public var attributes: [Attribute] = []
     var defaultAttributes: [String]? = []
     var moveGoal: Double = 0.0
+    var standGoal: Double = 0.0
+    var exerciseGoal: Double = 0.0
     var history: [HistoryDay] = []
     public var bodyMass: Double = 0.0
     public var weeklyTotal = 0

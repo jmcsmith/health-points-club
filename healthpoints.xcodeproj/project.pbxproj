@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE24EF2C202675B800860749 /* NewVersionViewController.swift */; };
+		EE26E8802526AE6500698F90 /* PointsTotal.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EEDD02B8252668D200D3F982 /* PointsTotal.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		EE26E9252526B47000698F90 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26E9242526B47000698F90 /* IntentHandler.swift */; };
+		EE26E92C2526B47000698F90 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE26E8C62526B3A600698F90 /* IntentsUI.framework */; };
+		EE26E92F2526B47000698F90 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26E92E2526B47000698F90 /* IntentViewController.swift */; };
+		EE26E9322526B47000698F90 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE26E9302526B47000698F90 /* MainInterface.storyboard */; };
+		EE26E9362526B47000698F90 /* PointsIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EE26E92B2526B47000698F90 /* PointsIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EE26E9392526B47000698F90 /* PointsIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EE26E9222526B47000698F90 /* PointsIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EE26E95A2526B4AE00698F90 /* PointsTotal.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EEDD02B8252668D200D3F982 /* PointsTotal.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		EE26E9F82527810800698F90 /* AttributesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26E9F72527810800698F90 /* AttributesLoader.swift */; };
 		EE50AF392449EC2100355AEF /* HealthPointsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */; };
 		EE50AF3B244A45EA00355AEF /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF3A244A45EA00355AEF /* OnboardingPageViewController.swift */; };
 		EE50AF42245A0B8500355AEF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE50AF40245A0B8500355AEF /* Interface.storyboard */; };
@@ -47,8 +56,6 @@
 		EE682D8C1F82F05E003A6CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8A1F82F05E003A6CF6 /* Main.storyboard */; };
 		EE682D8E1F82F05E003A6CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8D1F82F05E003A6CF6 /* Assets.xcassets */; };
 		EE682D911F82F05E003A6CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8F1F82F05E003A6CF6 /* LaunchScreen.storyboard */; };
-		EE682D9C1F82F05E003A6CF6 /* healthpointsclubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682D9B1F82F05E003A6CF6 /* healthpointsclubTests.swift */; };
-		EE682DA71F82F05E003A6CF6 /* healthpointsclubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */; };
 		EE682DB81F82F439003A6CF6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EE682DB51F82F439003A6CF6 /* splash.png */; };
 		EE682DC01F82F5B4003A6CF6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */; };
 		EE682DC31F830093003A6CF6 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682DC21F830093003A6CF6 /* PointsViewController.swift */; };
@@ -57,7 +64,6 @@
 		EE6B34B01FA4E22A005E8E87 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6B34AF1FA4E22A005E8E87 /* NotificationCenter.framework */; };
 		EE6B34B31FA4E22A005E8E87 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6B34B21FA4E22A005E8E87 /* TodayViewController.swift */; };
 		EE6B34B61FA4E22A005E8E87 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6B34B41FA4E22A005E8E87 /* MainInterface.storyboard */; };
-		EE6B34BA1FA4E22A005E8E87 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EE6B34AE1FA4E229005E8E87 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EE6B34BF1FA4E467005E8E87 /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6B34BE1FA4E467005E8E87 /* LargeHeart.png */; };
 		EE7E0BB81F9043B700849FDF /* LargeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EE7E0BB71F9043B700849FDF /* LargeHeart.png */; };
 		EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E0BB91F90443600849FDF /* AttributeCollectionViewCell.swift */; };
@@ -79,9 +85,29 @@
 		EED3EB11245B15DB00DE92E4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF53245A0B8800355AEF /* ExtensionDelegate.swift */; };
 		EED3EB12245B186A00DE92E4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50AF59245A0B8800355AEF /* ComplicationController.swift */; };
 		EEDACCFC1FA9DF8900D3F6A9 /* heartdarkergray.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */; };
+		EEDD02B3252668D200D3F982 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0D1FF22526499600F96126 /* WidgetKit.framework */; };
+		EEDD02B4252668D200D3F982 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0D1FF42526499600F96126 /* SwiftUI.framework */; };
+		EEDD02B7252668D200D3F982 /* PointsTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD02B6252668D200D3F982 /* PointsTotal.swift */; };
+		EEDD02BA252668D300D3F982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDD02B9252668D300D3F982 /* Assets.xcassets */; };
+		EEDD02BC252668D300D3F982 /* PointsTotal.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EEDD02B8252668D200D3F982 /* PointsTotal.intentdefinition */; };
+		EEDD02C0252668D300D3F982 /* PointsTotalExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EEDD02B2252668D200D3F982 /* PointsTotalExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EE26E9342526B47000698F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE26E92A2526B47000698F90;
+			remoteInfo = PointsIntentUI;
+		};
+		EE26E9372526B47000698F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE26E9212526B47000698F90;
+			remoteInfo = PointsIntent;
+		};
 		EE50AF62245A0B8900355AEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
@@ -110,13 +136,6 @@
 			remoteGlobalIDString = EE682D821F82F05E003A6CF6;
 			remoteInfo = healthpointsclub;
 		};
-		EE6B34B81FA4E22A005E8E87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EE6B34AD1FA4E229005E8E87;
-			remoteInfo = TodayExtension;
-		};
 		EEC5D3221FA000DA007956FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
@@ -130,6 +149,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EE50AF49245A0B8800355AEF;
 			remoteInfo = "healthpoints-watch Extension";
+		};
+		EEDD02BE252668D300D3F982 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEDD02B1252668D200D3F982;
+			remoteInfo = PointsTotalExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -162,8 +188,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				EE6B34BA1FA4E22A005E8E87 /* TodayExtension.appex in Embed App Extensions */,
+				EEDD02C0252668D300D3F982 /* PointsTotalExtension.appex in Embed App Extensions */,
 				EEC5D3241FA000DA007956FB /* healthpoints-imessage.appex in Embed App Extensions */,
+				EE26E9392526B47000698F90 /* PointsIntent.appex in Embed App Extensions */,
+				EE26E9362526B47000698F90 /* PointsIntentUI.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,7 +210,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EE0D1FF22526499600F96126 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EE0D1FF42526499600F96126 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
+		EE26E8C62526B3A600698F90 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		EE26E9222526B47000698F90 /* PointsIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PointsIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE26E9242526B47000698F90 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		EE26E9262526B47000698F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE26E92B2526B47000698F90 /* PointsIntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PointsIntentUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE26E92E2526B47000698F90 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		EE26E9312526B47000698F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		EE26E9332526B47000698F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE26E9F72527810800698F90 /* AttributesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributesLoader.swift; sourceTree = "<group>"; };
 		EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPointsNavigationController.swift; sourceTree = "<group>"; };
 		EE50AF3A244A45EA00355AEF /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		EE50AF3E245A0B8500355AEF /* HP Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HP Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,7 +244,6 @@
 		EE50AFAA245A188E00355AEF /* RSSHealthKitHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSSHealthKitHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE50AFAC245A188E00355AEF /* RSSHealthKitHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSHealthKitHelper.h; sourceTree = "<group>"; };
 		EE50AFAD245A188E00355AEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE50AFEB245A19F900355AEF /* RSSHealthKitHelper copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RSSHealthKitHelper copy-Info.plist"; path = "/Users/josephsmith/health-points-club/RSSHealthKitHelper copy-Info.plist"; sourceTree = "<absolute>"; };
 		EE50AFF8245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSSHealthKitHelper_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE50AFFA245A1A8200355AEF /* RSSHealthKitHelper_Watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSHealthKitHelper_Watch.h; sourceTree = "<group>"; };
 		EE50AFFB245A1A8200355AEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -237,11 +275,7 @@
 		EE682D901F82F05E003A6CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE682D921F82F05E003A6CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE682D971F82F05E003A6CF6 /* healthpointsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = healthpointsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE682D9B1F82F05E003A6CF6 /* healthpointsclubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthpointsclubTests.swift; sourceTree = "<group>"; };
-		EE682D9D1F82F05E003A6CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE682DA21F82F05E003A6CF6 /* healthpointsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = healthpointsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthpointsclubUITests.swift; sourceTree = "<group>"; };
-		EE682DA81F82F05E003A6CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE682DB51F82F439003A6CF6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		EE682DC11F82F5B4003A6CF6 /* healthpoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthpoints.entitlements; sourceTree = "<group>"; };
@@ -273,9 +307,30 @@
 		EEC5D3311FA003B8007956FB /* healthpoints-imessage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints-imessage.entitlements"; sourceTree = "<group>"; };
 		EED3EB0A245AEF1C00DE92E4 /* healthpoints-watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "healthpoints-watch.entitlements"; sourceTree = "<group>"; };
 		EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartdarkergray.png; sourceTree = "<group>"; };
+		EEDD02B2252668D200D3F982 /* PointsTotalExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PointsTotalExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEDD02B6252668D200D3F982 /* PointsTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsTotal.swift; sourceTree = "<group>"; };
+		EEDD02B8252668D200D3F982 /* PointsTotal.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PointsTotal.intentdefinition; sourceTree = "<group>"; };
+		EEDD02B9252668D300D3F982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEDD02BB252668D300D3F982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEDD02CD25266BD400D3F982 /* PointsTotalExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PointsTotalExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EE26E91F2526B47000698F90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE26E9282526B47000698F90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE26E92C2526B47000698F90 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE50AF47245A0B8800355AEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,9 +392,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEDD02AF252668D200D3F982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDD02B4252668D200D3F982 /* SwiftUI.framework in Frameworks */,
+				EEDD02B3252668D200D3F982 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE26E9232526B47000698F90 /* PointsIntent */ = {
+			isa = PBXGroup;
+			children = (
+				EE26E9242526B47000698F90 /* IntentHandler.swift */,
+				EE26E9262526B47000698F90 /* Info.plist */,
+			);
+			path = PointsIntent;
+			sourceTree = "<group>";
+		};
+		EE26E92D2526B47000698F90 /* PointsIntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				EE26E92E2526B47000698F90 /* IntentViewController.swift */,
+				EE26E9302526B47000698F90 /* MainInterface.storyboard */,
+				EE26E9332526B47000698F90 /* Info.plist */,
+			);
+			path = PointsIntentUI;
+			sourceTree = "<group>";
+		};
 		EE50AF3F245A0B8500355AEF /* healthpoints-watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +448,7 @@
 				EE50AF60245A0B8900355AEF /* Info.plist */,
 				EE50AF61245A0B8900355AEF /* PushNotificationPayload.apns */,
 				EE50AF5D245A0B8900355AEF /* Preview Content */,
+				EE26E9F72527810800698F90 /* AttributesLoader.swift */,
 			);
 			path = "healthpoints-watch Extension";
 			sourceTree = "<group>";
@@ -405,18 +489,19 @@
 		EE682D7A1F82F05E003A6CF6 = {
 			isa = PBXGroup;
 			children = (
+				EEDD02CD25266BD400D3F982 /* PointsTotalExtension.entitlements */,
 				EE682D851F82F05E003A6CF6 /* healthpoints */,
-				EE682D9A1F82F05E003A6CF6 /* healthpointsclubTests */,
-				EE682DA51F82F05E003A6CF6 /* healthpointsclubUITests */,
 				EEC5D3191FA000DA007956FB /* healthpoints-imessage */,
 				EE6B34B11FA4E22A005E8E87 /* TodayExtension */,
 				EE50AF3F245A0B8500355AEF /* healthpoints-watch */,
 				EE50AF4E245A0B8800355AEF /* healthpoints-watch Extension */,
 				EE50AFAB245A188E00355AEF /* RSSHealthKitHelper */,
 				EE50AFF9245A1A8200355AEF /* RSSHealthKitHelper_Watch */,
+				EEDD02B5252668D200D3F982 /* PointsTotal */,
+				EE26E9232526B47000698F90 /* PointsIntent */,
+				EE26E92D2526B47000698F90 /* PointsIntentUI */,
 				EE682D841F82F05E003A6CF6 /* Products */,
 				EE682DBE1F82F5B4003A6CF6 /* Frameworks */,
-				EE50AFEB245A19F900355AEF /* RSSHealthKitHelper copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -432,6 +517,9 @@
 				EE50AF4A245A0B8800355AEF /* HP Club.appex */,
 				EE50AFAA245A188E00355AEF /* RSSHealthKitHelper.framework */,
 				EE50AFF8245A1A8200355AEF /* RSSHealthKitHelper_Watch.framework */,
+				EEDD02B2252668D200D3F982 /* PointsTotalExtension.appex */,
+				EE26E9222526B47000698F90 /* PointsIntent.appex */,
+				EE26E92B2526B47000698F90 /* PointsIntentUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -470,24 +558,6 @@
 			path = healthpoints;
 			sourceTree = "<group>";
 		};
-		EE682D9A1F82F05E003A6CF6 /* healthpointsclubTests */ = {
-			isa = PBXGroup;
-			children = (
-				EE682D9B1F82F05E003A6CF6 /* healthpointsclubTests.swift */,
-				EE682D9D1F82F05E003A6CF6 /* Info.plist */,
-			);
-			path = healthpointsclubTests;
-			sourceTree = "<group>";
-		};
-		EE682DA51F82F05E003A6CF6 /* healthpointsclubUITests */ = {
-			isa = PBXGroup;
-			children = (
-				EE682DA61F82F05E003A6CF6 /* healthpointsclubUITests.swift */,
-				EE682DA81F82F05E003A6CF6 /* Info.plist */,
-			);
-			path = healthpointsclubUITests;
-			sourceTree = "<group>";
-		};
 		EE682DBE1F82F5B4003A6CF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +565,9 @@
 				EE682DBF1F82F5B4003A6CF6 /* HealthKit.framework */,
 				EEC5D3171FA000DA007956FB /* Messages.framework */,
 				EE6B34AF1FA4E22A005E8E87 /* NotificationCenter.framework */,
+				EE0D1FF22526499600F96126 /* WidgetKit.framework */,
+				EE0D1FF42526499600F96126 /* SwiftUI.framework */,
+				EE26E8C62526B3A600698F90 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -541,6 +614,17 @@
 			path = HealthKit;
 			sourceTree = "<group>";
 		};
+		EEDD02B5252668D200D3F982 /* PointsTotal */ = {
+			isa = PBXGroup;
+			children = (
+				EEDD02B6252668D200D3F982 /* PointsTotal.swift */,
+				EEDD02B8252668D200D3F982 /* PointsTotal.intentdefinition */,
+				EEDD02B9252668D300D3F982 /* Assets.xcassets */,
+				EEDD02BB252668D300D3F982 /* Info.plist */,
+			);
+			path = PointsTotal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -563,6 +647,40 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		EE26E9212526B47000698F90 /* PointsIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE26E93D2526B47000698F90 /* Build configuration list for PBXNativeTarget "PointsIntent" */;
+			buildPhases = (
+				EE26E91E2526B47000698F90 /* Sources */,
+				EE26E91F2526B47000698F90 /* Frameworks */,
+				EE26E9202526B47000698F90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PointsIntent;
+			productName = PointsIntent;
+			productReference = EE26E9222526B47000698F90 /* PointsIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		EE26E92A2526B47000698F90 /* PointsIntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE26E93A2526B47000698F90 /* Build configuration list for PBXNativeTarget "PointsIntentUI" */;
+			buildPhases = (
+				EE26E9272526B47000698F90 /* Sources */,
+				EE26E9282526B47000698F90 /* Frameworks */,
+				EE26E9292526B47000698F90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PointsIntentUI;
+			productName = PointsIntentUI;
+			productReference = EE26E92B2526B47000698F90 /* PointsIntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EE50AF3D245A0B8500355AEF /* healthpoints-watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE50AF6C245A0B8900355AEF /* Build configuration list for PBXNativeTarget "healthpoints-watch" */;
@@ -649,8 +767,10 @@
 			);
 			dependencies = (
 				EEC5D3231FA000DA007956FB /* PBXTargetDependency */,
-				EE6B34B91FA4E22A005E8E87 /* PBXTargetDependency */,
 				EE50AF63245A0B8900355AEF /* PBXTargetDependency */,
+				EEDD02BF252668D300D3F982 /* PBXTargetDependency */,
+				EE26E9352526B47000698F90 /* PBXTargetDependency */,
+				EE26E9382526B47000698F90 /* PBXTargetDependency */,
 			);
 			name = healthpoints;
 			productName = healthpointsclub;
@@ -727,16 +847,41 @@
 			productReference = EEC5D3161FA000DA007956FB /* healthpoints-imessage.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
 		};
+		EEDD02B1252668D200D3F982 /* PointsTotalExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEDD02C1252668D300D3F982 /* Build configuration list for PBXNativeTarget "PointsTotalExtension" */;
+			buildPhases = (
+				EEDD02AE252668D200D3F982 /* Sources */,
+				EEDD02AF252668D200D3F982 /* Frameworks */,
+				EEDD02B0252668D200D3F982 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PointsTotalExtension;
+			productName = PointsTotalExtension;
+			productReference = EEDD02B2252668D200D3F982 /* PointsTotalExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EE682D7B1F82F05E003A6CF6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Joseph Smith";
 				TargetAttributes = {
+					EE26E9212526B47000698F90 = {
+						CreatedOnToolsVersion = 12.2;
+						ProvisioningStyle = Automatic;
+					};
+					EE26E92A2526B47000698F90 = {
+						CreatedOnToolsVersion = 12.2;
+						ProvisioningStyle = Automatic;
+					};
 					EE50AF3D245A0B8500355AEF = {
 						CreatedOnToolsVersion = 11.4;
 						ProvisioningStyle = Automatic;
@@ -801,6 +946,10 @@
 							};
 						};
 					};
+					EEDD02B1252668D200D3F982 = {
+						CreatedOnToolsVersion = 12.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = EE682D7E1F82F05E003A6CF6 /* Build configuration list for PBXProject "healthpoints" */;
@@ -825,11 +974,29 @@
 				EE50AF49245A0B8800355AEF /* healthpoints-watch Extension */,
 				EE50AFA9245A188E00355AEF /* RSSHealthKitHelper */,
 				EE50AFF7245A1A8200355AEF /* RSSHealthKitHelper_Watch */,
+				EEDD02B1252668D200D3F982 /* PointsTotalExtension */,
+				EE26E9212526B47000698F90 /* PointsIntent */,
+				EE26E92A2526B47000698F90 /* PointsIntentUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EE26E9202526B47000698F90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE26E9292526B47000698F90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE26E9322526B47000698F90 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE50AF3C245A0B8500355AEF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -911,9 +1078,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEDD02B0252668D200D3F982 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDD02BA252668D300D3F982 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EE26E91E2526B47000698F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE26E95A2526B4AE00698F90 /* PointsTotal.intentdefinition in Sources */,
+				EE26E9252526B47000698F90 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE26E9272526B47000698F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE26E92F2526B47000698F90 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE50AF46245A0B8800355AEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -923,6 +1115,7 @@
 				EED3EB11245B15DB00DE92E4 /* ExtensionDelegate.swift in Sources */,
 				EED3EB10245B15D100DE92E4 /* ContentView.swift in Sources */,
 				EE50AF58245A0B8800355AEF /* NotificationView.swift in Sources */,
+				EE26E9F82527810800698F90 /* AttributesLoader.swift in Sources */,
 				EED3EB12245B186A00DE92E4 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -974,6 +1167,7 @@
 				EE50AF392449EC2100355AEF /* HealthPointsNavigationController.swift in Sources */,
 				EE50B019245A1E1E00355AEF /* Attribute.swift in Sources */,
 				EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */,
+				EE26E8802526AE6500698F90 /* PointsTotal.intentdefinition in Sources */,
 				EE50B01C245A1E1E00355AEF /* HistoryAttribute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -982,7 +1176,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE682D9C1F82F05E003A6CF6 /* healthpointsclubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,7 +1183,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE682DA71F82F05E003A6CF6 /* healthpointsclubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1012,9 +1204,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEDD02AE252668D200D3F982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDD02BC252668D300D3F982 /* PointsTotal.intentdefinition in Sources */,
+				EEDD02B7252668D200D3F982 /* PointsTotal.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EE26E9352526B47000698F90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE26E92A2526B47000698F90 /* PointsIntentUI */;
+			targetProxy = EE26E9342526B47000698F90 /* PBXContainerItemProxy */;
+		};
+		EE26E9382526B47000698F90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE26E9212526B47000698F90 /* PointsIntent */;
+			targetProxy = EE26E9372526B47000698F90 /* PBXContainerItemProxy */;
+		};
 		EE50AF63245A0B8900355AEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EE50AF3D245A0B8500355AEF /* healthpoints-watch */;
@@ -1035,11 +1246,6 @@
 			target = EE682D821F82F05E003A6CF6 /* healthpoints */;
 			targetProxy = EE682DA31F82F05E003A6CF6 /* PBXContainerItemProxy */;
 		};
-		EE6B34B91FA4E22A005E8E87 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EE6B34AD1FA4E229005E8E87 /* TodayExtension */;
-			targetProxy = EE6B34B81FA4E22A005E8E87 /* PBXContainerItemProxy */;
-		};
 		EEC5D3231FA000DA007956FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EEC5D3151FA000DA007956FB /* healthpoints-imessage */;
@@ -1050,9 +1256,22 @@
 			target = EE50AF49245A0B8800355AEF /* healthpoints-watch Extension */;
 			targetProxy = EED3EB0C245B152C00DE92E4 /* PBXContainerItemProxy */;
 		};
+		EEDD02BF252668D300D3F982 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEDD02B1252668D200D3F982 /* PointsTotalExtension */;
+			targetProxy = EEDD02BE252668D300D3F982 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EE26E9302526B47000698F90 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE26E9312526B47000698F90 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		EE50AF40245A0B8500355AEF /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1096,6 +1315,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EE26E93B2526B47000698F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = PointsIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE26E93C2526B47000698F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = PointsIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE26E93E2526B47000698F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = PointsIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE26E93F2526B47000698F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = PointsIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EE50AF66245A0B8900355AEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1116,7 +1409,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -1139,7 +1432,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -1165,7 +1458,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -1190,7 +1483,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -1209,7 +1502,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RSSHealthKitHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1239,7 +1532,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RSSHealthKitHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoboticSnailSoftware.RSSHealthKitHelper;
@@ -1337,6 +1630,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1362,7 +1656,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1396,6 +1690,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1415,7 +1710,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1433,7 +1728,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
@@ -1453,7 +1748,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = healthpoints/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
@@ -1537,7 +1832,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.TodayExtension;
@@ -1556,7 +1851,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.TodayExtension;
@@ -1576,7 +1871,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = "healthpoints-imessage/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-imessage";
@@ -1596,7 +1891,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = "healthpoints-imessage/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-imessage";
@@ -1607,9 +1902,72 @@
 			};
 			name = Release;
 		};
+		EEDD02C2252668D300D3F982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = PointsTotalExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = PointsTotal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsTotal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEDD02C3252668D300D3F982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = PointsTotalExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = JANZDS5D43;
+				INFOPLIST_FILE = PointsTotal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsTotal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EE26E93A2526B47000698F90 /* Build configuration list for PBXNativeTarget "PointsIntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE26E93B2526B47000698F90 /* Debug */,
+				EE26E93C2526B47000698F90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE26E93D2526B47000698F90 /* Build configuration list for PBXNativeTarget "PointsIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE26E93E2526B47000698F90 /* Debug */,
+				EE26E93F2526B47000698F90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EE50AF6B245A0B8900355AEF /* Build configuration list for PBXNativeTarget "healthpoints-watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1696,6 +2054,15 @@
 			buildConfigurations = (
 				EEC5D3251FA000DA007956FB /* Debug */,
 				EEC5D3261FA000DA007956FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEDD02C1252668D300D3F982 /* Build configuration list for PBXNativeTarget "PointsTotalExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEDD02C2252668D300D3F982 /* Debug */,
+				EEDD02C3252668D300D3F982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

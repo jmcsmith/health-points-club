@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         
         
         if let data =  UserDefaults.standard.data(forKey: "history") {
-            if let history = NSKeyedUnarchiver.unarchiveObject(with: data) as? [HistoryDay]{
+            //if let history = NSKeyedUnarchiver.unarchiveObject(with: data) as? [HistoryDay]{
+            if let history = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [HistoryDay] {
                 HealthDay.shared.history = history
             }
         }
@@ -100,9 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
         print("Recieved context on phone")
-        if let request = applicationContext["request"] as? String {
-            
-        }
+        //        if let request = applicationContext["request"] as? String {
+        //
+        //        }
     }
 }
 

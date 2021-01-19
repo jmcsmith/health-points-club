@@ -8,6 +8,7 @@
 
 import UIKit
 import WatchConnectivity
+import WidgetKit
 
 public class HealthDay {
     private init() {
@@ -40,6 +41,8 @@ public class HealthDay {
     var attributes: [Attribute] = []
     var defaultAttributes: [String]? = []
     var moveGoal: Double = 0.0
+    var standGoal: Double = 0.0
+    var exerciseGoal: Double = 0.0
     var history: [HistoryDay] = []
     var bodyMass: Double = 0.0
     
@@ -49,6 +52,10 @@ public class HealthDay {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
         sendAlertToWatch()
+        if #available(iOS 14.0, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: "club.healthpoints.PointsTotal")
+            print("reload widget")
+        }
     }
     func saveAttributeOrder(){
         defaultAttributes = attributes.map({$0.type.rawValue})
@@ -75,6 +82,10 @@ public class HealthDay {
         print("Get Points - \(points)")
         sendAlertToWatch()
         updateWidgetValues()
+        if #available(iOS 14.0, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: "club.healthpoints.PointsTotal")
+            print("reload widget")
+        } 
         return points
     }
     func saveHistory(){
@@ -86,8 +97,11 @@ public class HealthDay {
         let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0, withBodyMass: bodyMass), $0.type.getBackgroundColor()]}
         let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
         defaults?.set(values, forKey: "widgetValues")
-        
-        
+        var total = 0
+        for attribute in HealthDay.shared.attributes {
+            total += attribute.getPoints(withWeight: 1.0, withBodyMass: HealthDay.shared.bodyMass)
+        }
+        defaults?.set(total, forKey: "today")
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
         let dayOfWeek = calendar.component(.weekday, from: today)

@@ -10,20 +10,33 @@ import SwiftUI
 import RSSHealthKitHelper_Watch
 
 struct ContentView: View {
+
     @State var attributes = HealthDay.shared.attributes
+    //@AppStorage("today", store: UserDefaults(suiteName: "group.HealthPointsClub"))
+    @AppStorage("today", store: UserDefaults(suiteName: "group.HealthPointsClub")) var total = 0
+    @ObservedObject private var attributesLoader = AttributesLoader()
+    
+    init() {
+        self.attributesLoader.load()
+    }
+    
     var body: some View {
         List {
-            ForEach(attributes, id: \.type) { item  in
+            ForEach(attributesLoader.attributes ?? [] , id: \.type) { item  in
                 HStack {
                     Text(item.type.rawValue)
                     Spacer()
                     Text(item.getPoints(withWeight: 1.0, withBodyMass: HealthDay.shared.bodyMass).description)
+                        .background(Color(item.type.getBackgroundColor()))
                 }
+                .listRowBackground(Color(item.type.getBackgroundColor())
+                .clipped()
+                .cornerRadius(15))
+                
             }
+            
         }.onAppear {
-            let hkHelper = HealthKitHelper()
-            hkHelper.loadHealthDay()
-            self.attributes = HealthDay.shared.attributes
+            self.attributesLoader.load()
         }
     }
 }

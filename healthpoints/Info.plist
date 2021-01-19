@@ -50,6 +50,10 @@
 	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ConfigurationIntent</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array/>
 	<key>UILaunchStoryboardName</key>

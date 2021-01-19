@@ -9,6 +9,7 @@
 import WatchKit
 import RSSHealthKitHelper_Watch
 import WatchConnectivity
+import ClockKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
@@ -79,7 +80,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
                 
                 let server = CLKComplicationServer.sharedInstance()
                 guard let complications = server.activeComplications else { return }
-                for complication in complications { server.reloadTimeline(for: complication)
+                for complication in complications {
+                    server.reloadTimeline(for: complication)
                 }
             }
             

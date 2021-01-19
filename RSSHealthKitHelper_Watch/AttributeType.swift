@@ -26,8 +26,10 @@ public enum AttributeType: String {
         case .steps:
             return (Int((value/1000)*weight))
         case .stand:
-            if value >= 12 {
-                return Int(1*weight)
+            var goal = HealthDay.shared.standGoal
+            if goal > 0 && value >= goal {
+                let base = value/goal
+                return Int(base*weight)
             } else {
                 return 0
             }
@@ -56,8 +58,9 @@ public enum AttributeType: String {
         case .mind:
             return Int(value)
         case .exercise:
-            if value >= 30 {
-                let base = value/30.0
+            var goal = HealthDay.shared.exerciseGoal
+            if goal > 0 && value >= goal {
+                let base = value/goal
                 return Int(base*weight)
             } else {
                 return 0
@@ -147,7 +150,7 @@ public enum AttributeType: String {
             
         }
     }
-    func getBackgroundColor() -> UIColor {
+    public func getBackgroundColor() -> UIColor {
         switch self {
         case .steps:
             return UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00)

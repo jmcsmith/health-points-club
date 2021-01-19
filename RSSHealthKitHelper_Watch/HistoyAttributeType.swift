@@ -27,8 +27,11 @@ enum HistoryAttributeType: String {
         case .steps:
             return (Int((value/1000)))
         case .stand:
-            if value >= 12 {
-                return Int(1)
+            let goal = day.standGoal
+            
+            if value >= goal {
+                let base = value/goal
+                return Int(base)
             } else {
                 return 0
             }
@@ -57,8 +60,9 @@ enum HistoryAttributeType: String {
         case .mind:
             return Int(value)
         case .exercise:
-            if value >= 30 {
-                let base = value/30.0
+            let goal = day.exerciseGoal
+            if value >= goal {
+                let base = value/goal
                 return Int(base)
             } else {
                 return 0
@@ -91,7 +95,7 @@ enum HistoryAttributeType: String {
                 if exercise > 0 {
                     temp = temp + 1
                 }
-               day.attributes.first(where: {$0.type == .rings})?.value = temp
+                day.attributes.first(where: {$0.type == .rings})?.value = temp
                 return 0
             }
         case .sleep:
@@ -112,8 +116,8 @@ enum HistoryAttributeType: String {
         }
     }
     
-
-       
+    
+    
     func displayText(forValue value: Int) -> String {
         
         switch self {

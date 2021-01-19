@@ -14,6 +14,8 @@ class HistoryDay: NSObject, NSCoding {
     
     var attributes: [HistoryAttribute] = []
     var moveGoal: Double = 0.0
+    var standGoal = 0.0
+    var exerciseGoal = 0.0
     var bodyMass: Double = 0.0
     
     override init() {
