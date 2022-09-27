@@ -51,7 +51,7 @@
 		<key>RSSHealthKitHelper.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>12</integer>
 		</dict>
 		<key>RSSHealthKitHelper_Watch.xcscheme_^#shared#^_</key>
 		<dict>
@@ -71,7 +71,7 @@
 		<key>TodayExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>10</integer>
 		</dict>
 		<key>healthpoints-imessage.xcscheme</key>
 		<dict>

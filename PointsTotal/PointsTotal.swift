@@ -10,8 +10,9 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-struct Provider: IntentTimelineProvider {
 
+struct Provider: IntentTimelineProvider {
+    
     
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
@@ -24,13 +25,13 @@ struct Provider: IntentTimelineProvider {
     
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-        print(configuration.attribute)
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        print("Timeline")
         let currentDate = Date()
         
-            let entryDate = Calendar.current.date(byAdding: .minute, value: 10, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+        let entryDate = Calendar.current.date(byAdding: .minute, value: 10, to: currentDate)!
+        let entry = SimpleEntry(date: entryDate, configuration: configuration)
+        entries.append(entry)
         
         
         let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -46,8 +47,12 @@ struct SimpleEntry: TimelineEntry {
 
 struct PointsTotalEntryView : View {
     var entry: Provider.Entry
-    @AppStorage("today", store: UserDefaults(suiteName: "group.HealthPointsClub"))
-    var weekly: Int = 0
+    @Environment(\.widgetFamily) var family
+    @AppStorage("today", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var today: Int = 0
+    @AppStorage("weekTotal", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var week: Int = 0
+    @AppStorage("allTimeHigh", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var high: Int = 0
+    @AppStorage("lifetimeTotal", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var life: Int = 0
+    @AppStorage("widgetValues", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var data: Data = Data()
     var backgroundColor: Color {
         get {
             if entry.configuration.defaultBackground == 1 {
@@ -55,7 +60,7 @@ struct PointsTotalEntryView : View {
             }
             
             switch entry.configuration.attribute?.identifier {
-            case "0":               
+            case "0":
                 return Color(UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00))
             case "1":
                 return Color(UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00))
@@ -78,20 +83,119 @@ struct PointsTotalEntryView : View {
             case "10":
                 return Color(UIColor.systemBackground)
             default:
-               return Color(UIColor.systemBackground)
+                return Color(UIColor.systemBackground)
             }
         }
     }
+    @ViewBuilder
     var body: some View {
-        ZStack {
-            Image("heart")
-                .resizable().aspectRatio(contentMode: .fit)
-            Text("\(weekly)")
-                .font(.system(size: 50))
-                .foregroundColor(.white)
-                .offset(y: -5)
+        
+        switch family {
+        case .accessoryCircular:
+            ZStack {
+                Image("heart")
+                    .resizable().aspectRatio(contentMode: .fit)
+                Text("\(getPointValue(attribute: entry.configuration.attribute))")
+                    .font(.system(size: 30))
+                    .bold()
+                    .foregroundColor(.white)
+                    .offset(y: -5)
+            }
+        case .systemSmall:
+            ZStack {
+                Image("heart")
+                    .resizable().aspectRatio(contentMode: .fit)
+                Text("\(getPointValue(attribute: entry.configuration.attribute))")
+                    .font(.system(size: 50))
+                    .bold()
+                    .foregroundColor(.white)
+                    .offset(y: -5)
+            }
+            .background(backgroundColor)
+        case .accessoryRectangular:
+            HStack {
+                VStack {
+                    Text("Today: \(today)")
+                    Text("Weekly Total: \(week)")
+                        .font(.caption2)
+                    Text("All Time High: \(high)")
+                        .font(.caption2)
+                    Text("Life Time Total: \(life)")
+                        .font(.caption2)
+                }
+            }
+        case .systemMedium:
+            HStack(spacing: 0){
+                ZStack {
+                    Image("heart")
+                        .resizable().aspectRatio(contentMode: .fit)
+                    Text("\(getPointValue(attribute: entry.configuration.attribute))")
+                        .font(.system(size: 50))
+                        .bold()
+                        .foregroundColor(.white)
+                        .offset(y: -5)
+                }
+                VStack {
+                    Text("Today: \(today)")
+                        .font(.title)
+                    Text("Weekly Total: \(week)")
+                     
+                    Text("All Time High: \(high)")
+                        
+                    Text("Life Time Total: \(life)")
+                        
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
+            .background(backgroundColor)
+        default:
+            Text("Some other WidgetFamily in the future.")
         }
-        .background(backgroundColor)
+        
+    }
+    private func getPointValue(attribute: Attribute?) -> Int {
+        if let attribute {
+            do {
+       
+                let values = try JSONDecoder().decode([WidgetValue].self, from: data)
+                
+                switch attribute.identifier {
+                case "0":
+                    return values.first(where: {$0.type == "Steps"})?.value ?? 0
+                case "1":
+                    return values.first(where: {$0.type == "Workouts"})?.value ?? 0
+                case "2":
+                    return values.first(where: {$0.type == "Water"})?.value ?? 0
+                case "3":
+                    return values.first(where: {$0.type == "Sleep"})?.value ?? 0
+                case "4":
+                    return values.first(where: {$0.type == "Mind Sessions"})?.value ?? 0
+                case "5":
+                    return values.first(where: {$0.type == "Stand Hours"})?.value ?? 0
+                case "6":
+                    return values.first(where: {$0.type == "Exercise"})?.value ?? 0
+                case "7":
+                    return values.first(where: {$0.type == "Move"})?.value ?? 0
+                case "8":
+                    return values.first(where: {$0.type == "⌚️ Rings"})?.value ?? 0
+                case "9":
+                    return values.first(where: {$0.type == "Calories"})?.value ?? 0
+                case "10":
+                    return today
+                default:
+                    return -1
+                }
+//                return -1
+            } catch {
+                print(error)
+                return -1
+            }
+            
+ 
+        } else {
+            return -1
+        }
     }
 }
 
@@ -103,7 +207,7 @@ struct PointsTotal: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             PointsTotalEntryView(entry: entry)
         }
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .accessoryCircular, .accessoryRectangular, .systemMedium])
         .configurationDisplayName("Today's Health Points")
         .description("Shows Health Points earned today. Edit to pick an Attribute")
     }
@@ -115,3 +219,4 @@ struct PointsTotal_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
+

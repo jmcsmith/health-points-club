@@ -40,13 +40,18 @@ enum Theme: Int {
         UISwitch.appearance().onTintColor = mainColor
         
         //NavigationBar
+        let app = UINavigationBarAppearance()
+        app.backgroundColor = barBackgroundColor
+        app.titleTextAttributes = [NSAttributedString.Key.foregroundColor: textColor]
+        UINavigationBar.appearance().scrollEdgeAppearance = app
+        
+        
         UINavigationBar.appearance().barStyle = barStyle
         UINavigationBar.appearance().isTranslucent = false
-        //UINavigationBar.appearance().backgroundColor = barBackgroundColor
+        UINavigationBar.appearance().backgroundColor = barBackgroundColor
         UINavigationBar.appearance().barTintColor = navigationBarBackgroundColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: textColor]
-        
-        
+        //UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: textColor]
+
         //tab bar
         UITabBar.appearance().barTintColor = barBackgroundColor
         UITabBar.appearance().backgroundColor = barBackgroundColor
@@ -57,11 +62,7 @@ enum Theme: Int {
         UITableViewCell.appearance(whenContainedInInstancesOf: [HistoryTableViewController.self]).backgroundColor = backgroundColor
         UITableViewCell.appearance(whenContainedInInstancesOf: [SettingsTableViewController.self]).backgroundColor = tableviewCellBackgroundColor
         UITableView.appearance().backgroundColor = backgroundColor
-        if #available(iOS 13, *) {
-        } else {
-            
-            UITableView.appearance().backgroundColor = UIColor.green
-        }
+//        UITableView.appearance().backgroundColor = UIColor.green
         
         
         //specific labels
@@ -120,7 +121,7 @@ enum Theme: Int {
     var barStyle: UIBarStyle {
         switch self {
         case .default:
-            return .black
+            return .default
         case .dark:
             return .black
         case .pitchBlack:

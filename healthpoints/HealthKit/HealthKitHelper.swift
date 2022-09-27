@@ -554,7 +554,7 @@ class HealthKitHelper {
                 for item in myResults {
                     if let sample = item as? HKCategorySample {
                         
-                        if sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
+                        if sample.value == HKCategoryValueSleepAnalysis.asleepCore.rawValue || sample.value == HKCategoryValueSleepAnalysis.asleepREM.rawValue || sample.value == HKCategoryValueSleepAnalysis.asleepDeep.rawValue {
                             minutes += Int(sample.endDate.timeIntervalSince(sample.startDate) / 60)
                         }
                     }

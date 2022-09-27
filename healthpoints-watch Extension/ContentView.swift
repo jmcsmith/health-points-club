@@ -11,9 +11,8 @@ import RSSHealthKitHelper_Watch
 
 struct ContentView: View {
 
-    @State var attributes = HealthDay.shared.attributes
-    //@AppStorage("today", store: UserDefaults(suiteName: "group.HealthPointsClub"))
-    @AppStorage("today", store: UserDefaults(suiteName: "group.HealthPointsClub")) var total = 0
+
+    @AppStorage("today", store: UserDefaults(suiteName: "group.HealthPointsClub.test")) var total = 0
     @ObservedObject private var attributesLoader = AttributesLoader()
     
     init() {

@@ -41,9 +41,9 @@
 		<string>com.apple.watchkit</string>
 	</dict>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 </dict>

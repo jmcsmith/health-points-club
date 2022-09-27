@@ -11,7 +11,9 @@ import UserNotifications
 import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate
+//, WCSessionDelegate
+{
     
     var window: UIWindow?
     let hkHelper = HealthKitHelper()
@@ -35,40 +37,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         
         
         Theme.current.apply()
-        setupWatchConnectivity()
+//        setupWatchConnectivity()
         
         
         return true
     }
-    func setupWatchConnectivity() {
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-            
-        }
-    }
-    func sendUpdateToWatch() {
-        if WCSession.isSupported() {
-            
-        }
-    }
-    func session(_ session: WCSession,
-                 activationDidCompleteWith activationState: WCSessionActivationState,
-                 error: Error?) {
-        if let error = error {
-            print("WC Session activation failed with errors: \(error.localizedDescription)")
-            return
-        }
-        print("WC Session activated with state: \(activationState.rawValue)")
-    }
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        print("WC Session did become inactive")
-    }
-    func sessionDidDeactivate(_ session: WCSession) {
-        print("WC Session did deactivate")
-        WCSession.default.activate()
-    }
+//    func setupWatchConnectivity() {
+//        if WCSession.isSupported() {
+//            let session = WCSession.default
+//            session.delegate = self
+//            session.activate()
+//
+//        }
+//    }
+//    func sendUpdateToWatch() {
+//        if WCSession.isSupported() {
+//
+//        }
+//    }
+//    func session(_ session: WCSession,
+//                 activationDidCompleteWith activationState: WCSessionActivationState,
+//                 error: Error?) {
+//        if let error = error {
+//            print("WC Session activation failed with errors: \(error.localizedDescription)")
+//            return
+//        }
+//        print("WC Session activated with state: \(activationState.rawValue)")
+//    }
+//    func sessionDidBecomeInactive(_ session: WCSession) {
+//        print("WC Session did become inactive")
+//    }
+//    func sessionDidDeactivate(_ session: WCSession) {
+//        print("WC Session did deactivate")
+//        WCSession.default.activate()
+//    }
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     }
     

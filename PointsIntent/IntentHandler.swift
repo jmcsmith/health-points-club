@@ -27,7 +27,7 @@ class IntentHandler: INExtension, ConfigurationIntentHandling {
         ]),nil)
     }
     func defaultAttribute(for intent: ConfigurationIntent) -> Attribute? {
-        return Attribute(identifier: "0", display: "Steps")
+        return Attribute(identifier: "10", display: "Total Points")
     }
     
 }

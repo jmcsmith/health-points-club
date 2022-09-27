@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 class Attribute {
+
     var type: AttributeType
     var value: Int = 0 {
         
@@ -28,3 +30,4 @@ class Attribute {
         return type.calculatePoints(withWeight: weight, forValue: Double(value), withBodyMass: bodyMass)
     }
 }
+

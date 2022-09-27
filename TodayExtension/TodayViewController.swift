@@ -15,15 +15,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var weeklyTotal: UILabel!
     @IBOutlet weak var allTimeHigh: UILabel!
     @IBOutlet weak var lifeTimeHigh: UILabel!
-    let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
+    let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         
         let data = defaults?.object(forKey: "widgetValues") as! Data
-        let list = NSKeyedUnarchiver.unarchiveObject(with: data) as! [[Any]]
-        
+        //let list = NSKeyedUnarchiver.unarchiveObject(with: data) as! [[Any]]
+        let list = NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: [Any], from: data)
         var total = 0
         for attribute in list {
             total += attribute[1] as! Int
@@ -45,7 +45,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     override func viewWillAppear(_ animated: Bool) {
         let data = defaults?.object(forKey: "widgetValues") as! Data
-        let list = NSKeyedUnarchiver.unarchiveObject(with: data) as! [[Any]]
+        let list = NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: [Any], from: data)
         
         var total = 0
         for attribute in list {

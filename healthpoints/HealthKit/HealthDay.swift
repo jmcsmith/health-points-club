@@ -12,13 +12,13 @@ import WidgetKit
 
 public class HealthDay {
     private init() {
-        let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
+        let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
         defaultAttributes = defaults?.object(forKey: "attributeOrder") as? [String]
         if defaultAttributes != nil {
             for attribute in defaultAttributes!{
                 attributes.append(Attribute(type: AttributeType.init(rawValue: attribute)!, value: 0))
             }
-        }else{
+        } else {
             attributes.append(Attribute(type: .steps, value: 0))
             attributes.append(Attribute(type: .workouts, value: 0))
             attributes.append(Attribute(type: .water, value: 0))
@@ -46,16 +46,14 @@ public class HealthDay {
     var history: [HistoryDay] = []
     var bodyMass: Double = 0.0
     
-    let defaults = UserDefaults(suiteName: "group.HealthPointsClub")
+    let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
     
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
         print("--------Notification Sent--------")
-        sendAlertToWatch()
-        if #available(iOS 14.0, *) {
-            WidgetCenter.shared.reloadTimelines(ofKind: "club.healthpoints.PointsTotal")
+//        sendAlertToWatch()
+        WidgetCenter.shared.reloadAllTimelines()
             print("reload widget")
-        }
     }
     func saveAttributeOrder(){
         defaultAttributes = attributes.map({$0.type.rawValue})
@@ -80,23 +78,28 @@ public class HealthDay {
         }
         saveHistory()
         print("Get Points - \(points)")
-        sendAlertToWatch()
+//        sendAlertToWatch()
         updateWidgetValues()
         if #available(iOS 14.0, *) {
-            WidgetCenter.shared.reloadTimelines(ofKind: "club.healthpoints.PointsTotal")
+            WidgetCenter.shared.reloadAllTimelines()
             print("reload widget")
         } 
         return points
     }
     func saveHistory(){
         history = history.sorted(by: {$0.date > $1.date} )
-        let h = NSKeyedArchiver.archivedData(withRootObject: history)
+        let h = try? NSKeyedArchiver.archivedData(withRootObject: history, requiringSecureCoding: false)
         UserDefaults.standard.set(h, forKey: "history")
     }
     func updateWidgetValues(){
-        let encoded = attributes.map {[$0.type.rawValue, $0.getPoints(withWeight: 1.0, withBodyMass: bodyMass), $0.type.getBackgroundColor()]}
-        let values = NSKeyedArchiver.archivedData(withRootObject: encoded)
-        defaults?.set(values, forKey: "widgetValues")
+        let encoded = attributes.map { WidgetValue(type: $0.type.rawValue, value: $0.getPoints(withWeight: 1.0, withBodyMass: bodyMass)) }
+        do {
+            let values = try JSONEncoder().encode(encoded)
+            defaults?.set(values, forKey: "widgetValues")
+        } catch {
+            print(error)
+        }
+        
         var total = 0
         for attribute in HealthDay.shared.attributes {
             total += attribute.getPoints(withWeight: 1.0, withBodyMass: HealthDay.shared.bodyMass)
@@ -129,24 +132,24 @@ public class HealthDay {
         
         
     }
-    public func sendAlertToWatch(){
-        if WCSession.isSupported() {
-            
-            let session = WCSession.default
-            if session.isWatchAppInstalled {
-                do {
-                    let weeklyTotalValue = defaults?.integer(forKey: "weekTotal")
-                    let alltimeHighValue = defaults?.integer(forKey: "allTimeHigh")
-                    let lifetimeTotalValue = defaults?.integer(forKey: "lifetimeTotal")
-
-                    try session.updateApplicationContext(["status": "Update","weekTotal":weeklyTotalValue ?? 0, "allTimeHigh":alltimeHighValue ?? 0, "lifetimeTotal": lifetimeTotalValue ?? 0, "date": Date()])
-                    print("sent status update to watch")
-                } catch {
-                    print("ERROR: \(error)")
-                }
-            }
-            
-        }
-    }
+//    public func sendAlertToWatch(){
+//        if WCSession.isSupported() {
+//
+//            let session = WCSession.default
+//            if session.isWatchAppInstalled {
+//                do {
+//                    let weeklyTotalValue = defaults?.integer(forKey: "weekTotal")
+//                    let alltimeHighValue = defaults?.integer(forKey: "allTimeHigh")
+//                    let lifetimeTotalValue = defaults?.integer(forKey: "lifetimeTotal")
+//
+//                    try session.updateApplicationContext(["status": "Update","weekTotal":weeklyTotalValue ?? 0, "allTimeHigh":alltimeHighValue ?? 0, "lifetimeTotal": lifetimeTotalValue ?? 0, "date": Date()])
+//                    print("sent status update to watch")
+//                } catch {
+//                    print("ERROR: \(error)")
+//                }
+//            }
+//
+//        }
+//    }
 }
 
