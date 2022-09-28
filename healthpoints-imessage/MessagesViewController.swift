@@ -188,7 +188,7 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDataS
         case "Calories":
             return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
         default:
-            return UIColor.systemBackground
+            return UIColor.white
         }
     }
     
