@@ -14,6 +14,7 @@
 		3E5A9D5E28E222A0005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
 		3E5A9D5F28E222A5005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
 		3E5A9D6228E27A39005F76B5 /* RoboticSnailUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5A9D6128E27A39005F76B5 /* RoboticSnailUtilities */; };
+		3E5A9D6528E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */; };
 		EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE24EF2C202675B800860749 /* NewVersionViewController.swift */; };
 		EE26E8802526AE6500698F90 /* PointsTotal.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EEDD02B8252668D200D3F982 /* PointsTotal.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		EE26E9252526B47000698F90 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26E9242526B47000698F90 /* IntentHandler.swift */; };
@@ -127,6 +128,7 @@
 
 /* Begin PBXFileReference section */
 		3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WidgetValue.swift; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/HealthKit/WidgetValue.swift"; sourceTree = "<group>"; };
+		3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SKStoreReviewController+Custom.swift"; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/Extensions/SKStoreReviewController+Custom.swift"; sourceTree = "<group>"; };
 		EE0D1FF22526499600F96126 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		EE0D1FF42526499600F96126 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E5A9D6328E4BED1005F76B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EE26E9232526B47000698F90 /* PointsIntent */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +296,7 @@
 		EE682D851F82F05E003A6CF6 /* healthpoints */ = {
 			isa = PBXGroup;
 			children = (
+				3E5A9D6328E4BED1005F76B5 /* Extensions */,
 				EED7DD78209E07D400F88BDC /* HealthKit */,
 				EEDACCFB1FA9DF8900D3F6A9 /* heartdarkergray.png */,
 				EE5552A91F96FE99001D3F5F /* dark@2x.png */,
@@ -629,6 +640,7 @@
 				EE50B01A245A1E1E00355AEF /* HealthDay.swift in Sources */,
 				EE50AF3B244A45EA00355AEF /* OnboardingPageViewController.swift in Sources */,
 				EE5DE9C31F942D6300F6BFC1 /* SettingsTableViewController.swift in Sources */,
+				3E5A9D6528E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift in Sources */,
 				EE8A3C041F8930CC00EB3E77 /* HistoryTableViewCell.swift in Sources */,
 				EE5DE9C91F94750400F6BFC1 /* ThemeImageView.swift in Sources */,
 				EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */,

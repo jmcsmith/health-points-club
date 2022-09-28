@@ -79,19 +79,19 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         if indexPath.section == 4 {
             switch indexPath.row {
             case 0:
-                if let url = URL(string: "https://www.healthpoints.club/privacy") {
+                if let url = URL(string: "https://roboticsnailsoftware.com/hpc/privacy-policy") {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             case 1:
-                if let url = URL(string: "https://www.healthpoints.club"){
+                if let url = URL(string: "https://roboticsnailsoftware.com/work/hpc"){
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             case 2:
-                if let url = URL(string: "https://www.roboticsnailsoftware.com"){
+                if let url = URL(string: "https://roboticsnailsoftware.com"){
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             case 3:
-                SKStoreReviewController.requestReview()
+                SKStoreReviewController.requestReviewInCurrentScene()
             default:
                 return
             }
