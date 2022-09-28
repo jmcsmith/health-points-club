@@ -14,22 +14,25 @@ import Messages
 class MessagesViewController: MSMessagesAppViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     @IBOutlet weak var collectionView: UICollectionView!
     let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
-    var list: [[Any]] = []
+    var list: [WidgetValue] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let data = defaults?.object(forKey: "widgetValues") as! Data
-        list = NSKeyedUnarchiver.unarchiveObject(with: data) as! [[Any]]
-        
+        do {
+            list = try JSONDecoder().decode([WidgetValue].self, from: data)
+        } catch {
+            print(error)
+        }
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .none
         let dateString = formatter.string(from: Date())
         var total = 0
         for attribute in list {
-            total += attribute[1] as! Int
+            total += attribute.value 
         }
-        list.insert([dateString,total,UIColor.white], at: 0)
+        list.insert(WidgetValue(type: dateString, value: total), at: 0)
         collectionView.reloadData()
     }
     
@@ -97,9 +100,9 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "messagesCell", for: indexPath) as! MessagesCollectionViewCell
-        cell.descriptionLabel.text = (list[indexPath.row][0] as! String).description
-        cell.pointsLabel.text = (list[indexPath.row][1] as! Int).description
-        cell.backgroundColor = (list[indexPath.row][2] as! UIColor)
+        cell.descriptionLabel.text = (list[indexPath.row].type).description
+        cell.pointsLabel.text = (list[indexPath.row].value).description
+        cell.backgroundColor = (getBackgroundColor(from: list[indexPath.row].type))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -161,6 +164,32 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDataS
                 print(error ?? "")
             }
             )}
+    }
+    private func getBackgroundColor(from name: String) -> UIColor {
+        switch name {
+        case "Steps":
+            return UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00)
+        case "Workouts":
+            return UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00)
+        case "Water":
+            return UIColor(red:0.38, green:0.75, blue:0.98, alpha:1.00)
+        case "Sleep":
+            return UIColor(red:0.49, green:0.36, blue:0.92, alpha:1.00)
+        case "Mind Sessions":
+            return UIColor(red:0.33, green:0.73, blue:0.82, alpha:1.00)
+        case "Stand Hours":
+            return UIColor(red:0.38, green:0.87, blue:0.84, alpha:1.00)
+        case "Exercise":
+            return UIColor(red:0.66, green:0.95, blue:0.29, alpha:1.00)
+        case "Move":
+            return UIColor(red:0.89, green:0.24, blue:0.37, alpha:1.00)
+        case "⌚️ Rings":
+            return UIColor.lightGray
+        case "Calories":
+            return UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00)
+        default:
+            return UIColor.systemBackground
+        }
     }
     
 }

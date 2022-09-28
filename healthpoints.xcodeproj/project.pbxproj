@@ -15,6 +15,9 @@
 		3E5A9D5F28E222A5005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
 		3E5A9D6228E27A39005F76B5 /* RoboticSnailUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5A9D6128E27A39005F76B5 /* RoboticSnailUtilities */; };
 		3E5A9D6528E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */; };
+		3E5A9D6728E4C50E005F76B5 /* Array+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D6628E4C50E005F76B5 /* Array+Custom.swift */; };
+		3E5A9D6828E4C548005F76B5 /* Array+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D6628E4C50E005F76B5 /* Array+Custom.swift */; };
+		3E5A9D6928E4E0F3005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
 		EE24EF2D202675B800860749 /* NewVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE24EF2C202675B800860749 /* NewVersionViewController.swift */; };
 		EE26E8802526AE6500698F90 /* PointsTotal.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EEDD02B8252668D200D3F982 /* PointsTotal.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		EE26E9252526B47000698F90 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26E9242526B47000698F90 /* IntentHandler.swift */; };
@@ -37,7 +40,6 @@
 		EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C41F94606900F6BFC1 /* Theme.swift */; };
 		EE5DE9C71F9473E500F6BFC1 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */; };
 		EE5DE9C91F94750400F6BFC1 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */; };
-		EE67D55220E154EE0074F484 /* SettingsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE67D55120E154EE0074F484 /* SettingsWebViewController.swift */; };
 		EE682D871F82F05E003A6CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE682D861F82F05E003A6CF6 /* AppDelegate.swift */; };
 		EE682D8C1F82F05E003A6CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8A1F82F05E003A6CF6 /* Main.storyboard */; };
 		EE682D8E1F82F05E003A6CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE682D8D1F82F05E003A6CF6 /* Assets.xcassets */; };
@@ -129,6 +131,7 @@
 /* Begin PBXFileReference section */
 		3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WidgetValue.swift; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/HealthKit/WidgetValue.swift"; sourceTree = "<group>"; };
 		3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SKStoreReviewController+Custom.swift"; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/Extensions/SKStoreReviewController+Custom.swift"; sourceTree = "<group>"; };
+		3E5A9D6628E4C50E005F76B5 /* Array+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Array+Custom.swift"; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/Extensions/Array+Custom.swift"; sourceTree = "<group>"; };
 		EE0D1FF22526499600F96126 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		EE0D1FF42526499600F96126 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +159,6 @@
 		EE5DE9C41F94606900F6BFC1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
-		EE67D55120E154EE0074F484 /* SettingsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWebViewController.swift; sourceTree = "<group>"; };
 		EE682D831F82F05E003A6CF6 /* healthpoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthpoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE682D861F82F05E003A6CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE682D8B1F82F05E003A6CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */,
+				3E5A9D6628E4C50E005F76B5 /* Array+Custom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,7 +324,6 @@
 				EE5DE9C61F9473E500F6BFC1 /* ThemeView.swift */,
 				EE5DE9C81F94750400F6BFC1 /* ThemeImageView.swift */,
 				EE24EF2C202675B800860749 /* NewVersionViewController.swift */,
-				EE67D55120E154EE0074F484 /* SettingsWebViewController.swift */,
 				EE50AF382449EC2100355AEF /* HealthPointsNavigationController.swift */,
 				EE50AF3A244A45EA00355AEF /* OnboardingPageViewController.swift */,
 			);
@@ -632,7 +634,6 @@
 			files = (
 				EE50B01D245A1E1E00355AEF /* AttributeType.swift in Sources */,
 				EE50B01F245A1E1E00355AEF /* HistoryDay.swift in Sources */,
-				EE67D55220E154EE0074F484 /* SettingsWebViewController.swift in Sources */,
 				EE50B01E245A1E1E00355AEF /* HistoyAttributeType.swift in Sources */,
 				EE8A3C061F89314900EB3E77 /* HistoryTableViewController.swift in Sources */,
 				EE682DC51F8301CF003A6CF6 /* OnboardingPageOneViewController.swift in Sources */,
@@ -646,6 +647,7 @@
 				EE8C599D1F94297C00A30773 /* InfoViewController.swift in Sources */,
 				EE682DC31F830093003A6CF6 /* PointsViewController.swift in Sources */,
 				EE50B01B245A1E1E00355AEF /* HealthKitHelper.swift in Sources */,
+				3E5A9D6728E4C50E005F76B5 /* Array+Custom.swift in Sources */,
 				EE682DC71F830270003A6CF6 /* OnboardingPageTwoViewController.swift in Sources */,
 				EE7E0BBA1F90443600849FDF /* AttributeCollectionViewCell.swift in Sources */,
 				EE5DE9C51F94606900F6BFC1 /* Theme.swift in Sources */,
@@ -664,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC5D32C1FA00295007956FB /* MessagesCollectionViewCell.swift in Sources */,
+				3E5A9D6928E4E0F3005F76B5 /* WidgetValue.swift in Sources */,
 				EEC5D31B1FA000DA007956FB /* MessagesViewController.swift in Sources */,
 				EEC5D3301FA0031D007956FB /* AttributeCellView.swift in Sources */,
 			);
@@ -675,6 +678,7 @@
 			files = (
 				EEDD02BC252668D300D3F982 /* PointsTotal.intentdefinition in Sources */,
 				EEDD02B7252668D200D3F982 /* PointsTotal.swift in Sources */,
+				3E5A9D6828E4C548005F76B5 /* Array+Custom.swift in Sources */,
 				3E5A9D5F28E222A5005F76B5 /* WidgetValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1011,7 +1015,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = "healthpoints-imessage/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1035,7 +1039,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = "healthpoints-imessage/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -53,6 +53,7 @@ struct PointsTotalEntryView : View {
     @AppStorage("allTimeHigh", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var high: Int = 0
     @AppStorage("lifetimeTotal", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var life: Int = 0
     @AppStorage("widgetValues", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var data: Data = Data()
+    
     var backgroundColor: Color {
         get {
             if entry.configuration.defaultBackground == 1 {
@@ -139,15 +140,86 @@ struct PointsTotalEntryView : View {
                     Text("Today: \(today)")
                         .font(.title)
                     Text("Weekly Total: \(week)")
-                     
                     Text("All Time High: \(high)")
-                        
                     Text("Life Time Total: \(life)")
-                        
                 }
                 .frame(maxWidth: .infinity)
             }
             .frame(maxWidth: .infinity)
+            .background(backgroundColor)
+        case .systemLarge:
+            VStack(spacing: 0) {
+                HStack(spacing: 0){
+                    ZStack {
+                        Image("heart")
+                            .resizable().aspectRatio(contentMode: .fit)
+                        Text("\(getPointValue(attribute: entry.configuration.attribute))")
+                            .font(.system(size: 50))
+                            .bold()
+                            .foregroundColor(.white)
+                            .offset(y: -5)
+                    }
+                    VStack {
+                        Text("Today: \(today)")
+                            .font(.title)
+                        Text("Weekly Total: \(week)")
+                        Text("All Time High: \(high)")
+                        Text("Life Time Total: \(life)")
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .frame(maxWidth: .infinity)
+                .background( backgroundColor)
+                HStack {
+                    VStack {
+                        ForEach(getAttributeOrder().split()[0], id: \.self) { o in
+                            HStack(alignment: .center) {
+                                ZStack {
+                                    Image("heart")
+                                        .resizable().aspectRatio(contentMode: .fit)
+                                    Text("\(getPoints(from: o))")
+                                        .font(.system(size: 12))
+                                        .bold()
+                                        .foregroundColor(.white)
+                                        .offset(y: -2)
+                                }
+                                Text(o)
+                                    .font(.caption)
+                                    .padding(4)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(getBackgroundColor(from: o))
+                            .cornerRadius(10)
+                        }
+                    }
+                    VStack {
+                        ForEach(getAttributeOrder().split()[1], id: \.self) { o in
+                            HStack(alignment: .center) {
+                                ZStack {
+                                    Image("heart")
+                                        .resizable().aspectRatio(contentMode: .fit)
+                                    Text("\(getPoints(from: o))")
+                                        .font(.system(size: 12))
+                                        .bold()
+                                        .foregroundColor(.white)
+                                        .offset(y: -2)
+                                }
+                                Text(o)
+                                    .font(.caption)
+                                    .padding(4)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(getBackgroundColor(from: o))
+                            .cornerRadius(10)
+                        }
+                    }
+                }
+                .frame(maxHeight: .infinity)
+            }
+            .padding(8)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(backgroundColor)
         default:
             Text("Some other WidgetFamily in the future.")
@@ -157,7 +229,7 @@ struct PointsTotalEntryView : View {
     private func getPointValue(attribute: Attribute?) -> Int {
         if let attribute {
             do {
-       
+                
                 let values = try JSONDecoder().decode([WidgetValue].self, from: data)
                 
                 switch attribute.identifier {
@@ -186,15 +258,79 @@ struct PointsTotalEntryView : View {
                 default:
                     return -1
                 }
-//                return -1
             } catch {
                 print(error)
                 return -1
             }
-            
- 
         } else {
             return -1
+        }
+    }
+    private func getAttributeOrder() -> [String] {
+        let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
+        let defaultAttributes = defaults?.object(forKey: "attributeOrder") as? [String]
+        if let defaultAttributes {
+            return defaultAttributes
+        } else {
+            return []
+        }
+    }
+    private func getPoints(from name: String) -> Int {
+        do {
+            let values = try JSONDecoder().decode([WidgetValue].self, from: data)
+            switch name {
+            case "Steps":
+                return values.first(where: {$0.type == "Steps"})?.value ?? 0
+            case "Workouts":
+                return values.first(where: {$0.type == "Workouts"})?.value ?? 0
+            case "Water":
+                return values.first(where: {$0.type == "Water"})?.value ?? 0
+            case "Sleep":
+                return values.first(where: {$0.type == "Sleep"})?.value ?? 0
+            case "Mind Sessions":
+                return values.first(where: {$0.type == "Mind Sessions"})?.value ?? 0
+            case "Stand Hours":
+                return values.first(where: {$0.type == "Stand Hours"})?.value ?? 0
+            case "Exercise":
+                return values.first(where: {$0.type == "Exercise"})?.value ?? 0
+            case "Move":
+                return values.first(where: {$0.type == "Move"})?.value ?? 0
+            case "⌚️ Rings":
+                return values.first(where: {$0.type == "⌚️ Rings"})?.value ?? 0
+            case "Calories":
+                return values.first(where: {$0.type == "Calories"})?.value ?? 0
+                
+            default:
+                return -1
+            }
+        } catch {
+            return -1
+        }
+    }
+    private func getBackgroundColor(from name: String) -> Color {
+        switch name {
+        case "Steps":
+            return Color(UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00))
+        case "Workouts":
+            return Color(UIColor(red:0.91, green:0.36, blue:0.28, alpha:1.00))
+        case "Water":
+            return Color(UIColor(red:0.38, green:0.75, blue:0.98, alpha:1.00))
+        case "Sleep":
+            return Color(UIColor(red:0.49, green:0.36, blue:0.92, alpha:1.00))
+        case "Mind Sessions":
+            return Color(UIColor(red:0.33, green:0.73, blue:0.82, alpha:1.00))
+        case "Stand Hours":
+            return Color(UIColor(red:0.38, green:0.87, blue:0.84, alpha:1.00))
+        case "Exercise":
+            return Color(UIColor(red:0.66, green:0.95, blue:0.29, alpha:1.00))
+        case "Move":
+            return Color(UIColor(red:0.89, green:0.24, blue:0.37, alpha:1.00))
+        case "⌚️ Rings":
+            return Color(UIColor.lightGray)
+        case "Calories":
+            return Color(UIColor(red:0.32, green:0.71, blue:0.30, alpha:1.00))
+        default:
+            return Color(UIColor.systemBackground)
         }
     }
 }
@@ -207,7 +343,7 @@ struct PointsTotal: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             PointsTotalEntryView(entry: entry)
         }
-        .supportedFamilies([.systemSmall, .accessoryCircular, .accessoryRectangular, .systemMedium])
+        .supportedFamilies([.systemSmall, .accessoryCircular, .accessoryRectangular, .systemMedium, .systemLarge])
         .configurationDisplayName("Today's Health Points")
         .description("Shows Health Points earned today. Edit to pick an Attribute")
     }

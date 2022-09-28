@@ -23,35 +23,19 @@ class HistoryTableViewController: UITableViewController {
     
     @IBAction func refreshHistory(_ sender: Any) {
         let alert = UIAlertController(title: "Update", message: "Your History is being updated. Please Wait.", preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
-            switch action.style{
-            case .default:
-                print("default")
-                
-            case .cancel:
-                print("cancel")
-                
-            case .destructive:
-                print("destructive")
-            }})
-        action.isEnabled = false
-        alert.addAction(action)
-        
-        
-         self.present(alert, animated: true, completion: nil)
-        DispatchQueue.main.async {
-           
-          
-        }
-          self.refresh(alert: alert, action: action)
-   
+        _ = UIAlertAction(title: "OK", style: .default, handler: { action in
+            action.isEnabled = false
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            self.refresh(alert: alert, action: action)
+        })
     }
     func refresh(alert: UIAlertController, action: UIAlertAction) {
         let original = HealthDay.shared.history.reduce(0) {$0 + $1.points}
         let originalHighScore = HealthDay.shared.history.map{ $0.points }.max()!
         var newTotal = 0
         var newHighScore = 0
-       
+        
         let hkHelper = HealthKitHelper()
         
         let group = DispatchGroup()
@@ -60,8 +44,8 @@ class HistoryTableViewController: UITableViewController {
             group.enter()
             if let index = HealthDay.shared.history.firstIndex(of: day){
                 hkHelper.loadHistoricDay(date: day.date) { (day) in
-                    day.getPoints()
-                
+                    _ = day.getPoints()
+                    
                     DispatchQueue.main.async {
                         self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.none)
                     }
@@ -97,7 +81,7 @@ class HistoryTableViewController: UITableViewController {
             let hkHelper = HealthKitHelper()
             
             hkHelper.loadHistoricDay(date: date) { (day) -> Void in
-                let points = day.getPoints()
+                _ = day.getPoints()
                 DispatchQueue.main.async {
                     tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
                 }

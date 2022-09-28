@@ -146,7 +146,10 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         refreshUITheme()
     }
     func refreshUITheme(){
-        for window in UIApplication.shared.windows {
+        guard let firstScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return
+        }
+        for window in firstScene.windows {
             for view in window.subviews {
                 view.removeFromSuperview()
                 window.addSubview(view)
@@ -189,7 +192,8 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         }
     }
     func importHistoryFromFile(){
-        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text"], in: UIDocumentPickerMode.import)
+        //let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text"], in: UIDocumentPickerMode.import)
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.text])
         documentPicker.delegate = self as UIDocumentPickerDelegate
         documentPicker.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         let systemTint = UILabel.appearance().tintColor

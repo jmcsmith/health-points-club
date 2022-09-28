@@ -60,7 +60,7 @@ class HistoryDay: NSObject, NSCoding {
     }
     func saveHistory(){
         let history = HealthDay.shared.history.sorted(by: {$0.date > $1.date} )
-        let h = NSKeyedArchiver.archivedData(withRootObject: history)
+        let h = try? NSKeyedArchiver.archivedData(withRootObject: history, requiringSecureCoding: false)
         UserDefaults.standard.set(h, forKey: "history")
     }
     required init(coder aDecoder: NSCoder) {

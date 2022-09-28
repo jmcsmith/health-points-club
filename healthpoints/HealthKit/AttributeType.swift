@@ -26,7 +26,7 @@ enum AttributeType: String {
         case .steps:
             return (Int((value/1000)*weight))
         case .stand:
-            var goal = HealthDay.shared.standGoal
+            let goal = HealthDay.shared.standGoal
             if goal > 0 && value >= goal {
                 let base = value/goal
                 return Int(base*weight)
@@ -58,7 +58,7 @@ enum AttributeType: String {
         case .mind:
             return Int(value)
         case .exercise:
-            var goal = HealthDay.shared.exerciseGoal
+            let goal = HealthDay.shared.exerciseGoal
             if goal > 0 && value >= goal {
                 let base = value/goal
                 return Int(base*weight)
