@@ -1,65 +1,65 @@
 {
   "images" : [
     {
-      "size" : "60x45",
-      "idiom" : "iphone",
       "filename" : "Icon-60@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x45",
       "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "60x45"
+    },
+    {
       "filename" : "Icon-60@3x.png",
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "60x45"
     },
     {
       "idiom" : "ipad",
-      "size" : "67x50",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "67x50"
     },
     {
       "idiom" : "ipad",
-      "size" : "74x55",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "74x55"
     },
     {
-      "size" : "27x20",
-      "idiom" : "universal",
       "filename" : "Icon-27@2x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
       "scale" : "2x",
-      "platform" : "ios"
+      "size" : "27x20"
     },
     {
-      "size" : "27x20",
-      "idiom" : "universal",
       "filename" : "Icon-27@3x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
       "scale" : "3x",
-      "platform" : "ios"
+      "size" : "27x20"
     },
     {
-      "size" : "32x24",
-      "idiom" : "universal",
       "filename" : "Icon-32@2x.png",
-      "scale" : "2x",
-      "platform" : "ios"
-    },
-    {
-      "size" : "32x24",
       "idiom" : "universal",
-      "filename" : "Icon-32@3x-1.png",
-      "scale" : "3x",
-      "platform" : "ios"
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "32x24"
     },
     {
-      "size" : "1024x768",
-      "idiom" : "ios-marketing",
+      "filename" : "Icon-32@3x-1.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "3x",
+      "size" : "32x24"
+    },
+    {
       "filename" : "imessage.png",
+      "idiom" : "ios-marketing",
+      "platform" : "ios",
       "scale" : "1x",
-      "platform" : "ios"
+      "size" : "1024x768"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
