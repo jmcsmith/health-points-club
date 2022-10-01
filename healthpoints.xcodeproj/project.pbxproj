@@ -752,7 +752,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = PointsIntentUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -761,11 +761,11 @@
 				MARKETING_VERSION = 2022.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test.PointsIntentUI;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntentUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -777,7 +777,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = PointsIntentUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -785,11 +785,11 @@
 				);
 				MARKETING_VERSION = 2022.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test.PointsIntentUI;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntentUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -801,7 +801,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = PointsIntent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -810,11 +810,11 @@
 				MARKETING_VERSION = 2022.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test.PointsIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -826,7 +826,7 @@
 				CURRENT_PROJECT_VERSION = 312;
 				DEVELOPMENT_TEAM = JANZDS5D43;
 				INFOPLIST_FILE = PointsIntent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -834,11 +834,11 @@
 				);
 				MARKETING_VERSION = 2022.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test.PointsIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -893,7 +893,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -947,7 +947,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -971,7 +971,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2022.1;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -996,7 +996,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2022.1;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1022,7 +1022,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2022.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.test.healthpoints-imessage";
+				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1046,7 +1046,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2022.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.test.healthpoints-imessage";
+				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1074,7 +1074,7 @@
 				MARKETING_VERSION = 2022.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test.PointsTotal;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.pointsTotalWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1101,7 +1101,7 @@
 				);
 				MARKETING_VERSION = 2022.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.test.PointsTotal;
+				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.pointsTotalWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

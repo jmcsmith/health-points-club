@@ -23,12 +23,14 @@ class HistoryTableViewController: UITableViewController {
     
     @IBAction func refreshHistory(_ sender: Any) {
         let alert = UIAlertController(title: "Update", message: "Your History is being updated. Please Wait.", preferredStyle: UIAlertController.Style.alert)
-        _ = UIAlertAction(title: "OK", style: .default, handler: { action in
-            action.isEnabled = false
+        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
+            //action.isEnabled = false
             alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
-            self.refresh(alert: alert, action: action)
+           
         })
+        print("refresh")
+        self.present(alert, animated: true, completion: nil)
+        self.refresh(alert: alert, action: action)
     }
     func refresh(alert: UIAlertController, action: UIAlertAction) {
         let original = HealthDay.shared.history.reduce(0) {$0 + $1.points}
@@ -44,8 +46,8 @@ class HistoryTableViewController: UITableViewController {
             group.enter()
             if let index = HealthDay.shared.history.firstIndex(of: day){
                 hkHelper.loadHistoricDay(date: day.date) { (day) in
-                    _ = day.getPoints()
-                    
+                    var points = day.getPoints()
+                    print("\(day.date) - \(points)")
                     DispatchQueue.main.async {
                         self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.none)
                     }

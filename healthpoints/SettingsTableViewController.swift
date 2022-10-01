@@ -192,8 +192,8 @@ class SettingsTableViewController: UITableViewController, UIDocumentPickerDelega
         }
     }
     func importHistoryFromFile(){
-        //let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text"], in: UIDocumentPickerMode.import)
-        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.text])
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text"], in: UIDocumentPickerMode.import)
+        //let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.text])
         documentPicker.delegate = self as UIDocumentPickerDelegate
         documentPicker.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         let systemTint = UILabel.appearance().tintColor

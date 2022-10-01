@@ -13,7 +13,7 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     @IBOutlet weak var collectionView: UICollectionView!
-    let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
+    let defaults = UserDefaults(suiteName: "group.club.healthpoints")
     var list: [WidgetValue] = []
     override func viewDidLoad() {
         super.viewDidLoad()

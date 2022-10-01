@@ -48,11 +48,11 @@ struct SimpleEntry: TimelineEntry {
 struct PointsTotalEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var family
-    @AppStorage("today", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var today: Int = 0
-    @AppStorage("weekTotal", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var week: Int = 0
-    @AppStorage("allTimeHigh", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var high: Int = 0
-    @AppStorage("lifetimeTotal", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var life: Int = 0
-    @AppStorage("widgetValues", store: UserDefaults(suiteName: "group.club.healthpoints.test")) var data: Data = Data()
+    @AppStorage("today", store: UserDefaults(suiteName: "group.club.healthpoints")) var today: Int = 0
+    @AppStorage("weekTotal", store: UserDefaults(suiteName: "group.club.healthpoints")) var week: Int = 0
+    @AppStorage("allTimeHigh", store: UserDefaults(suiteName: "group.club.healthpoints")) var high: Int = 0
+    @AppStorage("lifetimeTotal", store: UserDefaults(suiteName: "group.club.healthpoints")) var life: Int = 0
+    @AppStorage("widgetValues", store: UserDefaults(suiteName: "group.club.healthpoints")) var data: Data = Data()
     
     var backgroundColor: Color {
         get {
@@ -267,7 +267,7 @@ struct PointsTotalEntryView : View {
         }
     }
     private func getAttributeOrder() -> [String] {
-        let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
+        let defaults = UserDefaults(suiteName: "group.club.healthpoints")
         let defaultAttributes = defaults?.object(forKey: "attributeOrder") as? [String]
         if let defaultAttributes {
             return defaultAttributes

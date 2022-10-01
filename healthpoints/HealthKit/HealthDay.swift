@@ -12,7 +12,7 @@ import WidgetKit
 
 public class HealthDay {
     private init() {
-        let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
+        let defaults = UserDefaults(suiteName: "group.club.healthpoints")
         defaultAttributes = defaults?.object(forKey: "attributeOrder") as? [String]
         if defaultAttributes != nil {
             for attribute in defaultAttributes!{
@@ -46,7 +46,7 @@ public class HealthDay {
     var history: [HistoryDay] = []
     var bodyMass: Double = 0.0
     
-    let defaults = UserDefaults(suiteName: "group.club.healthpoints.test")
+    let defaults = UserDefaults(suiteName: "group.club.healthpoints")
     
     func setUpdateNotification() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUIFromHealthDay"), object: nil)
