@@ -142,7 +142,11 @@ struct PointsTotalEntryView : View {
                     Text("Weekly Total: \(week)")
                     Text("All Time High: \(high)")
                     Text("Life Time Total: \(life)")
+                        .lineLimit(1)
+                        .font(.system(size: 500))
+                        .minimumScaleFactor(0.01)
                 }
+                .padding(.trailing, 4)
                 .frame(maxWidth: .infinity)
             }
             .frame(maxWidth: .infinity)
@@ -165,7 +169,11 @@ struct PointsTotalEntryView : View {
                         Text("Weekly Total: \(week)")
                         Text("All Time High: \(high)")
                         Text("Life Time Total: \(life)")
+                            .lineLimit(1)
+                            .font(.system(size: 500))
+                            .minimumScaleFactor(0.01)
                     }
+                    .padding(.trailing, 4)
                     .frame(maxWidth: .infinity)
                 }
                 .frame(maxWidth: .infinity)
