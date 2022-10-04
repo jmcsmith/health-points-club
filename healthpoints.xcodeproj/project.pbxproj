@@ -129,9 +129,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WidgetValue.swift; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/HealthKit/WidgetValue.swift"; sourceTree = "<group>"; };
-		3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SKStoreReviewController+Custom.swift"; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/Extensions/SKStoreReviewController+Custom.swift"; sourceTree = "<group>"; };
-		3E5A9D6628E4C50E005F76B5 /* Array+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Array+Custom.swift"; path = "../../../../../../../Macintosh HD/Users/josephsmith/Development/health-points-club/healthpoints/Extensions/Array+Custom.swift"; sourceTree = "<group>"; };
+		3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetValue.swift; sourceTree = "<group>"; };
+		3E5A9D6428E4BEE7005F76B5 /* SKStoreReviewController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Custom.swift"; sourceTree = "<group>"; };
+		3E5A9D6628E4C50E005F76B5 /* Array+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Custom.swift"; sourceTree = "<group>"; };
 		EE0D1FF22526499600F96126 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		EE0D1FF42526499600F96126 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		EE24EF2C202675B800860749 /* NewVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionViewController.swift; sourceTree = "<group>"; };
