@@ -90,7 +90,10 @@ struct PointsTotalEntryView : View {
     }
     @ViewBuilder
     var body: some View {
-        
+        let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible()),
+        ]
         switch family {
         case .accessoryCircular:
             ZStack {
@@ -185,6 +188,7 @@ struct PointsTotalEntryView : View {
                                 ZStack {
                                     Image("heart")
                                         .resizable().aspectRatio(contentMode: .fit)
+                                        .padding([.leading, .top, .bottom], 2)
                                     Text("\(getPoints(from: o))")
                                         .font(.system(size: 12))
                                         .bold()
@@ -207,6 +211,7 @@ struct PointsTotalEntryView : View {
                                 ZStack {
                                     Image("heart")
                                         .resizable().aspectRatio(contentMode: .fit)
+                                        .padding([.leading, .top, .bottom], 2)
                                     Text("\(getPoints(from: o))")
                                         .font(.system(size: 12))
                                         .bold()
@@ -224,6 +229,30 @@ struct PointsTotalEntryView : View {
                         }
                     }
                 }
+                //                LazyVGrid(columns: columns) {
+                //                    ForEach(getAttributeOrder(), id: \.self) { o in
+                //                        HStack(alignment: .center) {
+                //                            ZStack {
+                //                                Image("heart")
+                //                                    .resizable().aspectRatio(contentMode: .fit)
+                //                                    .padding()
+                //                                    .frame(maxHeight: 20)
+                //                                Text("\(getPoints(from: o))")
+                //                                    .font(.system(size: 12))
+                //                                    .bold()
+                //                                    .foregroundColor(.white)
+                //                                    .offset(y: -2)
+                //                            }
+                //                            Text(o)
+                //                                .font(.caption)
+                //                                .padding(4)
+                //                                .frame(maxWidth: .infinity, alignment: .leading)
+                //                        }
+                //                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                //                        .background(getBackgroundColor(from: o))
+                //                        .cornerRadius(10)
+                //                    }
+                //                }
                 .frame(maxHeight: .infinity)
             }
             .padding(8)
