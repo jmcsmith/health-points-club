@@ -99,6 +99,7 @@ struct PointsTotalEntryView : View {
             ZStack {
                 Image("heart")
                     .resizable().aspectRatio(contentMode: .fit)
+                    .widgetAccentable()
                 Text("\(getPointValue(attribute: entry.configuration.attribute))")
                     .font(.system(size: 30))
                     .bold()
