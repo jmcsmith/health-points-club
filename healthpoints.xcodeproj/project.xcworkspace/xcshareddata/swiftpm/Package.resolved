@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "roboticsnailutilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jmcsmith/RoboticSnailUtilities",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5e8edd2fb6ec7c572e2ee201f53a70a3b27cef09"
+      }
+    }
+  ],
+  "version" : 2
+}
