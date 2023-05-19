@@ -90,10 +90,6 @@ struct PointsTotalEntryView : View {
     }
     @ViewBuilder
     var body: some View {
-        let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-        ]
         switch family {
         case .accessoryCircular:
             ZStack {

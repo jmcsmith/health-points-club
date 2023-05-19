@@ -29,7 +29,7 @@ enum HistoryAttributeType: String {
         case .stand:
             let goal = day.standGoal
             
-            if value >= goal {
+            if goal != 0 && value >= goal {
                 let base = value/goal
                 return Int(base)
             } else {
@@ -61,7 +61,7 @@ enum HistoryAttributeType: String {
             return Int(value)
         case .exercise:
             let goal = day.exerciseGoal
-            if value >= goal {
+            if goal != 0 && value >= goal {
                 let base = value/goal
                 return Int(base)
             } else {

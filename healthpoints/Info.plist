@@ -47,9 +47,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️'s</string>
+	<string>Allows Health Points Club to read data from the Health app and use it to calculate ❤️&apos;s</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
@@ -76,6 +76,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>

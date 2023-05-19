@@ -46,7 +46,7 @@ class HistoryTableViewController: UITableViewController {
             group.enter()
             if let index = HealthDay.shared.history.firstIndex(of: day){
                 hkHelper.loadHistoricDay(date: day.date) { (day) in
-                    var points = day.getPoints()
+                    let points = day.getPoints()
                     print("\(day.date) - \(points)")
                     DispatchQueue.main.async {
                         self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.none)
