@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E5A9D5028E0CC7F005F76B5 /* healthpoints-imessage.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EEC5D3161FA000DA007956FB /* healthpoints-imessage.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3E5A9D5428E0CC85005F76B5 /* PointsIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EE26E9222526B47000698F90 /* PointsIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3E5A9D5728E0CC89005F76B5 /* PointsIntentUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EE26E92B2526B47000698F90 /* PointsIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3E5A9D5A28E0CC8E005F76B5 /* PointsTotalExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EEDD02B2252668D200D3F982 /* PointsTotalExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E5A9D5E28E222A0005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
 		3E5A9D5F28E222A5005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
 		3E5A9D6228E27A39005F76B5 /* RoboticSnailUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5A9D6128E27A39005F76B5 /* RoboticSnailUtilities */; };
@@ -78,27 +75,6 @@
 			remoteGlobalIDString = EEC5D3151FA000DA007956FB;
 			remoteInfo = "healthpoints-imessage";
 		};
-		3E5A9D5528E0CC85005F76B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EE26E9212526B47000698F90;
-			remoteInfo = PointsIntent;
-		};
-		3E5A9D5828E0CC89005F76B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EE26E92A2526B47000698F90;
-			remoteInfo = PointsIntentUI;
-		};
-		3E5A9D5B28E0CC8E005F76B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EEDD02B1252668D200D3F982;
-			remoteInfo = PointsTotalExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,10 +84,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3E5A9D5A28E0CC8E005F76B5 /* PointsTotalExtension.appex in Embed Foundation Extensions */,
 				3E5A9D5028E0CC7F005F76B5 /* healthpoints-imessage.appex in Embed Foundation Extensions */,
-				3E5A9D5728E0CC89005F76B5 /* PointsIntentUI.appex in Embed Foundation Extensions */,
-				3E5A9D5428E0CC85005F76B5 /* PointsIntent.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,9 +410,6 @@
 			);
 			dependencies = (
 				3E5A9D5228E0CC7F005F76B5 /* PBXTargetDependency */,
-				3E5A9D5628E0CC85005F76B5 /* PBXTargetDependency */,
-				3E5A9D5928E0CC89005F76B5 /* PBXTargetDependency */,
-				3E5A9D5C28E0CC8E005F76B5 /* PBXTargetDependency */,
 			);
 			name = healthpoints;
 			packageProductDependencies = (
@@ -691,21 +661,6 @@
 			target = EEC5D3151FA000DA007956FB /* healthpoints-imessage */;
 			targetProxy = 3E5A9D5128E0CC7F005F76B5 /* PBXContainerItemProxy */;
 		};
-		3E5A9D5628E0CC85005F76B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EE26E9212526B47000698F90 /* PointsIntent */;
-			targetProxy = 3E5A9D5528E0CC85005F76B5 /* PBXContainerItemProxy */;
-		};
-		3E5A9D5928E0CC89005F76B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EE26E92A2526B47000698F90 /* PointsIntentUI */;
-			targetProxy = 3E5A9D5828E0CC89005F76B5 /* PBXContainerItemProxy */;
-		};
-		3E5A9D5C28E0CC8E005F76B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EEDD02B1252668D200D3F982 /* PointsTotalExtension */;
-			targetProxy = 3E5A9D5B28E0CC8E005F76B5 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -758,7 +713,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntentUI;
@@ -783,7 +738,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntentUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -807,7 +762,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntent;
@@ -832,7 +787,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.PointsIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -970,7 +925,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -995,7 +950,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1021,7 +976,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1045,7 +1000,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "club.healthpoints.healthpoints-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1071,7 +1026,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.pointsTotalWidget;
@@ -1099,7 +1054,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.1;
+				MARKETING_VERSION = 2023.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = club.healthpoints.pointsTotalWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
