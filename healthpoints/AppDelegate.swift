@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         if let data =  UserDefaults.standard.data(forKey: "history") {
             //if let history = NSKeyedUnarchiver.unarchiveObject(with: data) as? [HistoryDay]{
             if let history = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [HistoryDay] {
+                
                 HealthDay.shared.history = history
             }
         }
