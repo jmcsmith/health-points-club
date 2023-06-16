@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F88DF612A3CC5ED00FE13EC /* PointsIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EE26E9222526B47000698F90 /* PointsIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0F88DF642A3CC5ED00FE13EC /* PointsIntentUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EE26E92B2526B47000698F90 /* PointsIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0F88DF672A3CC5ED00FE13EC /* PointsTotalExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EEDD02B2252668D200D3F982 /* PointsTotalExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E5A9D5028E0CC7F005F76B5 /* healthpoints-imessage.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EEC5D3161FA000DA007956FB /* healthpoints-imessage.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E5A9D5E28E222A0005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
 		3E5A9D5F28E222A5005F76B5 /* WidgetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D5D28E222A0005F76B5 /* WidgetValue.swift */; };
@@ -68,6 +71,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0F88DF5F2A3CC5ED00FE13EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEC5D3151FA000DA007956FB;
+			remoteInfo = "healthpoints-imessage";
+		};
+		0F88DF622A3CC5ED00FE13EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE26E9212526B47000698F90;
+			remoteInfo = PointsIntent;
+		};
+		0F88DF652A3CC5ED00FE13EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE26E92A2526B47000698F90;
+			remoteInfo = PointsIntentUI;
+		};
+		0F88DF682A3CC5ED00FE13EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEDD02B1252668D200D3F982;
+			remoteInfo = PointsTotalExtension;
+		};
 		3E5A9D5128E0CC7F005F76B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE682D7B1F82F05E003A6CF6 /* Project object */;
@@ -84,7 +115,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				0F88DF672A3CC5ED00FE13EC /* PointsTotalExtension.appex in Embed Foundation Extensions */,
 				3E5A9D5028E0CC7F005F76B5 /* healthpoints-imessage.appex in Embed Foundation Extensions */,
+				0F88DF642A3CC5ED00FE13EC /* PointsIntentUI.appex in Embed Foundation Extensions */,
+				0F88DF612A3CC5ED00FE13EC /* PointsIntent.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +444,10 @@
 			);
 			dependencies = (
 				3E5A9D5228E0CC7F005F76B5 /* PBXTargetDependency */,
+				0F88DF602A3CC5ED00FE13EC /* PBXTargetDependency */,
+				0F88DF632A3CC5ED00FE13EC /* PBXTargetDependency */,
+				0F88DF662A3CC5ED00FE13EC /* PBXTargetDependency */,
+				0F88DF692A3CC5ED00FE13EC /* PBXTargetDependency */,
 			);
 			name = healthpoints;
 			packageProductDependencies = (
@@ -459,8 +497,9 @@
 		EE682D7B1F82F05E003A6CF6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Joseph Smith";
 				TargetAttributes = {
 					EE26E9212526B47000698F90 = {
@@ -656,6 +695,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0F88DF602A3CC5ED00FE13EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEC5D3151FA000DA007956FB /* healthpoints-imessage */;
+			targetProxy = 0F88DF5F2A3CC5ED00FE13EC /* PBXContainerItemProxy */;
+		};
+		0F88DF632A3CC5ED00FE13EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE26E9212526B47000698F90 /* PointsIntent */;
+			targetProxy = 0F88DF622A3CC5ED00FE13EC /* PBXContainerItemProxy */;
+		};
+		0F88DF662A3CC5ED00FE13EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE26E92A2526B47000698F90 /* PointsIntentUI */;
+			targetProxy = 0F88DF652A3CC5ED00FE13EC /* PBXContainerItemProxy */;
+		};
+		0F88DF692A3CC5ED00FE13EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEDD02B1252668D200D3F982 /* PointsTotalExtension */;
+			targetProxy = 0F88DF682A3CC5ED00FE13EC /* PBXContainerItemProxy */;
+		};
 		3E5A9D5228E0CC7F005F76B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EEC5D3151FA000DA007956FB /* healthpoints-imessage */;
